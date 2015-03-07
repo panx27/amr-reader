@@ -12,4 +12,4 @@ The boy wants the girl to believe him.
             :ARG0 (g / girl)
             :ARG1 b))
 
-![alt tag](http://url/to/example.png)
+![alt tag](https://github.com/panx27/amr-reader/blob/master/example.png)
