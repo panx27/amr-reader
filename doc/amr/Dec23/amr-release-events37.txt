@@ -1,0 +1,2113 @@
+# AMR release (generated on Tue Dec 23, 2014 at 16:50:49)
+
+# ::id events_0037.1 ::date 2013-02-22T17:00:33 ::annotator UCO-AMR-05 ::preferred
+# ::snt Indonesia's West Papua province was hit by a magnitude 6.1 earthquake today, the latest powerful tremor to shake the region where five people were killed and hundreds injured at the weekend when buildings were destroyed.
+# ::save-date Tue Mar 5, 2013 ::file events_0037_1.txt
+(h / hit-01
+      :ARG1 (p / province :wiki "West_Papua_(province)"
+            :name (n / name :op1 "West" :op2 "Papua")
+            :location (c / country :wiki "Indonesia"
+                  :name (n2 / name :op1 "Indonesia"))
+            :location-of (a / and
+                  :op1 (k / kill-01
+                        :ARG1 (p2 / person :quant 5))
+                  :op2 (i / injure-01
+                        :ARG1 (p3 / person
+                              :quant (m / multiple :op1 100)))
+                  :time (w / weekend)
+                  :ARG1-of (c2 / cause-01
+                        :ARG0 (d / destroy-01
+                              :ARG1 (b / building)))))
+      :ARG2 (e / earthquake
+            :quant (s / seismic-quantity :quant 6.1)
+            :mod (t3 / tremor
+                  :ARG0-of (s2 / shake-01
+                        :ARG1 p)
+                  :time (l / late
+                        :degree (m2 / most))
+                  :mod (p4 / powerful)))
+      :time (t / today))
+
+# ::id events_0037.2 ::date 2013-03-04T07:57:34 ::annotator UCO-AMR-05 ::preferred
+# ::snt The quake struck off the coast at 7:48 a.m. local time, 75 kilometers (50 miles) west of the region's main city of Manokwari, the U.S. Geological Survey said in an alert.
+# ::save-date Mon Jan 27, 2014 ::file events_0037_2.txt
+(a2 / alert-01
+      :ARG0 (g / government-organization :wiki "United_States_Geological_Survey"
+            :name (n / name :op1 "U.S." :op2 "Geological" :op3 "Survey"))
+      :ARG2 (s2 / strike-01
+            :ARG2 (q / quake)
+            :time (d4 / date-entity :time "7:48"
+                  :timezone (l2 / local))
+            :location (o / off
+                  :op1 (c / coast))
+            :location (r / relative-position
+                  :op1 (c2 / city :wiki "Manokwari"
+                        :name (n2 / name :op1 "Manokwari")
+                        :ARG0-of (h / have-org-role-91
+                              :ARG1 (r2 / region)
+                              :ARG2 (c3 / city
+                                    :mod (m / main))))
+                  :quant (d5 / distance-quantity :quant 75
+                        :unit (k2 / kilometer))
+                  :direction (w / west))))
+
+# ::id events_0037.3 ::date 2013-03-04T08:05:34 ::annotator UCO-AMR-05 ::preferred
+# ::snt There were no immediate reports of damage or casualties and no tsunami alert was issued.
+# ::save-date Tue Mar 5, 2013 ::file events_0037_3.txt
+(a / and
+  :op1 (r / report-01
+         :ARG1 (o / or
+                 :op1 (d / damage-01)
+                 :op2 (c / casualty))
+         :polarity -
+         :time (i / immediate))
+  :op2 (a2 / alert-01
+         :ARG2 (t / tsunami)
+         :polarity -))
+
+# ::id events_0037.4 ::date 2013-03-04T08:07:13 ::annotator UCO-AMR-05 ::preferred
+# ::snt A United Nations assessment team was dispatched to the province after two quakes, measuring 7.6 and 7.4, struck west of Manokwari Jan. 4.
+# ::save-date Thu Sep 26, 2013 ::file events_0037_4.txt
+(d2 / dispatch-01
+      :ARG1 (t / team
+            :ARG0-of (h / have-org-role-91
+                  :ARG1 (o / organization :wiki "United_Nations"
+                        :name (n / name :op1 "United" :op2 "Nations"))
+                  :ARG3 (a / assess-01)))
+      :ARG2 (p / province)
+      :time (a2 / after
+            :op1 (a4 / and
+                  :op1 (s5 / strike-01
+                        :ARG2 (q2 / quake
+                              :quant (s / seismic-quantity :quant 7.6)))
+                  :op2 (s6 / strike-01
+                        :ARG2 (q3 / quake
+                              :quant (s2 / seismic-quantity :quant 7.4)))
+                  :location (r / relative-position
+                        :op1 (c2 / city :wiki "Manokwari"
+                              :name (n2 / name :op1 "Manokwari"))
+                        :direction (w / west))
+                  :time (d / date-entity :day 4 :month 1))))
+
+# ::id events_0037.5 ::date 2013-03-04T08:11:37 ::annotator UCO-AMR-05 ::preferred
+# ::snt At least five people were killed, 250 others injured and more than 800 homes destroyed by those temblors, according to the UN.
+# ::save-date Tue Mar 5, 2013 ::file events_0037_5.txt
+(s / say-01
+      :ARG0 (o / organization :wiki "United_Nations"
+            :name (n / name :op1 "UN"))
+      :ARG1 (a2 / and
+            :op1 (k / kill-01
+                  :ARG0 (t / temblor
+                        :mod (t2 / that))
+                  :ARG1 (p / person
+                        :quant (a3 / at-least :op1 5)))
+            :op2 (i / injure-01
+                  :ARG0 t
+                  :ARG1 (p2 / person :quant 250
+                        :mod (o2 / other)))
+            :op3 (d / destroy-01
+                  :ARG0 t
+                  :ARG1 (h / home
+                        :quant (m2 / more-than :op1 800)))))
+
+# ::id events_0037.6 ::date 2013-03-04T08:14:32 ::annotator UCO-AMR-05 ::preferred
+# ::snt About 14,000 people fled their homes at the weekend after a local tsunami warning was issued, the UN said on its Web site.
+# ::save-date Tue Mar 5, 2013 ::file events_0037_6.txt
+(s / say-01
+      :ARG0 (o / organization :wiki "United_Nations"
+            :name (n / name :op1 "UN"))
+      :ARG1 (f / flee-01
+            :ARG0 (p / person
+                  :quant (a / about :op1 14000))
+            :ARG1 (h / home
+                  :poss p)
+            :time (w / weekend)
+            :time (a2 / after
+                  :op1 (w2 / warn-01
+                        :ARG1 (t / tsunami)
+                        :mod (l / local))))
+      :medium (s2 / site
+            :poss o
+            :mod (w3 / web)))
+
+# ::id events_0037.7 ::date 2013-03-10T16:55:38 ::annotator UCO-AMR-05 ::preferred
+# ::snt The Indonesian government has transported relief supplies, including food, medicine, tarpaulins, generators and water purification equipment to the affected areas.
+# ::save-date Mon Jan 27, 2014 ::file events_0037_7.txt
+(t / transport-01
+      :ARG0 (g3 / government-organization
+            :ARG0-of (g2 / govern-01
+                  :ARG1 (c / country :wiki "Indonesia"
+                        :name (n / name :op1 "Indonesia"))))
+      :ARG1 (t2 / thing
+            :ARG1-of (s / supply-01
+                  :purpose r)
+            :ARG2-of (i / include-01
+                  :ARG1 (a / and
+                        :op1 (f / food)
+                        :op2 (m / medicine)
+                        :op3 (t3 / tarpaulin)
+                        :op4 (g / generator)
+                        :op5 (e / equipment
+                              :ARG0-of (p / purify-01
+                                    :ARG1 (w / water)))))
+            :ARG0-of (r / relieve-01))
+      :ARG2 (a2 / area
+            :ARG1-of (a3 / affect-01)))
+
+# ::id events_0037.8 ::date 2013-03-10T17:01:47 ::annotator UCO-AMR-05 ::preferred
+# ::snt Two three-story hotels in Manokwari, a city of 160,000 people, collapsed in the Jan. 4 quakes and buildings were also damaged in the town of Sorong, according to the World Health Organization.
+# ::save-date Tue Dec 10, 2013 ::file events_0037_8.txt
+(s / say-01
+      :ARG0 (o / organization :wiki "World_Health_Organization"
+            :name (n3 / name :op1 "World" :op2 "Health" :op3 "Organization"))
+      :ARG1 (a / and
+            :op1 (c3 / collapse-01
+                  :ARG1 (h / hotel :quant 2
+                        :mod (s2 / story :quant 3)
+                        :location (c / city :wiki "Manokwari"
+                              :name (n / name :op1 "Manokwari")
+                              :ARG1-of (p4 / populate-01
+                                    :ARG2 (p / person :quant 160000))))
+                  :ARG1-of (c4 / cause-01
+                        :ARG0 (q / quake
+                              :time (d / date-entity :day 4 :month 1))))
+            :op2 (d2 / damage-01
+                  :ARG1 (b / building
+                        :location (t / town :wiki "Sorong_(city)"
+                              :name (n2 / name :op1 "Sorong")))
+                  :mod (a2 / also))))
+
+# ::id events_0037.9 ::date 2013-03-08T21:10:47 ::annotator UCO-AMR-05 ::preferred
+# ::snt Manokwari's Rendai Airport was also temporarily closed on security and safety concerns, the WHO said.
+# ::save-date Sat May 25, 2013 ::file events_0037_9.txt
+(s / say-01
+      :ARG0 (o / organization :wiki "World_Health_Organization"
+            :name (n4 / name :op1 "WHO"))
+      :ARG1 (c2 / close-01
+            :ARG1 (a / airport :wiki "Rendani_Airport"
+                  :name (n3 / name :op1 "Rendai" :op2 "Airport")
+                  :location (c / city :wiki "Manokwari"
+                        :name (n2 / name :op1 "Manokwari")))
+            :duration (t / temporary)
+            :ARG1-of (c3 / cause-01
+                  :ARG0 (c4 / concern-01
+                        :ARG0 (a2 / and
+                              :op1 (s2 / security)
+                              :op2 (s3 / safe-41
+                                    :ARG1 a))))
+            :mod (a3 / also)))
+
+# ::id events_0037.10 ::date 2013-03-11T17:27:20 ::annotator UCO-AMR-05 ::preferred
+# ::snt Indonesia lies in a zone where the Indo-Australian, Eurasian, Philippine and Pacific plates meet and occasionally shift, causing earthquakes and sometimes generating tsunamis.
+# ::save-date Tue Mar 19, 2013 ::file events_0037_10.txt
+(l2 / lie-01
+      :ARG1 (c / country :wiki "Indonesia"
+            :name (n / name :op1 "Indonesia"))
+      :ARG2 (z / zone
+            :location-of (m / meet-03
+                  :ARG0 (a / and
+                        :op1 (p / plate :wiki "Indo-Australian_Plate"
+                              :name (n7 / name :op1 "Indo-Australian" :op2 "Plate"))
+                        :op2 (p2 / plate :wiki "Eurasian_Plate"
+                              :name (n8 / name :op1 "Eurasian" :op2 "Plate"))
+                        :op3 (p3 / plate :wiki "Philippine_Sea_Plate"
+                              :name (n9 / name :op1 "Philippine" :op2 "Plate"))
+                        :op4 (p4 / plate :wiki "Pacific_Plate"
+                              :name (n10 / name :op1 "Pacific" :op2 "Plate"))))
+            :location-of (s / shift-01
+                  :ARG1 a
+                  :frequency (o2 / occasional)
+                  :ARG0-of (c4 / cause-01
+                        :ARG1 (e / earthquake))
+                  :ARG0-of (g / generate-01
+                        :ARG1 (t / tsunami)
+                        :frequency (s2 / sometimes)))))
+
+# ::id events_0037.11 ::date 2013-03-11T17:37:51 ::annotator UCO-AMR-05 ::preferred
+# ::snt There have been hundreds of earthquakes in Indonesia since a 9.1 temblor in 2004 caused a tsunami that swept across the Indian Ocean, devastating coastal communities and leaving more than 220,000 people dead in Indonesia, Sri Lanka, India, Thailand and other countries.
+# ::save-date Tue Mar 19, 2013 ::file events_0037_11.txt
+(e / earthquake
+      :quant (m / multiple :op1 100)
+      :location (c / country :wiki "Indonesia"
+            :name (n / name :op1 "Indonesia"))
+      :time (s2 / since
+            :op1 (c2 / cause-01
+                  :ARG0 (t / temblor
+                        :quant (s / seismic-quantity :quant 9.1)
+                        :time (d / date-entity :year 2004))
+                  :ARG1 (t2 / tsunami
+                        :ARG1-of (s3 / sweep-02
+                              :ARG2 (a / across
+                                    :op1 (o / ocean :wiki "Indian_Ocean"
+                                          :name (n2 / name :op1 "Indian" :op2 "Ocean"))))
+                        :ARG0-of (d2 / devastate-01
+                              :ARG1 (c6 / community
+                                    :location (c7 / coast)))
+                        :ARG0-of (k / kill-01
+                              :ARG1 (p / person
+                                    :quant (m2 / more-than :op1 220000))
+                              :location (a2 / and
+                                    :op1 c
+                                    :op2 (c3 / country :wiki "Sri_Lanka"
+                                          :name (n4 / name :op1 "Sri" :op2 "Lanka"))
+                                    :op3 (c4 / country :wiki "India"
+                                          :name (n5 / name :op1 "India"))
+                                    :op4 (c5 / country :wiki "Thailand"
+                                          :name (n6 / name :op1 "Thailand"))
+                                    :op5 (c8 / country
+                                          :mod (o2 / other))))))))
+
+# ::id events_0037.12 ::date 2013-03-11T17:49:16 ::annotator UCO-AMR-05 ::preferred
+# ::snt A strong earthquake rattled Indonesia's West Papua province Wednesday just days after a powerful quake levelled buildings and killed one person, the United States Geological Survey said.
+# ::save-date Tue Mar 26, 2013 ::file events_0037_12.txt
+(s / say-01
+      :ARG0 (g / government-organization :wiki "United_States_Geological_Survey"
+            :name (n3 / name :op1 "United" :op2 "States" :op3 "Geological" :op4 "Survey"))
+      :ARG1 (r / rattle-01
+            :ARG0 (e / earthquake
+                  :mod (s2 / strong))
+            :ARG1 (p / province :wiki "West_Papua_(province)"
+                  :name (n2 / name :op1 "West" :op2 "Papua")
+                  :location (c / country :wiki "Indonesia"
+                        :name (n / name :op1 "Indonesia")))
+            :time (d / date-entity
+                  :weekday (w / wednesday))
+            :time (a / after
+                  :op1 (a2 / and
+                        :op1 (l / level-01
+                              :ARG0 (q / quake
+                                    :mod (p2 / powerful))
+                              :ARG1 (b / building))
+                        :op2 (k / kill-01
+                              :ARG0 q
+                              :ARG1 (p3 / person :quant 1)))
+                  :quant (m / multiple
+                        :op1 (t / temporal-quantity :quant 1
+                              :unit (d2 / day))
+                        :mod (j / just)))))
+
+# ::id events_0037.13 ::date 2013-03-12T21:19:42 ::annotator UCO-AMR-05 ::preferred
+# ::snt The 6.1-magnitude quake was the latest in a series of dozens of powerful tremors to have hit the region since 7.6 and 7.5 magnitude quakes that struck off the provincial capital Manokwari on Sunday.
+# ::save-date Thu Apr 17, 2014 ::file events_0037_13.txt
+(q / quake
+      :quant (s / seismic-quantity :quant 6.1)
+      :time (l / late
+            :degree (m2 / most)
+            :compared-to (t / tremor
+                  :quant (m / multiple :op1 12)
+                  :mod (p / powerful)
+                  :ARG2-of (h / hit-01
+                        :ARG1 (r / region)
+                        :time (s4 / since
+                              :op1 (s5 / strike-01
+                                    :ARG2 (a / and
+                                          :op1 (q3 / quake
+                                                :quant (s2 / seismic-quantity :quant 7.6))
+                                          :op2 (q4 / quake
+                                                :quant (s3 / seismic-quantity :quant 7.5)))
+                                    :time (d / date-entity
+                                          :weekday (s6 / sunday))
+                                    :location (o / off
+                                          :op1 (c / city :wiki "Manokwari"
+                                                :name (n / name :op1 "Manokwari")
+                                                :ARG0-of (h2 / have-org-role-91
+                                                      :ARG1 (p2 / province)
+                                                      :ARG2 (c2 / capital))))))))))
+
+# ::id events_0037.14 ::date 2013-03-12T21:37:55 ::annotator UCO-AMR-05 ::preferred
+# ::snt Wednesday's shallow quake hit at 7: 48 am (2248 GMT Tuesday) just off the coast, some 75 kilometres (50 miles) west of Manokwari.
+# ::save-date Sat May 25, 2013 ::file events_0037_14.txt
+(h / hit-01
+      :ARG2 (q / quake
+            :mod (s2 / shallow)
+            :time (d / date-entity
+                  :weekday (w2 / wednesday)))
+      :time (d2 / date-entity :time "7:48")
+      :time (d6 / date-entity :time "22:48" :timezone "GMT"
+            :weekday (t / tuesday))
+      :location (o2 / off
+            :op1 (c2 / coast)
+            :quant (j / just))
+      :location (r / relative-position
+            :op1 (c / city :wiki "Manokwari"
+                  :name (n2 / name :op1 "Manokwari"))
+            :direction (w / west)
+            :quant (s3 / some
+                  :op1 (d4 / distance-quantity :quant 75
+                        :unit (k / kilometer)))))
+
+# ::id events_0037.15 ::date 2013-03-25T16:08:34 ::annotator UCO-AMR-05 ::preferred
+# ::snt Officials had been put on alert to deal with more devastation to the area -- where thousands of people have been living in tents since Sunday's quakes -- but no damage or injuries had been reported, provincial disaster chief Rahimin Kacong was quoted by AFP as saying.
+# ::save-date Fri Sep 27, 2013 ::file events_0037_15.txt
+(q2 / quote-01
+      :ARG0 (p3 / publication :wiki "Agence_France-Presse"
+            :name (n2 / name :op1 "AFP"))
+      :ARG1 (p5 / person :wiki -
+            :name (n / name :op1 "Rahimin" :op2 "Kacong")
+            :ARG0-of (h2 / have-org-role-91
+                  :ARG1 (p / province)
+                  :ARG2 (c / chief
+                        :mod (d5 / disaster))))
+      :ARG2 (r / report-01 :polarity -
+            :ARG1 (o2 / or
+                  :op1 (d4 / damage-01)
+                  :op2 (i / injure-01))
+            :concession (a / alert-01
+                  :ARG1 (p4 / person
+                        :ARG0-of (h / have-org-role-91
+                              :ARG2 (o / official)))
+                  :ARG2 (d2 / deal-01
+                        :ARG0 p4
+                        :ARG1 (d3 / devastate-01
+                              :ARG1 (a2 / area
+                                    :location-of (l / live-01
+                                          :ARG0 (p2 / person
+                                                :quant (m / multiple :op1 1000))
+                                          :location (t / tent)
+                                          :time (s / since
+                                                :op1 (q / quake
+                                                      :time (d / date-entity
+                                                            :weekday (s3 / sunday))))))
+                              :mod (m2 / more))))))
+
+# ::id events_0037.16 ::date 2013-03-12T13:51:51 ::annotator UCO-AMR-05 ::preferred
+# ::snt The quake was accompanied by smaller quakes with a magnitude over 5.0 off Kupang in East Nusa Tenggara Province and Ternate in North Maluku province, Indonesia's seismological agency said.
+# ::save-date Fri Jan 31, 2014 ::file events_0037_16.txt
+(s2 / say-01
+      :ARG0 (a / agency
+            :mod (s3 / seismologic)
+            :poss (c / country :wiki "Indonesia"
+                  :name (n5 / name :op1 "Indonesia")))
+      :ARG1 (a2 / accompany-01
+            :ARG0 (q2 / quake
+                  :mod (s4 / small
+                        :degree (m / more))
+                  :quant (m2 / multiple)
+                  :quant (o / over
+                        :op1 (s / seismic-quantity :quant 5.0))
+                  :location (o2 / off
+                        :op1 (c2 / city :wiki "Kupang"
+                              :name (n / name :op1 "Kupang")
+                              :location (p2 / province :wiki "East_Nusa_Tenggara"
+                                    :name (n2 / name :op1 "East" :op2 "Nusa" :op3 "Tenggara" :op4 "Province"))))
+                  :location (i / island :wiki "Ternate"
+                        :name (n3 / name :op1 "Ternate")
+                        :location (p4 / province :wiki "North_Maluku"
+                              :name (n4 / name :op1 "North" :op2 "Maluku"))))
+            :ARG1 (q / quake)))
+
+# ::id events_0037.17 ::date 2013-03-16T13:41:58 ::annotator UCO-AMR-05 ::preferred
+# ::snt Around 14,000 people flooded into camps on high ground in the aftermath of Sunday's quakes fearing deadly waves after authorities issued and then withdrew a tsunami alert.
+# ::save-date Fri Sep 27, 2013 ::file events_0037_17.txt
+(f / flood-01
+      :ARG1 (c / camp
+            :location (g / ground
+                  :mod (h / high)))
+      :ARG2 (p / person
+            :quant (a / around :op1 14000))
+      :time (a2 / after
+            :op1 (q / quake
+                  :time (d / date-entity
+                        :weekday (s / sunday))))
+      :ARG1-of (c3 / cause-01
+            :ARG0 (f2 / fear-01
+                  :ARG0 p
+                  :ARG1 (w / wave
+                        :ARG0-of (k / kill-01))
+                  :time (a3 / after
+                        :op1 (w2 / withdraw-01
+                              :ARG0 (p2 / person
+                                    :ARG0-of (h2 / have-org-role-91
+                                          :ARG2 (a4 / authority)))
+                              :ARG1 (a6 / alert-01
+                                    :ARG0 p2
+                                    :ARG2 (t / tsunami))
+                              :time (a5 / after
+                                    :op1 a6))))))
+
+# ::id events_0037.18 ::date 2013-03-11T20:44:42 ::annotator UCO-AMR-05 ::preferred
+# ::snt Many refugees have returned home but some remain too fearful to go back Kacong said.
+# ::save-date Mon Mar 11, 2013 ::file events_0037_18.txt
+(s / say-01
+      :ARG0 (p / person :wiki -
+            :name (n / name :op1 "Kacong"))
+      :ARG1 (c / contrast-01
+            :ARG1 (r / return-01
+                  :ARG1 (r2 / refugee
+                        :quant (m / many))
+                  :ARG4 (h / home))
+            :ARG2 (g / go-02 :polarity -
+                  :ARG0 (r3 / refugee
+                        :quant (s2 / some))
+                  :ARG4 h
+                  :direction (b / back)
+                  :ARG1-of (c2 / cause-01
+                        :ARG0 (f / fear-01
+                              :ARG0 r2)))))
+
+# ::id events_0037.19 ::date 2013-03-11T20:50:31 ::annotator UCO-AMR-05 ::preferred
+# ::snt "We already told people to return to their houses following the meteorological office report saying that the frequency of aftershocks has reduced," he said.
+# ::save-date Mon Apr 1, 2013 ::file events_0037_19.txt
+(s / say-01
+      :ARG0 (h / he)
+      :ARG1 (t / tell-01
+            :ARG0 (w / we)
+            :ARG1 (r / return-01
+                  :ARG1 p
+                  :ARG4 (h2 / house
+                        :poss p))
+            :ARG2 (p / person)
+            :time (a / already)
+            :ARG1-of (f / follow-01
+                  :ARG2 (t2 / thing
+                        :ARG1-of (r2 / report-01
+                              :ARG0 (o / office
+                                    :mod (m / meteorology)))
+                        :ARG0-of (s2 / say-01
+                              :ARG1 (r3 / reduce-01
+                                    :ARG1 (h3 / have-frequency-91
+                                          :ARG1 (a2 / aftershock))))))))
+
+# ::id events_0037.20 ::date 2013-03-12T10:00:47 ::annotator UCO-AMR-05 ::preferred
+# ::snt Hundreds of government and private buildings have been damaged by the Sunday quakes, as well as seven bridges, two of which have collapsed.
+# ::save-date Wed May 29, 2013 ::file events_0037_20.txt
+(d2 / damage-01
+      :ARG0 (q / quake
+            :time (d / date-entity
+                  :weekday (s / sunday)))
+      :ARG1 (a / and
+            :op1 (b / building
+                  :poss (g / government-organization
+                        :ARG0-of (g2 / govern-01))
+                  :quant (m / multiple :op1 100))
+            :op2 (b2 / building
+                  :mod (p / private)
+                  :quant (m2 / multiple :op1 100))
+            :op3 (b3 / bridge :quant 7
+                  :ARG2-of (i / include-91
+                        :ARG1 (b4 / bridge :quant 2
+                              :ARG1-of (c / collapse-01))))))
+
+# ::id events_0037.21 ::date 2013-04-01T21:30:01 ::annotator UCO-AMR-05 ::preferred
+# ::snt The tremors have re-awakened bitter memories of similar deadly quakes that hit Manokwari in 2002, as well as the Asian tsunami that killed 168,000 people in Indonesia's Aceh province and Nias island in 2004.
+# ::save-date Mon Dec 9, 2013 ::file events_0037_21.txt
+(r / reawaken-01
+      :ARG0 (t / tremor)
+      :ARG1 (r2 / remember-01
+            :ARG1 (a / and
+                  :op1 (q / quake
+                        :ARG2-of (h / hit-01
+                              :ARG1 (c / city :wiki "Manokwari"
+                                    :name (n2 / name :op1 "Manokwari"))
+                              :time (d / date-entity :year 2002))
+                        :ARG2-of (r3 / resemble-01
+                              :ARG1 t)
+                        :ARG0-of (k2 / kill-01))
+                  :op2 (t2 / tsunami
+                        :location (c2 / continent :wiki "Asia"
+                              :name (n3 / name :op1 "Asia"))
+                        :ARG0-of (k / kill-01
+                              :ARG1 (p3 / person
+                                    :quant (x / 168000)
+                                    :location (a2 / and
+                                          :op1 (p2 / province :wiki "Aceh"
+                                                :name (n5 / name :op1 "Aceh")
+                                                :location (c3 / country :wiki "Indonesia"
+                                                      :name (n4 / name :op1 "Indonesia")))
+                                          :op2 (i / island :wiki "Nias"
+                                                :name (n6 / name :op1 "Nias")
+                                                :location c3)))
+                              :time (d2 / date-entity :year 2004))))
+            :mod (b / bitter)))
+
+# ::id events_0037.22 ::date 2013-04-02T13:24:50 ::annotator UCO-AMR-05 ::preferred
+# ::snt THOUSANDS of frightened residents flooded makeshift refugee camps in Indonesia's West Papua province today after two powerful earthquakes flattened buildings and killed at least one person.
+# ::save-date Sat May 10, 2014 ::file events_0037_22.txt
+(f / flood-01
+      :ARG1 (c2 / camp
+            :mod (r / refugee)
+            :mod (m / makeshift)
+            :location (p / province :wiki "West_Papua_(province)" :name (n2 / name :op1 "West" :op2 "Papua")
+                  :location (c / country :wiki "Indonesia" :name (n / name :op1 "Indonesia"))))
+      :ARG2 (p2 / person
+            :ARG0-of (r2 / reside-01)
+            :ARG1-of (f2 / frighten-01)
+            :quant (m2 / multiple :op1 1000))
+      :time (t / today)
+      :time (a2 / after
+            :op1 (e / earthquake :quant 2
+                  :mod (p3 / powerful)
+                  :ARG0-of (f3 / flatten-01
+                        :ARG1 (b / building))
+                  :ARG0-of (k / kill-01
+                        :ARG1 (p4 / person
+                              :quant (a / at-least :op1 1))))))
+
+# ::id events_0037.23 ::date 2013-04-01T15:02:17 ::annotator UCO-AMR-05 ::preferred
+# ::snt Residents camped out in yards and streets outside their homes, and there were some 14,000 refugees across the province, many of whom had fled to higher ground, officials said.
+# ::save-date Fri Sep 27, 2013 ::file events_0037_23.txt
+(s2 / say-01
+      :ARG0 (p3 / person
+            :ARG0-of (h3 / have-org-role-91
+                  :ARG2 (o / official)))
+      :ARG1 (a / and
+            :op1 (c / camp-01
+                  :ARG0 (p2 / person
+                        :ARG0-of (r4 / reside-01))
+                  :location (a2 / and
+                        :op1 (y / yard)
+                        :op2 (s3 / street)
+                        :location (o2 / outside
+                              :op1 (h / home
+                                    :poss p2))))
+            :op2 (r2 / refugee
+                  :quant (s / some :op1 14000)
+                  :location (a3 / across
+                        :op1 (p / province))
+                  :ARG2-of (i / include-91
+                        :ARG1 (r3 / refugee
+                              :quant (m / many)
+                              :ARG0-of (f / flee-01
+                                    :destination (g / ground
+                                          :mod (h2 / high
+                                                :degree (m2 / more)))))))))
+
+# ::id events_0037.24 ::date 2013-04-01T15:09:14 ::annotator UCO-AMR-05 ::preferred
+# ::snt "For the time being there are 14,000 refugees," Governor Abraham Atururi said, adding that 17 camps had been set up for the displaced in the provincial capital Manokwari.
+# ::save-date Thu Apr 17, 2014 ::file events_0037_24.txt
+(a / and
+      :op1 (s / say-01
+            :ARG0 (p / person :wiki -
+                  :name (n / name :op1 "Abraham" :op2 "Atururi")
+                  :ARG0-of (h / have-org-role-91
+                        :ARG2 (g / governor)))
+            :ARG1 (r / refugee
+                  :quant (x / 14000)
+                  :time (n2 / now)))
+      :op2 (a2 / add-01
+            :ARG0 p
+            :ARG1 (s2 / set-02
+                  :ARG1 (c / camp :quant 17
+                        :beneficiary (p2 / person
+                              :ARG1-of (d / displace-01)))
+                  :location (c2 / city :wiki "Manokwari"
+                        :name (n3 / name :op1 "Manokwari")
+                        :ARG0-of (h2 / have-org-role-91
+                              :ARG1 (p3 / province)
+                              :ARG2 (c3 / capital))))))
+
+# ::id events_0037.25 ::date 2013-05-12T16:52:21 ::annotator UCO-AMR-05 ::preferred
+# ::snt As aid started to arrive, hundreds of aftershocks continued to rattle the coastal city which was hit by the 7.6 and 7.5 magnitude quakes early on Sunday, cutting power and prompting a brief tsunami warning.
+# ::save-date Tue May 28, 2013 ::file events_0037_25.txt
+(c / continue-01
+      :ARG1 (r / rattle-01
+            :ARG0 (a / aftershock
+                  :quant (m / multiple :op1 100))
+            :ARG1 (c2 / city
+                  :location (c3 / coast)
+                  :ARG1-of (h / hit-01
+                        :ARG0 (a4 / and
+                              :op1 (q / quake
+                                    :quant (s / seismic-quantity :quant 7.6))
+                              :op2 (q2 / quake
+                                    :quant (s2 / seismic-quantity :quant 7.5)))
+                        :time (e / early
+                              :op1 (d / date-entity
+                                    :weekday (s3 / sunday)))
+                        :ARG0-of (c4 / cause-01
+                              :ARG1 (c5 / cut-03
+                                    :ARG1 (p / power)))
+                        :ARG0-of (p2 / prompt-01
+                              :ARG1 (w / warn-01
+                                    :ARG1 (t / tsunami)
+                                    :mod (b / brief))))))
+      :time (s4 / start-01
+            :ARG1 (a2 / arrive-01
+                  :ARG1 (t2 / thing
+                        :ARG0-of (a3 / aid-01)))))
+
+# ::id events_0037.26 ::date 2013-05-07T14:36:53 ::annotator UCO-AMR-05 ::preferred
+# ::snt Atururi said a 10-year-old girl was killed and at least 40 people were injured in the earthquakes, which rekindled bitter memories of similar deadly quakes that hit the town in 2002.
+# ::save-date Sat May 10, 2014 ::file events_0037_26.txt
+(s / say-01
+      :ARG0 (p / person :wiki -
+            :name (n / name :op1 "Atururi"))
+      :ARG1 (a2 / and
+            :op1 (k / kill-01
+                  :ARG0 (e / earthquake)
+                  :ARG1 (g / girl
+                        :age (t / temporal-quantity :quant 10
+                              :unit (y / year))))
+            :op2 (i / injure-01
+                  :ARG0 e
+                  :ARG1 (p2 / person
+                        :quant (a / at-least :op1 40)))
+            :ARG0-of (r / rekindle-01
+                  :ARG1 (r2 / remember-01
+                        :ARG1 (q / quake
+                              :ARG2-of (h / hit-01
+                                    :ARG1 (t2 / town)
+                                    :time (d / date-entity :year 2002))
+                              :ARG2-of (r3 / resemble-01
+                                    :ARG1 e)
+                              :ARG0-of (k2 / kill-01))
+                        :mod (b / bitter)))))
+
+# ::id events_0037.27 ::date 2013-05-12T11:03:43 ::annotator UCO-AMR-05 ::preferred
+# ::snt Hundreds of government and private buildings were damaged in the quake, as well as seven bridges, two of which collapsed, he said.
+# ::save-date Tue May 28, 2013 ::file events_0037_27.txt
+(s / say-01
+      :ARG0 (h / he)
+      :ARG1 (d / damage-01
+            :ARG0 (q / quake)
+            :ARG1 (a / and
+                  :op1 (b / building
+                        :quant (m / multiple :op1 100)
+                        :ARG2-of (i / include-91
+                              :ARG1 (a2 / and
+                                    :op1 (b2 / building
+                                          :poss (g / government-organization
+                                                :ARG0-of (g2 / govern-01)))
+                                    :op2 (b3 / building
+                                          :mod (p / private)))))
+                  :op2 (b4 / bridge :quant 7
+                        :ARG2-of (i3 / include-91
+                              :ARG1 (b5 / bridge :quant 2
+                                    :ARG1-of (c / collapse-01
+                                          :ARG0 q)))))))
+
+# ::id events_0037.28 ::date 2013-05-12T11:38:00 ::annotator UCO-AMR-05 ::preferred
+# ::snt Four central government ministers arrived by plane bringing 1.5 billion rupiah ($A195,900) in aid and to survey the damage, officials said.
+# ::save-date Fri Sep 27, 2013 ::file events_0037_28.txt
+(s / say-01
+      :ARG0 (p3 / person
+            :ARG0-of (h2 / have-org-role-91
+                  :ARG2 (o / official)))
+      :ARG1 (a / arrive-01
+            :ARG1 (p2 / person :quant 4
+                  :ARG0-of (b / bring-01
+                        :ARG1 (m / monetary-quantity :quant 1500000000
+                              :unit (r / rupiah))
+                        :purpose (a2 / aid-01))
+                  :ARG0-of (s2 / survey-01
+                        :ARG1 (d2 / damage))
+                  :ARG0-of (h / have-org-role-91
+                        :ARG1 (g / government-organization
+                              :ARG0-of (g2 / govern-01)
+                              :mod (c / central))
+                        :ARG2 (m2 / minister)))
+            :manner (p / plane)))
+
+# ::id events_0037.29 ::date 2013-05-12T11:49:17 ::annotator UCO-AMR-05 ::preferred
+# ::snt Two tonnes of medicine was also flown in by the health ministry to Manokwari's airport.
+# ::save-date Thu Sep 26, 2013 ::file events_0037_29.txt
+(f / fly-01
+      :ARG0 (m2 / ministry
+            :mod (h / health))
+      :ARG1 (m3 / medicine
+            :quant (v / volume-quantity :quant 2
+                  :unit (t / ton)))
+      :direction (i / in)
+      :destination (a / airport
+            :location (c / city :wiki "Manokwari"
+                  :name (n2 / name :op1 "Manokwari")))
+      :mod (a2 / also))
+
+# ::id events_0037.30 ::date 2013-05-12T11:58:00 ::annotator UCO-AMR-05 ::preferred
+# ::snt In Manokwari, many residents were camping outside their homes, but thousands from low-lying areas refused to leave camps on higher ground out of fear of a tsunami.
+# ::save-date Wed May 29, 2013 ::file events_0037_30.txt
+(c2 / contrast-01
+      :ARG1 (c3 / camp-01
+            :ARG0 (p / person
+                  :ARG0-of (r / reside-01)
+                  :quant (m3 / many))
+            :location (o / outside
+                  :op1 (h / home
+                        :poss p))
+            :location (c / city :wiki "Manokwari"
+                  :name (n / name :op1 "Manokwari")))
+      :ARG2 (r2 / refuse-01
+            :ARG0 (p2 / person
+                  :quant (m / multiple :op1 1000)
+                  :ARG0-of (r3 / reside-01
+                        :ARG1 (a / area
+                              :mod (l3 / low-lying))))
+            :ARG1 (l / leave-01
+                  :ARG0 p2
+                  :ARG1 (c6 / camp
+                        :location (g / ground
+                              :mod (h2 / high
+                                    :degree (m2 / more)))))
+            :ARG1-of (c5 / cause-01
+                  :ARG0 (f / fear-01
+                        :ARG0 p2
+                        :ARG1 (t / tsunami)))))
+
+# ::id events_0037.31 ::date 2013-05-12T12:16:52 ::annotator UCO-AMR-05 ::preferred
+# ::snt "I'm half-dead in my tent.
+# ::save-date Wed Oct 1, 2014 ::file events_0037_31.txt
+(b / be-located-at-91
+      :ARG1 (i / i
+            :ARG1-of (d / die-01
+                  :extent (h / half)))
+      :ARG2 (t / tent
+            :poss i))
+
+# ::id events_0037.32 ::date 2013-05-13T20:27:45 ::annotator UCO-AMR-05 ::preferred
+# ::snt I want to go home but I'm scared of a tsunami," said fisherman's wife Mapahai, 35, who fled with her husband and six children.
+# ::save-date Fri Aug 29, 2014 ::file events_0037_32.txt
+(s / say-01
+      :ARG0 (p / person :wiki - :name (n / name :op1 "Mapahai")
+            :age (t2 / temporal-quantity :quant 35
+                  :unit (y / year))
+            :ARG0-of (h3 / have-rel-role-91
+                  :ARG1 (m / man
+                        :ARG0-of (f / fish-01))
+                  :ARG2 (w / wife)
+                  :ARG3 (h2 / husband))
+            :ARG0-of (f2 / flee-01
+                  :accompanier (a / and
+                        :op1 m
+                        :op2 (p2 / person :quant 6
+                              :ARG0-of (h4 / have-rel-role-91
+                                    :ARG1 p
+                                    :ARG2 (c / child))))))
+      :ARG1 (c2 / contrast-01
+            :ARG1 (w2 / want-01
+                  :ARG0 p
+                  :ARG1 (g / go-01
+                        :ARG1 p
+                        :ARG4 (h / home)))
+            :ARG2 (s2 / scare-01
+                  :ARG0 (t / tsunami)
+                  :ARG1 p)))
+
+# ::id events_0037.33 ::date 2013-05-12T18:10:42 ::annotator UCO-AMR-05 ::preferred
+# ::snt "Two of my children are sick, I'm also sick.
+# ::save-date Thu Apr 24, 2014 ::file events_0037_33.txt
+(s / sick
+      :domain (a / and
+            :op1 (p / person :quant 2
+                  :ARG0-of (h / have-rel-role-91
+                        :ARG1 i
+                        :ARG2 (c2 / child)))
+            :op2 (i / i
+                  :mod (a2 / also))))
+
+# ::id events_0037.34 ::date 2013-05-13T09:15:24 ::annotator UCO-AMR-05 ::preferred
+# ::snt We haven't received any medicine yet," she said.
+# ::save-date Mon May 13, 2013 ::file events_0037_34.txt
+(s / say-01
+      :ARG0 (s2 / she)
+      :ARG1 (r / receive-01 :polarity -
+            :ARG0 (w / we)
+            :ARG1 (m / medicine)
+            :time (y / yet)))
+
+# ::id events_0037.35 ::date 2013-05-13T20:43:11 ::annotator UCO-AMR-05 ::preferred
+# ::snt Indonesia's Meteorology and Geophysics Agency (BMG) said Papua had been hit by 842 aftershocks over a period of 29 hours after the first quake, including 54 aftershocks stronger than five on the Richter scale.
+# ::save-date Mon May 13, 2013 ::file events_0037_35.txt
+(s2 / say-01
+      :ARG0 (g / government-organization :wiki "Indonesian_Agency_for_Meteorology,_Climatology_and_Geophysics"
+            :name (n2 / name :op1 "Meteorology" :op2 "and" :op3 "Geophysics" :op4 "Agency")
+            :location (c / country :wiki "Indonesia"
+                  :name (n / name :op1 "Indonesia")))
+      :ARG1 (h2 / hit-01
+            :ARG1 (p / province :wiki "Papua_(province)"
+                  :name (n5 / name :op1 "Papua"))
+            :ARG2 (a / aftershock :quant 842
+                  :ARG2-of (i / include-91
+                        :ARG1 (a3 / aftershock :quant 54
+                              :quant (m / more-than
+                                    :op1 (s / seismic-quantity :quant 5
+                                          :scale (r / richter))))))
+            :time (a2 / after
+                  :op1 (q / quake
+                        :ord (o / ordinal-entity :value 1)))
+            :duration (t2 / temporal-quantity :quant 29
+                  :unit (h3 / hour))))
+
+# ::id events_0037.36 ::date 2013-05-13T09:26:02 ::annotator UCO-AMR-05 ::preferred
+# ::snt "It keeps on shaking," Papua BMG spokesman Mujahidin said.
+# ::save-date Fri Sep 27, 2013 ::file events_0037_36.txt
+(s / say-01
+      :ARG0 (p2 / person :wiki -
+            :name (n2 / name :op1 "Mujahidin")
+            :ARG0-of (h / have-org-role-91
+                  :ARG1 (o / organization :wiki "Indonesian_Agency_for_Meteorology,_Climatology_and_Geophysics"
+                        :name (n3 / name :op1 "BMG")
+                        :location (p / province :wiki "Papua_(province)"
+                              :name (n4 / name :op1 "Papua")))
+                  :ARG2 (s2 / spokesman)))
+      :ARG1 (k / keep-02
+            :ARG1 (s3 / shake-01
+                  :ARG1 (i / it))))
+
+# ::id events_0037.37 ::date 2013-05-13T09:28:38 ::annotator UCO-AMR-05 ::preferred
+# ::snt Some 168,000 people were killed in Indonesia's Aceh province and Nias island by the 2004 Asian tsunami, making it the worst hit country.
+# ::save-date Wed May 29, 2013 ::file events_0037_37.txt
+(k / kill-01
+      :ARG0 (t / tsunami
+            :mod (c2 / continent :wiki "Asia"
+                  :name (n5 / name :op1 "Asia"))
+            :time (d / date-entity :year 2004))
+      :ARG1 (p2 / person
+            :quant (s / some :op1 168000))
+      :location (a / and
+            :op1 (p / province :wiki "Aceh"
+                  :name (n2 / name :op1 "Aceh")
+                  :location (c / country :wiki "Indonesia"
+                        :name (n / name :op1 "Indonesia")))
+            :op2 (i / island :wiki "Nias"
+                  :name (n3 / name :op1 "Nias")))
+      :ARG0-of (m / make-02
+            :ARG1 (h / hit-01
+                  :ARG1 c
+                  :mod (b / bad
+                        :degree (m2 / most)))))
+
+# ::id events_0037.38 ::date 2013-05-14T12:20:36 ::annotator UCO-AMR-05 ::preferred
+# ::snt A series of powerful earthquakes has shaken Indonesia's remote eastern province of Papua, briefly triggering fears of a tsunami, officials have said.
+# ::save-date Wed Sep 17, 2014 ::file events_0037_38.txt
+(s / say-01
+      :ARG0 (p3 / person
+            :ARG0-of (h / have-org-role-91
+                  :ARG2 (o / official)))
+      :ARG1 (s2 / shake-01
+            :ARG0 (e / earthquake
+                  :quant (s3 / series)
+                  :mod (p2 / powerful))
+            :ARG1 (p / province :wiki "Papua_(province)" :name (n2 / name :op1 "Papua")
+                  :mod (r / remote)
+                  :location (e2 / east
+                        :part-of (c / country :wiki "Indonesia" :name (n / name :op1 "Indonesia")))))
+      :ARG0-of (t / trigger-01
+            :ARG1 (f / fear-01
+                  :ARG1 (t2 / tsunami)
+                  :duration (b / brief))))
+
+# ::id events_0037.39 ::date 2013-05-14T20:17:07 ::annotator UCO-AMR-05 ::preferred
+# ::snt A young girl was killed and dozens of others were seriously injured in the quakes, which also sent small tsunamis into Japan's southeastern coast.
+# ::save-date Wed May 29, 2013 ::file events_0037_39.txt
+(a / and
+      :op1 (k / kill-01
+            :ARG0 (q / quake
+                  :ARG0-of (s2 / send-01
+                        :ARG1 (t / tsunami
+                              :mod (s3 / small))
+                        :ARG2 (c2 / coast
+                              :mod (s4 / southeast)
+                              :location (c / country :wiki "Japan"
+                                    :name (n / name :op1 "Japan")))
+                        :mod (a2 / also)))
+            :ARG1 (g / girl
+                  :mod (y / young)))
+      :op2 (i / injure-01
+            :ARG0 q
+            :ARG1 (p / person
+                  :mod (o / other)
+                  :quant (m / multiple :op1 12))
+            :mod (s / serious)))
+
+# ::id events_0037.40 ::date 2013-05-14T20:35:17 ::annotator UCO-AMR-05 ::preferred
+# ::snt Panicked residents fled to higher ground as the first earthquake measuring 7.6 magnitude struck on Sunday about 135 kilometers from the main city of Manokwari, according to the US Geological Survey.
+# ::save-date Wed Apr 16, 2014 ::file events_0037_40.txt
+(s3 / say-01
+      :ARG0 (g / government-organization :wiki "United_States_Geological_Survey"
+            :name (n2 / name :op1 "US" :op2 "Geological" :op3 "Survey"))
+      :ARG1 (f / flee-01
+            :ARG0 (p / person
+                  :ARG0-of (r / reside-01)
+                  :ARG1-of (p2 / panic-01))
+            :destination (g2 / ground
+                  :mod (h / high
+                        :degree (m / more)))
+            :time (s4 / strike-01
+                  :ARG2 (e / earthquake
+                        :quant (s / seismic-quantity :quant 7.6)
+                        :ord (o / ordinal-entity :value 1))
+                  :time (d / date-entity
+                        :weekday (s2 / sunday))
+                  :location (r2 / relative-position
+                        :op1 (c / city :wiki "Manokwari"
+                              :name (n / name :op1 "Manokwari")
+                              :ARG0-of (h2 / have-org-role-91
+                                    :ARG2 (c2 / city
+                                          :mod (m2 / main))))
+                        :quant (a / about
+                              :op1 (d2 / distance-quantity :quant 135
+                                    :unit (k / kilometer)))))))
+
+# ::id events_0037.41 ::date 2013-05-14T21:04:09 ::annotator UCO-AMR-05 ::preferred
+# ::snt Power supplies were cut and commercial flights were cancelled after cracks appeared on the runway of the city's airport.
+# ::save-date Thu Jul 25, 2013 ::file events_0037_41.txt
+(a / and
+      :op1 (c / cut-02
+            :ARG1 (s / supply-01
+                  :ARG1 (p / power)))
+      :op2 (c2 / cancel-01
+            :ARG1 (f / fly-01
+                  :mod (c3 / commerce)))
+      :time (a2 / after
+            :op1 (a3 / appear-01
+                  :ARG1 (c4 / crack
+                        :location (r / runway
+                              :part-of (a4 / airport
+                                    :poss (c5 / city)))))))
+
+# ::id events_0037.42 ::date 2013-05-26T07:58:32 ::annotator UCO-AMR-05 ::preferred
+# ::snt Hengky Tewu, a hospital director, said a 10-year-old girl was killed at home when a wall collapsed and crushed her head.
+# ::save-date Fri Sep 27, 2013 ::file events_0037_42.txt
+(s / say-01
+      :ARG0 (p / person :wiki -
+            :name (n / name :op1 "Hengky" :op2 "Tewu")
+            :ARG0-of (h4 / have-org-role-91
+                  :ARG1 (h / hospital)
+                  :ARG2 (d / director)))
+      :ARG1 (k / kill-01
+            :ARG1 (g / girl
+                  :age (t / temporal-quantity :quant 10
+                        :unit (y / year)))
+            :location (h2 / home)
+            :ARG1-of (c / cause-01
+                  :ARG0 (c2 / crush-01
+                        :ARG0 (w / wall
+                              :ARG1-of (c3 / collapse-01))
+                        :ARG1 (h3 / head
+                              :part-of g)))))
+
+# ::id events_0037.43 ::date 2013-05-26T08:05:53 ::annotator UCO-AMR-05 ::preferred
+# ::snt At least 50 people were hospitalised for broken bones and head wounds while 300 others were given outpatient treatment, Henri Sembiring a local health official, said.
+# ::save-date Fri Sep 27, 2013 ::file events_0037_43.txt
+(s / say-01
+      :ARG0 (p3 / person :wiki -
+            :name (n / name :op1 "Henri" :op2 "Sembiring")
+            :ARG0-of (h4 / have-org-role-91
+                  :ARG2 (o / official
+                        :mod (h / health)
+                        :mod (l / local))))
+      :ARG1 (c / contrast-01
+            :ARG1 (h2 / hospitalize-01
+                  :ARG1 (p / person
+                        :quant (a / at-least :op1 50))
+                  :ARG1-of (c2 / cause-01
+                        :ARG0 (a2 / and
+                              :op1 (b / break-01
+                                    :ARG1 (b2 / bone))
+                              :op2 (w / wound-01
+                                    :ARG1 (h3 / head)))))
+            :ARG2 (g / give-01
+                  :ARG0 (p2 / person :quant 300
+                        :mod (o2 / other))
+                  :ARG1 (t / treatment
+                        :mod (o3 / outpatient)))))
+
+# ::id events_0037.44 ::date 2013-05-26T08:14:50 ::annotator UCO-AMR-05 ::preferred
+# ::snt One of the tremors with a 7.3 magnitude was felt 1,300 kilometers away in northern Australia, but no damage was reported.
+# ::save-date Wed Sep 17, 2014 ::file events_0037_44.txt
+(f / feel-03
+      :ARG1 (t / tremor :quant 1
+            :quant (s / seismic-quantity :quant 7.3))
+      :location (n2 / north
+            :part-of (c / continent :wiki "Australia_(continent)" :name (n / name :op1 "Australia")))
+      :location (r / relative-position
+            :op1 (d / distance-quantity :quant 1300
+                  :unit (k / kilometer))
+            :mod (a / away))
+      :concession (r2 / report-01 :polarity -
+            :ARG1 (d2 / damage)))
+
+# ::id events_0037.45 ::date 2013-05-26T08:47:39 ::annotator UCO-AMR-05 ::preferred
+# ::snt Indonesia's National Disaster Coordination Agency said about 135 homes and other buildings were badly damaged or toppled in the quakes.
+# ::save-date Mon May 27, 2013 ::file events_0037_45.txt
+(s / say-01
+      :ARG0 (g / government-organization :wiki "Indonesian_National_Board_for_Disaster_Management"
+            :name (n2 / name :op1 "National" :op2 "Disaster" :op3 "Coordination" :op4 "Agency")
+            :poss (c / country :wiki "Indonesia"
+                  :name (n / name :op1 "Indonesia")))
+      :ARG1 (o / or
+            :op1 (d / damage-01
+                  :ARG0 (q / quake)
+                  :ARG1 (a2 / and
+                        :op1 (h / home)
+                        :op2 (b / building
+                              :mod (o2 / other))
+                        :quant (a / about :op1 135))
+                  :mod (b2 / bad))
+            :op2 (t / topple-01
+                  :ARG0 q
+                  :ARG1 a2)))
+
+# ::id events_0037.46 ::date 2013-05-26T08:54:06 ::annotator UCO-AMR-05 ::preferred
+# ::snt Residents in Manokwari - a jumble of low-lying brick and cement structures home to 167,000 people - remained wary of aftershocks, with many staying outdoors in case fresh tremors caused more buildings to collapse.
+# ::save-date Sat May 10, 2014 ::file events_0037_46.txt
+(a / and
+      :op1 (r / remain-01
+            :ARG1 (p / person
+                  :ARG0-of (r2 / reside-01
+                        :ARG1 (c / city :wiki "Manokwari" :name (n / name :op1 "Manokwari")
+                              :location-of (j / jumble-01
+                                    :ARG1 (s2 / structure
+                                          :consist-of (a3 / and
+                                                :op1 (b2 / brick)
+                                                :op2 (c4 / cement))
+                                          :mod (l / low-lying)))
+                              :mod (h / home
+                                    :poss (p3 / person
+                                          :quant (x / 167000))))))
+            :ARG3 (w / wary
+                  :ARG1-of (c2 / cause-01
+                        :ARG0 (a2 / aftershock))))
+      :op2 (s / stay-01
+            :ARG1 (p2 / person
+                  :quant (m / many))
+            :location (o / outdoors)
+            :condition (c3 / collapse-01
+                  :ARG0 (t / tremor
+                        :mod (f / fresh))
+                  :ARG1 (b / building
+                        :quant (m2 / more)))))
+
+# ::id events_0037.47 ::date 2013-05-26T09:28:21 ::annotator UCO-AMR-05 ::preferred
+# ::snt The Indonesian health ministry and World Vision Indonesia, a relief agency, have said they will be sending in aid teams and emergency kits including canned food, blankets and basic medical supplies.
+# ::save-date Sat May 10, 2014 ::file events_0037_47.txt
+(s / say-01
+      :ARG0 (a / and
+            :op1 (m / ministry
+                  :poss (c / country :wiki "Indonesia"
+                        :name (n / name :op1 "Indonesia"))
+                  :mod (h / health))
+            :op2 (o / organization :wiki "World_Vision_India"
+                  :name (n2 / name :op1 "World" :op2 "Vision" :op3 "Indonesia")
+                  :mod (a2 / agency
+                        :mod (r / relief))))
+      :ARG1 (s2 / send-01
+            :ARG0 a
+            :ARG2 (a3 / and
+                  :op1 (t / team
+                        :mod (a4 / aid))
+                  :op2 (k / kit
+                        :mod (e / emergency)
+                        :ARG2-of (i / include-01
+                              :ARG1 (a5 / and
+                                    :op1 (f / food
+                                          :ARG1-of (c2 / can-01))
+                                    :op2 (b / blanket)
+                                    :op3 (s3 / supply
+                                          :mod (b2 / basic)
+                                          :mod (m2 / medical))))))))
+
+# ::id events_0037.48 ::date 2013-05-26T09:55:57 ::annotator UCO-AMR-05 ::preferred
+# ::snt Papua, located about 2,955 kilometers east of the country's capital, Jakarta, is among the nation's least developed areas.
+# ::save-date Fri Aug 8, 2014 ::file events_0037_48.txt
+(i / include-91
+      :ARG1 (p / province :wiki "Papua_(province)"
+            :name (n / name :op1 "Papua")
+            :location (r / relative-position
+                  :op1 (c / city :wiki "Jakarta"
+                        :name (n2 / name :op1 "Jakarta")
+                        :ARG0-of (h / have-org-role-91
+                              :ARG1 (c2 / country)
+                              :ARG2 (c3 / capital)))
+                  :quant (a / about
+                        :op1 (d / distance-quantity :quant 2955
+                              :unit (k / kilometer)))
+                  :mod (e / east)))
+      :ARG2 (a2 / area
+            :poss (n3 / nation)
+            :ARG1-of (d2 / develop-02
+                  :degree (l / less
+                        :degree (m / most)))))
+
+# ::id events_0037.49 ::date 2013-05-26T11:23:25 ::annotator UCO-AMR-05 ::preferred
+# ::snt In December 2004, a massive undersea quake off the western Indonesian province of Aceh triggered a giant tsunami that left at least 230,000 people dead and missing in a dozen countries facing the Indian Ocean.
+# ::save-date Wed Sep 17, 2014 ::file events_0037_49.txt
+(t / trigger-01
+      :ARG0 (q / quake
+            :mod (m / massive)
+            :mod (u / undersea)
+            :location (o2 / off
+                  :op1 (p / province :wiki "Aceh" :name (n2 / name :op1 "Aceh")
+                        :location (w / west
+                              :part-of (c / country :wiki "Indonesia" :name (n / name :op1 "Indonesia"))))))
+      :ARG1 (t2 / tsunami
+            :mod (g / giant)
+            :ARG0-of (l / leave-06
+                  :ARG1 (p2 / person
+                        :quant (a / at-least :op1 230000)
+                        :ARG2-of (i / include-91
+                              :ARG1 (a2 / and
+                                    :op1 (p3 / person
+                                          :ARG1-of (d3 / die-01))
+                                    :op2 (p4 / person
+                                          :ARG1-of (m3 / miss-01)))))
+                  :location (c3 / country :quant 12
+                        :ARG0-of (f / face-01
+                              :ARG1 (o / ocean :wiki "Indian_Ocean" :name (n3 / name :op1 "Indian" :op2 "Ocean"))))))
+      :time (d / date-entity :month 12 :year 2004))
+
+# ::id events_0037.50 ::date 2013-05-26T11:54:12 ::annotator UCO-AMR-05 ::preferred
+# ::snt Indonesia straddles a chain of fault lines and volcanoes known as the Pacific "ring of fire" and is prone to seismic activity.
+# ::save-date Mon Dec 9, 2013 ::file events_0037_50.txt
+(s2 / straddle-01
+      :ARG0 (c / country :wiki "Indonesia"
+            :name (n / name :op1 "Indonesia")
+            :mod (p / prone
+                  :prep-to (a / activity
+                        :mod (s / seismic))))
+      :ARG1 (c2 / chain :wiki "Ring_of_Fire"
+            :name (n3 / name :op1 "Ring" :op2 "of" :op3 "Fire")
+            :consist-of (a2 / and
+                  :op1 (l / line
+                        :mod (f / fault))
+                  :op2 (v / volcano))
+            :location (o / ocean :wiki "Pacific_Ocean"
+                  :name (n2 / name :op1 "Pacific"))))
+
+# ::id events_0037.51 ::date 2013-05-26T15:11:21 ::annotator UCO-AMR-05 ::preferred
+# ::snt The powerful quakes in Papua in easternmost of Indonesia on Sunday have led over 14,000 people taking shelters in tents, destroyed hundreds of buildings, killed one person and injured dozens others, local disaster management agency said on Monday.
+# ::save-date Wed Sep 17, 2014 ::file events_0037_51.txt
+(s2 / say-01
+      :ARG0 (a / agency
+            :ARG0-of (m4 / manage-01
+                  :ARG1 (d3 / disaster))
+            :mod (l / local))
+      :ARG1 (q / quake
+            :mod (p2 / powerful)
+            :location (p / province :wiki "Papua_(province)" :name (n / name :op1 "Papua")
+                  :location (e / east
+                        :degree (m5 / most)
+                        :part-of (c / country :wiki "Indonesia" :name (n2 / name :op1 "Indonesia"))))
+            :time (d / date-entity
+                  :weekday (s / sunday))
+            :ARG0-of (c2 / cause-01
+                  :ARG1 (a2 / and
+                        :op1 (s3 / shelter-01
+                              :ARG0 (p3 / person
+                                    :quant (o / over :op1 14000))
+                              :ARG2 (t / tent))
+                        :op2 (d4 / destroy-01
+                              :ARG1 (b / building
+                                    :quant (m / multiple :op1 100)))
+                        :op3 (k / kill-01
+                              :ARG1 (p4 / person :quant 1))
+                        :op4 (i / injure-01
+                              :ARG1 (p5 / person
+                                    :quant (m2 / multiple :op1 12)
+                                    :mod (o2 / other))))))
+      :time (d2 / date-entity
+            :weekday (m3 / monday)))
+
+# ::id events_0037.52 ::date 2013-05-26T16:23:04 ::annotator UCO-AMR-05 ::preferred
+# ::snt Head of the agency Captain Manrosan, who goes with a single name like many Indonesian, told Xinhua by phone from Manokwari of Papua's main city that eight people had suffered from serious injury and 261 other got minor injury.
+# ::save-date Wed Apr 16, 2014 ::file events_0037_52.txt
+(t / tell-01
+      :ARG0 (p3 / person :wiki -
+            :name (n / name :op1 "Manrosan")
+            :ARG1-of (g / go-22
+                  :ARG2 (n7 / name :quant 1)
+                  :ARG1-of (r / resemble-01
+                        :ARG2 (p4 / person
+                              :mod (c / country :wiki "Indonesia"
+                                    :name (n2 / name :op1 "Indonesia"))
+                              :quant (m / many))))
+            :location (c3 / city :wiki "Manokwari"
+                  :name (n5 / name :op1 "Manokwari")
+                  :ARG0-of (h3 / have-org-role-91
+                        :ARG1 (p2 / province :wiki "Papua_(province)"
+                              :name (n6 / name :op1 "Papua"))
+                        :ARG2 (c5 / city
+                              :mod (m3 / main))))
+            :ARG0-of (h / head-01
+                  :ARG1 (a2 / agency))
+            :ARG0-of (h2 / have-org-role-91
+                  :ARG2 (c2 / captain)))
+      :ARG1 (a / and
+            :op1 (i2 / injure-01
+                  :ARG1 (p6 / person :quant 8)
+                  :degree (s / serious)
+                  :location c3)
+            :op2 (i3 / injure-01
+                  :ARG1 (p7 / person :quant 261
+                        :mod (o / other))
+                  :degree (m2 / minor)
+                  :location c3))
+      :ARG2 (p / publication :wiki "Xinhua_News_Agency"
+            :name (n3 / name :op1 "Xinhua"))
+      :medium (p5 / phone))
+
+# ::id events_0037.53 ::date 2013-05-26T21:31:23 ::annotator UCO-AMR-05 ::preferred
+# ::snt Manrosan said that the 7.7 magnitude quake damaged 42 government office buildings, 2 roads, 14 hotels, over 1,600 houses, 40 religious building including churches and mosques, 8 bridges, and 4 school buildings.
+# ::save-date Mon May 27, 2013 ::file events_0037_53.txt
+(s2 / say-01
+      :ARG0 (p / person :wiki -
+            :name (n / name :op1 "Manrosan"))
+      :ARG1 (d / damage-01
+            :ARG0 (q / quake
+                  :quant (s / seismic-quantity :quant 7.7))
+            :ARG1 (a / and
+                  :op1 (b / building :quant 42
+                        :mod (o2 / office
+                              :poss (g / government-organization
+                                    :ARG0-of (g2 / govern-01))))
+                  :op2 (r / road :quant 2)
+                  :op3 (h / hotel :quant 14)
+                  :op4 (h2 / house
+                        :quant (o / over :op1 1600))
+                  :op5 (b2 / building :quant 40
+                        :mod (r2 / religious)
+                        :ARG2-of (i / include-91
+                              :ARG1 (a2 / and
+                                    :op1 (c / church)
+                                    :op2 (m / mosque))))
+                  :op6 (b3 / bridge :quant 8)
+                  :op7 (b4 / building :quant 4
+                        :mod (s3 / school)))))
+
+# ::id events_0037.54 ::date 2013-05-27T07:40:52 ::annotator UCO-AMR-05 ::preferred
+# ::snt "Up to the midday Monday, the latest data of the fatality is only one person," he said, ruling out speculation about the rumor of several deaths.
+# ::save-date Wed Jul 24, 2013 ::file events_0037_54.txt
+(s / say-01
+      :ARG0 (h / he
+            :ARG0-of (r / rule-02
+                  :ARG1 (s2 / speculate-01
+                        :ARG1 (r2 / rumor-01
+                              :ARG1 (p2 / person
+                                    :ARG1-of (d5 / die-01)
+                                    :quant (s4 / several))))))
+      :ARG1 (d2 / data
+            :mod (l / late
+                  :degree (m2 / most))
+            :topic (f / fatality)
+            :mod (p / person :quant 1
+                  :mod (o / only))
+            :time (u / up-to
+                  :op1 (d / date-entity
+                        :dayperiod (m3 / midday
+                              :time (d4 / date-entity
+                                    :weekday (m / monday)))))))
+
+# ::id events_0037.55 ::date 2013-05-27T07:54:44 ::annotator UCO-AMR-05 ::preferred
+# ::snt The Manokwari Hospital said that most of those seriously wounded now were treated at an emergency unit at the hospital.
+# ::save-date Mon May 27, 2013 ::file events_0037_55.txt
+(s / say-01
+      :ARG0 (h / hospital :wiki -
+            :name (n / name :op1 "Manokwari" :op2 "Hospital"))
+      :ARG1 (t / treat-03
+            :ARG1 (p / person
+                  :ARG1-of (w / wound-01
+                        :mod (s2 / serious))
+                  :quant (m / most))
+            :time (n2 / now)
+            :location (u / unit
+                  :mod (e / emergency)
+                  :location h)))
+
+# ::id events_0037.56 ::date 2013-05-27T08:00:25 ::annotator UCO-AMR-05 ::preferred
+# ::snt "Most of them have broken bones, caused by the smashed of the debris of the buildings," Doctor Sokal Pirg of the unit told Xinhua by phone from the hospital.
+# ::save-date Fri May 9, 2014 ::file events_0037_56.txt
+(t / tell-01
+      :ARG0 (d / doctor :wiki -
+            :name (n / name :op1 "Sokal" :op2 "Pirg")
+            :location (h2 / hospital)
+            :ARG0-of (h3 / have-org-role-91
+                  :ARG1 (u / unit)))
+      :ARG1 (h / have-03
+            :ARG0 (t2 / they
+                  :quant (m / most))
+            :ARG1 (b / bone
+                  :ARG1-of (b2 / break-01
+                        :ARG0 (d2 / debris
+                              :ARG1-of (s / smash-01)
+                              :part-of (b3 / building)))))
+      :ARG2 (p2 / publication :wiki "Xinhua_News_Agency"
+            :name (n2 / name :op1 "Xinhua"))
+      :medium (p / phone))
+
+# ::id events_0037.57 ::date 2013-05-27T08:42:41 ::annotator UCO-AMR-05 ::preferred
+# ::snt Evacuees still lived in tents and relatives' houses which were at higher grounds and far from sea for fear of possible tsunami, said Manrosan.
+# ::save-date Thu May 1, 2014 ::file events_0037_57.txt
+(s / say-01
+      :ARG0 (p / person :wiki -
+            :name (n / name :op1 "Manrosan"))
+      :ARG1 (l / live-01
+            :ARG0 (p2 / person
+                  :ARG2-of (e / evacuate-01))
+            :location (a / and
+                  :op1 (t / tent
+                        :location (g / ground
+                              :mod (h2 / high
+                                    :degree (m / more)))
+                        :location (f / far
+                              :op1 (s2 / sea)))
+                  :op2 (h / house
+                        :location g
+                        :location f
+                        :poss (p4 / person
+                              :ARG0-of (h3 / have-rel-role-91
+                                    :ARG2 (r2 / relative)))))
+            :ARG1-of (c / cause-01
+                  :ARG0 (f2 / fear-01
+                        :ARG0 p2
+                        :ARG1 (t2 / tsunami
+                              :mod (p3 / possible))))
+            :mod (s3 / still)))
+
+# ::id events_0037.58 ::date 2013-05-27T08:50:40 ::annotator UCO-AMR-05 ::preferred
+# ::snt The quake has totally stop electricity supply at the city, but now some of them have resumed, said Manrosan.
+# ::save-date Mon May 27, 2013 ::file events_0037_58.txt
+(s / say-01
+      :ARG0 (p / person :wiki -
+            :name (n / name :op1 "Manrosan"))
+      :ARG1 (c / contrast-01
+            :ARG1 (s2 / stop-01
+                  :ARG0 (q / quake)
+                  :ARG1 (s3 / supply-01
+                        :ARG1 (e / electricity)
+                        :ARG2 (c2 / city))
+                  :mod (t / total))
+            :ARG2 (r / resume-01
+                  :ARG1 (t2 / they
+                        :quant (s4 / some))
+                  :time (n2 / now))))
+
+# ::id events_0037.59 ::date 2013-05-27T08:53:58 ::annotator UCO-AMR-05 ::preferred
+# ::snt The quake, with epicenter was about 85 miles (135 kilometers) from Manokwari and occurred at a depth of 22 miles (35 kilometers), is followed by tremors, triggering fears among the displaced persons to return homes.
+# ::save-date Mon Jan 27, 2014 ::file events_0037_59.txt
+(f / follow-01
+      :ARG1 (t / tremor
+            :ARG0-of (t2 / trigger-01
+                  :ARG1 (f2 / fear-01
+                        :ARG0 (p / person
+                              :ARG1-of (d6 / displace-01))
+                        :ARG1 (r2 / return-01
+                              :ARG1 p
+                              :ARG4 (h / home
+                                    :poss p)))))
+      :ARG2 (q / quake
+            :poss-of (e / epicenter
+                  :location (r / relative-position
+                        :op1 (c / city :wiki "Manokwari"
+                              :name (n / name :op1 "Manokwari"))
+                        :quant (a / about
+                              :op1 (d / distance-quantity :quant 85
+                                    :unit (m / mile))))
+                  :location (r3 / relative-position
+                        :op1 (s / surface)
+                        :quant (d3 / distance-quantity :quant 22
+                              :unit (m2 / mile))
+                        :direction (d2 / down)))))
+
+# ::id events_0037.60 ::date 2013-05-27T09:03:55 ::annotator UCO-AMR-05 ::preferred
+# ::snt "We are still scared of further strong quakes," said Nora Nursita, a resident at Manokwari, over phone.
+# ::save-date Mon May 27, 2013 ::file events_0037_60.txt
+(s / say-01
+      :ARG0 (p / person :wiki -
+            :name (n / name :op1 "Nora" :op2 "Nursita")
+            :ARG0-of (r / reside-01
+                  :ARG1 (c / city :wiki "Manokwari"
+                        :name (n3 / name :op1 "Manokwari"))))
+      :ARG1 (s2 / scare-01
+            :ARG0 (q / quake
+                  :mod (s3 / strong)
+                  :mod (f / further))
+            :ARG1 (w / we)
+            :mod (s4 / still))
+      :medium (p2 / phone))
+
+# ::id events_0037.61 ::date 2013-05-27T09:21:05 ::annotator UCO-AMR-05 ::preferred
+# ::snt Aids for the victims have been delivered from the local administration and Jakarta, said Manrosan.
+# ::save-date Mon May 27, 2013 ::file events_0037_61.txt
+(s / say-01
+      :ARG0 (p / person :wiki -
+            :name (n2 / name :op1 "Manrosan"))
+      :ARG1 (d / deliver-01
+            :ARG0 (a / and
+                  :op1 (g / government-organization
+                        :mod (l / local)
+                        :ARG0-of (a2 / administrate-01))
+                  :op2 (c / city :wiki "Jakarta"
+                        :name (n / name :op1 "Jakarta")))
+            :ARG1 (a3 / aid
+                  :beneficiary (v / victim))))
+
+# ::id events_0037.62 ::date 2013-05-27T09:23:29 ::annotator UCO-AMR-05 ::preferred
+# ::snt Up to Monday, tremors keep shaking Papua, particularly Manokwari city which is home by over 170,000 people.
+# ::save-date Wed May 29, 2013 ::file events_0037_62.txt
+(k / keep-02
+      :ARG1 (s / shake-01
+            :ARG0 (t / tremor)
+            :location (c / city :wiki "Manokwari"
+                  :name (n2 / name :op1 "Manokwari")
+                  :mod (p2 / particular)
+                  :location (p / province :wiki "Papua_(province)"
+                        :name (n / name :op1 "Papua"))
+                  :domain (h / home
+                        :poss (p3 / person
+                              :quant (o / over :op1 170000))))
+            :time (u / up-to
+                  :op1 (d / date-entity
+                        :weekday (m / monday)))))
+
+# ::id events_0037.63 ::date 2013-05-27T10:25:02 ::annotator UCO-AMR-05 ::preferred
+# ::snt Indonesian have recently launched an early tsunami warning system across the country to prevent a repeat of the 2004's massive death caused by tsunami.
+# ::save-date Wed Jul 24, 2013 ::file events_0037_63.txt
+(l / launch-01
+      :ARG0 (c / country :wiki "Indonesia"
+            :name (n / name :op1 "Indonesia"))
+      :ARG1 (s / system
+            :ARG0-of (w / warn-01
+                  :ARG1 (t / tsunami)
+                  :time (e / early))
+            :location (a / across
+                  :op1 c)
+            :purpose (p / prevent-01
+                  :ARG1 (r2 / repeat-01
+                        :ARG1 (p2 / person
+                              :time (d / date-entity :year 2004)
+                              :quant (m / massive)
+                              :ARG1-of (d2 / die-01
+                                    :ARG1-of (c4 / cause-01
+                                          :ARG0 (t3 / tsunami)))))))
+      :time (r / recent))
+
+# ::id events_0037.64 ::date 2013-05-27T10:32:01 ::annotator UCO-AMR-05 ::preferred
+# ::snt The catastrophe four years ago devastated Indian Ocean community and killed more than 230,000 people, over 170,000 of them in Aceh at northern tip of Sumatra Island of Indonesia.
+# ::save-date Mon May 27, 2013 ::file events_0037_64.txt
+(c2 / catastrophe
+      :time (b / before
+            :op1 (n6 / now)
+            :quant (t / temporal-quantity :quant 4
+                  :unit (y / year)))
+      :ARG0-of (d / devastate-01
+            :ARG1 (c3 / community
+                  :location (o2 / ocean :wiki "Indian_Ocean"
+                        :name (n / name :op1 "Indian" :op2 "Ocean"))))
+      :ARG0-of (k / kill-01
+            :ARG1 (p2 / person
+                  :quant (m / more-than :op1 230000)
+                  :ARG2-of (i2 / include-91
+                        :ARG1 (p3 / person
+                              :quant (o / over :op1 170000)
+                              :location (p / province :wiki "Aceh"
+                                    :name (n2 / name :op1 "Aceh")
+                                    :location (i / island :wiki "Sumatra"
+                                          :name (n3 / name :op1 "Sumatra" :op2 "Island")
+                                          :part (t2 / tip
+                                                :mod (n5 / north))
+                                          :location (c / country :wiki "Indonesia"
+                                                :name (n4 / name :op1 "Indonesia")))))))))
+
+# ::id events_0037.65 ::date 2013-05-27T10:37:27 ::annotator UCO-AMR-05 ::preferred
+# ::snt Indonesia, with over 230 million population and 17,000 islands, sits at a vulnerable zone so called "the Pacific Ring of Fire" where two continental plates, stretching from the Western Hemisphere through Japan and Southeast Asia, meet that cause frequent volcanic movements.
+# ::save-date Mon May 27, 2013 ::file events_0037_65.txt
+(s / sit-01
+      :ARG1 (c / country :wiki "Indonesia"
+            :name (n / name :op1 "Indonesia")
+            :poss-of (a / and
+                  :op1 (p / population
+                        :quant (o / over :op1 230000000))
+                  :op2 (i / island
+                        :quant (x / 17000))))
+      :ARG2 (z / zone :wiki "Ring_of_Fire"
+            :name (n2 / name :op1 "Pacific" :op2 "Ring" :op3 "of" :op4 "Fire")
+            :mod (v / vulnerable)
+            :location-of (m / meet-03
+                  :ARG0 (p2 / plate :quant 2
+                        :mod (c3 / continent)
+                        :ARG1-of (s2 / stretch-01
+                              :ARG3 (w / world-region :wiki "Western_Hemisphere"
+                                    :name (n3 / name :op1 "Western" :op2 "Hemisphere"))
+                              :path (t / through
+                                    :op1 (a2 / and
+                                          :op1 (c2 / country :wiki "Japan"
+                                                :name (n4 / name :op1 "Japan"))
+                                          :op2 (w2 / world-region :wiki "Southeast_Asia"
+                                                :name (n5 / name :op1 "Southeast" :op2 "Asia"))))))
+                  :ARG0-of (c4 / cause-01
+                        :ARG1 (m2 / move-01
+                              :mod (v2 / volcanic)
+                              :mod (f2 / frequent))))))
+
+# ::id events_0037.66 ::date 2013-05-27T10:47:01 ::annotator UCO-AMR-05 ::preferred
+# ::snt A series of powerful earthquakes rocked Manokwari, the capital of West Papua, on Sunday, killing four people, injuring dozens and destroying hundreds of buildings.
+# ::save-date Thu Apr 17, 2014 ::file events_0037_66.txt
+(r / rock-01
+      :ARG0 (e / earthquake
+            :quant (s2 / series)
+            :mod (p2 / powerful)
+            :ARG0-of (k / kill-01
+                  :ARG1 (p3 / person :quant 4))
+            :ARG0-of (i / injure-01
+                  :ARG1 (p4 / person
+                        :quant (m / multiple :op1 12)))
+            :ARG0-of (d2 / destroy-01
+                  :ARG1 (b / building
+                        :quant (m2 / multiple :op1 100))))
+      :ARG1 (c / city :wiki "Manokwari"
+            :name (n2 / name :op1 "Manokwari")
+            :ARG0-of (h / have-org-role-91
+                  :ARG1 (p / province :wiki "West_Papua_(province)"
+                        :name (n / name :op1 "West" :op2 "Papua"))
+                  :ARG2 (c2 / capital)))
+      :time (d / date-entity
+            :weekday (s / sunday)))
+
+# ::id events_0037.67 ::date 2013-05-27T10:57:14 ::annotator UCO-AMR-05 ::preferred
+# ::snt One 7.3-magnitude tremor was felt as far away as Australia and sent small tsunamis into Japan's southeastern coast, the Associated Press reported.
+# ::save-date Fri Jan 17, 2014 ::file events_0037_67.txt
+(r / report-01
+      :ARG0 (p / publication :wiki "Associated_Press"
+            :name (n3 / name :op1 "Associated" :op2 "Press"))
+      :ARG1 (t / tremor :quant 1
+            :quant (s / seismic-quantity :quant 7.3)
+            :ARG1-of (f / feel-01
+                  :location (a / as-far-away
+                        :op1 (c / continent :wiki "Australia_(continent)"
+                              :name (n / name :op1 "Australia"))))
+            :ARG0-of (s2 / send-01
+                  :ARG1 (t2 / tsunami
+                        :mod (s3 / small))
+                  :ARG2 (c4 / coast
+                        :mod (s4 / southeast)
+                        :location (c2 / country :wiki "Japan"
+                              :name (n2 / name :op1 "Japan"))))))
+
+# ::id events_0037.68 ::date 2013-05-27T11:07:21 ::annotator UCO-AMR-05 ::preferred
+# ::snt The first quake, magnitude 7.6, struck at 4:43 a.m. local time about 135 kilometers from Manokwari at a depth of 35 kilometers, the U.S. Geological Survey said.
+# ::save-date Mon May 27, 2013 ::file events_0037_68.txt
+(s2 / say-01
+      :ARG0 (g / government-organization :wiki "United_States_Geological_Survey"
+            :name (n2 / name :op1 "U.S." :op2 "Geological" :op3 "Survey"))
+      :ARG1 (s3 / strike-01
+            :ARG2 (q / quake
+                  :ord (o / ordinal-entity :value 1)
+                  :quant (s / seismic-quantity :quant 7.6))
+            :time (d / date-entity :time "4:43"
+                  :timezone (l / local))
+            :location (r / relative-position
+                  :op1 (c / city :wiki "Manokwari"
+                        :name (n / name :op1 "Manokwari"))
+                  :quant (a / about
+                        :op1 (d2 / distance-quantity :quant 135
+                              :unit (k / kilometer))))
+            :location (d4 / deep
+                  :op1 (d3 / distance-quantity :quant 35
+                        :unit (k2 / kilometer)))))
+
+# ::id events_0037.69 ::date 2013-05-27T11:27:57 ::annotator UCO-AMR-05 ::preferred
+# ::snt Dozens of aftershocks followed.
+# ::save-date Mon May 27, 2013 ::file events_0037_69.txt
+(f / follow-01
+      :ARG1 (a / aftershock
+            :quant (m / multiple :op1 12)))
+
+# ::id events_0037.70 ::date 2013-05-27T11:28:44 ::annotator UCO-AMR-05 ::preferred
+# ::snt At least four people died in Papua, where the runway of the airport nearest the epicenter was split by the force, President Susilo Bambang Yudhoyono told reporters.
+# ::save-date Fri Sep 27, 2013 ::file events_0037_70.txt
+(t / tell-01
+      :ARG0 (p2 / person :wiki "Susilo_Bambang_Yudhoyono"
+            :name (n2 / name :op1 "Susilo" :op2 "Bambang" :op3 "Yudhoyono")
+            :ARG0-of (h / have-org-role-91
+                  :ARG2 (p5 / president)))
+      :ARG1 (d / die-01
+            :ARG1 (p3 / person
+                  :quant (a / at-least :op1 4))
+            :location (p / province :wiki "Papua_(province)"
+                  :name (n / name :op1 "Papua")
+                  :location-of (s / split-01
+                        :ARG0 (f / force)
+                        :ARG1 (r2 / runway
+                              :part-of (a2 / airport
+                                    :location (n3 / near
+                                          :op1 (e / epicenter)
+                                          :mod (m / most)))))))
+      :ARG2 (p4 / person
+            :ARG0-of (r / report-01)))
+
+# ::id events_0037.71 ::date 2013-05-27T11:33:23 ::annotator UCO-AMR-05 ::preferred
+# ::snt "I've instructed emergency steps be taken to help our brothers and to restore power and other vital utilities," Yudhoyono said.
+# ::save-date Thu Apr 24, 2014 ::file events_0037_71.txt
+(s / say-01
+      :ARG0 (p / person :wiki "Susilo_Bambang_Yudhoyono"
+            :name (n / name :op1 "Yudhoyono"))
+      :ARG1 (i / instruct-01
+            :ARG0 p
+            :ARG2 (t / take-03
+                  :ARG2 (s2 / step
+                        :mod (e / emergency))
+                  :purpose (a / and
+                        :op1 (h / help-01
+                              :ARG2 (p3 / person
+                                    :ARG0-of (h2 / have-rel-role-91
+                                          :ARG1 (w / we)
+                                          :ARG2 (b / brother))))
+                        :op2 (r / restore-01
+                              :ARG1 (a2 / and
+                                    :op1 (p2 / power)
+                                    :op2 (u / utility
+                                          :mod (v / vital)
+                                          :mod (o / other))))))))
+
+# ::id events_0037.72 ::date 2013-05-27T11:37:32 ::annotator UCO-AMR-05 ::preferred
+# ::snt Among the dead was a 10-year-old girl, identified as Yolanda Mandofi, whose head was crushed, said local hospital director Hengky Tewu.
+# ::save-date Thu Sep 26, 2013 ::file events_0037_72.txt
+(s / say-01
+      :ARG0 (p2 / person :wiki -
+            :name (n2 / name :op1 "Hengky" :op2 "Tewu")
+            :ARG0-of (h3 / have-org-role-91
+                  :ARG1 (h / hospital
+                        :mod (l / local))
+                  :ARG2 (d / director)))
+      :ARG1 (g / girl :wiki -
+            :name (n / name :op1 "Yolanda" :op2 "Mandofi")
+            :part (h2 / head
+                  :ARG1-of (c / crush-01))
+            :ARG1-of (i / include-91
+                  :ARG2 (p / person
+                        :ARG1-of (d2 / die-01)))
+            :ARG1-of (i2 / identify-01
+                  :ARG2 n)
+            :age (t2 / temporal-quantity :quant 10
+                  :unit (y2 / year))))
+
+# ::id events_0037.73 ::date 2013-05-27T11:43:26 ::annotator UCO-AMR-05 ::preferred
+# ::snt "Our ambulances are picking up two more," he said.
+# ::save-date Mon May 27, 2013 ::file events_0037_73.txt
+(s / say-01
+      :ARG0 (h / he)
+      :ARG1 (p / pick-04
+            :ARG0 (a / ambulance
+                  :poss (w / we))
+            :ARG1 (p2 / person :quant 2
+                  :mod (m / more))))
+
+# ::id events_0037.74 ::date 2013-05-27T11:45:34 ::annotator UCO-AMR-05 ::preferred
+# ::snt Another 19 patients at the hospital were treated for broken bones, cuts, crush wounds and other injuries.
+# ::save-date Mon May 27, 2013 ::file events_0037_74.txt
+(t / treat-03
+      :ARG1 (p / patient :quant 19
+            :mod (a / another))
+      :ARG2 (a2 / and
+            :op1 (b / break-01
+                  :ARG1 (b2 / bone))
+            :op2 (c / cut)
+            :op3 (w / wound
+                  :ARG1-of (c2 / cause-01
+                        :ARG0 (c3 / crush-01)))
+            :op4 (i / injury
+                  :mod (o / other)))
+      :location (h / hospital))
+
+# ::id events_0037.75 ::date 2013-05-27T11:48:24 ::annotator UCO-AMR-05 ::preferred
+# ::snt Papua police chief Maj. Gen. Bagus Ekodanto said he had received reports that a hotel and a rice warehouse had been "destroyed", but he did not know if anyone had been killed in the incidences.
+# ::save-date Thu Sep 26, 2013 ::file events_0037_75.txt
+(s / say-01
+      :ARG0 (p3 / person :wiki -
+            :name (n2 / name :op1 "Bagus" :op2 "Ekodanto")
+            :ARG0-of (h2 / have-org-role-91
+                  :ARG1 (p4 / police
+                        :location (p / province :wiki "Papua_(province)"
+                              :name (n / name :op1 "Papua")))
+                  :ARG2 (c / chief))
+            :ARG0-of (h3 / have-org-role-91
+                  :ARG2 (m / major-general)))
+      :ARG1 (r / receive-01
+            :ARG0 p3
+            :ARG1 (r2 / report-01
+                  :ARG1 (d / destroy-01
+                        :ARG1 (a / and
+                              :op1 (h / hotel)
+                              :op2 (w / warehouse
+                                    :mod (r3 / rice))))
+                  :concession (k / know-01 :polarity -
+                        :ARG0 p3
+                        :ARG1 (k2 / kill-01
+                              :ARG1 (a2 / anyone)
+                              :time (i / incidence))))))
+
+# ::id events_0037.76 ::date 2013-05-27T12:04:25 ::annotator UCO-AMR-05 ::preferred
+# ::snt A search for victims was under way.
+# ::save-date Wed May 29, 2013 ::file events_0037_76.txt
+(s / search-01
+      :ARG2 (v / victim))
+
+# ::id events_0037.77 ::date 2013-05-27T15:23:29 ::annotator UCO-AMR-05 ::preferred
+# ::snt Several stories of the Mutiara Hotel in the main city Manokwari collapsed, said Ina, a nurse at a navy hospital, adding that she had already treated 20 quake victims.
+# ::save-date Wed Apr 16, 2014 ::file events_0037_77.txt
+(a3 / and
+      :op1 (s / say-01
+            :ARG0 (p / person :wiki -
+                  :name (n2 / name :op1 "Ina")
+                  :ARG0-of (n3 / nurse-01
+                        :location (h2 / hospital
+                              :poss (n4 / navy))))
+            :ARG1 (c / collapse-01
+                  :ARG1 (s2 / story
+                        :quant (s3 / several)
+                        :part-of (h / hotel :wiki -
+                              :name (n / name :op1 "Mutiara" :op2 "Hotel")
+                              :location (c2 / city :wiki "Manokwari"
+                                    :name (n5 / name :op1 "Manokwari")
+                                    :ARG0-of (h3 / have-org-role-91
+                                          :ARG2 (c3 / city
+                                                :mod (m / main))))))))
+      :op2 (a4 / add-01
+            :ARG0 p
+            :ARG1 (t / treat-03
+                  :ARG0 p
+                  :ARG1 (v / victim :quant 20
+                        :mod (q / quake))
+                  :mod (a2 / already))))
+
+# ::id events_0037.78 ::date 2013-05-27T16:04:31 ::annotator UCO-AMR-05 ::preferred
+# ::snt The quakes also reportedly damaged the Kalidingin hotel.
+# ::save-date Mon May 27, 2013 ::file events_0037_78.txt
+(d / damage-01
+      :ARG0 (q / quake)
+      :ARG1 (h / hotel :wiki -
+            :name (n / name :op1 "Kalidingin")
+            :mod (a / also))
+      :ARG1-of (r / report-01))
+
+# ::id events_0037.79 ::date 2013-05-27T16:06:33 ::annotator UCO-AMR-05 ::preferred
+# ::snt Electricity was cut off to the coastal city of population 167,000, where people fled their homes in the dark fearing a tsunami, said Hasim Rumatiga, a local health official.
+# ::save-date Fri Sep 27, 2013 ::file events_0037_79.txt
+(s / say-01
+      :ARG0 (p3 / person :wiki -
+            :name (n / name :op1 "Hasim" :op2 "Rumatiga")
+            :ARG0-of (h3 / have-org-role-91
+                  :ARG2 (o / official
+                        :mod (h / health)
+                        :mod (l / local))))
+      :ARG1 (c / cut-02
+            :ARG1 (e / electricity)
+            :ARG4 (o2 / off)
+            :location (c2 / city
+                  :location (c3 / coast)
+                  :poss-of (p / population
+                        :quant (x / 167000))
+                  :location-of (f / flee-01
+                        :ARG0 (p2 / person)
+                        :ARG1 (h2 / home
+                              :poss p2)
+                        :time (d / date-entity
+                              :dayperiod (d2 / dark))
+                        :ARG1-of (c4 / cause-01
+                              :ARG0 (f2 / fear-01
+                                    :ARG0 p2
+                                    :ARG1 (t / tsunami)))))))
+
+# ::id events_0037.80 ::date 2013-05-27T16:15:39 ::annotator UCO-AMR-05 ::preferred
+# ::snt The quakes forced thousands of people to take refuge, including in military fields in the city, said Manokwari Military Commander Col. Inf. Irham Waroiham.
+# ::save-date Thu Sep 26, 2013 ::file events_0037_80.txt
+(s / say-01
+      :ARG0 (p / person :wiki -
+            :name (n4 / name :op1 "Irham" :op2 "Waroiham")
+            :ARG0-of (h / have-org-role-91
+                  :ARG1 (i2 / infantry
+                        :poss m3)
+                  :ARG2 (c2 / colonel))
+            :ARG0-of (h2 / have-org-role-91
+                  :ARG1 m3
+                  :ARG2 (c4 / commander)))
+      :ARG1 (f / force-01
+            :ARG0 (q / quake)
+            :ARG1 (p3 / person
+                  :quant (m / multiple :op1 1000)
+                  :ARG0-of (t / take-01
+                        :ARG1 (r / refuge
+                              :location (l / location
+                                    :ARG2-of (i / include-91
+                                          :ARG1 (f2 / field
+                                                :poss (m3 / military)
+                                                :location (c / city :wiki "Manokwari"
+                                                      :name (n2 / name :op1 "Manokwari"))))))))))
+
+# ::id events_0037.81 ::date 2013-05-27T16:38:41 ::annotator UCO-AMR-05 ::preferred
+# ::snt About 1,000 residents had taken shelter in a military field, 500 in a navy field, 500 in the yard of the Manokwari regent office and 7,000 others in Masni district, which lies just outside of Manokwari city.
+# ::save-date Wed May 29, 2013 ::file events_0037_81.txt
+(a2 / and
+      :op1 (s / shelter-01
+            :ARG0 (p / person
+                  :ARG0-of (r / reside-01)
+                  :quant (a / about :op1 1000))
+            :ARG2 (f / field
+                  :poss (m / military)))
+      :op2 (s2 / shelter-01
+            :ARG0 (p2 / person :quant 500)
+            :ARG2 (f2 / field
+                  :poss (n6 / navy)))
+      :op3 (s3 / shelter-01
+            :ARG0 (p3 / person :quant 500)
+            :ARG2 (y / yard
+                  :poss (o / office
+                        :mod (r2 / regent)
+                        :location (c2 / city :wiki "Manokwari"
+                              :name (n5 / name :op1 "Manokwari")))))
+      :op4 (s4 / shelter-01
+            :ARG0 (p4 / person
+                  :mod (o2 / other)
+                  :quant (x / 7000))
+            :ARG2 (d / district :wiki -
+                  :name (n4 / name :op1 "Masni")
+                  :ARG1-of (l / lie-01
+                        :ARG2 (o3 / outside
+                              :op1 c2
+                              :mod (j / just))))))
+
+# ::id events_0037.82 ::date 2013-05-27T17:33:34 ::annotator UCO-AMR-05 ::preferred
+# ::snt The Meteorology and Geophysics Agency had issued a tsunami alert, but it was revoked within an hour after it was determined the epicenter of the main quake had been within the mainland.
+# ::save-date Thu Jan 23, 2014 ::file events_0037_82.txt
+(c / contrast-01
+      :ARG1 (a / alert-01
+            :ARG0 (g / government-organization :wiki "Indonesian_Agency_for_Meteorology,_Climatology_and_Geophysics"
+                  :name (n / name :op1 "Meteorology" :op2 "and" :op3 "Geophysics" :op4 "Agency"))
+            :ARG2 (t2 / tsunami))
+      :ARG2 (r / revoke-01
+            :ARG0 g
+            :ARG1 a
+            :time (a2 / after
+                  :op1 (d / determine-01
+                        :ARG1 (e / epicenter
+                              :part-of (q / quake
+                                    :mod (m / main))
+                              :location (w / within
+                                    :op1 (m2 / mainland)))))
+            :time (w2 / within
+                  :op1 (t / temporal-quantity :quant 1
+                        :unit (h / hour)))))
+
+# ::id events_0037.83 ::date 2013-05-27T17:40:54 ::annotator UCO-AMR-05 ::preferred
+# ::snt Quakes centered well within the mainland do not pose the threat of a tsunami to Indonesia, but can still spread large waves to neighboring countries, such as Japan.
+# ::save-date Mon May 27, 2013 ::file events_0037_83.txt
+(c3 / contrast-01
+      :ARG1 (t / threaten-01 :polarity -
+            :ARG0 (q / quake
+                  :part (c4 / center
+                        :location (w / within
+                              :op1 (m / mainland)
+                              :mod (w2 / well))))
+            :ARG1 (t2 / tsunami)
+            :ARG2 (c / country :wiki "Indonesia"
+                  :name (n / name :op1 "Indonesia")))
+      :ARG2 (p / possible
+            :domain (s / spread-03
+                  :ARG0 q
+                  :ARG1 (w3 / wave
+                        :mod (l / large))
+                  :direction (c5 / country
+                        :ARG1-of (n3 / neighbor-01)
+                        :example (c2 / country :wiki "Japan"
+                              :name (n2 / name :op1 "Japan")))
+                  :mod (s2 / still))))
+
+# ::id events_0037.84 ::date 2013-05-27T17:50:57 ::annotator UCO-AMR-05 ::preferred
+# ::snt Japan's Meteorological Agency said tsunamis 10 to 40 centimeters in height swept into towns along the coast.
+# ::save-date Mon May 27, 2013 ::file events_0037_84.txt
+(s / say-01
+      :ARG0 (o / organization :wiki "Japan_Meteorological_Agency"
+            :name (n2 / name :op1 "Meteorological" :op2 "Agency")
+            :location (c3 / country :wiki "Japan"
+                  :name (n / name :op1 "Japan")))
+      :ARG1 (s2 / sweep-02
+            :ARG1 (t / tsunami
+                  :quant (b / between
+                        :op1 (d / distance-quantity :quant 10
+                              :unit (c / centimeter)
+                              :direction (h / high))
+                        :op2 (d2 / distance-quantity :quant 40
+                              :unit (c2 / centimeter)
+                              :direction (h2 / high))))
+            :ARG2 (i / into
+                  :op1 (t2 / town
+                        :location (a / along
+                              :op1 (c4 / coast))))))
+
+# ::id events_0037.85 ::date 2013-05-27T17:59:01 ::annotator UCO-AMR-05 ::preferred
+# ::snt The quakes were also felt in Sorong regency.
+# ::save-date Mon May 27, 2013 ::file events_0037_85.txt
+(f / feel-01
+      :ARG1 (q / quake)
+      :location (r / regency :wiki "Sorong_Regency"
+            :name (n / name :op1 "Sorong"))
+      :mod (a / also))
+
+# ::id events_0037.86 ::date 2013-05-27T18:00:20 ::annotator UCO-AMR-05 ::preferred
+# ::snt The regency police spokesman Snr. Comr. Agus Rianto told The Jakarta Post the quakes had damaged 18 houses, injuring 11 residents.
+# ::save-date Thu Sep 26, 2013 ::file events_0037_86.txt
+(t / tell-01
+      :ARG0 (p3 / person :wiki -
+            :name (n2 / name :op1 "Agus" :op2 "Rianto")
+            :ARG0-of (h2 / have-org-role-91
+                  :ARG2 (c / commander
+                        :mod (s / senior)))
+            :ARG0-of (h3 / have-org-role-91
+                  :ARG1 (p / police
+                        :mod (r2 / regency))
+                  :ARG2 (s3 / spokesman)))
+      :ARG1 (d / damage-01
+            :ARG0 (q / quake)
+            :ARG1 (h / house :quant 18)
+            :ARG0-of (i / injure-01
+                  :ARG1 (p2 / person
+                        :ARG0-of (r / reside-01))))
+      :ARG2 (n4 / newspaper :wiki "The_Jakarta_Post"
+            :name (n3 / name :op1 "Jakarta" :op2 "Post")))
+
+# ::id events_0037.87 ::date 2013-05-27T18:04:26 ::annotator UCO-AMR-05 ::preferred
+# ::snt The latest quakes in Manokwari occurred on Oct. 10, 2002, the largest recorded at magnitude 7.6, killing three people.
+# ::save-date Mon Jan 27, 2014 ::file events_0037_87.txt
+(q / quake
+      :mod (l / late
+            :degree (m / most))
+      :location (c / city :wiki "Manokwari"
+            :name (n / name :op1 "Manokwari"))
+      :ARG2-of (i / include-91
+            :ARG1 (q2 / quake
+                  :mod (l2 / large
+                        :degree (m2 / most))
+                  :quant (s / seismic-quantity :quant 7.6)
+                  :ARG0-of (k / kill-01
+                        :ARG1 (p / person :quant 3))
+                  :ARG1-of (r / record-01)))
+      :time (d / date-entity :day 10 :month 10 :year 2002))
+
+# ::id events_0037.88 ::date 2013-05-27T18:10:07 ::annotator UCO-AMR-05 ::preferred
+# ::snt Another strong quake hit in 1996, triggering enormous waves that hammered into the north coastal area of Papua, as well as Sorong, Biak and Manokwari.
+# ::save-date Mon May 27, 2013 ::file events_0037_88.txt
+(h / hit-01
+      :ARG2 (q / quake
+            :mod (s / strong)
+            :mod (a / another))
+      :time (d / date-entity :year 1996)
+      :ARG0-of (t / trigger-01
+            :ARG1 (w / wave
+                  :mod (e / enormous)
+                  :ARG2-of (h2 / hammer-02
+                        :ARG1 (a3 / and
+                              :op1 (a2 / area
+                                    :mod (n3 / north)
+                                    :location (c / coast
+                                          :location (p / province :wiki "Papua_(province)"
+                                                :name (n / name :op1 "Papua"))))
+                              :op2 (c2 / city :wiki "Sorong_Regency"
+                                    :name (n4 / name :op1 "Sorong"))
+                              :op3 (i / island :wiki "Biak"
+                                    :name (n5 / name :op1 "Biak"))
+                              :op4 (c3 / city :wiki "Manokwari"
+                                    :name (n6 / name :op1 "Manokwari")))))))
+
+# ::id events_0037.89 ::date 2013-05-27T18:39:35 ::annotator UCO-AMR-05 ::preferred
+# ::snt A series of earthquakes killed a 10-year-old girl and injured dozens Sunday in remote eastern Indonesia and briefly triggered fears of another tsunami in a country still recovering from such a disaster in 2004.
+# ::save-date Wed Sep 17, 2014 ::file events_0037_89.txt
+(e / earthquake
+      :quant (s2 / series)
+      :ARG0-of (k / kill-01
+            :ARG1 (g / girl
+                  :age (t / temporal-quantity :quant 10
+                        :unit (y / year))))
+      :ARG0-of (i / injure-01
+            :ARG1 (p / person
+                  :quant (m / multiple :op1 12)))
+      :time (d / date-entity
+            :weekday (s / sunday))
+      :location (e2 / east
+            :part-of (c / country :wiki "Indonesia" :name (n / name :op1 "Indonesia"))
+            :mod (r / remote))
+      :ARG0-of (t2 / trigger-01
+            :ARG1 (f / fear-01
+                  :ARG1 (t3 / tsunami
+                        :mod (a / another))
+                  :location (c2 / country
+                        :ARG1-of (r2 / recover-01
+                              :ARG2 (d3 / disaster
+                                    :ARG1-of (r3 / resemble-01
+                                          :ARG2 e)
+                                    :time (d2 / date-entity :year 2004))
+                              :mod (s3 / still))))
+            :mod (b / brief)))
+
+# ::id events_0037.90 ::date 2013-05-27T18:44:45 ::annotator UCO-AMR-05 ::preferred
+# ::snt One of the quakes -- a 7.3-magnitude tremor -- was felt as far away as Australia and sent small tsunamis into Japan's southeastern coast.
+# ::save-date Mon May 27, 2013 ::file events_0037_90.txt
+(q / quake :quant 1
+      :ARG1-of (i / include-91
+            :ARG2 (q2 / quake))
+      :ARG1-of (f / feel-01
+            :location (a / as-far-away
+                  :op1 (c / continent :wiki "Australia_(continent)"
+                        :name (n / name :op1 "Australia"))))
+      :ARG0-of (s2 / send-01
+            :ARG1 (t / tsunami
+                  :mod (s4 / small))
+            :direction (i2 / into
+                  :op1 (c3 / coast
+                        :mod (s3 / southeast)
+                        :location (c2 / country :wiki "Japan"
+                              :name (n2 / name :op1 "Japan")))))
+      :mod (t2 / tremor
+            :quant (s / seismic-quantity :quant 7.3)))
+
+# ::id events_0037.91 ::date 2013-05-27T18:48:17 ::annotator UCO-AMR-05 ::preferred
+# ::snt Residents near the epicenter in Papua province rushed from their homes in search of higher ground shortly after the first 7.6-magnitude quake struck, afraid that huge waves might wash over the island.
+# ::save-date Wed Sep 17, 2014 ::file events_0037_91.txt
+(r / rush-01
+      :ARG1 (p2 / person
+            :ARG0-of (r2 / reside-01
+                  :ARG1 (n2 / near
+                        :op1 (e / epicenter
+                              :location (p / province :wiki "Papua_(province)" :name (n / name :op1 "Papua")))))
+            :ARG0-of (f3 / fear-01
+                  :ARG1 (p3 / possible
+                        :domain (w / wave
+                              :mod (h3 / huge)
+                              :ARG0-of (w2 / wash-01
+                                    :ARG1 (i / island)
+                                    :direction (o / over))))))
+      :ARG2 (f / from
+            :op1 (h / home
+                  :poss p2))
+      :purpose (s2 / search-01
+            :ARG0 p2
+            :ARG2 (g / ground
+                  :mod (h2 / high
+                        :degree (m / more))))
+      :time (a / after
+            :op1 (s3 / strike-01
+                  :ARG2 (q / quake
+                        :ord (o2 / ordinal-entity :value 1)
+                        :quant (s / seismic-quantity :quant 7.6)))
+            :quant (s4 / short)))
+
+# ::id events_0037.92 ::date 2013-05-27T18:56:40 ::annotator UCO-AMR-05 ::preferred
+# ::snt The epicenter was about 85 miles from Papua's main city of Manokwari and occurred at a depth of 22 miles, the U.S. Geological Survey said.
+# ::save-date Mon Jan 27, 2014 ::file events_0037_92.txt
+(s / say-01
+      :ARG0 (g / government-organization :wiki "United_States_Geological_Survey"
+            :name (n3 / name :op1 "U.S." :op2 "Geological" :op3 "Survey"))
+      :ARG1 (e / epicenter
+            :location (r / relative-position
+                  :op1 (c / city :wiki "Manokwari"
+                        :name (n2 / name :op1 "Manokwari")
+                        :ARG0-of (h / have-org-role-91
+                              :ARG1 (p / province :wiki "Papua_(province)"
+                                    :name (n / name :op1 "Papua"))
+                              :ARG2 (c2 / city
+                                    :mod (m3 / main))))
+                  :quant (a / about
+                        :op1 (d / distance-quantity :quant 85
+                              :unit (m / mile))))
+            :location (r2 / relative-position
+                  :op1 (s2 / surface)
+                  :quant (d2 / distance-quantity :quant 22
+                        :unit (m2 / mile))
+                  :direction (d3 / down))))
+
+# ::id events_0037.93 ::date 2013-05-27T18:59:40 ::annotator UCO-AMR-05 ::preferred
+# ::snt It was followed by dozens of aftershocks.
+# ::save-date Mon May 27, 2013 ::file events_0037_93.txt
+(f / follow-01
+      :ARG1 (a / aftershock
+            :quant (m / multiple :op1 12))
+      :ARG2 (i / it))

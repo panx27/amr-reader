@@ -1,0 +1,289 @@
+Aboriginal	Aborigine
+Abyssinian	Abyssinia
+Aeolian	Aeolus
+Afghan	Afghanistan
+Afghani	Afghanistan
+Afghanistani	Afghanistan
+African	Africa
+Albanian	Albania
+Aleutian	Aleut
+Algerian	Algeria
+American	America
+Andorran	Andorra
+Angolan	Angola
+Arabic	Arab
+Arawakan	Arawak
+Argentine	Argentina
+Argentinian	Argentina
+Armenian	Armenia
+Aruban	Aruba
+Asian	Asia
+Athenian	Athens
+Australian	Australia
+Austrian	Austria
+Azerbaijani	Azerbaijan
+Bahamian	Bahamas
+Bahrainian	Bahrain
+Bangladeshi	Bangladesh
+Basotho	Lesotho
+Belarusian	Belarus
+Belgian	Belgium
+Bhutanese	Bhutan
+Bohemian	Bohemia
+Bolivian	Bolivia
+Bosnian	Bosnia and Herzegovina
+Brazilian	Brazil
+British	Great Britain
+Bulgarian	Bulgaria
+Calabrian	Calabria
+Cambodian	Cambodia
+Cameroonian	Cameroon
+Canadian	Canada
+Cantonese	Canton
+Caucasian	Caucasia
+Celtic	Celt
+Central American	Central America
+Central European	Central Europe
+Ceylonese	Ceylon
+Chadian	Chad
+Chechen	Chechnya
+Chilean	Chile
+Chinese	China
+Colombian	Colombia
+Columbian	Columbus
+Congolese	Congo
+Coptic	Copt
+Costa Rican	Costa Rica
+Croatian	Croatia
+Cuban	Cuba
+Cypriot	Cyprus
+Czech	Czechoslovakia
+Czechoslovak	Czechoslovakia
+Czechoslovakian	Czechoslovakia
+Danish	Denmark
+Dutch	Netherlands
+East German	East Germany
+East Pakistani	East Pakistan
+Eastern	East
+Eastern European	Eastern Europe
+Ecuadorian	Ecuador
+Egyptian	Egypt
+El Salvadoran	El Salvador
+English	England
+Equatorial Guinean	Equatorial Guinea
+Eritrean	Eritrea
+Estonian	Estonia
+Ethiopian	Ethiopia
+European	Europe
+Far Eastern	Far East
+Faroese	Faroe Islands
+Fijian	Fiji
+Filipino	Philippines
+Finnish	Finland
+Franciscan	Francis of Assisi
+French	France
+Gabonese	Gabon
+Gallic	Gaul
+Galwegian	Galloway
+Gambian	Gambia
+Georgian	Georgia
+German	Germany
+Ghanaian	Ghana
+Gothic	Goth
+Greek	Greece
+Guatemalan	Guatemala
+Guinean	Guinea
+Guyanan	Guyana
+Haitian	Haiti
+Hawaiian	Hawaii
+Hebraic	Hebrew
+Himalayan	Himalaya
+Hindu	Hinduism
+Honduran	Honduras
+Hungarian	Hungary
+Icelander	Iceland
+Icelandic	Iceland
+Indonesian	Indonesia
+Iranian	Iran
+Iraqi	Iraq
+Irish	Ireland
+Islamic	Islam
+Israeli	Israel
+Italian	Italy
+Jamaican	Jamaica
+Japanese	Japan
+Jesuitical	Jesuit
+Jewish	Jew
+Jewish	Jew
+Jewish	Judaism
+Jordanian	Jordan
+Jovian	Jupiter
+Judeo-Christian	Christianity
+Judeo-Christian	Judaism
+Kashmiri	Kashmir
+Kazakh	Kazakhstan
+Kazakhstani	Kazakhstan
+Kenyan	Kenya
+Kenyian	Kenya
+Kirghizian	Kirghistan
+Korean	Korea
+Kosovar	Kosovo
+Kurdish	Kurdistan
+Kuwaiti	Kuwait
+Kyrgyz	Kyrgyzstan
+Kyrgyzstani	Kyrgyzstan
+Lao	Laos
+Laotian	Laos
+Latin	Latium
+Latin American	Latin America
+Latvian	Latvia
+Lebanese	Lebanon
+Levantine	Levant
+Liberian	Liberia
+Libyan	Libya
+Liechtensteiner	Liechtenstein
+Lithuanian	Lithuania
+Luxembourger	Luxembourg
+Macedonian	Macedonia
+Malagasy	Madagascar
+Malawian	Malawi
+Malaysian	Malaysia
+Maldivian	Maldives
+Malian	Mali
+Maltese	Malta
+Masonic	Freemason
+Mauritanian	Mauritius
+Mauritian	Mauritius
+Mayan	Maya
+medieval	Middle Ages
+Mexican	Mexico
+Middle Eastern	Middle East
+Moldovan	Moldova
+Monacan	Monaco
+Monegasque	Monaco
+Mongolian	Mongolia
+Montenegrin	Montenegro
+Moroccan	Morocco
+Mosotho	Lesotho
+Mozambican	Mozambique
+Muslim	Islam
+Myanmaran	Myanmar
+Namibian	Namibia
+Nauruan	Nauru
+neolithic	Neolithic Age
+Nepalese	Nepal
+Nepali	Nepal
+New Zealander	New Zealand
+Ni-Vanuatu	Vanuatu
+Nicaraguan	Nicaragua
+Nigeran	Niger
+Nilotic	Nile
+Nordic	Scandinavia
+North American	North America
+North Korean	North Korea
+Northern	North
+Northern European	Northern Europe
+Norwegian	Norway
+Omani	Oman
+Pakistani	Pakistan
+Palauan	Palau
+Palestinian	Palestine
+Panamanian	Panama
+Papua New Guinean	Papua New Guinea
+Paraguayan	Paraguay
+Persian	Persia
+Peruvian	Peru
+Pharaonic	Pharaoh
+Philippine	Philippines
+Polish	Poland
+Portuguese	Portugal
+Puerto Rican	Puerto Rico
+Qatari	Qatar
+Quechuan	Quechua
+Republican	Republican Party
+Rhenish	Rhine
+Riemannian	Riemann
+Roman	Rome
+Romanian	Romania
+Romany	Gypsy
+Romany	Romani
+Ruandan	Ruanda
+Russian	Russia
+Rwandan	Rwanda
+Sahraouian	Western Sahara
+Sahrawi	Western Sahara
+Sahrawian	Western Sahara
+Salvadoran	El Salvador
+Samoan	Samoa
+Saudi Arabian	Saudi Arabia
+Scandinavian	Scandinavia
+Scottish	Scotland
+Senegalese	Senegal
+Seychellois	Seychelles
+Siamese	Siam
+Sierra Leonean	Sierra Leone
+Singaporean	Singapore
+Sinhala	Sinhalese
+Sinitic	Chinese
+Siouan	Sioux
+Slovak	Slovakia
+Slovene	Slovenia
+Slovenian	Slovenia
+Somali	Somalia
+Somalian	Somalia
+South African	South Africa
+South American	South America
+South Korean	South Korea
+Southeast Asian	Southeast Asia
+Southern	South
+Southern European	Southern Europe
+Spanish	Spain
+SriLankan	Sri Lanka
+Stalinist	Stalin
+Sudanese	Sudan
+Surinamese	Suriname
+Swazi	Swaziland
+Swedish	Sweden
+Swiss	Switzerland
+Syrian	Syria
+Taiwanese	Taiwan
+Tajik	Tajikistan
+Tajikistani	Tajikistan
+Tanzanian	Tanzania
+Tchadian	Tchad
+Teutonic	Teuton
+Texan	Texas
+Thai	Thailand
+Tibetan	Tibet
+Timorese	Timor
+Togolese	Togo
+Tongan	Tonga
+Trojan	Troy
+Tunisian	Tunisia
+Turkic	Turki
+Turkish	Turkey
+Turkmen	Turkmenistan
+Tuscan	Tuscany
+Tuvaluan	Tuvalu
+Ugandan	Uganda
+Ukrainian	Ukraine
+Uruguayan	Uruguay
+Uzbek	Uzbekistan
+Uzbekistani	Uzbekistan
+Venezuelan	Venezuela
+Virginian	Virginia
+Welch	Wales
+Welsh	Wales
+West German	West Germany
+West Pakistani	West Pakistan
+Western	West
+Western European	Western Europe
+Western Samoan	Western Samoa
+Wilsonian	Wilson
+Yemeni	Yemen
+Yugoslav	Yugoslavia
+Yugoslavian	Yugoslavia
+Zairian	Zaire
+Zambian	Zambia
+Zimbabwean	Zimbabwe
+Zoroastrian	Zoroaster
