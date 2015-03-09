@@ -29,4 +29,8 @@ entity to leaf:<br>
       product	Yuri Dolgoruky --> (:mod) first --> (:ARG1-of) include-91 --> (:ARG2) series --> (:mod) submarine --> (:mod) new
 
 Graph:<br>
+
+      Green Ellispe: concept
+      Orange Ellispe: concept with sense
+      Blue Rectangle: named entity
 ![alt tag](https://github.com/panx27/amr-reader/blob/master/example.png)
