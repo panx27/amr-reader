@@ -1,12 +1,11 @@
 # amr_reader
-Input: raw AMR
-
+Input: raw AMR<br>
 Output: AMR graph, AMR paths
 
-PROXY_APW_ENG_20080515_0931.31
-The Yuri dolgoruky is the first in a series of new nuclear submarines to be commissioned this year but the bulava nuclear-armed missile developed to equip the submarine has failed tests and the deployment prospects are uncertain.
+PROXY_APW_ENG_20080515_0931.31<br>
+   The Yuri dolgoruky is the first in a series of new nuclear submarines to be commissioned this year but the bulava nuclear-armed missile developed to equip the submarine has failed tests and the deployment prospects are uncertain.<br>
 
-(c3 / contrast-01
+    (c3 / contrast-01
       :ARG1 (c / commission-01
             :ARG1 (p / product :wiki "Russian_submarine_Yury_Dolgorukiy_K-535"
                   :name (n / name :op1 "Yuri" :op2 "Dolgoruky")
