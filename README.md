@@ -21,11 +21,11 @@ PROXY_APW_ENG_20080515_0931.31<br>
 Paths:<br>
 root to entity:<br>
 
-      contrast-01 --> :ARG1 commission-01 --> :ARG1 product	Yuri Dolgoruky<br>
+      contrast-01 --> :ARG1 commission-01 --> :ARG1 product	Yuri Dolgoruky
 entity to leaf:<br> 
 
-      product	Yuri Dolgoruky --> :mod first --> :ARG1-of include-91 --> :ARG2 series --> :mod submarine --> :mod nucleus<br>
-      product	Yuri Dolgoruky --> :mod first --> :ARG1-of include-91 --> :ARG2 series --> :mod submarine --> :mod new<br>
+      product	Yuri Dolgoruky --> :mod first --> :ARG1-of include-91 --> :ARG2 series --> :mod submarine --> :mod nucleus
+      product	Yuri Dolgoruky --> :mod first --> :ARG1-of include-91 --> :ARG2 series --> :mod submarine --> :mod new
 
 Graph:<br>
 ![alt tag](https://github.com/panx27/amr-reader/blob/master/example.png)
