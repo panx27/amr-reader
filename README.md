@@ -2,6 +2,7 @@
 Input: raw AMR<br>
 Output: AMR graph, AMR paths
 
+## Example
 PROXY_APW_ENG_20080515_0931.31<br>
    The Yuri dolgoruky is the first in a series of new nuclear submarines to be commissioned this year but the bulava nuclear-armed missile developed to equip the submarine has failed tests and the deployment prospects are uncertain.<br>
 
