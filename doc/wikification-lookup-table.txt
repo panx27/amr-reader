@@ -1,0 +1,1089 @@
+# biomed list
+::ne-surf AIDS ::ne-type disease ::wiki HIV%2FAIDS
+::ne-surf HIV ::ne-type disease ::wiki HIV%2FAIDS
+::ne-surf HIV/AIDS ::ne-type disease ::wiki HIV%2FAIDS
+::ne-surf hepatitis B ::ne-type disease ::wiki Hepatitis_B
+::ne-surf meningitis ::ne-type disease ::wiki Meningitis
+::ne-surf Alzheimer's disease ::ne-type disease ::wiki Alzheimer's_disease
+::ne-surf Alzheimers disease ::ne-type disease ::wiki Alzheimer's_disease
+::ne-surf Alzheimer disease ::ne-type disease ::wiki Alzheimer's_disease
+::ne-surf Alzheimer's ::ne-type disease ::wiki Alzheimer's_disease
+::ne-surf Alzheimers ::ne-type disease ::wiki Alzheimer's_disease
+::ne-surf Alzheimer ::ne-type disease ::wiki Alzheimer's_disease
+::ne-surf leukemia ::ne-type disease ::wiki Leukemia
+::ne-surf type 2 diabetes ::ne-type disease ::wiki Diabetes_mellitus_type_2
+::ne-surf cancer ::ne-type disease ::wiki Cancer
+::ne-surf lung cancer ::ne-type disease ::wiki Lung_cancer
+::ne-surf tubercolosis ::ne-type disease ::wiki Tuberculosis
+::ne-surf tuberculosis ::ne-type disease ::wiki Tuberculosis
+::ne-surf Parkinson's disease ::ne-type disease ::wiki Parkinson's_disease
+::ne-surf Parkinsons disease ::ne-type disease ::wiki Parkinson's_disease
+::ne-surf Parkinson disease ::ne-type disease ::wiki Parkinson's_disease
+::ne-surf Parkinson's ::ne-type disease ::wiki Parkinson's_disease
+::ne-surf Parkinsons ::ne-type disease ::wiki Parkinson's_disease
+::ne-surf Parkinson ::ne-type disease ::wiki Parkinson's_disease
+
+::ne-surf citric acid cycle ::ne-type pathway ::wiki Citric_acid_cycle
+::ne-surf Krebs cycle ::ne-type pathway ::wiki Citric_acid_cycle
+
+::ne-surf myoglobin ::ne-type protein ::wiki Myoglobin
+
+# city list
+::ne-surf Hong Kong ::ne-type city ::wiki Hong_Kong
+::ne-surf Moscow ::ne-type city ::wiki Moscow
+::ne-surf Paris ::ne-type city ::wiki Paris
+::ne-surf London ::ne-type city ::wiki London
+::ne-surf Beijing ::ne-type city ::wiki Beijing
+::ne-surf Vienna ::ne-type city ::wiki Vienna
+::ne-surf Washington ::ne-type city ::wiki Washington,_D.C.
+::ne-surf Manokwari ::ne-type city ::wiki Manokwari
+::ne-surf Tehran ::ne-type city ::wiki Tehran
+::ne-surf Pyongyang ::ne-type city ::wiki Pyongyang
+::ne-surf Shanghai ::ne-type city ::wiki Shanghai
+::ne-surf New Delhi ::ne-type city ::wiki New_Delhi
+::ne-surf New York ::ne-type city ::wiki New_York_City
+::ne-surf Tokyo ::ne-type city ::wiki Tokyo
+::ne-surf Geneva ::ne-type city ::wiki Geneva
+::ne-surf Hanoi ::ne-type city ::wiki Hanoi
+::ne-surf Seoul ::ne-type city ::wiki Seoul
+::ne-surf Sydney ::ne-type city ::wiki Sydney
+::ne-surf Tianjin ::ne-type city ::wiki Tianjin
+::ne-surf Zahedan ::ne-type city ::wiki Zahedan
+::ne-surf Tallinn ::ne-type city ::wiki Tallinn
+::ne-surf Baghdad ::ne-type city ::wiki Baghdad
+::ne-surf Berlin ::ne-type city ::wiki Berlin
+::ne-surf Kabul ::ne-type city ::wiki Kabul
+::ne-surf Rio de Janeiro ::ne-type city ::wiki Rio_de_Janeiro
+::ne-surf Riyadh ::ne-type city ::wiki Riyadh
+::ne-surf Brussels ::ne-type city ::wiki Brussels
+::ne-surf Cairo ::ne-type city ::wiki Cairo
+::ne-surf Islamabad ::ne-type city ::wiki Islamabad
+::ne-surf Ho Chi Minh City ::ne-type city ::wiki Ho_Chi_Minh_City
+::ne-surf Karachi ::ne-type city ::wiki Karachi
+::ne-surf Hyderabad ::ne-type city ::wiki Hyderabad
+::ne-surf Mumbai ::ne-type city ::wiki Mumbai
+::ne-surf Bangkok ::ne-type city ::wiki Bangkok
+::ne-surf Bonn ::ne-type city ::wiki Bonn
+::ne-surf Dublin ::ne-type city ::wiki Dublin
+::ne-surf Kuala Lumpur ::ne-type city ::wiki Kuala_Lumpur
+::ne-surf Madrid ::ne-type city ::wiki Madrid
+::ne-surf Pretoria ::ne-type city ::wiki Pretoria
+::ne-surf Quetta ::ne-type city ::wiki Quetta
+::ne-surf Teheran ::ne-type city ::wiki Tehran
+::ne-surf Amman ::ne-type city ::wiki Amman
+::ne-surf Boston ::ne-type city ::wiki Boston
+::ne-surf Dubai ::ne-type city ::wiki Dubai
+::ne-surf Jakarta ::ne-type city ::wiki Jakarta
+::ne-surf Lahore ::ne-type city ::wiki Lahore
+::ne-surf Manila ::ne-type city ::wiki Manila
+::ne-surf Mecca ::ne-type city ::wiki Mecca
+::ne-surf Mexico City ::ne-type city ::wiki Mexico_City
+::ne-surf Qom ::ne-type city ::wiki Qom
+::ne-surf Taipei ::ne-type city ::wiki Taipei
+::ne-surf Tirana ::ne-type city ::wiki Tirana
+::ne-surf Toronto ::ne-type city ::wiki Toronto
+::ne-surf Washington D.C. ::ne-type city ::wiki Washington,_D.C.
+::ne-surf Algiers ::ne-type city ::wiki Algiers
+::ne-surf Bangalore ::ne-type city ::wiki Bangalore
+::ne-surf Beirut ::ne-type city ::wiki Beirut
+::ne-surf Bogota ::ne-type city ::wiki Bogot%C3%A1
+::ne-surf Cape Town ::ne-type city ::wiki Cape_Town
+::ne-surf Damascus ::ne-type city ::wiki Damascus
+::ne-surf Glasgow ::ne-type city ::wiki Glasgow
+::ne-surf Istanbul ::ne-type city ::wiki Istanbul
+::ne-surf Kathmandu ::ne-type city ::wiki Kathmandu
+::ne-surf Mogadishu ::ne-type city ::wiki Mogadishu
+::ne-surf Montreal ::ne-type city ::wiki Montreal
+::ne-surf Rome ::ne-type city ::wiki Rome
+::ne-surf Stratford-upon-Avon ::ne-type city ::wiki Stratford-upon-Avon
+::ne-surf Washington ::ne-type city ::wiki Washington,_D.C.
+::ne-surf Washington DC ::ne-type city ::wiki Washington,_D.C.
+::ne-surf Bombay ::ne-type city ::wiki Mumbai
+::ne-surf Munich ::ne-type city ::wiki Munich
+::ne-surf New York City ::ne-type city ::wiki New_York_City
+::ne-surf Hamburg ::ne-type city ::wiki Hamburg
+::ne-surf Bucharest ::ne-type city ::wiki Bucharest
+::ne-surf Kandahar ::ne-type city ::wiki Kandahar
+::ne-surf Los Angeles ::ne-type city ::wiki Los_Angeles
+::ne-surf San Francisco ::ne-type city ::wiki San_Francisco
+::ne-surf Macao ::ne-type city ::wiki Macau
+::ne-surf Macau ::ne-type city ::wiki Macau
+::ne-surf Cluj ::ne-type city ::wiki Cluj-Napoca
+::ne-surf Cluj-Napoca ::ne-type city ::wiki Cluj-Napoca
+::ne-surf Klausenburg ::ne-type city ::wiki Cluj-Napoca
+::ne-surf Kolozsvár ::ne-type city ::wiki Cluj-Napoca
+::ne-surf Bethlehem ::ne-type city ::wiki Bethlehem
+::ne-surf Nanjing ::ne-type city ::wiki Nanjing
+::ne-surf Tripoli ::ne-type city ::wiki Tripoli
+::ne-surf Guangzhou ::ne-type city ::wiki Guangzhou
+::ne-surf The Hague ::ne-type city ::wiki The_Hague
+::ne-surf Den Haag ::ne-type city ::wiki The_Hague
+::ne-surf 's-Gravenhage ::ne-type city ::wiki The_Hague
+
+
+::ne-surf Manhattan ::ne-type city-district ::wiki Manhattan
+::ne-surf Brooklyn ::ne-type city-district ::wiki Brooklyn
+::ne-surf Hollywood ::ne-type city-district ::wiki Hollywood
+::ne-surf Pudong ::ne-type city-district ::wiki Pudong
+::ne-surf Tempelhof ::ne-type city-district ::wiki Tempelhof
+::ne-surf Bergedorf ::ne-type city-district ::wiki Bergedorf
+::ne-surf Schwabing ::ne-type city-district ::wiki Schwabing
+::ne-surf Knightsbridge ::ne-type city-district ::wiki Knightsbridge
+
+::ne-surf Indianapolis ::ne-type city ::wiki Indianapolis
+::ne-surf Boca Raton ::ne-type city ::wiki Boca_Raton,_Florida
+# company list
+::ne-surf AFP ::ne-type publication ::wiki Agence_France-Presse
+::ne-surf AFP ::ne-type agency ::wiki Agence_France-Presse
+::ne-surf Xinhua News Agency ::ne-type publication ::wiki Xinhua_News_Agency
+::ne-surf IRNA ::ne-type publication ::wiki Islamic_Republic_News_Agency
+::ne-surf IRNA ::ne-type agency ::wiki Islamic_Republic_News_Agency
+::ne-surf YouTube ::ne-type publication ::wiki YouTube
+::ne-surf Associated Press ::ne-type publication ::wiki Associated_Press
+::ne-surf Interfax ::ne-type publication ::wiki Interfax
+::ne-surf Interfax ::ne-type agency ::wiki Interfax
+::ne-surf Agence France-Presse ::ne-type publication ::wiki Agence_France-Presse
+::ne-surf ITAR-TASS ::ne-type publication ::wiki Information_Telegraph_Agency_of_Russia
+::ne-surf ITAR-TASS ::ne-type agency ::wiki Information_Telegraph_Agency_of_Russia
+::ne-surf Itar-Tass ::ne-type publication ::wiki Information_Telegraph_Agency_of_Russia
+::ne-surf Fars News Agency ::ne-type publication ::wiki Fars_News_Agency
+::ne-surf News Agency Fars ::ne-type publication ::wiki Fars_News_Agency
+::ne-surf Reuters ::ne-type publication ::wiki Reuters
+::ne-surf Reuters ::ne-type agency ::wiki Reuters
+::ne-surf Xinhua ::ne-type publication ::wiki Xinhua_News_Agency
+::ne-surf Fars ::ne-type publication ::wiki Fars_News_Agency
+::ne-surf A.F.P. ::ne-type publication ::wiki Agence_France-Presse
+::ne-surf A. F. P. ::ne-type publication ::wiki Agence_France-Presse
+::ne-surf AP ::ne-type publication ::wiki Associated_Press
+::ne-surf Agence France Presse ::ne-type publication ::wiki Agence_France-Presse
+
+::ne-surf Hindustan Aeronautics Limited ::ne-type company ::wiki Hindustan_Aeronautics_Limited
+::ne-surf Alstom ::ne-type company ::wiki Alstom
+::ne-surf Siemens ::ne-type company ::wiki Siemens
+::ne-surf Areva ::ne-type company ::wiki Areva
+::ne-surf Embraer ::ne-type company ::wiki Embraer
+::ne-surf Boeing ::ne-type company ::wiki Boeing
+::ne-surf SAIC ::ne-type company ::wiki SAIC_Motor
+::ne-surf UMC ::ne-type company ::wiki United_Microelectronics_Corporation
+::ne-surf Boeing Corporation ::ne-type company ::wiki Boeing
+::ne-surf Hynix ::ne-type company ::wiki SK_Hynix
+::ne-surf Abbott ::ne-type company ::wiki Abbott_Laboratories
+::ne-surf Volkswagen ::ne-type company ::wiki Volkswagen
+::ne-surf Bell Canada ::ne-type company ::wiki Bell_Canada
+::ne-surf Google ::ne-type company ::wiki Google
+::ne-surf Lorillard ::ne-type company ::wiki Lorillard_Tobacco_Company
+::ne-surf BP ::ne-type company ::wiki BP
+::ne-surf IBM ::ne-type company ::wiki IBM
+::ne-surf Microsoft ::ne-type company ::wiki Microsoft
+::ne-surf Volkswagen AG ::ne-type company ::wiki Volkswagen
+::ne-surf Du Pont ::ne-type company ::wiki DuPont
+::ne-surf General Motors ::ne-type company ::wiki General_Motors
+::ne-surf Goldman Sachs ::ne-type company ::wiki Goldman_Sachs
+::ne-surf Microsoft Corp. ::ne-type company ::wiki Microsoft
+::ne-surf Bank of China ::ne-type company ::wiki Bank_of_China
+
+::ne-surf Agricultural Bank of China ::ne-type company ::wiki Agricultural_Bank_of_China
+::ne-surf Bank of America ::ne-type company ::wiki Bank_of_America
+::ne-surf Berkshire Hathaway ::ne-type company ::wiki Berkshire_Hathaway
+::ne-surf BNP Paribas ::ne-type company ::wiki BNP_Paribas
+::ne-surf Chevron ::ne-type company ::wiki Chevron_Corporation
+::ne-surf Chevron Corporation ::ne-type company ::wiki Chevron_Corporation
+::ne-surf China Construction Bank ::ne-type company ::wiki China_Construction_Bank
+::ne-surf Chrysler ::ne-type company ::wiki Chrysler
+::ne-surf Citigroup ::ne-type company ::wiki Citigroup
+::ne-surf Commerzbank ::ne-type company ::wiki Commerzbank
+::ne-surf Credit Suisse ::ne-type company ::wiki Credit_Suisse
+::ne-surf Deutsche Bank ::ne-type company ::wiki Deutsche_Bank
+::ne-surf Dresdner Bank ::ne-type company ::wiki Dresdner_Bank
+::ne-surf DuPont ::ne-type company ::wiki DuPont
+::ne-surf Exxon Mobil ::ne-type company ::wiki ExxonMobil
+::ne-surf ExxonMobil ::ne-type company ::wiki ExxonMobil
+::ne-surf Exxon Mobile ::ne-type company ::wiki ExxonMobil
+::ne-surf ExxonMobile ::ne-type company ::wiki ExxonMobil
+::ne-surf Gazprom ::ne-type company ::wiki Gazprom
+::ne-surf General Electric ::ne-type company ::wiki General_Electric
+::ne-surf ICBC ::ne-type company ::wiki Industrial_and_Commercial_Bank_of_China
+::ne-surf Industrial and Commercial Bank of China ::ne-type company ::wiki Industrial_and_Commercial_Bank_of_China
+::ne-surf JPMorgan Chase ::ne-type company ::wiki JPMorgan_Chase
+::ne-surf Mazda ::ne-type company ::wiki Mazda
+::ne-surf Nissan ::ne-type company ::wiki Nissan
+::ne-surf Paribas ::ne-type company ::wiki Paribas
+::ne-surf Petro China ::ne-type company ::wiki PetroChina
+::ne-surf PetroChina ::ne-type company ::wiki PetroChina
+::ne-surf Royal Dutch Shell ::ne-type company ::wiki Royal_Dutch_Shell
+::ne-surf Sony ::ne-type company ::wiki Sony
+::ne-surf Toyota ::ne-type company ::wiki Toyota
+::ne-surf Wells Fargo ::ne-type company ::wiki Wells_Fargo
+
+
+::ne-surf The Financial Times ::ne-type newspaper ::wiki Financial_Times
+::ne-surf The Wall Street Journal ::ne-type newspaper ::wiki The_Wall_Street_Journal
+::ne-surf Wall Street Journal ::ne-type newspaper ::wiki The_Wall_Street_Journal
+::ne-surf WSJ ::ne-type newspaper ::wiki The_Wall_Street_Journal
+::ne-surf Guardian ::ne-type newspaper ::wiki The_Guardian
+::ne-surf Los Angeles Times ::ne-type newspaper ::wiki Los_Angeles_Times
+::ne-surf L.A. Times ::ne-type newspaper ::wiki Los_Angeles_Times
+::ne-surf LA Times ::ne-type newspaper ::wiki Los_Angeles_Times
+::ne-surf The Daily Telegraph ::ne-type newspaper ::wiki The_Daily_Telegraph
+::ne-surf New York Times ::ne-type newspaper ::wiki The_New_York_Times
+::ne-surf NY Times ::ne-type newspaper ::wiki The_New_York_Times
+::ne-surf NYT ::ne-type newspaper ::wiki The_New_York_Times
+::ne-surf The New York Times ::ne-type newspaper ::wiki The_New_York_Times
+::ne-surf The Guardian ::ne-type newspaper ::wiki The_Guardian
+
+::ne-surf Der Spiegel ::ne-type magazine ::wiki Der_Spiegel
+::ne-surf L'Express ::ne-type magazine ::wiki L'Express_(France)
+::ne-surf Newsweek ::ne-type magazine ::wiki Newsweek
+::ne-surf The Economist ::ne-type magazine ::wiki The_Economist
+::ne-surf The New Yorker ::ne-type magazine ::wiki The_New_Yorker
+
+# continent list
+::ne-surf Europe ::ne-type continent ::wiki Europe
+::ne-surf Asia ::ne-type continent ::wiki Asia
+::ne-surf Africa ::ne-type continent ::wiki Africa
+::ne-surf South America ::ne-type continent ::wiki South_America
+::ne-surf North America ::ne-type continent ::wiki North_America
+::ne-surf Australia ::ne-type continent ::wiki Australia_(continent)
+::ne-surf America ::ne-type continent ::wiki Americas
+::ne-surf Antarctica ::ne-type continent ::wiki Antarctica
+::ne-surf Americas ::ne-type continent ::wiki Americas
+# country list
+::ne-surf Iran ::ne-type country ::wiki Iran
+::ne-surf China ::ne-type country ::wiki China
+::ne-surf United States ::ne-type country ::wiki United_States
+::ne-surf North Korea ::ne-type country ::wiki North_Korea
+::ne-surf India ::ne-type country ::wiki India
+::ne-surf Afghanistan ::ne-type country ::wiki Afghanistan
+::ne-surf Russia ::ne-type country ::wiki Russia
+::ne-surf France ::ne-type country ::wiki France
+::ne-surf Pakistan ::ne-type country ::wiki Pakistan
+::ne-surf US ::ne-type country ::wiki United_States
+::ne-surf Japan ::ne-type country ::wiki Japan
+::ne-surf Myanmar ::ne-type country ::wiki Burma
+::ne-surf Iraq ::ne-type country ::wiki Iraq
+::ne-surf U.S. ::ne-type country ::wiki United_States
+::ne-surf Taiwan ::ne-type country ::wiki Taiwan
+::ne-surf Vietnam ::ne-type country ::wiki Vietnam
+::ne-surf Australia ::ne-type country ::wiki Australia
+::ne-surf South Korea ::ne-type country ::wiki South_Korea
+::ne-surf Germany ::ne-type country ::wiki Germany
+::ne-surf Libya ::ne-type country ::wiki Libya
+::ne-surf Britain ::ne-type country ::wiki United_Kingdom
+::ne-surf Israel ::ne-type country ::wiki Israel
+::ne-surf South Africa ::ne-type country ::wiki South_Africa
+::ne-surf Brazil ::ne-type country ::wiki Brazil
+::ne-surf Thailand ::ne-type country ::wiki Thailand
+::ne-surf Indonesia ::ne-type country ::wiki Indonesia
+::ne-surf Estonia ::ne-type country ::wiki Estonia
+::ne-surf Saudi Arabia ::ne-type country ::wiki Saudi_Arabia
+::ne-surf Georgia ::ne-type country ::wiki Georgia_(country)
+::ne-surf Singapore ::ne-type country ::wiki Singapore
+::ne-surf Soviet Union ::ne-type country ::wiki Soviet_Union
+::ne-surf Laos ::ne-type country ::wiki Laos
+::ne-surf Malaysia ::ne-type country ::wiki Malaysia
+::ne-surf Russian Federation ::ne-type country ::wiki Russia
+::ne-surf Philippines ::ne-type country ::wiki Philippines
+::ne-surf Kazakhstan ::ne-type country ::wiki Kazakhstan
+::ne-surf Zimbabwe ::ne-type country ::wiki Zimbabwe
+::ne-surf Egypt ::ne-type country ::wiki Egypt
+::ne-surf Jordan ::ne-type country ::wiki Jordan
+::ne-surf United Kingdom ::ne-type country ::wiki United_Kingdom
+::ne-surf Italy ::ne-type country ::wiki Italy
+::ne-surf Spain ::ne-type country ::wiki Spain
+::ne-surf Tajikistan ::ne-type country ::wiki Tajikistan
+::ne-surf Republic of Korea ::ne-type country ::wiki South_Korea
+::ne-surf Ukraine ::ne-type country ::wiki Ukraine
+::ne-surf Syria ::ne-type country ::wiki Syria
+::ne-surf Canada ::ne-type country ::wiki Canada
+::ne-surf Colombia ::ne-type country ::wiki Colombia
+::ne-surf Algeria ::ne-type country ::wiki Algeria
+::ne-surf Cambodia ::ne-type country ::wiki Cambodia
+::ne-surf Kingdom of Cambodia ::ne-type country ::wiki Cambodia
+::ne-surf Venezuela ::ne-type country ::wiki Venezuela
+::ne-surf America ::ne-type country ::wiki United_States
+::ne-surf Albania ::ne-type country ::wiki Albania
+::ne-surf Sweden ::ne-type country ::wiki Sweden
+::ne-surf Switzerland ::ne-type country ::wiki Switzerland
+::ne-surf Turkey ::ne-type country ::wiki Turkey
+::ne-surf Kenya ::ne-type country ::wiki Kenya
+::ne-surf Great Britain ::ne-type country ::wiki United_Kingdom
+::ne-surf Mexico ::ne-type country ::wiki Mexico
+::ne-surf Democratic People's Republic of Korea ::ne-type country ::wiki North_Korea
+::ne-surf Cuba ::ne-type country ::wiki Cuba
+::ne-surf Nepal ::ne-type country ::wiki Nepal
+::ne-surf Bulgaria ::ne-type country ::wiki Bulgaria
+::ne-surf Kyrgyzstan ::ne-type country ::wiki Kyrgyzstan
+::ne-surf Korea ::ne-type country ::wiki Korea
+::ne-surf Morocco ::ne-type country ::wiki Morocco
+::ne-surf Somalia ::ne-type country ::wiki Somalia
+::ne-surf Yemen ::ne-type country ::wiki Yemen
+::ne-surf Peru ::ne-type country ::wiki Peru
+::ne-surf Greece ::ne-type country ::wiki Greece
+::ne-surf Netherlands ::ne-type country ::wiki Netherlands
+::ne-surf Costa Rica ::ne-type country ::wiki Costa_Rica
+::ne-surf Islamic Republic of Iran ::ne-type country ::wiki Iran
+::ne-surf Nicaragua ::ne-type country ::wiki Nicaragua
+::ne-surf Nigeria ::ne-type country ::wiki Nigeria
+::ne-surf Austria ::ne-type country ::wiki Austria
+::ne-surf Lebanon ::ne-type country ::wiki Lebanon
+::ne-surf UK ::ne-type country ::wiki United_Kingdom
+::ne-surf Uzbekistan ::ne-type country ::wiki Uzbekistan
+::ne-surf Belarus ::ne-type country ::wiki Belarus
+::ne-surf Belgium ::ne-type country ::wiki Belgium
+::ne-surf Norway ::ne-type country ::wiki Norway
+::ne-surf Poland ::ne-type country ::wiki Poland
+::ne-surf Qatar ::ne-type country ::wiki Qatar
+::ne-surf Denmark ::ne-type country ::wiki Denmark
+::ne-surf Finland ::ne-type country ::wiki Finland
+::ne-surf Mauritania ::ne-type country ::wiki Mauritania
+::ne-surf Croatia ::ne-type country ::wiki Croatia
+::ne-surf PRC ::ne-type country ::wiki China
+::ne-surf Serbia ::ne-type country ::wiki Serbia
+::ne-surf Serbia and Montenegro ::ne-type country ::wiki Serbia_and_Montenegro
+::ne-surf United Arab Emirates ::ne-type country ::wiki United_Arab_Emirates
+::ne-surf United States of America ::ne-type country ::wiki United_States
+::ne-surf Cape Verde ::ne-type country ::wiki Cape_Verde
+::ne-surf China ::ne-type country ::wiki China
+::ne-surf Czech Republic ::ne-type country ::wiki Czech_Republic
+::ne-surf Libyan Arab Jamahiriya ::ne-type country ::wiki Libya
+::ne-surf Slovakia ::ne-type country ::wiki Slovakia
+::ne-surf Argentina ::ne-type country ::wiki Argentina
+::ne-surf Bangladesh ::ne-type country ::wiki Bangladesh
+::ne-surf Chile ::ne-type country ::wiki Chile
+::ne-surf Ecuador ::ne-type country ::wiki Ecuador
+::ne-surf England ::ne-type country ::wiki England
+::ne-surf Great Britain ::ne-type country ::wiki United_Kingdom
+::ne-surf Honduras ::ne-type country ::wiki Honduras
+::ne-surf Lao People's Democratic Republic ::ne-type country ::wiki Laos
+::ne-surf Macedonia ::ne-type country ::wiki Republic_of_Macedonia
+::ne-surf Republic of Macedonia ::ne-type country ::wiki Republic_of_Macedonia
+::ne-surf former Yugoslav Republic of Macedonia ::ne-type country ::wiki Republic_of_Macedonia
+::ne-surf Former Yugoslav Republic of Macedonia ::ne-type country ::wiki Republic_of_Macedonia
+::ne-surf FYROM ::ne-type country ::wiki Republic_of_Macedonia
+::ne-surf Yugoslavia ::ne-type country ::wiki Yugoslavia
+::ne-surf Bosnia-Herzegovina ::ne-type country ::wiki Bosnia_and_Herzegovina
+::ne-surf Bosnia Herzegovina ::ne-type country ::wiki Bosnia_and_Herzegovina
+::ne-surf Brunei ::ne-type country ::wiki Brunei
+::ne-surf Kosovo ::ne-type country ::wiki Kosovo
+::ne-surf Lithuania ::ne-type country ::wiki Lithuania
+::ne-surf Palestine ::ne-type country ::wiki State_of_Palestine
+::ne-surf Romania ::ne-type country ::wiki Romania
+::ne-surf Tanzania ::ne-type country ::wiki Tanzania
+::ne-surf United Republic of Tanzania ::ne-type country ::wiki Tanzania
+::ne-surf Tanzania United Republic ::ne-type country ::wiki Tanzania
+::ne-surf Tunisia ::ne-type country ::wiki Tunisia
+::ne-surf Turkmenistan ::ne-type country ::wiki Turkmenistan
+::ne-surf Moldova ::ne-type country ::wiki Moldova
+::ne-surf Monaco ::ne-type country ::wiki Monaco
+::ne-surf Palestine ::ne-type country ::wiki State_of_Palestine
+::ne-surf People's Republic of China ::ne-type country ::wiki China
+::ne-surf Scotland ::ne-type country ::wiki Scotland
+::ne-surf Sudan ::ne-type country ::wiki Sudan
+::ne-surf Syrian Arab Republic ::ne-type country ::wiki Syria
+::ne-surf UAE ::ne-type country ::wiki United_Arab_Emirates
+::ne-surf USA ::ne-type country ::wiki United_States
+::ne-surf Armenia ::ne-type country ::wiki Armenia
+::ne-surf Bahrain ::ne-type country ::wiki Bahrain
+::ne-surf Burma ::ne-type country ::wiki Burma
+::ne-surf Democratic People's Republic Of Korea ::ne-type country ::wiki North_Korea
+::ne-surf Ghana ::ne-type country ::wiki Ghana
+::ne-surf Hungary ::ne-type country ::wiki Hungary
+::ne-surf Hungary Republic ::ne-type country ::wiki Hungary
+::ne-surf Hungarian Republic ::ne-type country ::wiki Hungary
+::ne-surf Ireland ::ne-type country ::wiki Republic_of_Ireland
+::ne-surf Kuwait ::ne-type country ::wiki Kuwait
+::ne-surf Malta ::ne-type country ::wiki Malta
+::ne-surf Mozambique ::ne-type country ::wiki Mozambique
+::ne-surf New Zealand ::ne-type country ::wiki New_Zealand
+::ne-surf Niger ::ne-type country ::wiki Niger
+::ne-surf Oman ::ne-type country ::wiki Oman
+::ne-surf Phillipines ::ne-type country ::wiki Philippines
+::ne-surf Russia Federation ::ne-type country ::wiki Russia
+::ne-surf South Sudan ::ne-type country ::wiki South_Sudan
+::ne-surf Southern Sudan ::ne-type country ::wiki South_Sudan
+::ne-surf Sri Lanka ::ne-type country ::wiki Sri_Lanka
+::ne-surf USSR ::ne-type country ::wiki Soviet_Union
+::ne-surf Afganistan ::ne-type country ::wiki Afghanistan
+::ne-surf Azerbaijan ::ne-type country ::wiki Azerbaijan
+::ne-surf Bolivia ::ne-type country ::wiki Bolivia
+::ne-surf Botswana ::ne-type country ::wiki Botswana
+::ne-surf Burundi ::ne-type country ::wiki Burundi
+::ne-surf Chad ::ne-type country ::wiki Chad
+::ne-surf DPRK ::ne-type country ::wiki North_Korea
+::ne-surf Democratic Korea ::ne-type country ::wiki North_Korea
+::ne-surf Democratic Republic of Korea ::ne-type country ::wiki North_Korea
+::ne-surf Ethiopia ::ne-type country ::wiki Ethiopia
+::ne-surf European Union ::ne-type country ::wiki European_Union
+::ne-surf French Republic ::ne-type country ::wiki France
+::ne-surf Guatemala ::ne-type country ::wiki Guatemala
+::ne-surf Haiti ::ne-type country ::wiki Haiti
+::ne-surf Ivory Coast ::ne-type country ::wiki Ivory_Coast
+::ne-surf Libya Arab Jamahiriya ::ne-type country ::wiki Libya
+::ne-surf Madagascar ::ne-type country ::wiki Madagascar
+::ne-surf Mali ::ne-type country ::wiki Mali
+::ne-surf Northern Ireland ::ne-type country ::wiki Northern_Ireland
+::ne-surf Panama ::ne-type country ::wiki Panama
+::ne-surf People's Democratic Republic of Korea ::ne-type country ::wiki North_Korea
+::ne-surf Phillippines ::ne-type country ::wiki Philippines
+::ne-surf Portugal ::ne-type country ::wiki Portugal
+::ne-surf Senegal ::ne-type country ::wiki Senegal
+::ne-surf Slovenia ::ne-type country ::wiki Slovenia
+::ne-surf Soviet ::ne-type country ::wiki Soviet_Union
+::ne-surf Suriname ::ne-type country ::wiki Suriname
+::ne-surf The US ::ne-type country ::wiki United_States
+::ne-surf U.K. ::ne-type country ::wiki United_Kingdom
+::ne-surf U.S ::ne-type country ::wiki United_States
+::ne-surf Uganda ::ne-type country ::wiki Uganda
+::ne-surf Uruguay ::ne-type country ::wiki Uruguay
+::ne-surf Viet Nam ::ne-type country ::wiki Vietnam
+::ne-surf Zambia ::ne-type country ::wiki Zambia
+::ne-surf Andorra ::ne-type country ::wiki Andorra
+::ne-surf Angola ::ne-type country ::wiki Angola
+::ne-surf Antigua and Barbuda ::ne-type country ::wiki Antigua_and_Barbuda
+::ne-surf Bahamas ::ne-type country ::wiki The_Bahamas
+::ne-surf The Bahamas ::ne-type country ::wiki The_Bahamas
+::ne-surf Barbados ::ne-type country ::wiki Barbados
+::ne-surf Belize ::ne-type country ::wiki Belize
+::ne-surf Benin ::ne-type country ::wiki Benin
+::ne-surf Bhutan ::ne-type country ::wiki Bhutan
+::ne-surf Bosnia ::ne-type country ::wiki Bosnia_and_Herzegovina
+::ne-surf Bosnia and Herzegovina ::ne-type country ::wiki Bosnia_and_Herzegovina
+::ne-surf Bosnia and Herzegowina ::ne-type country ::wiki Bosnia_and_Herzegovina
+::ne-surf Burkina Faso ::ne-type country ::wiki Burkina_Faso
+::ne-surf Cameroon ::ne-type country ::wiki Cameroon
+::ne-surf Central African Republic ::ne-type country ::wiki Central_African_Republic
+::ne-surf Comoros ::ne-type country ::wiki Comoros
+::ne-surf Democratic Republic of Congo ::ne-type country ::wiki Democratic_Republic_of_the_Congo
+::ne-surf Democratic Republic of the Congo ::ne-type country ::wiki Democratic_Republic_of_the_Congo
+::ne-surf Congo-Kinshasa ::ne-type country ::wiki Democratic_Republic_of_the_Congo
+::ne-surf Zaire ::ne-type country ::wiki Democratic_Republic_of_the_Congo
+::ne-surf Republic of Congo ::ne-type country ::wiki Republic_of_the_Congo
+::ne-surf Republic of the Congo ::ne-type country ::wiki Republic_of_the_Congo
+::ne-surf Congo Republic ::ne-type country ::wiki Republic_of_the_Congo
+::ne-surf Congo-Brazzaville ::ne-type country ::wiki Republic_of_the_Congo
+::ne-surf Cote d'Ivoire ::ne-type country ::wiki Ivory_Coast
+::ne-surf Cyprus ::ne-type country ::wiki Cyprus
+::ne-surf Djibouti ::ne-type country ::wiki Djibouti
+::ne-surf Dominica ::ne-type country ::wiki Dominica
+::ne-surf Dominican Republic ::ne-type country ::wiki Dominican_Republic
+::ne-surf East Timor ::ne-type country ::wiki East_Timor
+::ne-surf El Salvador ::ne-type country ::wiki El_Salvador
+::ne-surf Equatorial Guinea ::ne-type country ::wiki Equatorial_Guinea
+::ne-surf Eritrea ::ne-type country ::wiki Eritrea
+::ne-surf Fiji ::ne-type country ::wiki Fiji
+::ne-surf Gabon ::ne-type country ::wiki Gabon
+::ne-surf Gabonese Republic ::ne-type country ::wiki Gabon
+::ne-surf Gabon Republic ::ne-type country ::wiki Gabon
+::ne-surf Gambia ::ne-type country ::wiki The_Gambia
+::ne-surf The Gambia ::ne-type country ::wiki The_Gambia
+::ne-surf Grenada ::ne-type country ::wiki Grenada
+::ne-surf Guinea ::ne-type country ::wiki Guinea
+::ne-surf Guinea-Bissau ::ne-type country ::wiki Guinea-Bissau
+::ne-surf Guinea Bissau ::ne-type country ::wiki Guinea-Bissau
+::ne-surf Guyana ::ne-type country ::wiki Guyana
+::ne-surf Republic of Ireland ::ne-type country ::wiki Republic_of_Ireland
+::ne-surf Irish Republic ::ne-type country ::wiki Republic_of_Ireland
+::ne-surf Jamaica ::ne-type country ::wiki Jamaica
+::ne-surf Kiribati ::ne-type country ::wiki Kiribati
+::ne-surf Kirghizia ::ne-type country ::wiki Kyrgyzstan
+::ne-surf Latvia ::ne-type country ::wiki Latvia
+::ne-surf Latvian Republic ::ne-type country ::wiki Latvia
+::ne-surf Republic of Latvia ::ne-type country ::wiki Latvia
+::ne-surf Lesotho ::ne-type country ::wiki Lesotho
+::ne-surf Liberia ::ne-type country ::wiki Liberia
+::ne-surf Liechtenstein ::ne-type country ::wiki Liechtenstein
+::ne-surf Lithuania ::ne-type country ::wiki Lithuania
+::ne-surf Luxembourg ::ne-type country ::wiki Luxembourg
+::ne-surf Malawi ::ne-type country ::wiki Malawi
+::ne-surf Maldives ::ne-type country ::wiki Maldives
+::ne-surf Marshall Islands ::ne-type country ::wiki Marshall_Islands
+::ne-surf Mauritius ::ne-type country ::wiki Mauritius
+::ne-surf Mongolia ::ne-type country ::wiki Mongolia
+::ne-surf Montenegro ::ne-type country ::wiki Montenegro
+::ne-surf Namibia ::ne-type country ::wiki Namibia
+::ne-surf Nauru ::ne-type country ::wiki Nauru
+::ne-surf Palau ::ne-type country ::wiki Palau
+::ne-surf Papua New Guinea ::ne-type country ::wiki Papua_New_Guinea
+::ne-surf Paraguay ::ne-type country ::wiki Paraguay
+::ne-surf Rwanda ::ne-type country ::wiki Rwanda
+::ne-surf Saint Kitts and Nevis ::ne-type country ::wiki Saint_Kitts_and_Nevis
+::ne-surf Saint Lucia ::ne-type country ::wiki Saint_Lucia
+::ne-surf Saint Vincent and the Grenadines ::ne-type country ::wiki Saint_Vincent_and_the_Grenadines
+::ne-surf Samoa ::ne-type country ::wiki Samoa
+::ne-surf San Marino ::ne-type country ::wiki San_Marino
+::ne-surf Sao Tome and Principe ::ne-type country ::wiki S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe
+::ne-surf São Tomé and Príncipe ::ne-type country ::wiki S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe
+::ne-surf Seychelles ::ne-type country ::wiki Seychelles
+::ne-surf Sierra Leone ::ne-type country ::wiki Sierra_Leone
+::ne-surf Solomon Islands ::ne-type country ::wiki Solomon_Islands
+::ne-surf Swaziland ::ne-type country ::wiki Swaziland
+::ne-surf Togo ::ne-type country ::wiki Togo
+::ne-surf Tonga ::ne-type country ::wiki Tonga
+::ne-surf Trinidad and Tobago ::ne-type country ::wiki Trinidad_and_Tobago
+::ne-surf Tuvalu ::ne-type country ::wiki Tuvalu
+::ne-surf Vanuatu ::ne-type country ::wiki Vanuatu
+::ne-surf Vatican ::ne-type country ::wiki Vatican_City
+::ne-surf Vatican City ::ne-type country ::wiki Vatican_City
+::ne-surf Wales ::ne-type country ::wiki Wales
+::ne-surf West Samoa ::ne-type country ::wiki Samoa
+::ne-surf Western Samoa ::ne-type country ::wiki Samoa
+::ne-surf Kurdistan ::ne-type country ::wiki Kurdistan
+::ne-surf Polar Bear ::ne-type country ::wiki Russia
+::ne-surf Roman Empire ::ne-type country ::wiki Roman_Empire
+
+::ne-surf English ::ne-type language ::wiki English_language
+::ne-surf Arabic ::ne-type language ::wiki Arabic_language
+::ne-surf Chinese ::ne-type language ::wiki Chinese_language
+::ne-surf French ::ne-type language ::wiki French_language
+::ne-surf Latin ::ne-type language ::wiki Latin
+::ne-surf Mandarin ::ne-type language ::wiki Mandarin_Chinese
+::ne-surf Russian ::ne-type language ::wiki Russian_language
+::ne-surf Italian ::ne-type language ::wiki Italian_language
+::ne-surf Korean ::ne-type language ::wiki Korean_language
+::ne-surf German ::ne-type language ::wiki German_language
+::ne-surf Japanese ::ne-type language ::wiki Japanese_language
+::ne-surf Swedish ::ne-type language ::wiki Swedish_language
+::ne-surf Spanish ::ne-type language ::wiki Spanish_language
+::ne-surf NZ ::ne-type country ::wiki New_Zealand
+# event list
+::ne-surf Cold War ::ne-type war ::wiki Cold_War
+::ne-surf World War II ::ne-type war ::wiki World_War_II
+::ne-surf Iraq War ::ne-type war ::wiki Iraq_War
+::ne-surf Vietnam War ::ne-type war ::wiki Vietnam_War
+::ne-surf World War I ::ne-type war ::wiki World_War_I
+::ne-surf World War II ::ne-type war ::wiki World_War_II
+::ne-surf Korean World ::ne-type war ::wiki Korean_War
+
+::ne-surf World Cup ::ne-type game ::wiki FIFA_World_Cup
+::ne-surf Asian Cup ::ne-type game ::wiki AFC_Asian_Cup
+::ne-surf US Open ::ne-type game ::wiki US_Open_(tennis)
+::ne-surf Olympics ::ne-type game ::wiki Olympic_Games
+::ne-surf Super Bowl ::ne-type game ::wiki Super_Bowl
+
+::ne-surf Christmas ::ne-type festival ::wiki Christmas
+::ne-surf Easter ::ne-type festival ::wiki Easter
+::ne-surf Halloween ::ne-type festival ::wiki Halloween
+::ne-surf Thanksgiving ::ne-type festival ::wiki Thanksgiving
+::ne-surf Yom Kippur ::ne-type festival ::wiki Yom_Kippur
+::ne-surf Eid al-Fitr ::ne-type festival ::wiki Eid_al-Fitr
+::ne-surf Eeyore's Birthday Party ::ne-type festival ::wiki Eeyore's_Birthday_Party
+
+# facility list
+::ne-surf Yasukuni Shrine ::ne-type worship-place ::wiki Yasukuni_Shrine
+::ne-surf Yongbyon ::ne-type facility ::wiki Yongbyon_Nuclear_Scientific_Research_Center
+::ne-surf Finsbury Park Mosque ::ne-type worship-place ::wiki North_London_Central_Mosque
+::ne-surf Baikonur Space Center ::ne-type facility ::wiki Baikonur_Cosmodrome
+
+# ethnic/religious group list
+::ne-surf Islam ::ne-type religious-group ::wiki Islam
+::ne-surf Arab ::ne-type ethnic-group ::wiki Arabs
+::ne-surf Kurd ::ne-type ethnic-group ::wiki Kurds
+::ne-surf Islamism ::ne-type religious-group ::wiki Islam
+::ne-surf Muslim ::ne-type religious-group ::wiki Muslim
+::ne-surf Hmong ::ne-type ethnic-group ::wiki Hmong_people
+::ne-surf Shiite ::ne-type religious-group ::wiki Shia_Islam
+::ne-surf Hinduism ::ne-type religious-group ::wiki Hindu
+::ne-surf Christian ::ne-type religious-group ::wiki Christian
+::ne-surf Sunni ::ne-type religious-group ::wiki Sunni_Islam
+::ne-surf Christianity ::ne-type religious-group ::wiki Christian
+::ne-surf Catholic ::ne-type religious-group ::wiki Catholicism
+::ne-surf Catholicism ::ne-type religious-group ::wiki Catholicism
+::ne-surf Copt ::ne-type ethnic-group ::wiki Copts
+::ne-surf Hindu ::ne-type religious-group ::wiki Hindu
+::ne-surf Islamic ::ne-type religious-group ::wiki Islam
+::ne-surf Jew ::ne-type religious-group ::wiki Jews
+::ne-surf Mormon ::ne-type religious-group ::wiki Mormons
+::ne-surf Salafism ::ne-type religious-group ::wiki Salafi_movement
+::ne-surf Shiite ::ne-type religious-group ::wiki Shia_Islam
+::ne-surf Sunni Islam ::ne-type religious-group ::wiki Sunni_Islam
+::ne-surf Wahhabi ::ne-type religious-group ::wiki Wahhabi_movement
+::ne-surf Salafist ::ne-type religious-group ::wiki Salafi_movement
+::ne-surf Lutheran ::ne-type religious-group ::wiki Lutheranism
+::ne-surf Buddhist ::ne-type religious-group ::wiki Buddhism
+::ne-surf Sikh ::ne-type religious-group ::wiki Sikh
+::ne-surf Shintoist ::ne-type religious-group ::wiki Shinto
+::ne-surf Taoist ::ne-type religious-group ::wiki Taoism
+::ne-surf Confucian ::ne-type religious-group ::wiki Confucianism
+::ne-surf Druze ::ne-type religious-group ::wiki Druze
+::ne-surf Baptist ::ne-type religious-group ::wiki Baptists
+::ne-surf Methodist ::ne-type religious-group ::wiki Methodism
+::ne-surf Orthodox Christian ::ne-type religious-group ::wiki Orthodox_Christianity
+::ne-surf Anglican ::ne-type religious-group ::wiki Anglicanism
+::ne-surf Protestant ::ne-type religious-group ::wiki Protestantism
+::ne-surf Calvinist ::ne-type religious-group ::wiki Calvinism
+::ne-surf Pentacostal ::ne-type religious-group ::wiki Pentecostalism
+::ne-surf Pentecostal ::ne-type religious-group ::wiki Pentecostalism
+# military list
+::ne-surf NATO ::ne-type military ::wiki NATO
+::ne-surf North Atlantic Treaty Organization ::ne-type military ::wiki NATO
+::ne-surf Warsaw Pact ::ne-type military ::wiki Warsaw_Pact
+::ne-surf International Security Assistance Force ::ne-type military ::wiki International_Security_Assistance_Force
+::ne-surf Russian Space Forces ::ne-type military ::wiki Russian_Space_Forces
+::ne-surf Coast Guard ::ne-type military ::wiki United_States_Coast_Guard
+::ne-surf Indian Navy ::ne-type military ::wiki Indian_Navy
+::ne-surf People's Liberation Army ::ne-type military ::wiki People's_Liberation_Army
+::ne-surf Indian Air Force ::ne-type military ::wiki Indian_Air_Force
+::ne-surf Marines ::ne-type military ::wiki United_States_Marine_Corps
+::ne-surf United States Air Force ::ne-type military ::wiki United_States_Air_Force
+::ne-surf United States Military ::ne-type military ::wiki United_States_Armed_Forces
+::ne-surf Al-Qassam Brigades ::ne-type military ::wiki Izz_ad-Din_al-Qassam_Brigades
+::ne-surf U.S. Army ::ne-type military ::wiki United_States_Army
+::ne-surf US Army ::ne-type military ::wiki United_States_Army
+::ne-surf United States Army ::ne-type military ::wiki United_States_Army
+::ne-surf US Marines ::ne-type military ::wiki United_States_Marine_Corps
+::ne-surf United States Marines ::ne-type military ::wiki United_States_Marine_Corps
+::ne-surf US Air Force ::ne-type military ::wiki United_States_Air_Force
+::ne-surf US Coast Guard ::ne-type military ::wiki United_States_Coast_Guard
+::ne-surf US Navy ::ne-type military ::wiki United_States_Navy
+::ne-surf United States Navy ::ne-type military ::wiki United_States_Navy
+::ne-surf United States Coast Guard ::ne-type military ::wiki United_States_Coast_Guard
+::ne-surf United States Armed Forces ::ne-type military ::wiki United_States_Armed_Forces
+::ne-surf US Military ::ne-type military ::wiki United_States_Armed_Forces
+# misc geo list
+::ne-surf Earth ::ne-type planet ::wiki Earth
+::ne-surf Jupiter ::ne-type planet ::wiki Jupiter
+::ne-surf Mars ::ne-type planet ::wiki Mars
+::ne-surf Venus ::ne-type planet ::wiki Venus
+::ne-surf Saturn ::ne-type planet ::wiki Saturn
+::ne-surf Mercury ::ne-type planet ::wiki Mercury_(planet)
+::ne-surf Uranus ::ne-type planet ::wiki Uranus
+::ne-surf Neptune ::ne-type planet ::wiki Neptune
+
+::ne-surf Yongbyon ::ne-type county ::wiki Nyongbyon_County
+::ne-surf Los Angeles County ::ne-type county ::wiki Los_Angeles_County,_California
+
+::ne-surf Senkaku Islands ::ne-type island ::wiki Senkaku_Islands
+::ne-surf Diaoyu Islands ::ne-type island ::wiki Senkaku_Islands
+::ne-surf Diaoyu ::ne-type island ::wiki Senkaku_Islands
+::ne-surf Bali ::ne-type island ::wiki Bali
+::ne-surf Easter Island ::ne-type island ::wiki Easter_Island
+::ne-surf Mindanao ::ne-type island ::wiki Mindanao
+::ne-surf Nias ::ne-type island ::wiki Nias
+::ne-surf Nias island ::ne-type island ::wiki Nias
+::ne-surf Sumatra Island ::ne-type island ::wiki Sumatra
+::ne-surf Ireland ::ne-type island ::wiki Ireland
+::ne-surf Sumatra ::ne-type island ::wiki Sumatra
+::ne-surf Helgoland ::ne-type island ::wiki Heligoland
+::ne-surf Heligoland ::ne-type island ::wiki Heligoland
+::ne-surf Oahu ::ne-type island ::wiki Oahu
+::ne-surf O'ahu ::ne-type island ::wiki Oahu
+::ne-surf Maui ::ne-type island ::wiki Maui
+
+::ne-surf Indian Ocean ::ne-type ocean ::wiki Indian_Ocean
+::ne-surf Pacific Ocean ::ne-type ocean ::wiki Pacific_Ocean
+::ne-surf Pacific ::ne-type ocean ::wiki Pacific_Ocean
+::ne-surf Atlantic Ocean ::ne-type ocean ::wiki Atlantic_Ocean
+::ne-surf Atlantic ::ne-type ocean ::wiki Atlantic_Ocean
+
+::ne-surf Caspian Sea ::ne-type sea ::wiki Caspian_Sea
+::ne-surf Mediterranean ::ne-type sea ::wiki Mediterranean_Sea
+::ne-surf Baltic ::ne-type sea ::wiki Baltic_Sea
+::ne-surf Barents Sea ::ne-type sea ::wiki Barents_Sea
+::ne-surf Black Sea ::ne-type sea ::wiki Black_Sea
+::ne-surf East China Sea ::ne-type sea ::wiki East_China_Sea
+::ne-surf Mediterranean Sea ::ne-type sea ::wiki Mediterranean_Sea
+::ne-surf Sea of Japan ::ne-type sea ::wiki Sea_of_Japan
+::ne-surf Sea of Okhotsk ::ne-type sea ::wiki Sea_of_Okhotsk
+::ne-surf Yellow Sea ::ne-type sea ::wiki Yellow_Sea
+::ne-surf North Sea ::ne-type sea ::wiki North_Sea
+
+::ne-surf Pennsylvania Ave ::ne-type road ::wiki Pennsylvania_Avenue_(Washington,_D.C.) ::context Washington,_D.C.
+::ne-surf Downing Street ::ne-type road ::wiki Downing_Street ::context London
+
+::ne-surf Kamchatka Peninsula ::ne-type peninsula ::wiki Kamchatka_Peninsula
+::ne-surf Kamchatka ::ne-type peninsula ::wiki Kamchatka_Peninsula
+::ne-surf Korean Peninsula ::ne-type peninsula ::wiki Korean_Peninsula
+::ne-surf Korea ::ne-type peninsula ::wiki Korean_Peninsula
+::ne-surf Jiaodong Peninsula ::ne-type peninsula ::wiki Shandong_Peninsula
+::ne-surf Shandong Peninsula ::ne-type peninsula ::wiki Shandong_Peninsula
+::ne-surf Liaodong Peninsula ::ne-type peninsula ::wiki Liaodong_Peninsula
+::ne-surf Crimean Peninsula ::ne-type peninsula ::wiki Crimea
+::ne-surf Crimea ::ne-type peninsula ::wiki Crimea
+
+# organization list
+::ne-surf UN ::ne-type organization ::wiki United_Nations
+::ne-surf IAEA ::ne-type organization ::wiki International_Atomic_Energy_Agency
+::ne-surf European Union ::ne-type organization ::wiki European_Union
+::ne-surf EU ::ne-type organization ::wiki European_Union
+::ne-surf United Nations ::ne-type organization ::wiki United_Nations
+::ne-surf Taliban ::ne-type criminal-organization ::wiki Taliban
+::ne-surf International Atomic Energy Agency ::ne-type organization ::wiki International_Atomic_Energy_Agency
+::ne-surf Amnesty International ::ne-type organization ::wiki Amnesty_International
+::ne-surf ASEAN ::ne-type organization ::wiki Association_of_Southeast_Asian_Nations
+::ne-surf Security Council ::ne-type organization ::wiki United_Nations_Security_Council
+::ne-surf UN Security Council ::ne-type organization ::wiki United_Nations_Security_Council
+::ne-surf OSCE ::ne-type organization ::wiki Organization_for_Security_and_Co-operation_in_Europe
+::ne-surf United Nations Security Council ::ne-type organization ::wiki United_Nations_Security_Council
+::ne-surf Congress ::ne-type government-organization ::wiki United_States_Congress ::context United_States
+::ne-surf Interpol ::ne-type organization ::wiki Interpol
+::ne-surf SCO ::ne-type organization ::wiki Shanghai_Cooperation_Organisation
+::ne-surf European Commission ::ne-type organization ::wiki European_Commission
+::ne-surf Greenpeace ::ne-type organization ::wiki Greenpeace
+::ne-surf People's Mujahedeen ::ne-type organization ::wiki People's_Mujahedin_of_Iran
+::ne-surf People's Mujahedin ::ne-type organization ::wiki People's_Mujahedin_of_Iran
+::ne-surf United States Senate ::ne-type government-organization ::wiki United_States_Senate
+::ne-surf U.S. Senate ::ne-type government-organization ::wiki United_States_Senate
+::ne-surf US Senate ::ne-type government-organization ::wiki United_States_Senate
+::ne-surf U.N. ::ne-type organization ::wiki United_Nations
+::ne-surf al-Qaida ::ne-type criminal-organization ::wiki Al-Qaeda
+::ne-surf Association of Southeast Asian Nations ::ne-type organization ::wiki Association_of_Southeast_Asian_Nations
+::ne-surf United States Department of State ::ne-type government-organization ::wiki United_States_Department_of_State
+::ne-surf U.S. State Department ::ne-type government-organization ::wiki United_States_Department_of_State
+::ne-surf US State Department ::ne-type government-organization ::wiki United_States_Department_of_State
+::ne-surf Hamas ::ne-type organization ::wiki Hamas
+::ne-surf Kremlin ::ne-type government-organization ::wiki Moscow_Kremlin
+::ne-surf Al-Qaeda ::ne-type criminal-organization ::wiki Al-Qaeda
+::ne-surf al-Qaeda ::ne-type criminal-organization ::wiki Al-Qaeda
+::ne-surf Al Qaeda ::ne-type criminal-organization ::wiki Al-Qaeda
+::ne-surf Al-Qaida ::ne-type criminal-organization ::wiki Al-Qaeda
+::ne-surf Organization for Security and Cooperation in Europe ::ne-type organization ::wiki Organization_for_Security_and_Co-operation_in_Europe
+::ne-surf Anti Narcotics Force ::ne-type government-organization ::wiki Anti-Narcotics_Force
+::ne-surf FARC ::ne-type criminal-organization ::wiki FARC
+::ne-surf Revolutionary Armed Forces of Colombia ::ne-type criminal-organization ::wiki FARC
+::ne-surf Muslim Brotherhood ::ne-type organization ::wiki Muslim_Brotherhood
+::ne-surf U.N. Security Council ::ne-type organization ::wiki United_Nations_Security_Council
+::ne-surf UN General Assembly ::ne-type organization ::wiki United_Nations_General_Assembly
+::ne-surf European Parliament ::ne-type organization ::wiki European_Parliament
+::ne-surf European Space Agency ::ne-type organization ::wiki European_Space_Agency
+::ne-surf FAO ::ne-type organization ::wiki Food_and_Agriculture_Organization
+::ne-surf Shanghai Cooperation Organization ::ne-type organization ::wiki Shanghai_Cooperation_Organisation
+::ne-surf UN Office on Drugs and Crime ::ne-type organization ::wiki United_Nations_Office_on_Drugs_and_Crime
+::ne-surf WHO ::ne-type organization ::wiki World_Health_Organization
+::ne-surf World Health Organization ::ne-type organization ::wiki World_Health_Organization
+::ne-surf European Space Agency ::ne-type government-organization ::wiki European_Space_Agency
+::ne-surf Federal Reserve ::ne-type government-organization ::wiki Federal_Reserve_System ::context United_States
+::ne-surf G-8 ::ne-type organization ::wiki G8
+::ne-surf House ::ne-type government-organization ::wiki United_States_House_of_Representatives ::context United_States
+::ne-surf Kurdistan Workers' Party ::ne-type criminal-organization ::wiki Kurdistan_Workers'_Party
+::ne-surf PKK ::ne-type criminal-organization ::wiki Kurdistan_Workers'_Party
+::ne-surf Pentagon ::ne-type government-organization ::wiki The_Pentagon
+::ne-surf World Bank ::ne-type organization ::wiki World_Bank
+::ne-surf CIA ::ne-type government-organization ::wiki Central_Intelligence_Agency
+::ne-surf FBI ::ne-type government-organization ::wiki Federal_Bureau_of_Investigation
+::ne-surf G8 ::ne-type organization ::wiki G8
+::ne-surf Central Intelligence Agency ::ne-type government-organization ::wiki Central_Intelligence_Agency
+::ne-surf Group of Eight ::ne-type organization ::wiki G8
+::ne-surf National Security Agency ::ne-type government-organization ::wiki National_Security_Agency
+::ne-surf EPA ::ne-type government-organization ::wiki United_States_Environmental_Protection_Agency
+::ne-surf Environmental Protection Agency ::ne-type government-organization ::wiki United_States_Environmental_Protection_Agency
+::ne-surf Food and Agriculture Organization ::ne-type organization ::wiki Food_and_Agriculture_Organization
+::ne-surf Federal Bureau of Investigation ::ne-type government-organization ::wiki Federal_Bureau_of_Investigation
+::ne-surf NSA ::ne-type government-organization ::wiki National_Security_Agency
+::ne-surf Nuclear Suppliers Group ::ne-type organization ::wiki Nuclear_Suppliers_Group
+::ne-surf NSG ::ne-type organization ::wiki Nuclear_Suppliers_Group
+::ne-surf Red Cross ::ne-type organization ::wiki International_Red_Cross_and_Red_Crescent_Movement
+::ne-surf Doctors Without Borders ::ne-type organization ::wiki M%C3%A9decins_Sans_Fronti%C3%A8res
+::ne-surf Médecins Sans Frontières ::ne-type organization ::wiki M%C3%A9decins_Sans_Fronti%C3%A8res
+::ne-surf Medecins Sans Frontieres ::ne-type organization ::wiki M%C3%A9decins_Sans_Fronti%C3%A8res
+
+::ne-surf Republican Party ::ne-type political-party ::wiki Republican_Party_(United_States) ::context United_States
+::ne-surf Chinese Communist Party ::ne-type political-party ::wiki Communist_Party_of_China
+::ne-surf Communist Party of China ::ne-type political-party ::wiki Communist_Party_of_China
+::ne-surf GOP ::ne-type political-party ::wiki Republican_Party_(United_States)
+::ne-surf Republican ::ne-type political-party ::wiki Republican_Party_(United_States) ::context United_States
+::ne-surf Sandinista ::ne-type political-party ::wiki Sandinista_National_Liberation_Front
+::ne-surf Democratic Party ::ne-type political-party ::wiki Democratic_Party_(United_States) ::context United_States
+::ne-surf Awami League ::ne-type political-party ::wiki Bangladesh_Awami_League
+::ne-surf Conservative Party ::ne-type political-party ::wiki Conservative_Party_(UK) ::context United_Kingdom
+::ne-surf Democrat ::ne-type political-party ::wiki Democratic_Party_(United_States) ::context United_States
+::ne-surf Labour Party ::ne-type political-party ::wiki Labour_Party_(UK) ::context United_Kingdom
+::ne-surf Hezbollah ::ne-type political-party ::wiki Hezbollah
+::ne-surf Dem ::ne-type political-party ::wiki Democratic_Party_(United_States) ::context United_States
+::ne-surf FSLN ::ne-type political-party ::wiki Sandinista_National_Liberation_Front
+
+::ne-surf HKUST ::ne-type university ::wiki Hong_Kong_University_of_Science_and_Technology
+::ne-surf University of California ::ne-type university ::wiki University_of_California
+::ne-surf Harvard University ::ne-type university ::wiki Harvard_University
+::ne-surf Harvard ::ne-type university ::wiki Harvard_University
+::ne-surf University of Southern California ::ne-type university ::wiki University_of_Southern_California
+
+::ne-surf State Scientific Center of Applied Microbiology ::ne-type research-institute ::wiki -
+::ne-surf International Institute for Strategic Studies ::ne-type research-institute ::wiki International_Institute_for_Strategic_Studies
+::ne-surf ISI ::ne-type research-institute ::wiki Information_Sciences_Institute
+::ne-surf Information Sciences Institute ::ne-type research-institute ::wiki Information_Sciences_Institute
+# person list
+::ne-surf Wen ::ne-type person ::wiki Wen_Jiabao
+::ne-surf Obama ::ne-type person ::wiki Barack_Obama
+::ne-surf Chavez ::ne-type person ::wiki Hugo_Ch%C3%A1vez
+::ne-surf Sarkozy ::ne-type person ::wiki Nicolas_Sarkozy
+::ne-surf Peng Li ::ne-type person ::wiki Li_Peng
+::ne-surf Li Peng ::ne-type person ::wiki Li_Peng
+::ne-surf ElBaradei ::ne-type person ::wiki Mohamed_ElBaradei
+::ne-surf Kim Myong-Chol ::ne-type person ::wiki Kim_Myong-chol
+::ne-surf Ichiro Ozawa ::ne-type person ::wiki Ichir%C5%8D_Ozawa
+::ne-surf Dmitry Medvedev ::ne-type person ::wiki Dmitry_Medvedev
+::ne-surf Vladimir Putin ::ne-type person ::wiki Vladimir_Putin
+::ne-surf Putin ::ne-type person ::wiki Vladimir_Putin
+::ne-surf Mao Zedong ::ne-type person ::wiki Mao_Zedong
+::ne-surf Kadhafi ::ne-type person ::wiki Muammar_Gaddafi
+::ne-surf Saddam ::ne-type person ::wiki Saddam_Hussein
+::ne-surf Gerhard Schroeder ::ne-type person ::wiki Gerhard_Schr%C3%B6der
+::ne-surf Tony Blair ::ne-type person ::wiki Tony_Blair
+::ne-surf Chirac ::ne-type person ::wiki Jacques_Chirac
+::ne-surf Hans Blix ::ne-type person ::wiki Hans_Blix
+::ne-surf Zawahiri ::ne-type person ::wiki Ayman_al-Zawahiri
+::ne-surf Ahmadinejad ::ne-type person ::wiki Mahmoud_Ahmadinejad
+::ne-surf Koizumi ::ne-type person ::wiki Junichiro_Koizumi
+::ne-surf Michele Alliot-Marie ::ne-type person ::wiki Mich%C3%A8le_Alliot-Marie
+::ne-surf Roh Moo-hyun ::ne-type person ::wiki Roh_Moo-hyun
+::ne-surf Francisco Santos ::ne-type person ::wiki Francisco_Santos_Calder%C3%B3n
+::ne-surf Blair ::ne-type person ::wiki Tony_Blair
+::ne-surf Javier Solana ::ne-type person ::wiki Javier_Solana
+::ne-surf Joseph Wu ::ne-type person ::wiki Joseph_Wu
+::ne-surf Mohammed ElBaradei ::ne-type person ::wiki Mohamed_ElBaradei
+::ne-surf Nicolas Sarkozy ::ne-type person ::wiki Nicolas_Sarkozy
+::ne-surf Osama bin Laden ::ne-type person ::wiki Osama_bin_Laden
+::ne-surf Pervez Musharraf ::ne-type person ::wiki Pervez_Musharraf
+::ne-surf Romney ::ne-type person ::wiki Mitt_Romney
+::ne-surf Ron Paul ::ne-type person ::wiki Ron_Paul
+::ne-surf Schroeder ::ne-type person ::wiki Gerhard_Schr%C3%B6der
+::ne-surf George W. Bush ::ne-type person ::wiki George_W._Bush
+::ne-surf Jiang Yu ::ne-type person ::wiki Jiang_Yu
+::ne-surf Medvedev ::ne-type person ::wiki Dmitry_Medvedev
+::ne-surf Mohamed ElBaradei ::ne-type person ::wiki Mohamed_ElBaradei
+::ne-surf Palin ::ne-type person ::wiki Sarah_Palin
+::ne-surf Saddam Hussein ::ne-type person ::wiki Saddam_Hussein
+::ne-surf Shivraj Patil ::ne-type person ::wiki Shivraj_Patil
+::ne-surf Hamid Karzai ::ne-type person ::wiki Hamid_Karzai
+::ne-surf Musharraf ::ne-type person ::wiki Pervez_Musharraf
+::ne-surf Sergei Lavrov ::ne-type person ::wiki Sergey_Lavrov
+::ne-surf Thabo Mbeki ::ne-type person ::wiki Thabo_Mbeki
+::ne-surf bin Laden ::ne-type person ::wiki Osama_bin_Laden
+::ne-surf Abdullah II ::ne-type person ::wiki Abdullah_II_of_Jordan
+::ne-surf Barack Obama ::ne-type person ::wiki Barack_Obama
+::ne-surf Ingo Kober ::ne-type person ::wiki Ingo_Kober
+::ne-surf McCain ::ne-type person ::wiki John_McCain
+::ne-surf Santorum ::ne-type person ::wiki Rick_Santorum
+::ne-surf Sergei Ivanov ::ne-type person ::wiki Sergei_Ivanov
+::ne-surf Dalai Lama ::ne-type person ::wiki Dalai_Lama
+::ne-surf David Miliband ::ne-type person ::wiki David_Miliband
+::ne-surf Frank-Walter Steinmeier ::ne-type person ::wiki Frank-Walter_Steinmeier
+::ne-surf Jacques Chirac ::ne-type person ::wiki Jacques_Chirac
+::ne-surf Mahmoud Ahmadinejad ::ne-type person ::wiki Mahmoud_Ahmadinejad
+::ne-surf Pelosi ::ne-type person ::wiki Nancy_Pelosi
+::ne-surf Angela Merkel ::ne-type person ::wiki Angela_Merkel
+::ne-surf Dominique de Villepin ::ne-type person ::wiki Dominique_de_Villepin
+::ne-surf Junichiro Koizumi ::ne-type person ::wiki Junichiro_Koizumi
+::ne-surf Kim Jong-Il ::ne-type person ::wiki Kim_Jong-il
+::ne-surf Moamer Kadhafi ::ne-type person ::wiki Muammar_Gaddafi
+::ne-surf Wen Jiabao ::ne-type person ::wiki Wen_Jiabao
+::ne-surf Ayman al-Zawahiri ::ne-type person ::wiki Ayman_al-Zawahiri
+::ne-surf Hugo Chavez ::ne-type person ::wiki Hugo_Ch%C3%A1vez
+::ne-surf Muammar Kadhafi ::ne-type person ::wiki Muammar_Gaddafi
+::ne-surf Mitt Romney ::ne-type person ::wiki Mitt_Romney
+::ne-surf Nancy Pelosi ::ne-type person ::wiki Nancy_Pelosi
+::ne-surf Sarah Palin ::ne-type person ::wiki Sarah_Palin
+::ne-surf John McCain ::ne-type person ::wiki John_McCain
+::ne-surf Rick Santorum ::ne-type person ::wiki Rick_Santorum
+::ne-surf al-Zawahiri ::ne-type person ::wiki Ayman_al-Zawahiri
+::ne-surf George Washington ::ne-type person ::wiki George_Washington
+::ne-surf Abraham Lincoln ::ne-type person ::wiki Abraham_Lincoln
+# product list
+::ne-surf Shenzhou ::ne-type spaceship ::wiki Shenzhou_(spacecraft)
+::ne-surf Shenzhou I ::ne-type spaceship ::wiki Shenzhou_1
+::ne-surf Shenzhou II ::ne-type spaceship ::wiki Shenzhou_2
+::ne-surf Shenzhou III ::ne-type spaceship ::wiki Shenzhou_3
+::ne-surf Shenzhou IV ::ne-type spaceship ::wiki Shenzhou_4
+::ne-surf Rafale ::ne-type aircraft-type ::wiki Dassault_Rafale
+::ne-surf F-15 k ::ne-type aircraft-type ::wiki McDonnell_Douglas_F-15E_Strike_Eagle#F-15K
+
+::ne-surf EPO ::ne-type product ::wiki Erythropoietin
+::ne-surf Topol-M ::ne-type product ::wiki RT-2UTTKh_Topol-M
+::ne-surf Scorpene ::ne-type product ::wiki Scorp%C3%A8ne-class_submarine
+::ne-surf RS-24 ::ne-type product ::wiki RS-24_Yars
+::ne-surf Soyuz ::ne-type product ::wiki Soyuz_(rocket)
+# province/state list
+::ne-surf Helmand ::ne-type province ::wiki Helmand_Province
+::ne-surf Liaoning ::ne-type province ::wiki Liaoning
+::ne-surf Papua ::ne-type province ::wiki Papua_(province)
+::ne-surf Tibet ::ne-type province ::wiki Tibet
+::ne-surf Baluchistan ::ne-type province ::wiki Balochistan,_Pakistan
+::ne-surf Aceh ::ne-type province ::wiki Aceh
+::ne-surf Kandahar ::ne-type province ::wiki Kandahar_Province
+::ne-surf Qom Province ::ne-type province ::wiki Qom_Province
+::ne-surf Qom ::ne-type province ::wiki Qom_Province
+::ne-surf Sistan-Baluchestan ::ne-type province ::wiki Sistan_and_Baluchestan_Province
+::ne-surf Sistan-Baluchestan Province ::ne-type province ::wiki Sistan_and_Baluchestan_Province
+::ne-surf Son La ::ne-type province ::wiki S%C6%A1n_La_Province
+::ne-surf West Papua ::ne-type province ::wiki West_Papua_(province)
+::ne-surf Bali ::ne-type province ::wiki Bali
+::ne-surf Guangdong ::ne-type province ::wiki Guangdong
+::ne-surf Sichuan ::ne-type province ::wiki Sichuan
+::ne-surf Chechnya ::ne-type province ::wiki Chechnya
+::ne-surf Fujian ::ne-type province ::wiki Fujian
+::ne-surf Gansu ::ne-type province ::wiki Gansu
+::ne-surf Herat ::ne-type province ::wiki Herat_Province
+::ne-surf Balochistan ::ne-type province ::wiki Balochistan,_Pakistan
+::ne-surf Jiangsu ::ne-type province ::wiki Jiangsu
+::ne-surf Hubei ::ne-type province ::wiki Hubei
+::ne-surf Inner Mongolia ::ne-type province ::wiki Inner_Mongolia
+
+::ne-surf California ::ne-type state ::wiki California
+::ne-surf Calif. ::ne-type state ::wiki California
+::ne-surf Massachusetts ::ne-type state ::wiki Massachusetts
+::ne-surf Mass. ::ne-type state ::wiki Massachusetts
+::ne-surf Minnesota ::ne-type state ::wiki Minnesota
+::ne-surf Florida ::ne-type state ::wiki Florida
+::ne-surf Hawaii ::ne-type state ::wiki Hawaii
+::ne-surf NY ::ne-type state ::wiki New_York
+::ne-surf CA ::ne-type state ::wiki California
+::ne-surf Hesse ::ne-type state ::wiki Hesse
+::ne-surf NC ::ne-type state ::wiki North_Carolina
+::ne-surf Ohio ::ne-type state ::wiki Ohio
+::ne-surf Pennsylvania ::ne-type state ::wiki Pennsylvania
+::ne-surf Virginia ::ne-type state ::wiki Virginia
+::ne-surf Alaska ::ne-type state ::wiki Alaska
+::ne-surf Arizona ::ne-type state ::wiki Arizona
+::ne-surf Georgia ::ne-type state ::wiki Georgia_(U.S._state)
+::ne-surf Illinois ::ne-type state ::wiki Illinois
+::ne-surf Indiana ::ne-type state ::wiki Indiana
+::ne-surf Iowa ::ne-type state ::wiki Iowa
+::ne-surf Jammu-Kashmir ::ne-type state ::wiki Jammu_and_Kashmir
+::ne-surf Jammu and Kashmir ::ne-type state ::wiki Jammu_and_Kashmir
+::ne-surf Kansas ::ne-type state ::wiki Kansas
+::ne-surf Kentucky ::ne-type state ::wiki Kentucky
+::ne-surf MI ::ne-type state ::wiki Michigan
+::ne-surf Maine ::ne-type state ::wiki Maine
+::ne-surf Maryland ::ne-type state ::wiki Maryland
+::ne-surf Missouri ::ne-type state ::wiki Missouri
+::ne-surf New South Wales ::ne-type state ::wiki New_South_Wales
+::ne-surf New York ::ne-type state ::wiki New_York
+::ne-surf North Dakota ::ne-type state ::wiki North_Dakota
+::ne-surf Texas ::ne-type state ::wiki Texas
+::ne-surf Victoria ::ne-type state ::wiki Victoria_(Australia)
+::ne-surf Wisconsin ::ne-type state ::wiki Wisconsin
+::ne-surf Rio de Janeiro ::ne-type state ::wiki Rio_de_Janeiro_(state)
+::ne-surf North Carolina ::ne-type state ::wiki North_Carolina
+::ne-surf Michigan ::ne-type state ::wiki Michigan
+::ne-surf Bavaria ::ne-type state ::wiki Bavaria
+::ne-surf South Carolina ::ne-type state ::wiki South_Carolina
+::ne-surf South Dakota ::ne-type state ::wiki South_Dakota
+::ne-surf Oregon ::ne-type state ::wiki Oregon
+::ne-surf Vermont ::ne-type state ::wiki Vermont
+::ne-surf Utah ::ne-type state ::wiki Utah
+::ne-surf Colorado ::ne-type state ::wiki Colorado
+::ne-surf Wyoming ::ne-type state ::wiki Wyoming
+::ne-surf Montana ::ne-type state ::wiki Montana
+::ne-surf Idaho ::ne-type state ::wiki Idaho
+::ne-surf New Hampshire ::ne-type state ::wiki New_Hampshire
+::ne-surf New Mexico ::ne-type state ::wiki New_Mexico
+::ne-surf Arkansas ::ne-type state ::wiki Arkansas
+::ne-surf Oklahoma ::ne-type state ::wiki Oklahoma
+::ne-surf Louisiana ::ne-type state ::wiki Louisiana
+::ne-surf Mississippi ::ne-type state ::wiki Mississippi
+::ne-surf Alabama ::ne-type state ::wiki Alabama
+::ne-surf Delaware ::ne-type state ::wiki Delaware
+::ne-surf Tennessee ::ne-type state ::wiki Tennessee
+::ne-surf Kentucky ::ne-type state ::wiki Kentucky
+::ne-surf Nebraska ::ne-type state ::wiki Nebraska
+::ne-surf Connecticut ::ne-type state ::wiki Connecticut
+::ne-surf Nevada ::ne-type state ::wiki Nevada
+::ne-surf New Jersey ::ne-type state ::wiki New_Jersey
+::ne-surf Rhode Island ::ne-type state ::wiki Rhode_Island
+::ne-surf Washington ::ne-type state ::wiki Washington_(state)
+::ne-surf West Virginia ::ne-type state ::wiki West_Virginia
+::ne-surf North Rhine-Westphalia ::ne-type state ::wiki North_Rhine-Westphalia
+::ne-surf Lower Saxony ::ne-type state ::wiki Lower_Saxony
+::ne-surf Saxony ::ne-type state ::wiki Saxony
+::ne-surf Schleswig-Holstein ::ne-type state ::wiki Schleswig-Holstein
+::ne-surf Saarland ::ne-type state ::wiki Saarland
+
+
+::ne-surf Gibraltar ::ne-type territory ::wiki Gibraltar
+
+# region list
+::ne-surf West ::ne-type world-region ::wiki Western_world
+::ne-surf Kashmir ::ne-type world-region ::wiki Kashmir
+::ne-surf Middle East ::ne-type world-region ::wiki Middle_East
+::ne-surf Southeast Asia ::ne-type world-region ::wiki Southeast_Asia
+::ne-surf Latin America ::ne-type world-region ::wiki Latin_America
+::ne-surf Himalayas ::ne-type world-region ::wiki Himalayas
+::ne-surf Central Asia ::ne-type world-region ::wiki Central_Asia
+::ne-surf Golden Triangle ::ne-type world-region ::wiki Golden_Triangle_(Southeast_Asia)
+::ne-surf North Africa ::ne-type world-region ::wiki North_Africa
+::ne-surf Central Europe ::ne-type world-region ::wiki Central_Europe
+::ne-surf Eastern Europe ::ne-type world-region ::wiki Eastern_Europe
+::ne-surf South Ossetia ::ne-type country-region ::wiki South_Ossetia
+::ne-surf Asia-Pacific ::ne-type world-region ::wiki Asia-Pacific
+::ne-surf Asia Pacific ::ne-type world-region ::wiki Asia-Pacific
+::ne-surf Balkans ::ne-type world-region ::wiki Balkans
+::ne-surf Siberia ::ne-type country-region ::wiki Siberia
+::ne-surf South Asia ::ne-type world-region ::wiki South_Asia
+::ne-surf Baltic ::ne-type world-region ::wiki Baltic_states
+::ne-surf Korean Peninsula ::ne-type world-region ::wiki Korean_Peninsula
+::ne-surf West Africa ::ne-type world-region ::wiki West_Africa
+::ne-surf East Africa ::ne-type world-region ::wiki East_Africa
+::ne-surf Amazon ::ne-type world-region ::wiki Amazon_basin
+::ne-surf Balkan ::ne-type world-region ::wiki Balkans
+::ne-surf Balkans ::ne-type world-region ::wiki Balkans
+::ne-surf Caucasus ::ne-type world-region ::wiki Caucasus
+::ne-surf Darfur ::ne-type country-region ::wiki Darfur
+::ne-surf East Asia ::ne-type world-region ::wiki East_Asia
+::ne-surf Eastern Asia ::ne-type world-region ::wiki East_Asia
+::ne-surf Horn of Africa ::ne-type world-region ::wiki Horn_of_Africa
+::ne-surf Western Europe ::ne-type world-region ::wiki Western_Europe
+::ne-surf Caribbean ::ne-type world-region ::wiki Caribbean
+::ne-surf Central Europe ::ne-type world-region ::wiki Central_Europe
+::ne-surf East Asia ::ne-type world-region ::wiki East_Asia
+::ne-surf Far East ::ne-type world-region ::wiki Far_East
+::ne-surf Gaza Strip ::ne-type country-region ::wiki Gaza_Strip
+::ne-surf Indies ::ne-type world-region ::wiki Indies
+::ne-surf Maghreb ::ne-type world-region ::wiki Maghreb
+::ne-surf Mideast ::ne-type world-region ::wiki Middle_East
+::ne-surf North Pole ::ne-type world-region ::wiki North_Pole
+::ne-surf Pearl River Delta ::ne-type country-region ::wiki Pearl_River_Delta
+::ne-surf Sahel ::ne-type world-region ::wiki Sahel
+::ne-surf Scandinavia ::ne-type world-region ::wiki Scandinavia
+::ne-surf South East Asia ::ne-type world-region ::wiki Southeast_Asia
+::ne-surf South Pole ::ne-type world-region ::wiki South_Pole
+::ne-surf Southern Europe ::ne-type world-region ::wiki Southern_Europe
+::ne-surf Southwest Asia ::ne-type world-region ::wiki Western_Asia
+::ne-surf Southwestern Asia ::ne-type world-region ::wiki Western_Asia
+::ne-surf West Asia ::ne-type world-region ::wiki Western_Asia
+::ne-surf Western Asia ::ne-type world-region ::wiki Western_Asia
+::ne-surf Sub-Saharan Africa ::ne-type world-region ::wiki Sub-Saharan_Africa
+::ne-surf sub-Saharan Africa ::ne-type world-region ::wiki Sub-Saharan_Africa
+::ne-surf West Bank ::ne-type country-region ::wiki West_Bank
+::ne-surf Western Hemisphere ::ne-type world-region ::wiki Western_Hemisphere
+::ne-surf Central Asia ::ne-type world-region ::wiki Central_Asia
+::ne-surf Midwest ::ne-type country-region ::wiki Midwestern_United_States
+::ne-surf Baluchistan ::ne-type world-region ::wiki Balochistan
+::ne-surf Balochistan ::ne-type world-region ::wiki Balochistan
+::ne-surf Indochina ::ne-type world-region ::wiki Indochina
+::ne-surf East Indies ::ne-type world-region ::wiki Indies
+::ne-surf Balkan Peninsula ::ne-type world-region ::wiki Balkans
+::ne-surf Baltics ::ne-type world-region ::wiki Baltic_states
+::ne-surf Baltic countries ::ne-type world-region ::wiki Baltic_states
+::ne-surf Baltic nations ::ne-type world-region ::wiki Baltic_states
+::ne-surf Central America ::ne-type world-region ::wiki Central_America
+# treaty/law list
+::ne-surf NPT ::ne-type treaty ::wiki Treaty_on_the_Non-Proliferation_of_Nuclear_Weapons
+::ne-surf CFE ::ne-type treaty ::wiki Treaty_on_Conventional_Armed_Forces_in_Europe
+::ne-surf Conventional Forces in Europe Treaty ::ne-type treaty ::wiki Treaty_on_Conventional_Armed_Forces_in_Europe
+::ne-surf ABM ::ne-type treaty ::wiki Anti-Ballistic_Missile_Treaty
+::ne-surf Conventional Forces in Europe Treaty ::ne-type treaty ::wiki Treaty_on_Conventional_Armed_Forces_in_Europe
+::ne-surf Nuclear Nonproliferation Treaty ::ne-type treaty ::wiki Treaty_on_the_Non-Proliferation_of_Nuclear_Weapons
+::ne-surf CFE Treaty ::ne-type treaty ::wiki Treaty_on_Conventional_Armed_Forces_in_Europe
+::ne-surf Non-Proliferation Treaty ::ne-type treaty ::wiki Treaty_on_the_Non-Proliferation_of_Nuclear_Weapons
+::ne-surf Nuclear Non-Proliferation Treaty ::ne-type treaty ::wiki Treaty_on_the_Non-Proliferation_of_Nuclear_Weapons
+::ne-surf Treaty on Conventional Armed Forces in Europe ::ne-type treaty ::wiki Treaty_on_Conventional_Armed_Forces_in_Europe
+::ne-surf Treaty on Conventional Forces in Europe ::ne-type treaty ::wiki Treaty_on_Conventional_Armed_Forces_in_Europe
+::ne-surf Anti-Ballistic Missile Treaty ::ne-type treaty ::wiki Anti-Ballistic_Missile_Treaty
+::ne-surf Nuclear Non-Proliferation Treaty ::ne-type treaty ::wiki Treaty_on_the_Non-Proliferation_of_Nuclear_Weapons
+::ne-surf ABM Treaty ::ne-type treaty ::wiki Anti-Ballistic_Missile_Treaty
+::ne-surf Dayton Accord ::ne-type treaty ::wiki Dayton_Agreement
+::ne-surf START-II ::ne-type treaty ::wiki START_II
+::OK_SPECIALIZATION ::gen aircraft-type ::spec jet
+::OK_SPECIALIZATION ::gen aircraft-type ::spec plane
+::OK_SPECIALIZATION ::gen city ::spec capital
+::OK_SPECIALIZATION ::gen company ::spec group
+::OK_SPECIALIZATION ::gen country ::spec republic
+::OK_SPECIALIZATION ::gen facility ::spec building
+::OK_SPECIALIZATION ::gen facility ::spec plant
+::OK_SPECIALIZATION ::gen facility ::spec reactor
+::OK_SPECIALIZATION ::gen product ::spec missile
+::OK_SPECIALIZATION ::gen product ::spec rocket
+::OK_SPECIALIZATION ::gen product ::spec submarine
+::OK_SPECIALIZATION ::gen publication ::spec agency
+::ne-surf Tory ::ne-type political-party ::wiki Conservative_Party_(UK)
+::ne-surf Tories ::ne-type political-party ::wiki Conservative_Party_(UK)

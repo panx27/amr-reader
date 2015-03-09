@@ -194,23 +194,57 @@ def revise_node(content, amr_nodes, amr_nodes_acr):
         amr_nodes[content].next_ = arg_nodes
     
 '''
- functionality: retrieve nodes and generate paths
+ retrieve path - whole graph
 '''
-def retrieve_node(node, parent='@'):
-    # global node_paths
-    node_paths.append((parent, node.name_, node.edge_label_))
+def retrieve_path_whole(node, parent, paths_whole):
+    paths_whole.append((parent, node.name_, node.edge_label_))
     for i in node.next_:
-        retrieve_node(i, node.name_)
-        
-def amr_reader(raw_amr):
+        retrieve_path_whole(i, node.name_, paths_whole)
+
+'''
+ retrieve path - root to entity
+'''
+def retrieve_path_rte(node, path, paths_rte):
+    for i in node.next_:
+        tmp = path[:] # passing by value
+        if i.is_entity_:
+            ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+            path.append((i.edge_label_, ne))
+            paths_rte.append(path)
+            path = tmp
+        else:
+            tmp.append((i.edge_label_, i.ful_name_))
+            retrieve_path_rte(i, tmp, paths_rte)
+
+'''
+ retrieve path - entity to leaf
+'''
+def retrieve_path_etl(node, path, paths_etl):
+    if node.next_ == list():
+        paths_etl.append(path)
+    for i in node.next_:
+        tmp = path[:] # passing by value
+        if i.is_entity_:
+            ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+            tmp.append((i.edge_label_, ne))
+            retrieve_path_rte(i, tmp, paths_rte)
+        else:
+            tmp.append((i.edge_label_, i.ful_name_))
+            retrieve_path_etl(i, tmp, paths_etl)
+
+'''
+ amr reader
+'''
+def amr_reader(raw_amr_input):
     global amr_contents
     amr_contents = list()
-    global node_paths
-    node_paths = list()
     amr_nodes = dict() # amr content as key
     amr_nodes_acr = dict() # acronym as key
-
-    split_amr(raw_amr, list())
+    paths_whole = list()
+    paths_rte = list()
+    paths_etl = list()
+    
+    split_amr(raw_amr_input, list())
     for i in amr_contents:
         if i.count('(') == 1 and i.count(')') == 1:
             generate_node_single(i, amr_nodes, amr_nodes_acr)
@@ -221,24 +255,33 @@ def amr_reader(raw_amr):
         if i.count('(') == 1 and i.count(')') == 1:
             revise_node(i, amr_nodes, amr_nodes_acr)
 
-    # the last node (the whole raw amr) is always the root of the graph
+    # the last node (whole amr) is always the root of the graph
     root = amr_nodes[sorted(amr_nodes, key=len, reverse=True)[0]]
-    retrieve_node(root)
+    retrieve_path_whole(root, '@', paths_whole)
 
-    return node_paths, amr_nodes, amr_nodes_acr
+    retrieve_path_rte(root, [('@root', root.ful_name_)], paths_rte)
+    # for i in paths_rte: print i
 
-def main():
-    try: os.mkdir('../output/graphs/')
-    except OSError: pass
+    for i in amr_nodes_acr:
+        node = amr_nodes_acr[i]
+        if node.is_entity_ and node.next_ != list():
+            ne = ('@entity', node.entity_type_+'\t'+node.entity_name_)
+            retrieve_path_etl(node, [ne], paths_etl)
+    # for i in paths_etl: print i
 
-    input = open('../output/test', 'r').read()
-    # input = open('../output/banked_amr', 'r').read()
+    return amr_nodes, amr_nodes_acr, paths_whole, paths_rte, paths_etl
+
+'''
+ main function
+ input: raw amr
+ output: amr graph
+         amr path
+'''
+def main(input, output, graph_path='../output/graphs/'):
     sentences = input.strip().split('# ::id ')
     sentences = sentences[1:]
     raw_amr = list()
-    output = open('../output/test.html', 'w')
-    # output = open('../output/banked_amr.html', 'w')
-    output.write('<meta charset=\'utf-8\'>\n')
+
     for i in sentences:
         nline = i.split('\n')
         senid = nline[0]
@@ -246,11 +289,23 @@ def main():
         amr = '\n'.join(nline[2:]).strip()
         raw_amr.append((senid, sen, amr))
         print senid
-        node_paths, amr_nodes, amr_nodes_acr = amr_reader(amr)
-        visualizer(amr_nodes_acr, node_paths, '../output/graphs/', senid)
-        html(senid, sen, amr, output)
+        if amr_validator(amr) == False:
+            raise NameError('Invalid AMR Input: %s' % sen_id)
+        amr_nodes, amr_nodes_acr, paths_whole, paths_rte, paths_etl = amr_reader(amr)
 
+        visualizer(amr_nodes_acr, paths_whole, graph_path, senid)
+        html(senid, sen, amr, paths_rte, paths_etl, output)
 
-        
 if __name__ == '__main__':
-    main()
+    graph_path = '../output/graphs/'
+    try: os.mkdir(graph_path)
+    except OSError: pass
+
+    input = open('../output/test', 'r').read()
+    # input = open('../output/banked_amr', 'r').read()
+
+    output = open('../output/test.html', 'w')
+    # output = open('../output/banked_amr.html', 'w')
+    output.write('<meta charset=\'utf-8\'>\n')
+
+    main(input, output, graph_path)
