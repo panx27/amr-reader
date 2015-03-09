@@ -12,3 +12,69 @@ The Yuri dolgoruky is the first in a series of new nuclear submarines to be comm
                                           :mod (n3 / new))))))
             :time (y / year
                   :mod (t / this))))
+
+
+# ::id DF-170-181103-888_2097.2
+Hallmark could make a fortune off of this guy.
+(p / possible
+      :domain (m / make-05
+            :ARG0 (c / company :wiki "Hallmark_Cards"
+                  :name (n / name :op1 "Hallmark"))
+            :ARG1 (f / fortune
+                  :source (g / guy
+                        :mod (t / this)))))
+
+# ::id DF-170-181103-888_2097.3
+I don't follow, why should he apologize to Palin?
+(a / and
+      :op1 (f / follow-02 :polarity -
+            :ARG0 (i / i))
+      :op2 (r / recommend-01
+            :ARG1 (a3 / apologize-01
+                  :ARG0 (h / he)
+                  :ARG2 (p / person :wiki "Sarah_Palin"
+                        :name (n / name :op1 "Palin")))
+            :ARG1-of (c / cause-01
+                  :ARG0 (a2 / amr-unknown))))
+
+# ::id DF-170-181103-888_2097.4
+Did Palin apologize to Giffords?
+(a / apologize-01 :mode interrogative
+      :ARG0 (p / person :wiki "Sarah_Palin"
+            :name (n / name :op1 "Palin"))
+      :ARG2 (p2 / person :wiki "Gabrielle_Giffords"
+            :name (n2 / name :op1 "Giffords")))
+
+# ::id DF-170-181103-888_2097.5
+He needs to conduct a beer summit between Palin and NBC.
+(n / need-01
+      :ARG0 (h / he)
+      :ARG1 (c / conduct-01
+            :ARG0 h
+            :ARG1 (m / meet-03
+                  :ARG0 (p / person :wiki "Sarah_Palin"
+                        :name (n2 / name :op1 "Palin"))
+                  :ARG1 (p2 / publication :wiki "NBC"
+                        :name (n3 / name :op1 "NBC"))
+                  :mod (s / summit
+                        :mod (b / beer)))))
+
+# ::id DF-170-181103-888_2097.6
+Mend some fences and get this country moving.
+(a / and
+      :op1 (m / mend-01
+            :ARG1 (f / fence
+                  :quant (s / some)))
+      :op2 (g / get-04
+            :ARG1 (m2 / move-03
+                  :ARG1 (c / country
+                        :mod (t / this)))))
+
+# ::id DF-170-181103-888_2097.7
+He could call it the APOLOGIES ON BEER tour.
+(p / possible
+      :domain (c / call-01
+            :ARG0 (h / he)
+            :ARG1 (i / it)
+            :ARG2 (t / tour :wiki -
+                  :name (n / name :op1 "APOLOGIES" :op2 "ON" :op3 "BEER"))))
