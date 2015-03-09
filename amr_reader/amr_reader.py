@@ -227,7 +227,7 @@ def retrieve_path_etl(node, path, paths_etl):
         if i.is_entity_:
             ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
             tmp.append((i.edge_label_, ne))
-            retrieve_path_rte(i, tmp, paths_rte)
+            retrieve_path_etl(i, tmp, paths_etl)
         else:
             tmp.append((i.edge_label_, i.ful_name_))
             retrieve_path_etl(i, tmp, paths_etl)
