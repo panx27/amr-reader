@@ -34,3 +34,7 @@ Graph:<br>
       Orange Ellispe: concept with sense
       Blue Rectangle: named entity
 ![alt tag](https://github.com/panx27/amr-reader/blob/master/example.png)
+
+## Citation
+If you would like to cite this work, please cite the following publication: <br>
+Unsupervised Entity Linking with Abstract Meaning Representation.
