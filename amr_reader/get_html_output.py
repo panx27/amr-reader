@@ -19,7 +19,7 @@ def path(name, paths):
             if role == '@root' or role == '@entity':
                 p += '<font face="arial">%s</font>' % concept
             else:
-                p += ' --> <font face="verdana" color="red">%s</font> <font face="arial">%s</font>' % (role, concept)
+                p += ' --> <font face="verdana" color="orange">%s</font> <font face="arial">%s</font>' % (role, concept)
         p += '<br>'
     return result + p + '\n'
 

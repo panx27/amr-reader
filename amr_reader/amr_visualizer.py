@@ -2,11 +2,12 @@ import re
 import pygraphviz as pgv
 
 
+
 '''
  input: amr_nodes_acr, nodes_paths
  output: amr graph
 '''
-def visualizer(amr_nodes_acr, node_paths, output_path='', output_name='amr_graph'):
+def visualizer(amr_nodes_acr, node_paths, output_path='', output_name='amr_graph', show_wiki=True):
     nodes = set()
     for i in node_paths:
         nodes.add(i[0])
@@ -22,7 +23,10 @@ def visualizer(amr_nodes_acr, node_paths, output_path='', output_name='amr_graph
             pol = '\npolarity'
         if node.ful_name_ != '':
             if node.is_entity_: # node is a named entity
-                ne_name = '%s\nwiki: %s' % (node.entity_name_.decode("utf-8"), node.wiki_)
+                if show_wiki:
+                    ne_name = '%s\nwiki: %s' % (node.entity_name_.decode("utf-8"), node.wiki_)
+                else:
+                    ne_name = '%s\n' % node.entity_name_.decode("utf-8")
                 G.add_node(i, shape='point', fillcolor='red')
                 G.add_node(i+'#'+node.ful_name_, shape='box', color='blue', label=ne_name)
                 G.add_edge(i, i+'#'+node.ful_name_, label=node.ful_name_+pol)
@@ -45,3 +49,4 @@ def visualizer(amr_nodes_acr, node_paths, output_path='', output_name='amr_graph
     G.layout()
     G.layout(prog = 'dot')
     G.draw('%s%s.png' % (output_path, output_name))
+    # G.draw('%s%s.pdf' % (output_path, output_name))

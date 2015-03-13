@@ -1,17 +1,6 @@
-# ::id DF-170-181103-888_2097.1
-He can't seem to help himself from apologizing for anything and everything.
-(p / possible :polarity -
-      :domain (s / seem-01
-            :ARG1 (h / help-02
-                  :ARG0 (h2 / he)
-                  :ARG1 (a / apologize-01
-                        :ARG0 h2
-                        :ARG1 (a2 / and
-                              :op1 (a3 / anything)
-                              :op2 (e / everything))))))
-
-# ::id DF-170-181103-888_2097.2
-Hallmark could make a fortune off of this guy.
+# ::id DF-170-181103-888_2097.2 ::date 2013-09-16T07:19:54 ::annotator LDC-AMR-14 ::preferred
+# ::snt Hallmark could make a fortune off of this guy.
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2097_2.txt
 (p / possible
       :domain (m / make-05
             :ARG0 (c / company :wiki "Hallmark_Cards"
@@ -20,8 +9,9 @@ Hallmark could make a fortune off of this guy.
                   :source (g / guy
                         :mod (t / this)))))
 
-# ::id DF-170-181103-888_2097.3
-I don't follow, why should he apologize to Palin?
+# ::id DF-170-181103-888_2097.3 ::date 2013-09-16T07:22:01 ::annotator LDC-AMR-14 ::preferred
+# ::snt I don't follow, why should he apologize to Palin?
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2097_3.txt
 (a / and
       :op1 (f / follow-02 :polarity -
             :ARG0 (i / i))
@@ -33,16 +23,18 @@ I don't follow, why should he apologize to Palin?
             :ARG1-of (c / cause-01
                   :ARG0 (a2 / amr-unknown))))
 
-# ::id DF-170-181103-888_2097.4
-Did Palin apologize to Giffords?
+# ::id DF-170-181103-888_2097.4 ::date 2013-09-16T07:25:37 ::annotator LDC-AMR-14 ::preferred
+# ::snt Did Palin apologize to Giffords?
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2097_4.txt
 (a / apologize-01 :mode interrogative
       :ARG0 (p / person :wiki "Sarah_Palin"
             :name (n / name :op1 "Palin"))
       :ARG2 (p2 / person :wiki "Gabrielle_Giffords"
             :name (n2 / name :op1 "Giffords")))
 
-# ::id DF-170-181103-888_2097.5
-He needs to conduct a beer summit between Palin and NBC.
+# ::id DF-170-181103-888_2097.5 ::date 2013-09-16T07:28:10 ::annotator LDC-AMR-14 ::preferred
+# ::snt He needs to conduct a beer summit between Palin and NBC.
+# ::save-date Fri Jan 24, 2014 ::file DF-170-181103-888_2097_5.txt
 (n / need-01
       :ARG0 (h / he)
       :ARG1 (c / conduct-01
@@ -55,8 +47,9 @@ He needs to conduct a beer summit between Palin and NBC.
                   :mod (s / summit
                         :mod (b / beer)))))
 
-# ::id DF-170-181103-888_2097.6
-Mend some fences and get this country moving.
+# ::id DF-170-181103-888_2097.6 ::date 2013-09-16T07:36:43 ::annotator LDC-AMR-14 ::preferred
+# ::snt Mend some fences and get this country moving.
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2097_6.txt
 (a / and
       :op1 (m / mend-01
             :ARG1 (f / fence
@@ -66,8 +59,9 @@ Mend some fences and get this country moving.
                   :ARG1 (c / country
                         :mod (t / this)))))
 
-# ::id DF-170-181103-888_2097.7
-He could call it the APOLOGIES ON BEER tour.
+# ::id DF-170-181103-888_2097.7 ::date 2013-09-16T07:38:54 ::annotator LDC-AMR-14 ::preferred
+# ::snt He could call it the APOLOGIES ON BEER tour.
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2097_7.txt
 (p / possible
       :domain (c / call-01
             :ARG0 (h / he)
@@ -75,8 +69,9 @@ He could call it the APOLOGIES ON BEER tour.
             :ARG2 (t / tour :wiki -
                   :name (n / name :op1 "APOLOGIES" :op2 "ON" :op3 "BEER"))))
 
-# ::id DF-170-181103-888_2097.8
-Hell, sell tickets and hire the Chinese to cater the event.
+# ::id DF-170-181103-888_2097.8 ::date 2013-09-16T07:41:20 ::annotator LDC-AMR-14 ::preferred
+# ::snt Hell, sell tickets and hire the Chinese to cater the event.
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2097_8.txt
 (a / and
       :op1 (s / sell-01
             :ARG1 (t / ticket))
@@ -89,8 +84,9 @@ Hell, sell tickets and hire the Chinese to cater the event.
                   :ARG1 (e / event)))
       :mod (h / hell))
 
-# ::id DF-170-181103-888_2382.1
-Who Drops Out After Super Tuesday?
+# ::id DF-170-181103-888_2382.1 ::date 2013-09-16T07:43:44 ::annotator LDC-AMR-14 ::preferred
+# ::snt Who Drops Out After Super Tuesday?
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2382_1.txt
 (d2 / drop-04
       :ARG0 (a / amr-unknown)
       :time (a2 / after
@@ -98,8 +94,9 @@ Who Drops Out After Super Tuesday?
                   :weekday (t / tuesday
                         :mod (s / super)))))
 
-# ::id DF-170-181103-888_2382.2
-I think Romney wins big today and obviously stays in.
+# ::id DF-170-181103-888_2382.2 ::date 2013-09-16T07:46:10 ::annotator LDC-AMR-14 ::preferred
+# ::snt I think Romney wins big today and obviously stays in.
+# ::save-date Wed Oct 15, 2014 ::file DF-170-181103-888_2382_2.txt
 (t / think-01
       :ARG0 (i / i)
       :ARG1 (a / and
@@ -111,8 +108,9 @@ I think Romney wins big today and obviously stays in.
                   :ARG1 p
                   :ARG1-of (o / obvious-41))))
 
-# ::id DF-170-181103-888_2382.3
-Santorum gets enough of a boost to do the Huckabee hangs around.
+# ::id DF-170-181103-888_2382.3 ::date 2013-09-16T07:50:02 ::annotator LDC-AMR-14 ::preferred
+# ::snt Santorum gets enough of a boost to do the Huckabee hangs around.
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2382_3.txt
 (g / get-01
       :ARG0 (p / person :wiki "Rick_Santorum"
             :name (n / name :op1 "Santorum"))
@@ -127,8 +125,9 @@ Santorum gets enough of a boost to do the Huckabee hangs around.
                               :mod (p2 / person :wiki "Mike_Huckabee"
                                     :name (n2 / name :op1 "Huckabee")))))))
 
-# ::id DF-170-181103-888_2382.4
-I think Gingrich's sole win in GA is enough to hang it up and go back to making millions in the private sector.
+# ::id DF-170-181103-888_2382.4 ::date 2013-09-16T07:53:56 ::annotator LDC-AMR-14 ::preferred
+# ::snt I think Gingrich's sole win in GA is enough to hang it up and go back to making millions in the private sector.
+# ::save-date Sun Jan 26, 2014 ::file DF-170-181103-888_2382_4.txt
 (t / think-01
       :ARG0 (i / i)
       :ARG1 (e / enough
@@ -153,8 +152,9 @@ I think Gingrich's sole win in GA is enough to hang it up and go back to making 
                               :ARG2 (s3 / sector
                                     :mod (p2 / private)))))))
 
-# ::id DF-170-181103-888_2382.5
-I think the Good Doctor is too crazy to hang it up.
+# ::id DF-170-181103-888_2382.5 ::date 2013-09-16T08:01:27 ::annotator LDC-AMR-14 ::preferred
+# ::snt I think the Good Doctor is too crazy to hang it up.
+# ::save-date Sat Oct 18, 2014 ::file DF-170-181103-888_2382_5.txt
 (t / think-01
       :ARG0 (i / i)
       :ARG1 (c / crazy
@@ -165,27 +165,31 @@ I think the Good Doctor is too crazy to hang it up.
                         :ARG1 (i2 / it)
                         :mod (u / up)))))
 
-# ::id DF-170-181103-888_2382.6
-I will stick around until the end.
+# ::id DF-170-181103-888_2382.6 ::date 2013-09-16T08:05:43 ::annotator LDC-AMR-14 ::preferred
+# ::snt I will stick around until the end.
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2382_6.txt
 (s / stick-03
       :ARG0 (i / i)
       :time (u / until
             :op1 (e / end-01)))
 
-# ::id DF-170-181103-888_2382.7
-No one
+# ::id DF-170-181103-888_2382.7 ::date 2013-09-16T08:07:18 ::annotator LDC-AMR-14 ::preferred
+# ::snt No one
+# ::save-date Thu Jan 23, 2014 ::file DF-170-181103-888_2382_7.txt
 (n2 / no-one)
 
-# ::id DF-170-181103-888_2382.8
-I think Mitt drops out...
+# ::id DF-170-181103-888_2382.8 ::date 2013-09-16T08:08:35 ::annotator LDC-AMR-14 ::preferred
+# ::snt I think Mitt drops out...
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2382_8.txt
 (t / think-01
       :ARG0 (i / i)
       :ARG1 (d / drop-04
             :ARG0 (p / person :wiki "Mitt_Romney"
                   :name (n / name :op1 "Mitt"))))
 
-# ::id DF-170-181103-888_2382.9
-Ok, my answer is no one and Obama wins the GE.
+# ::id DF-170-181103-888_2382.9 ::date 2013-09-16T08:09:31 ::annotator LDC-AMR-14 ::preferred
+# ::snt Ok, my answer is no one and Obama wins the GE.
+# ::save-date Thu Jan 23, 2014 ::file DF-170-181103-888_2382_9.txt
 (a / answer-01
       :ARG0 (i / i)
       :ARG2 (a2 / and
@@ -197,8 +201,9 @@ Ok, my answer is no one and Obama wins the GE.
                         :name (n3 / name :op1 "GE"))))
       :mod (o2 / ok))
 
-# ::id DF-170-181103-888_2382.10
-The only one with any reason to will be Newt, but I don't think that he will.
+# ::id DF-170-181103-888_2382.10 ::date 2013-09-16T08:12:43 ::annotator LDC-AMR-14 ::preferred
+# ::snt The only one with any reason to will be Newt, but I don't think that he will.
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2382_10.txt
 (c / contrast-01
       :ARG1 (p / person :wiki "Newt_Gingrich"
             :name (n / name :op1 "Newt")
@@ -210,710 +215,3 @@ The only one with any reason to will be Newt, but I don't think that he will.
             :ARG0 (i / i)
             :ARG1 (w / will
                   :mod (h / he))))
-
-# ::id DF-170-181103-888_2466.1
-Ron Paul says tornado victims should not get aid
-(s / say-01
-      :ARG0 (p / person :wiki "Ron_Paul"
-            :name (n / name :op1 "Ron" :op2 "Paul"))
-      :ARG1 (r / recommend-01
-            :ARG1 (g / get-01 :polarity -
-                  :ARG0 (p2 / person
-                        :ARG1-of (v / victimize-01
-                              :ARG0 (t / tornado)))
-                  :ARG1 (a / aid-01))))
-
-# ::id DF-170-181103-888_2466.2
-Nuts.
-(n / nuts)
-
-# ::id DF-170-181103-888_2466.3
-My heart goes out to the people in tornado alley and I have no problem with my tax dollars going to help the survivors rebuild their lives.
-(a / and
-      :op1 (g / go-01
-            :ARG1 (h / heart
-                  :part-of (i / i))
-            :ARG4 (p / person
-                  :location (a2 / alley
-                        :mod (t / tornado)))
-            :direction (o / out))
-      :op2 (h2 / have-03 :polarity -
-            :ARG0 i
-            :ARG1 (p2 / problem)
-            :ARG1-of (c / cause-01
-                  :ARG0 (g2 / go-06
-                        :ARG0 (d / dollar
-                              :poss i
-                              :ARG1-of (t2 / tax-01))
-                        :ARG1 (h3 / help-01
-                              :ARG0 d
-                              :ARG1 (r / rebuild-01
-                                    :ARG0 p3
-                                    :ARG1 (l / life
-                                          :poss p3))
-                              :ARG2 (p3 / person
-                                    :ARG0-of (s / survive-01)))))))
-
-# ::id DF-170-181103-888_2466.4
-If you have no problem with your tax dollars going to aid them then you'd have no problem donating to them of your own free will.
-(h / have-03 :polarity -
-      :ARG0 (y / you)
-      :ARG1 (p / problem
-            :ARG1-of (c / cause-01
-                  :ARG0 (d / donate-01
-                        :ARG0 y
-                        :ARG2 (t / they)
-                        :mod (w / will
-                              :mod (f / free)
-                              :poss y))))
-      :condition (h2 / have-03 :polarity -
-            :ARG0 y
-            :ARG1 (p2 / problem
-                  :ARG1-of (c2 / cause-01
-                        :ARG0 (a / aid-01
-                              :ARG2 t
-                              :manner (d2 / dollar
-                                    :poss y
-                                    :ARG1-of (t2 / tax-01)))))))
-
-# ::id DF-170-181103-888_2466.5
-Not to mention that he's absolutely right that they should have insurance to cover them.
-(m / mention-01 :polarity -
-      :ARG1 (r / right-41
-            :ARG1 (h / he)
-            :ARG2 (r2 / recommend-01
-                  :ARG1 (h2 / have-03
-                        :ARG0 (t / they)
-                        :ARG1 (i / insurance)
-                        :purpose (c / cover-01
-                              :ARG1 t)))
-            :degree (a / absolute)))
-
-# ::id DF-170-181103-888_2466.6
-Ron Paul is not quite bright.
-(b / bright
-      :mod (q / quite :polarity -)
-      :domain (p / person :wiki "Ron_Paul"
-            :name (n / name :op1 "Ron" :op2 "Paul")))
-
-# ::id DF-170-181103-888_2466.7
-He's right in some ways but it doesn't translate into being right across the board.
-(c / contrast-01
-      :ARG1 (r / right-41
-            :ARG1 (h / he)
-            :mod (w / way
-                  :quant (s / some)))
-      :ARG2 (t / translate-01 :polarity -
-            :ARG2 (r2 / right-41
-                  :ARG1 h
-                  :mod (a / across
-                        :op1 (b / board)))))
-
-# ::id DF-170-181103-888_2466.8
-This isn't like someone's house burning down and they make an insurance claim.
-(r / resemble-01 :polarity -
-      :ARG1 (t / this)
-      :ARG2 (a / and
-            :op1 (b / burn-01
-                  :ARG1 (h / house
-                        :poss (s / someone))
-                  :direction (d / down))
-            :op2 (m / make-01
-                  :ARG0 s
-                  :ARG1 (c / claim-02
-                        :mod (i / insurance)))))
-
-# ::id DF-170-181103-888_2466.9
-Everything is gone, the entire infrastructure is gone.
-(g / gone
-      :domain (a / and
-            :op1 (e / everything)
-            :op2 (i / infrastructure
-                  :mod (e2 / entire))))
-
-# ::id DF-170-181103-888_2466.10
-Even if someone has insurance to cover their loss, that won't extend to the roads, power lines, sewers, public buildings.
-(e / extend-02 :polarity -
-      :ARG1 i
-      :ARG2 (o / or
-            :op1 (r / road)
-            :op2 (l / line
-                  :ARG0-of (p / power-01))
-            :op3 (s / sewer)
-            :op4 (b / building
-                  :mod (p2 / public)))
-      :concession (e2 / even-if
-            :op1 (h / have-03
-                  :ARG0 (s2 / someone)
-                  :ARG1 (i / insurance)
-                  :ARG2-of (c / cover-01
-                        :ARG1 (l2 / loss
-                              :poss s)))))
-
-# ::id DF-170-181103-888_2466.11
-The problem with this regime is aid is not distributed equally.
-(p / problem
-      :topic (r / regime
-            :mod (t / this))
-      :domain (d / distribute-01
-            :ARG1 (a / aid)
-            :manner (e / equal :polarity -)))
-
-# ::id DF-170-181103-888_2466.12
-Democrats get it, minorities get it, white republican jurisdictions don't.
-(c / contrast-01
-      :ARG1 (u / understand-01
-            :ARG0 (a / and
-                  :op1 (p / political-party :wiki "Democratic_Party_%28United_States%29"
-                        :name (n / name :op1 "Democrat"))
-                  :op2 (m / minority))
-            :ARG1 (i / it))
-      :ARG2 (u2 / understand-01 :polarity -
-            :ARG0 (j / jurisdiction
-                  :mod (w / white)
-                  :mod (p2 / political-party :wiki "Republican_Party_%28United_States%29"
-                        :name (n2 / name :op1 "Republican")))
-            :ARG1 i))
-
-# ::id DF-170-181103-888_2466.13
-Aid is now patronage, good party members get it.
-(p / patronage
-      :domain (a / aid-01)
-      :time (n / now)
-      :ARG1-of (g / get-02
-            :ARG0 (m / member
-                  :part-of (p2 / party)
-                  :mod (g2 / good))))
-
-# ::id DF-170-181103-888_2466.14
-Isn't it interesting how Libertarians' desire for "freedom" correspond so neatly with skinflints who don't want to give ANYONE, ANYTHING.
-(c / correspond-02
-      :ARG1 (d / desire-01
-            :ARG0 (l / libertarian)
-            :ARG1 (f / free-41))
-      :ARG2 (s2 / skinflint
-            :ARG0-of (w / want-01 :polarity -
-                  :ARG1 (g / give-01
-                        :ARG0 s2
-                        :ARG1 (a / anything)
-                        :ARG2 (a2 / anyone))))
-      :ARG2-of (i / interest-01)
-      :manner (n2 / neat
-            :degree (s / so)))
-
-# ::id DF-170-181103-888_2466.15
-So while libertarianism attracts people who want to be "free" it also attracts cheap assholes who don't want to pay their fair share.
-(a2 / attract-01
-      :ARG0 l
-      :ARG1 (a4 / asshole
-            :mod (c2 / cheap)
-            :ARG0-of (w2 / want-01 :polarity -
-                  :ARG1 (p2 / pay-01
-                        :ARG1 (s / share
-                              :mod (f2 / fair)
-                              :poss a4))))
-      :mod (a3 / also)
-      :time (a / attract-01
-            :ARG0 (l / libertarianism)
-            :ARG1 (p / person
-                  :ARG0-of (w / want-01
-                        :ARG1 (f / free-41
-                              :ARG1 p)))))
-
-# ::id DF-170-181103-888_2466.16
-Perhaps when Libertarians figure out a way to differentiate between the two, I'll vote for them.
-(p / possible
-      :domain (v / vote-01
-            :ARG0 (i / i)
-            :ARG1 (l / libertarian))
-      :time (f / figure-05
-            :ARG0 l
-            :ARG1 (w / way
-                  :manner-of (d / differentiate-01
-                        :ARG1 (t / two)))))
-
-# ::id DF-170-181103-888_2466.17
-I get what Ron Paul is saying.
-(u / understand-01
-      :ARG0 (i / i)
-      :ARG1 (t / thing
-            :ARG1-of (s / say-01
-                  :ARG0 (p / person :wiki "Ron_Paul"
-                        :name (n / name :op1 "Ron" :op2 "Paul")))))
-
-# ::id DF-170-181103-888_2466.18
-Thats what a Hardcore Libertarian would say.
-(s / say-01
-      :ARG0 (l / libertarian
-            :mod (h / hardcore))
-      :ARG1 (t / that))
-
-# ::id DF-170-181103-888_2466.19
-But the rest of us are thinking about the people that do not have insurance and/or need help right now.
-(c / contrast-01
-      :ARG2 (t / think-01
-            :ARG0 (r / rest
-                  :part-of (w / we))
-            :ARG1 (a / and-or
-                  :op1 (p / person
-                        :ARG0-of (h / have-03 :polarity -
-                              :ARG1 (i / insurance)))
-                  :op2 (p2 / person
-                        :ARG0-of (n / need-01
-                              :ARG1 (h2 / help-01)
-                              :time (r2 / right
-                                    :op1 (n2 / now)))))))
-
-# ::id DF-170-181103-888_2466.20
-Kind of hard to build a house over night, Mr Paul.
-(s / say-01
-      :ARG1 (h2 / hard
-            :degree (k / kind-of)
-            :domain (b / build-01
-                  :ARG1 (h / house)
-                  :duration (o / over
-                        :op1 (n / night))))
-      :ARG2 (p / person :wiki "Ron_Paul"
-            :name (n2 / name :op1 "Mr." :op2 "Paul")))
-
-# ::id DF-170-181103-888_2466.21
-Kind of hard to import food considering that the stores are probably wiped out too.
-(h / hard
-      :degree (k / kind-of)
-      :ARG1-of (c / cause-01
-            :ARG0 (c2 / consider-01
-                  :ARG1 (p / probable
-                        :domain (w / wipe-02
-                              :ARG1 (s / store)
-                              :mod (t / too)))))
-      :domain (i / import-01
-            :ARG1 (f / food)))
-
-# ::id DF-170-181103-888_2466.22
-How does one survive until the insurance(hopefully by a respectable company) claim comes through?
-(s / survive-01
-      :ARG0 (o / one)
-      :ARG1-of (c / cause-01
-            :ARG0 (a / amr-unknown))
-      :time (u / until
-            :op1 (c2 / come-17
-                  :ARG0 (c4 / company
-                        :ARG1-of (r / respect-01
-                              :mod (p / possible)
-                              :ARG1-of (h / hope-01)))
-                  :ARG1 (c3 / claim-01
-                        :ARG1 (i / insurance)))))
-
-# ::id DF-170-181103-888_2466.23
-How does one survive when you have the funds but the people you need to buy the goods from has no address?
-(s / survive-01
-      :ARG0 (o / one)
-      :ARG1 (c2 / contrast-01
-            :ARG1 (h / have-03
-                  :ARG0 o
-                  :ARG1 (f / fund))
-            :ARG2 (h2 / have-03
-                  :ARG0 (p / person
-                        :ARG2-of (b / buy-01
-                              :ARG0 o
-                              :ARG1 (g / good)
-                              :ARG1-of (n / need-01
-                                    :ARG0 o)))
-                  :ARG1 (a2 / address :polarity -)))
-      :ARG1-of (c / cause-01
-            :ARG0 (a / amr-unknown)))
-
-# ::id DF-170-181103-888_2466.24
-I know, you get into your pickup and drive over to the next town -- if you can find your damn pickup!!
-(k / know-01 :mode expressive
-      :ARG0 (i / i)
-      :ARG1 (a / and
-            :op1 (g / get-05
-                  :ARG1 (y / you)
-                  :ARG2 (p2 / pickup
-                        :poss y))
-            :op2 (d / drive-01
-                  :ARG0 y
-                  :ARG1 (o / over)
-                  :destination (t2 / town
-                        :mod (n / next)))
-            :condition (p / possible
-                  :domain (f / find-01
-                        :ARG0 y
-                        :ARG1 (p3 / pickup
-                              :poss y
-                              :mod (d2 / damn))))))
-
-# ::id DF-170-181103-888_2466.25
-Homeowners generally have insurance, but Federal Aid is necessary to provide for the clean up, repairs of electrical and water systems, roads, schools, buses, etc. etc.
-(c / contrast-01
-      :ARG1 (h / have-03
-            :ARG0 (p / person
-                  :ARG0-of (o / own-01
-                        :ARG1 (h2 / home)))
-            :ARG1 (i / insurance)
-            :mod (g / general))
-      :ARG2 (n / need-01
-            :ARG0 (p2 / provide-01
-                  :ARG0 a
-                  :ARG2 (a2 / and
-                        :op1 (c2 / clean-02)
-                        :op2 (r / repair-01
-                              :ARG1 (a4 / and
-                                    :op1 (s / system
-                                          :mod (e / electricity))
-                                    :op2 (s2 / system
-                                          :mod (w / water))
-                                    :op3 (r2 / road)
-                                    :op4 (s3 / school)
-                                    :op5 (b / buses)
-                                    :op6 (e2 / et-cetera)))))
-            :ARG1 (a / aid-01
-                  :mod (f / federal))))
-
-# ::id DF-170-181103-888_2466.26
-Keep in mind insurance companies are not in the business of paying claims, they are in the business of making money.
-(k / keep-03
-      :ARG1 (m / mind)
-      :ARG2 (c / contrast-01
-            :ARG1 (b / business :polarity -
-                  :domain (p / pay-01
-                        :ARG0 (c2 / company
-                              :mod (i / insurance))
-                        :ARG1 (c3 / claim)))
-            :ARG2 (b2 / business
-                  :domain (m2 / make-05
-                        :ARG0 c2
-                        :ARG1 (m3 / money)))))
-
-# ::id DF-170-181103-888_2466.27
-Anyone who suffers a loss as have those who lost everything over the weekend will not be made whole, and whatever claim they receive will not come soon or easy.
-(a / and
-      :op1 (m / make-18 :polarity -
-            :ARG0 (a2 / anyone
-                  :ARG0-of (s / suffer-01
-                        :ARG1 (l / lose-02)
-                        :ARG1-of (r / resemble-01
-                              :ARG2 (p / person
-                                    :ARG0-of (l2 / lose-02
-                                          :ARG1 (e / everything)
-                                          :time (o / over
-                                                :op1 (w / weekend)))))))
-            :ARG1 (w2 / whole))
-      :op2 (c / come-01
-            :ARG1 (c2 / claim
-                  :mod (w3 / whatever)
-                  :ARG1-of (r2 / receive-01
-                        :ARG0 a2))
-            :mod (o2 / or
-                  :op1 (s2 / soon :polarity -)
-                  :op2 (e2 / easy :polarity -))))
-
-# ::id DF-170-181103-888_2466.28
-Ron Paul and his Libertarian ideas are at best impractical.
-(i / impractical
-      :condition (g / good
-            :degree (m / most))
-      :domain (a2 / and
-            :op1 (p / person :wiki "Ron_Paul" :name (n / name :op1 "Ron" :op2 "Paul"))
-            :op2 (i2 / idea
-                  :poss p
-                  :mod (l / libertarian))))
-
-# ::id DF-170-181103-888_2520.1
-No surprise there.
-(s / surprise :polarity -
-      :location (t / there))
-
-# ::id DF-170-181103-888_2520.2
-He had to win there to stay in, so ultimately this helps Mitt keep the vote split.
-(o / obligate-01
-      :ARG2 (w / win-01
-            :ARG0 (h / he)
-            :location (t / there))
-      :purpose (s / stay-02
-            :ARG1 h)
-      :ARG0-of (c / cause-01
-            :ARG1 (h2 / help-01
-                  :ARG0 (t2 / this)
-                  :ARG1 (p / person :wiki "Mitt_Romney" :name (n / name :op1 "Mitt"))
-                  :ARG2 (k / keep-02
-                        :ARG0 p
-                        :ARG1 (s2 / split-01
-                              :ARG1 (v / vote)))
-                  :manner (u / ultimate))))
-
-# ::id DF-170-181103-888_2520.3
-Best outcome of the night would have been Newt losing there.
-(o / outcome
-      :mod (g / good
-            :degree (m / most))
-      :time (n2 / night)
-      :domain (l / lose-03
-            :ARG0 (p / person :wiki "Newt_Gingrich"
-                  :name (n / name :op1 "Newt"))
-            :location (t / there)))
-
-# ::id DF-170-181103-888_2520.4
-He's a nonfactor at this point and only in out of spite.
-(a / and
-      :op1 (f / factor :polarity -
-            :domain (h / he)
-            :time (t / this))
-      :op2 (r / race-02
-            :ARG0 h
-            :ARG1-of (c / cause-01
-                  :ARG0 (s / spite
-                        :mod (o / only)))))
-
-# ::id DF-170-181103-888_2520.5
-If he were out of the race, Santorum might have had a chance.
-(p / possible
-      :domain (h / have-03
-            :ARG0 (p2 / person :wiki "Rick_Santorum" :name (n / name :op1 "Santorum"))
-            :ARG1 (c / chance))
-      :condition (o / out
-            :domain (h2 / he)
-            :ARG0-of (r / race-02)))
-
-# ::id DF-170-181103-888_2529.1
-The Catholic Church is opposed to contraception for moral reasons.
-(o / oppose-01
-      :ARG0 (r / religious-group :wiki "Catholic_Church"
-            :name (n / name :op1 "Catholic" :op2 "Church"))
-      :ARG1 (c / contraception)
-      :ARG1-of (c2 / cause-01
-            :ARG0 (r2 / reason
-                  :mod (m / moral))))
-
-# ::id DF-170-181103-888_2529.2
-Where is the morality in creating a life when food and clean water are rare commodities?
-(m / morality
-      :location (a / amr-unknown)
-      :domain (c / create-01
-            :ARG1 (l / life)
-            :time (c2 / commodity
-                  :frequency (r / rare)
-                  :domain (a2 / and
-                        :op1 (f / food)
-                        :op2 (w / water
-                              :mod (c3 / clean))))))
-
-# ::id DF-170-181103-888_2529.3
-Where poverty exists and educational opportunities are non existent?
-(l / location
-      :location-of (a / and
-            :op1 (e / exist-01
-                  :ARG1 (p / poverty))
-            :op2 (e2 / exist-01 :polarity -
-                  :ARG1 (o / opportunity
-                        :mod (e3 / educate-01)))))
-
-# ::id DF-170-181103-888_2529.4
-Where is the morality when disease is spread?
-(m / morality
-      :location (a / amr-unknown)
-      :time (s / spread-03
-            :ARG1 (d / disease)))
-
-# ::id DF-170-181103-888_2529.5
-Where is the morality when a women is the victim of domestic violence?
-(m / morality
-      :location (a / amr-unknown)
-      :time (v / victimize-01
-            :ARG0 (v2 / violence
-                  :mod (d / domestic))
-            :ARG1 (w / woman)))
-
-# ::id DF-170-181103-888_2529.6
-When a women is forced to conceive and then trapped as the child become a lever to gain more power and more control?
-(t / time
-      :time-of (a / and
-            :op1 (f / force-01
-                  :ARG1 (w / woman)
-                  :ARG2 (c / conceive-02
-                        :ARG0 w))
-            :op2 (t2 / trap-01
-                  :ARG1 w
-                  :time (t3 / then)
-                  :time (b / become-01
-                        :ARG1 (p2 / person
-                              :ARG0-of (h / have-rel-role-91
-                                    :ARG1 w
-                                    :ARG2 (c2 / child)))
-                        :ARG2 (l / lever
-                              :purpose (g / gain-02
-                                    :ARG1 (a2 / and
-                                          :op1 (p / power
-                                                :degree (m / more))
-                                          :op2 (c3 / control-01
-                                                :ARG1 w
-                                                :degree (m2 / more)))))))))
-
-# ::id DF-170-181103-888_2529.7
-I am with you.
-(i / i
-      :accompanier (y / you))
-
-# ::id DF-170-181103-888_2529.8
-If you cant feed, house and take care of a baby you have no business having one.
-(p / possible :polarity -
-      :domain (a / and
-            :op1 (f / feed-01
-                  :ARG0 (y / you)
-                  :ARG2 (b / baby))
-            :op2 (h / house-01
-                  :ARG0 y
-                  :ARG1 b)
-            :op3 (c / care-01
-                  :ARG0 y
-                  :ARG1 b))
-      :condition-of (h2 / have-03 :polarity -
-            :ARG0 y
-            :ARG1 (b2 / business
-                  :purpose (h3 / have-05
-                        :ARG0 y
-                        :ARG1 b))))
-
-# ::id DF-170-181103-888_2529.9
-Why is it literally 100% impossible for the liberal mind to understand that just because you don't want government involved in something doesn't mean you're against it?
-(p2 / possible :polarity -
-      :ARG1-of (c / cause-01
-            :ARG0 (a / amr-unknown))
-      :degree (p / percentage-entity :value 100
-            :mod (l2 / literal))
-      :domain (u / understand-01
-            :ARG0 (m / mind
-                  :mod (l / liberal))
-            :ARG1 (c2 / cause-01
-                  :ARG0 (w / want-01 :polarity -
-                        :ARG0 (y / you)
-                        :ARG1 (i / involve-01
-                              :ARG1 (g / government-organization
-                                    :ARG0-of (g2 / govern-01))
-                              :ARG2 (s / something)))
-                  :ARG1 (m2 / mean-01 :polarity -
-                        :ARG0 w
-                        :ARG1 (o / oppose-01
-                              :ARG0 y
-                              :ARG1 s))
-                  :mod (j / just))))
-
-# ::id DF-170-181103-888_2529.10
-I'm in favor of feeding, clothing, and giving shelter to the poor. I'm against all the gov't institutions that tax our brains out and who inefficiently attempt to provide some of these things.
-(m / multi-sentence
-      :snt1 (f / favor-01
-            :ARG0 (i / i)
-            :ARG1 (a / and
-                  :op1 (f2 / feed-01
-                        :ARG2 (p / poor))
-                  :op2 (c / clothe-01
-                        :ARG1 p)
-                  :op3 (s / shelter-01
-                        :ARG2 p)))
-      :snt2 (o / oppose-01
-            :ARG0 i
-            :ARG1 (i2 / institution
-                  :part-of (g2 / government-organization
-                        :ARG0-of (g3 / govern-01))
-                  :ARG0-of (t / tax-01
-                        :ARG2 (b / brain
-                              :poss (w / we))
-                        :direction (o2 / out))
-                  :ARG0-of (a2 / attempt-01
-                        :ARG1 (p2 / provide-01
-                              :ARG1 (s2 / some
-                                    :ARG1-of (i4 / include-91
-                                          :ARG2 (t2 / thing
-                                                :mod (t4 / this)))))
-                        :manner (i3 / inefficient))
-                  :quant (a3 / all))))
-
-# ::id DF-170-181103-888_2529.11
-Now am I just a genius who doesn't know it, or is it really not THAT hard to understand such a simple concept?
-(o / or
-      :op1 (g / genius
-            :domain (i / i)
-            :mod (j / just)
-            :ARG0-of (k / know-01 :polarity -
-                  :ARG1 (i2 / it)))
-      :op2 (h / hard
-            :degree (t / that :polarity -)
-            :mod (r / real)
-            :domain (u / understand-01
-                  :ARG1 (c / concept
-                        :mod (s / simple
-                              :degree (s2 / such)))))
-      :mod (n / now))
-
-# ::id DF-170-181103-888_3028.1
-Will they try to prop Romney up with a strong VP to help make him more palatable - or will they bring in a new face?
-(o / or
-      :op1 (t / try-01
-            :ARG0 (t2 / they)
-            :ARG1 (p / prop-01
-                  :ARG0 t2
-                  :ARG1 (p2 / person :wiki "Mitt_Romney" :name (n / name :op1 "Romney"))
-                  :ARG2 (p3 / person
-                        :ARG0-of (h / have-org-role-91
-                              :ARG2 (p4 / president
-                                    :mod (v / vice)
-                                    :mod (s / strong))))
-                  :purpose (h2 / help-01
-                        :ARG0 p3
-                        :ARG1 (m / make-01
-                              :ARG1 (p5 / palatable
-                                    :degree (m2 / more))
-                              :ARG2 p2))))
-      :op2 (b / bring-01
-            :ARG0 t2
-            :ARG1 (f / face
-                  :mod (n2 / new))))
-
-# ::id DF-170-181103-888_3028.2
-Either way, they've got a big problem.
-(g / get-02
-      :ARG0 (t / they)
-      :ARG1 (p / problem
-            :degree (b / big))
-      :mod (w / way
-            :mod (e / either)))
-
-# ::id DF-170-181103-888_3028.3
-Aren't you one of the assholes who assured us how Romney was inevitable as the GOP nominee?
-(a2 / asshole :mode interrogative
-      :ARG2-of (i2 / include-91
-            :ARG1 (y / you))
-      :ARG0-of (a / assure-01
-            :ARG1 (w / we)
-            :ARG2 (i / inevitable
-                  :domain (p / person :wiki "Mitt_Romney"
-                        :name (n / name :op1 "Romney")
-                        :ARG0-of (h / have-org-role-91
-                              :ARG1 (p2 / political-party :wiki "Republican_Party_%28United_States%29"
-                                    :name (n2 / name :op1 "GOP"))
-                              :ARG2 (n3 / nominee))))))
-
-# ::id DF-170-181103-888_3028.4
-I don't think Standtorum will tank, its going to be a close one till the very end, I am still rooting for a Romney/McDonnell ticket.
-(a / and
-      :op1 (t / think-01 :polarity -
-            :ARG0 (i / i)
-            :ARG1 (t2 / tank-01
-                  :ARG0 (p / person :wiki "Rick_Santorum"
-                        :name (n / name :op1 "Standtorum"))))
-      :op2 (o / one
-            :mod (c / close
-                  :time (t3 / till
-                        :op1 (e / end
-                              :degree (v / very))))
-            :domain (i2 / it))
-      :op3 (r / root-03
-            :ARG0 i
-            :ARG1 (t4 / ticket
-                  :mod (s2 / slash
-                        :op1 (p2 / person :wiki "Mitt_Romney"
-                              :name (n2 / name :op1 "Romney"))
-                        :op2 (p3 / person :wiki "Bob_McDonnell"
-                              :name (n3 / name :op1 "McDonnell"))))
-            :time (s / still)))

@@ -6,6 +6,11 @@ import urllib
 
 '''
  generate raw amr from isi amr release files
+ output:
+        # ::id
+        # ::snt
+        ( ... 
+             AMR ... )
 '''
 def read(path, file_name, output):
     f = open(path + file_name)
@@ -36,9 +41,29 @@ def read(path, file_name, output):
                 try:
                     line = next(f)
                 except StopIteration:
-                    print 'END OF FILE'
+                    print 'END OF FILE: %s' % file_name
                     break
             output.write('\n')
+
+'''
+ generate raw amr from isi amr release files
+ convert '()' in :wiki and :name only
+'''
+def read_all(path, file_name, output):
+    f = open(path + file_name)
+    for line in f:
+        # deal with '()' in wiki title
+        m = re.search(':wiki\s\"(.+?)\"', line)
+        if m != None:
+            line = line.replace(m.group(1),
+                                urllib.quote_plus(m.group(1)))
+        # deal with '()' in :name
+        m = re.search('\"(\w*\(\S+\)\w*)\"', line)
+        if m != None:
+            line = line.replace(m.group(1),
+                                urllib.quote_plus(m.group(1)))
+        output.write(line)
+    print 'END OF FILE: %s' % file_name
 
 '''
  generate plain docs from isi amr release files
@@ -71,9 +96,7 @@ def generate_raw_docs(path, file_name):
 if __name__ == '__main__':
     path = '../doc/amr/Dec23/'
     file_list = os.listdir(path)
-    # output = open('../output/test', 'w')
     output = open('../output/banked_amr', 'w')
     for i in file_list:
-        # if i != 'amr-internal-release-guidelines.txt': continue
-        read(path, i, output)
+        read_all(path, i, output)
         # generate_raw_docs(path, i)

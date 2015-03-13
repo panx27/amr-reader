@@ -1,5 +1,5 @@
 '''
- Node Class
+ AMR Node Object
 '''
 
 class Node(object):

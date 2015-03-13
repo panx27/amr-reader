@@ -4,6 +4,7 @@ import sys
 sys.setrecursionlimit(10000)
 import copy
 from node import Node
+from sentence import Sentence
 from amr_visualizer import visualizer
 from get_html_output import html
 
@@ -211,6 +212,7 @@ def retrieve_path_rte(node, path, paths_rte):
             ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
             path.append((i.edge_label_, ne))
             paths_rte.append(path)
+            retrieve_path_rte(i, path, paths_rte)
             path = tmp
         else:
             tmp.append((i.edge_label_, i.ful_name_))
@@ -269,7 +271,7 @@ def amr_reader(raw_amr_input):
             retrieve_path_etl(node, [ne], paths_etl)
     # for i in paths_etl: print i
 
-    return amr_nodes, amr_nodes_acr, paths_whole, paths_rte, paths_etl
+    return amr_nodes, amr_nodes_acr, [paths_whole, paths_rte, paths_etl]
 
 '''
  main function
@@ -277,24 +279,64 @@ def amr_reader(raw_amr_input):
  output: amr graph
          amr path
 '''
+# def main(input, output, graph_path='../output/graphs/'):
+#     sentences = input.strip().split('# ::id ')
+#     sentences = sentences[1:]
+#     raw_amr = list()
+
+#     for i in sentences:
+#         # nline = i.split('\n')
+#         # senid = nline[0]
+#         # sen = nline[1]
+#         # amr = '\n'.join(nline[2:]).strip()
+#         # raw_amr.append((senid, sen, amr))
+
+#         nline = i.split('\n')
+#         senid = nline[0][:nline[0].find(' ')]
+#         date = '# ::id %s' % nline[0]
+#         sen = nline[1]
+#         save = nline[2]
+#         amr = '\n'.join(nline[3:]).strip()
+#         raw_amr.append((senid, date, sen, save, amr))
+
+#         print senid
+#         if amr_validator(amr) == False:
+#             raise NameError('Invalid AMR Input: %s' % sen_id)
+#         amr_nodes, amr_nodes_acr, \
+#             paths_whole, paths_rte, paths_etl = amr_reader(amr)
+#         visualizer(amr_nodes_acr, paths_whole, graph_path, 
+#                    senid, show_wiki=True)
+#         html(senid, sen, amr, paths_rte, paths_etl, output)
 def main(input, output, graph_path='../output/graphs/'):
+    amr_sentences = dict()
     sentences = input.strip().split('# ::id ')
     sentences = sentences[1:]
-    raw_amr = list()
 
     for i in sentences:
         nline = i.split('\n')
-        senid = nline[0]
-        sen = nline[1]
-        amr = '\n'.join(nline[2:]).strip()
-        raw_amr.append((senid, sen, amr))
+        m = re.search('(\S+) ::date (\S+) ::annotator (\S+)', nline[0])
+        senid = m.group(1)
+        date = m.group(2)
+        annotator = m.group(3)
+        sen = re.search('# ::snt (.+)', nline[1]).group(1)
+        m = re.search('# ::save-date (.+) ::file (\S+)', nline[2])
+        save_date = m.group(1)
+        file_name = m.group(2)
+        amr = '\n'.join(nline[3:]).strip()
+
         print senid
         if amr_validator(amr) == False:
             raise NameError('Invalid AMR Input: %s' % sen_id)
-        amr_nodes, amr_nodes_acr, paths_whole, paths_rte, paths_etl = amr_reader(amr)
 
-        visualizer(amr_nodes_acr, paths_whole, graph_path, senid)
-        html(senid, sen, amr, paths_rte, paths_etl, output)
+        amr_nodes, amr_nodes_acr, paths = amr_reader(amr)
+        s = Sentence(senid, sen, amr, paths)
+        print s
+
+        # visualizer(amr_nodes_acr, paths_whole, graph_path, 
+        #            senid, show_wiki=True)
+        # html(senid, sen, amr, paths_rte, paths_etl, output)
+
+
 
 if __name__ == '__main__':
     graph_path = '../output/graphs/'
