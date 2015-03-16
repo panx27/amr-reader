@@ -1,3 +1,79 @@
+# # '''
+# #  retrieve path - root to entity
+# # '''
+# # def retrieve_path_rte(node, path, paths_rte):
+# #     for i in node.next_:
+# #         tmp = path[:] # passing by value
+# #         if i.is_entity_:
+# #             ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+# #             path.append((i.edge_label_, ne))
+# #             paths_rte.append(path)
+# #             retrieve_path_rte(i, path, paths_rte)
+# #             path = tmp
+# #         else:
+# #             tmp.append((i.edge_label_, i.ful_name_))
+# #             retrieve_path_rte(i, tmp, paths_rte)
+
+# # '''
+# #  retrieve path - entity to leaf
+# # '''
+# # def retrieve_path_etl(node, path, paths_etl):
+# #     if node.next_ == list():
+# #         paths_etl.append(path)
+# #     for i in node.next_:
+# #         tmp = path[:] # passing by value
+# #         if i.is_entity_:
+# #             ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+# #             tmp.append((i.edge_label_, ne))
+# #             retrieve_path_etl(i, tmp, paths_etl)
+# #         else:
+# #             tmp.append((i.edge_label_, i.ful_name_))
+# #             retrieve_path_etl(i, tmp, paths_etl)
+
+# '''
+#  amr reader
+# '''
+# def amr_reader(raw_amr_input):
+#     global amr_contents
+#     amr_contents = list()
+#     amr_nodes = dict() # amr content as key
+#     amr_nodes_acr = dict() # acronym as key
+#     path_whole = list()
+#     # paths_rte = list()
+#     # paths_etl = list()
+    
+#     split_amr(raw_amr_input, list())
+#     for i in amr_contents:
+#         if i.count('(') == 1 and i.count(')') == 1:
+#             generate_node_single(i, amr_nodes, amr_nodes_acr)
+#     for i in amr_contents:
+#         if i.count('(') > 1 and i.count(')') > 1:
+#             generate_nodes_multiple(i, amr_nodes, amr_nodes_acr)
+#     for i in amr_contents:
+#         if i.count('(') == 1 and i.count(')') == 1:
+#             revise_node(i, amr_nodes, amr_nodes_acr)
+
+#     # the last node (whole amr) is always the root of the graph
+#     root = amr_nodes[sorted(amr_nodes, key=len, reverse=True)[0]]
+#     retrieve_path_whole(root, '@', path_whole)
+
+#     # retrieve_path_rte(root, [('@root', root.ful_name_)], paths_rte)
+#     # for i in paths_rte: print i
+
+#     # for i in amr_nodes_acr:
+#     #     node = amr_nodes_acr[i]
+#     #     if node.is_entity_ and node.next_ != list():
+#     #         ne = ('@entity', node.entity_type_+'\t'+node.entity_name_)
+#     #         retrieve_path_etl(node, [ne], paths_etl)
+#     # for i in paths_etl: print i
+
+#     return amr_nodes_acr, path_whole
+
+
+
+
+
+
 # '''
 #  functionality: find acronym of nodes and their corresponding names
 #  container: dict; key: acronym, value: full_name; 'amr_acronyms'

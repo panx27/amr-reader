@@ -2,8 +2,6 @@ import re
 import os
 import urllib
 
-
-
 '''
  generate raw amr from isi amr release files
  output:

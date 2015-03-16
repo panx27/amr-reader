@@ -5,8 +5,6 @@ sys.setrecursionlimit(10000)
 import copy
 from node import Node
 from sentence import Sentence
-from amr_visualizer import visualizer
-from get_html_output import html
 
 '''
  input validator
@@ -26,7 +24,6 @@ def amr_validator(raw_amr_input):
  functionality: split raw amr by pairing '()'
 '''
 def split_amr(text, content):
-    # global amr_contents
     if len(text) == 0:
         return
     else:
@@ -47,7 +44,9 @@ def split_amr(text, content):
 
 '''
  input: splited raw amr by pairing '()'
- output: node object (container: dict; 'amr_nodes' and 'amr_nodes_acr')
+ output: node object 
+         container: 'amr_nodes': amr content as key
+                    'amr_nodes_acr': acronym as key
  single: only one pair of '()'
 '''
 def generate_node_single(content, amr_nodes, amr_nodes_acr):
@@ -56,12 +55,12 @@ def generate_node_single(content, amr_nodes, amr_nodes_acr):
     acr = predict_event.group(1) # acronym
     ful = predict_event.group(2).strip(')') # full name
 
-    # in case of :polarity -
+    ### in case of :polarity -
     is_polarity = False
     if re.search(":polarity\s-", content) != None: 
         is_polarity = True
 
-    # node is a named entity
+    ### node is a named entity
     names = re.findall(':op\d\s\"\S+\"', content)
     if len(names) > 0:
         entity_name = ''
@@ -79,7 +78,9 @@ def generate_node_single(content, amr_nodes, amr_nodes_acr):
 
 '''
  input: splited raw amr by pairing '()'
- output: node object (container: dict; 'amr_nodes' and 'amr_nodes_acr')
+ output: node object 
+         container: 'amr_nodes': amr content as key
+                    'amr_nodes_acr': acronym as key
  multiple: multiple pairs of '()'
 '''
 def generate_nodes_multiple(content, amr_nodes, amr_nodes_acr):
@@ -90,8 +91,8 @@ def generate_nodes_multiple(content, amr_nodes, amr_nodes_acr):
     is_named_entity = False
     is_polarity = False
     
-    # remove existing nodes from content and link nodes
-    # always check the longest node first, because it may contain other nodes
+    ### remove existing nodes from content and link nodes
+    ### always check the longest node first, because it may contain other nodes
     for i in sorted(amr_nodes, key=len, reverse=True): 
         if i in content:
             e = content.find(i)
@@ -109,7 +110,7 @@ def generate_nodes_multiple(content, amr_nodes, amr_nodes_acr):
     acr = predict_event[0] # acronym
     ful = predict_event[1] # full name
 
-    # in case of :polarity -
+    ### in case of :polarity -
     if re.search(":polarity\s-", content) != None: 
         is_polarity = True
 
@@ -125,7 +126,8 @@ def generate_nodes_multiple(content, amr_nodes, amr_nodes_acr):
         if concept in amr_nodes_acr:
             node = copy.copy(amr_nodes_acr[concept])
             node.next_ = list()
-        else: # in case of (d / date-entity :year 2012)
+        ### in case of (d / date-entity :year 2012)
+        else: 
             node = Node(name=concept)
             amr_nodes_acr[concept] = node
         node.edge_label_ = role
@@ -144,7 +146,7 @@ def generate_nodes_multiple(content, amr_nodes, amr_nodes_acr):
         (p / person in the example) instead of :instance
     '''
     if is_named_entity:
-        # find wikipedia title
+        ### find wikipedia title
         wikititle = 'None'
         # if re.match('\S+\s/\s\S+\s.*:wiki\s-', content) != None: wikititle = '-'
         if re.match(':wiki\s-', content) != None: wikititle = '-'
@@ -177,8 +179,7 @@ def revise_node(content, amr_nodes, amr_nodes_acr):
        ':polarity -' not in content:
         arg_nodes = list()
         acr = re.search('\w+\s/\s\S+', content).group().split(' / ')[0]
-        # nodes = re.findall('\S+\s\S+', m.group(1))
-        nodes = re.findall('\S+\s\".+\"|\S+\s\S+', m.group(1)) # in case of :ARG2 "Tsai et al., 2002"
+        nodes = re.findall('\S+\s\".+\"|\S+\s\S+', m.group(1)) 
         for i in nodes:
             i = re.search('(:\S+)\s(.+)', i)
             role = i.group(1)
@@ -186,7 +187,8 @@ def revise_node(content, amr_nodes, amr_nodes_acr):
             if concept in amr_nodes_acr:
                 node = copy.copy(amr_nodes_acr[concept])
                 node.next_ = list()
-            else: # in case of (d / date-entity :year 2012)
+            ### in case of (d / date-entity :year 2012)
+            else: 
                 node = Node(name=concept)
                 amr_nodes_acr[concept] = node
             node.edge_label_ = role
@@ -197,42 +199,10 @@ def revise_node(content, amr_nodes, amr_nodes_acr):
 '''
  retrieve path - whole graph
 '''
-def retrieve_path_whole(node, parent, paths_whole):
-    paths_whole.append((parent, node.name_, node.edge_label_))
+def retrieve_path_whole(node, parent, path_whole):
+    path_whole.append((parent, node.name_, node.edge_label_))
     for i in node.next_:
-        retrieve_path_whole(i, node.name_, paths_whole)
-
-'''
- retrieve path - root to entity
-'''
-def retrieve_path_rte(node, path, paths_rte):
-    for i in node.next_:
-        tmp = path[:] # passing by value
-        if i.is_entity_:
-            ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
-            path.append((i.edge_label_, ne))
-            paths_rte.append(path)
-            retrieve_path_rte(i, path, paths_rte)
-            path = tmp
-        else:
-            tmp.append((i.edge_label_, i.ful_name_))
-            retrieve_path_rte(i, tmp, paths_rte)
-
-'''
- retrieve path - entity to leaf
-'''
-def retrieve_path_etl(node, path, paths_etl):
-    if node.next_ == list():
-        paths_etl.append(path)
-    for i in node.next_:
-        tmp = path[:] # passing by value
-        if i.is_entity_:
-            ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
-            tmp.append((i.edge_label_, ne))
-            retrieve_path_etl(i, tmp, paths_etl)
-        else:
-            tmp.append((i.edge_label_, i.ful_name_))
-            retrieve_path_etl(i, tmp, paths_etl)
+        retrieve_path_whole(i, node.name_, path_whole)
 
 '''
  amr reader
@@ -242,9 +212,7 @@ def amr_reader(raw_amr_input):
     amr_contents = list()
     amr_nodes = dict() # amr content as key
     amr_nodes_acr = dict() # acronym as key
-    paths_whole = list()
-    paths_rte = list()
-    paths_etl = list()
+    path_whole = list() # path of whole graph
     
     split_amr(raw_amr_input, list())
     for i in amr_contents:
@@ -257,58 +225,22 @@ def amr_reader(raw_amr_input):
         if i.count('(') == 1 and i.count(')') == 1:
             revise_node(i, amr_nodes, amr_nodes_acr)
 
-    # the last node (whole amr) is always the root of the graph
+    ### the last node (whole amr) is always the root of the graph
     root = amr_nodes[sorted(amr_nodes, key=len, reverse=True)[0]]
-    retrieve_path_whole(root, '@', paths_whole)
+    retrieve_path_whole(root, '@', path_whole)
 
-    retrieve_path_rte(root, [('@root', root.ful_name_)], paths_rte)
-    # for i in paths_rte: print i
-
-    for i in amr_nodes_acr:
-        node = amr_nodes_acr[i]
-        if node.is_entity_ and node.next_ != list():
-            ne = ('@entity', node.entity_type_+'\t'+node.entity_name_)
-            retrieve_path_etl(node, [ne], paths_etl)
-    # for i in paths_etl: print i
-
-    return amr_nodes, amr_nodes_acr, [paths_whole, paths_rte, paths_etl]
+    return amr_nodes_acr, path_whole
 
 '''
  main function
+
  input: raw amr
- output: amr graph
-         amr path
+ output: 'amr_table'
+         container: dict()   dict()      Sentence
+         key:       docid -> senid -> sentence object
 '''
-# def main(input, output, graph_path='../output/graphs/'):
-#     sentences = input.strip().split('# ::id ')
-#     sentences = sentences[1:]
-#     raw_amr = list()
-
-#     for i in sentences:
-#         # nline = i.split('\n')
-#         # senid = nline[0]
-#         # sen = nline[1]
-#         # amr = '\n'.join(nline[2:]).strip()
-#         # raw_amr.append((senid, sen, amr))
-
-#         nline = i.split('\n')
-#         senid = nline[0][:nline[0].find(' ')]
-#         date = '# ::id %s' % nline[0]
-#         sen = nline[1]
-#         save = nline[2]
-#         amr = '\n'.join(nline[3:]).strip()
-#         raw_amr.append((senid, date, sen, save, amr))
-
-#         print senid
-#         if amr_validator(amr) == False:
-#             raise NameError('Invalid AMR Input: %s' % sen_id)
-#         amr_nodes, amr_nodes_acr, \
-#             paths_whole, paths_rte, paths_etl = amr_reader(amr)
-#         visualizer(amr_nodes_acr, paths_whole, graph_path, 
-#                    senid, show_wiki=True)
-#         html(senid, sen, amr, paths_rte, paths_etl, output)
-def main(input, output, graph_path='../output/graphs/'):
-    amr_sentences = dict()
+def main(input):
+    amr_table = dict()
     sentences = input.strip().split('# ::id ')
     sentences = sentences[1:]
 
@@ -316,6 +248,7 @@ def main(input, output, graph_path='../output/graphs/'):
         nline = i.split('\n')
         m = re.search('(\S+) ::date (\S+) ::annotator (\S+)', nline[0])
         senid = m.group(1)
+        docid = senid[:senid.rfind('.')]
         date = m.group(2)
         annotator = m.group(3)
         sen = re.search('# ::snt (.+)', nline[1]).group(1)
@@ -324,19 +257,21 @@ def main(input, output, graph_path='../output/graphs/'):
         file_name = m.group(2)
         amr = '\n'.join(nline[3:]).strip()
 
-        print senid
         if amr_validator(amr) == False:
             raise NameError('Invalid AMR Input: %s' % sen_id)
+        print senid
+        amr_nodes_acr, path_whole = amr_reader(amr)
+        
+        if docid not in amr_table:
+            amr_table[docid] = dict()
+        amr_table[docid][senid] = Sentence(senid, sen, amr,
+                                           amr_nodes_acr, [path_whole])
 
-        amr_nodes, amr_nodes_acr, paths = amr_reader(amr)
-        s = Sentence(senid, sen, amr, paths)
-        print s
-
-        # visualizer(amr_nodes_acr, paths_whole, graph_path, 
-        #            senid, show_wiki=True)
-        # html(senid, sen, amr, paths_rte, paths_etl, output)
-
-
+    # for docid in sorted(amr_table):
+    #     for senid in sorted(amr_table[docid]):
+    #         s = amr_table[docid][senid]
+    #         print s
+    return amr_table
 
 if __name__ == '__main__':
     graph_path = '../output/graphs/'
@@ -346,8 +281,10 @@ if __name__ == '__main__':
     input = open('../output/test', 'r').read()
     # input = open('../output/banked_amr', 'r').read()
 
-    output = open('../output/test.html', 'w')
-    # output = open('../output/banked_amr.html', 'w')
-    output.write('<meta charset=\'utf-8\'>\n')
+    amr_table = main(input)
 
-    main(input, output, graph_path)
+    # import get_output_html
+    # get_output_html.main(amr_table)
+
+    import get_ne_query
+    get_ne_query.main(amr_table)

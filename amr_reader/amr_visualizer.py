@@ -1,20 +1,27 @@
+'''
+ Please install graphviz and pygraphviz
+'''
+
 import re
 import pygraphviz as pgv
 
-
-
 '''
- input: amr_nodes_acr, nodes_paths
- output: amr graph
+ Input: 'amr_nodes_acr': amr nodes table
+        'path whole': path of whole graph
+        'output_path': default output directory
+        'output_name': default output name
+        'show_wiki': display wikipedia title
+ Output: amr graphs
 '''
-def visualizer(amr_nodes_acr, node_paths, output_path='', output_name='amr_graph', show_wiki=True):
+def visualizer(amr_nodes_acr, path_whole, output_path='../output/graphs/',
+               output_name='amr_graph', show_wiki=True):
     nodes = set()
-    for i in node_paths:
+    for i in path_whole:
         nodes.add(i[0])
         nodes.add(i[1])
 
     # draw nodes
-    G = pgv.AGraph(strict=False, directed=True, encoding='UTF-8')
+    G = pgv.AGraph(strict=False, directed=True)
     for i in nodes:
         if i == '@': continue
         node = amr_nodes_acr[i]
@@ -42,11 +49,10 @@ def visualizer(amr_nodes_acr, node_paths, output_path='', output_name='amr_graph
             G.add_node(i, shape='ellipse', color='black')
 
     # draw edge label
-    for i in node_paths:
+    for i in path_whole:
         if i[0] == '@': continue
         G.add_edge(i[0], i[1], label=i[2], fontname='monospace')
 
     G.layout()
     G.layout(prog = 'dot')
     G.draw('%s%s.png' % (output_path, output_name))
-    # G.draw('%s%s.pdf' % (output_path, output_name))

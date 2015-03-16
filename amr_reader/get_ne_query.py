@@ -1,36 +1,35 @@
 import re
 import os
-
-
-
-'''
- Named Entity class
-'''
-class NameEntity(object):
-    def __init__(self, sen_id = '', acronym = '', 
-                 name = '', subtype = '', wiki = ''):
-        self.sen_id_ = sen_id
-        self.acronym_ = acronym
-        self.name_ = name
-        self.subtype_ = subtype
-        self.maintype_ = ''
-        if subtype in subtypes_table:
-            self.maintype_ = subtypes_table[subtype]
-        self.wiki_ = wiki
-        self.coreference_ = ''
-        self.attribute_ = set()
-        self.coherence_ = set()
-        self.path_ = list()
+from namedentity import NamedEntity
+# '''
+#  Named Entity class
+# '''
+# class NameEntity(object):
+#     def __init__(self, sen_id = '', acronym = '', 
+#                  name = '', subtype = '', wiki = ''):
+#         self.sen_id_ = sen_id
+#         self.acronym_ = acronym
+#         self.name_ = name
+#         self.subtype_ = subtype
+#         self.maintype_ = ''
+#         if subtype in subtypes_table:
+#             self.maintype_ = subtypes_table[subtype]
+#         self.wiki_ = wiki
+#         self.coreference_ = ''
+#         self.attribute_ = set()
+#         self.coherence_ = set()
+#         self.path_ = list()
 
 '''
  AMR adj. to nonu mapping table
 '''
 def get_adj_noun_mapping_table():
-    current_path = os.path.dirname(os.path.abspath(__file__))
-    f = open(current_path + "/doc/ne-table.txt")
+    # current_path = os.path.dirname(os.path.abspath(__file__))
+    # f = open(current_path + '/doc/ne-table.txt')
+    f = open('../doc/ne-table.txt')
     adj_noun_map = dict()
     for line in f:
-        line = line.strip().split("\t")
+        line = line.strip().split('\t')
         adj = line[0].lower() # LOWERCASE
         noun = line[1].lower()
         adj_noun_map[adj] = noun
@@ -40,48 +39,51 @@ def get_adj_noun_mapping_table():
  AMR subtype to main type (PER, ORG, GPE) mapping table
 '''
 def get_subtype_mapping_table():
-    current_path = os.path.dirname(os.path.abspath(__file__))
+    # current_path = os.path.dirname(os.path.abspath(__file__))
     types = dict()
-    f = open(current_path + "/doc/ne_types/PER.txt")
+    # f = open(current_path + '/doc/ne_types/PER.txt')
+    f = open('../doc/ne_types/PER.txt')
     for line in f:
-        types[line.strip()] = "PER"
-    f = open(current_path + "/doc/ne_types/ORG.txt")
+        types[line.strip()] = 'PER'
+    # f = open(current_path + '/doc/ne_types/ORG.txt')
+    f = open('../doc/ne_types/ORG.txt')
     for line in f:
-        types[line.strip()] = "ORG"
-    f = open(current_path + "/doc/ne_types/GPE.txt")
+        types[line.strip()] = 'ORG'
+    # f = open(current_path + '/doc/ne_types/GPE.txt')
+    f = open('../doc/ne_types/GPE.txt')
     for line in f:
-        types[line.strip()] = "GPE"
+        types[line.strip()] = 'GPE'
     return types
 
-'''
- named entity table
+# '''
+#  named entity table
 
- container: dict()   dict()  dict()  NameEntity
- key:       docid -> senid -> ne ->  ne object
-'''
-def get_ne_table(root_to_entity):
-    ne_table = dict()
-    for i in root_to_entity.keys():
-        sen_id = i
-        doc_id = sen_id[:sen_id.rfind('.')]
-        if doc_id not in ne_table.keys():
-            ne_table[doc_id] = dict()
-        if sen_id not in ne_table[doc_id].keys():
-            ne_table[doc_id][sen_id] = dict()
+#  container: dict()   dict()  dict()  NameEntity
+#  key:       docid -> senid -> ne ->  ne object
+# '''
+# def get_ne_table(root_to_entity):
+#     ne_table = dict()
+#     for i in root_to_entity.keys():
+#         sen_id = i
+#         doc_id = sen_id[:sen_id.rfind('.')]
+#         if doc_id not in ne_table.keys():
+#             ne_table[doc_id] = dict()
+#         if sen_id not in ne_table[doc_id].keys():
+#             ne_table[doc_id][sen_id] = dict()
 
-        for j in root_to_entity[i]:
-            entity = j[0].split('\t')
-            ne_abb = entity[0].replace('ENTITY:', '')
-            ne_type = entity[1]
-            ne_name = entity[2]
-            ne_wiki = entity[3]
-            if ne_abb not in ne_table[doc_id][sen_id].keys():
-                ne_table[doc_id][sen_id][ne_abb] = NameEntity(sen_id,
-                                                               ne_abb,
-                                                               ne_name, 
-                                                               ne_type, 
-                                                               ne_wiki)
-    return ne_table
+#         for j in root_to_entity[i]:
+#             entity = j[0].split('\t')
+#             ne_abb = entity[0].replace('ENTITY:', '')
+#             ne_type = entity[1]
+#             ne_name = entity[2]
+#             ne_wiki = entity[3]
+#             if ne_abb not in ne_table[doc_id][sen_id].keys():
+#                 ne_table[doc_id][sen_id][ne_abb] = NameEntity(sen_id,
+#                                                                ne_abb,
+#                                                                ne_name, 
+#                                                                ne_type, 
+#                                                                ne_wiki)
+#     return ne_table
 
 
 
@@ -356,6 +358,96 @@ def generator(input, coherence_level):
 
 
 
+
+
+
+
+
+'''
+ retrieve path - root to entity
+'''
+def retrieve_path_rte(node, path, paths_rte):
+    for i in node.next_:
+        tmp = path[:] # passing by value
+        if i.is_entity_:
+            ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+            path.append((i.edge_label_, ne))
+            paths_rte.append(path)
+            retrieve_path_rte(i, path, paths_rte)
+            path = tmp
+        else:
+            tmp.append((i.edge_label_, i.ful_name_))
+            retrieve_path_rte(i, tmp, paths_rte)
+
+'''
+ retrieve path - entity to leaf
+'''
+def retrieve_path_etl(node, path, paths_etl):
+    if node.next_ == list():
+        paths_etl.append(path)
+    for i in node.next_:
+        tmp = path[:] # passing by value
+        if i.is_entity_:
+            ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+            tmp.append((i.edge_label_, ne))
+            retrieve_path_etl(i, tmp, paths_etl)
+        else:
+            tmp.append((i.edge_label_, i.ful_name_))
+            retrieve_path_etl(i, tmp, paths_etl)
+    
+def main(amr_table):
+    print 'hehe'
+    subtype_table = get_subtype_mapping_table()
+    
+    for docid in sorted(amr_table):
+        for senid in sorted(amr_table[docid]):
+            named_entities = list() # 
+            paths_rte = list() # path - root to entity
+            paths_etl = list() # path - entity to leaf
+            sen = amr_table[docid][senid]
+            amr_nodes_acr = sen.amr_nodes_
+            path_whole = sen.paths_[0]
+            root = amr_nodes_acr[path_whole[0][1]]
+
+            ### generate NamedEntity object
+            for i in amr_nodes_acr:
+                node = amr_nodes_acr[i]
+                if node.is_entity_ and node.entity_type_ != '':
+                    main_type = ''
+                    if node.entity_type_ in subtype_table:
+                        main_type = subtype_table[node.entity_type_]
+                    ne = NamedEntity(senid=senid, name=node.name_,
+                                     entity_name=node.entity_name_,
+                                     subtype=node.entity_type_,
+                                     maintype=main_type, wiki=node.wiki_)
+                    # print ne
+                    
+            ### generate path - root to entity
+            retrieve_path_rte(root, [('@root', root.ful_name_)], paths_rte)
+            sen.paths_.append(paths_rte)
+            # for i in paths_rte: print i
+
+            ### generate path - entity to leaf
+            for i in amr_nodes_acr:
+                node = amr_nodes_acr[i]
+                if node.is_entity_ and node.next_ != list():
+                    ne = '%s\t%s' % (node.entity_type_, node.entity_name_)
+                    retrieve_path_etl(node, [('@entity', ne)], paths_etl)
+            sen.paths_.append(paths_etl)
+            # for i in paths_etl: print i
+
+
+
+
+
+
+            break
+        break
+
+
+            
+
+    
 if __name__ == "__main__":
     raw_amr, root_to_entity, modify, have_org_role_91 = \
                                                         amr_reader.read(open('./docs/test/tmp.txt').read())
