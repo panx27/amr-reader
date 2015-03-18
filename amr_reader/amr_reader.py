@@ -6,6 +6,7 @@ import copy
 from node import Node
 from sentence import Sentence
 import amr_output
+import amr_path
 
 '''
  input validator
@@ -263,7 +264,7 @@ def main(input):
         if docid not in amr_table:
             amr_table[docid] = dict()
         amr_table[docid][senid] = Sentence(senid, sen, amr,
-                                           amr_nodes_acr, [path_whole])
+                                           amr_nodes_acr, path_whole)
     return amr_table
 
 
@@ -273,10 +274,10 @@ if __name__ == '__main__':
     # input = open('../output/banked_amr', 'r').read()
 
     amr_table = main(input)
-    # for docid in sorted(amr_table):
-    #     for senid in sorted(amr_table[docid]):
-    #         s = amr_table[docid][senid]
-    #         print s
+    amr_path.add(amr_table)
+    for docid in sorted(amr_table):
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
 
     # import get_ne_query
     # get_ne_query.main(amr_table)

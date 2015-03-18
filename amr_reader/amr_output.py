@@ -3,9 +3,8 @@ import os
 '''
  html
 '''
-def get_path(paths):
-    # result = '<b>%s</b>\n<br>\n' % name
-    result = ''
+def get_path(name, paths):
+    result = '<b>%s</b>\n<br>\n' % name
     p = ''
     for i in paths:
         for j in i:
@@ -25,7 +24,7 @@ def get_html(senid, sen, amr, amr_paths, output):
     amr = '<p>%s</p>\n' % amr.replace('\n', '<br>').replace(' ', '&nbsp;')
     paths = '<p><b>Paths:</b><br>'
     for p in amr_paths:
-        paths += get_path(p)
+        paths += get_path(p, amr_paths[p])
     output.write('<body>\n%s%s%s%s%s</body>\n' % (senid, sen, amr, paths, graph))
 
 def html(amr_table, output=open('../output/test.html', 'w'), graph_path='../output/graphs/'):
@@ -39,8 +38,8 @@ def html(amr_table, output=open('../output/test.html', 'w'), graph_path='../outp
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
-            amr_visualizer.visualizer(sen.amr_nodes_, sen.paths_[0], output_name=sen.senid_)
-            get_html(sen.senid_, sen.sen_, sen.amr_, sen.paths_[1:], output)
+            amr_visualizer.visualizer(sen.amr_nodes_, sen.path_whole_, output_name=sen.senid_)
+            get_html(sen.senid_, sen.sen_, sen.amr_, sen.amr_paths_, output)
 
 '''
  named entities

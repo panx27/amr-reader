@@ -435,14 +435,8 @@ def main(amr_table):
                     retrieve_path_etl(node, [('@entity', ne)], paths_etl)
             sen.paths_.append(paths_etl)
             # for i in paths_etl: print i
-
-
-
-
-
-
-            break
-        break
+        #     break
+        # break
 
 
             
