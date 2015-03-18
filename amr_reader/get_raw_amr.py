@@ -23,12 +23,12 @@ def read(path, file_name, output):
             next(f)
             line = next(f)
             while line != '\n':
-                # deal with '()' in wiki title
+                ### '()' in wiki title
                 m = re.search(':wiki\s\"(.+?)\"', line)
                 if m != None:
                     line = line.replace(m.group(1),
                                         urllib.quote_plus(m.group(1)))
-                # deal with '()' in :name
+                ### '()' in :name
                 m = re.search('\"(\w*\(\S+\)\w*)\"', line)
                 if m != None:
                     line = line.replace(m.group(1),
@@ -45,17 +45,24 @@ def read(path, file_name, output):
 
 '''
  generate raw amr from isi amr release files
- convert '()' in :wiki and :name only
+ convert '()' to '%28 %29' only
 '''
 def read_all(path, file_name, output):
     f = open(path + file_name)
     for line in f:
-        # deal with '()' in wiki title
+        ### file title
+        if re.match('# AMR release .+', line) != None:
+            continue
+        ### lpp Chinese translation
+        if re.match('# ::zh .+', line) != None:
+            continue
+
+        ### '()' in wiki title
         m = re.search(':wiki\s\"(.+?)\"', line)
         if m != None:
             line = line.replace(m.group(1),
                                 urllib.quote_plus(m.group(1)))
-        # deal with '()' in :name
+        ### '()' in :name
         m = re.search('\"(\w*\(\S+\)\w*)\"', line)
         if m != None:
             line = line.replace(m.group(1),

@@ -1,6 +1,6 @@
 # amr_reader
 Input: raw AMR<br>
-Output: AMR graph, AMR paths
+Output: AMR graphs, AMR paths
 
 ## Example
 PROXY_APW_ENG_20080515_0931.31<br>

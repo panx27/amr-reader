@@ -5,10 +5,7 @@ sys.setrecursionlimit(10000)
 import copy
 from node import Node
 from sentence import Sentence
-<<<<<<< Updated upstream
-=======
-from get_html_output import html
->>>>>>> Stashed changes
+import amr_output
 
 '''
  input validator
@@ -151,13 +148,13 @@ def generate_nodes_multiple(content, amr_nodes, amr_nodes_acr):
     '''
     if is_named_entity:
         ### find wikipedia title
-        wikititle = 'None'
+        wikititle = 'NULL'
         # if re.match('\S+\s/\s\S+\s.*:wiki\s-', content) != None: wikititle = '-'
         if re.match(':wiki\s-', content) != None: wikititle = '-'
         else:
             m = re.search(':wiki\s\"(.+?)\"', content)
             if m != None: wikititle = m.group(1)
-            else: wikititle = 'None'
+            else: wikititle = 'NULL'
 
         new_node = Node(name=acr, ful_name=ful, next_node=arg_nodes,
                         edge_label=ne.ful_name_, is_entity=True,
@@ -250,15 +247,12 @@ def main(input):
 
     for i in sentences:
         nline = i.split('\n')
-        m = re.search('(\S+) ::date (\S+) ::annotator (\S+)', nline[0])
-        senid = m.group(1)
+        senid = re.search('(\S+) ', nline[0]).group(1)
         docid = senid[:senid.rfind('.')]
-        date = m.group(2)
-        annotator = m.group(3)
         sen = re.search('# ::snt (.+)', nline[1]).group(1)
-        m = re.search('# ::save-date (.+) ::file (\S+)', nline[2])
-        save_date = m.group(1)
-        file_name = m.group(2)
+        # m = re.search('# ::save-date (.+) ::file (\S+)', nline[2])
+        # save_date = m.group(1)
+        # file_name = m.group(2)
         amr = '\n'.join(nline[3:]).strip()
 
         if amr_validator(amr) == False:
@@ -270,25 +264,22 @@ def main(input):
             amr_table[docid] = dict()
         amr_table[docid][senid] = Sentence(senid, sen, amr,
                                            amr_nodes_acr, [path_whole])
-
-    # for docid in sorted(amr_table):
-    #     for senid in sorted(amr_table[docid]):
-    #         s = amr_table[docid][senid]
-    #         print s
     return amr_table
 
-if __name__ == '__main__':
-    graph_path = '../output/graphs/'
-    try: os.mkdir(graph_path)
-    except OSError: pass
 
+
+if __name__ == '__main__':
     input = open('../output/test', 'r').read()
     # input = open('../output/banked_amr', 'r').read()
 
     amr_table = main(input)
+    # for docid in sorted(amr_table):
+    #     for senid in sorted(amr_table[docid]):
+    #         s = amr_table[docid][senid]
+    #         print s
 
-    # import get_output_html
-    # get_output_html.main(amr_table)
+    # import get_ne_query
+    # get_ne_query.main(amr_table)
 
-    import get_ne_query
-    get_ne_query.main(amr_table)
+    # amr_output.namedentity(amr_table)
+    amr_output.html(amr_table)
