@@ -5,6 +5,10 @@ sys.setrecursionlimit(10000)
 import copy
 from node import Node
 from sentence import Sentence
+<<<<<<< Updated upstream
+=======
+from get_html_output import html
+>>>>>>> Stashed changes
 
 '''
  input validator
