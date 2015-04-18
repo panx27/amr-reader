@@ -5,8 +5,6 @@ sys.setrecursionlimit(10000)
 import copy
 from node import Node
 from sentence import Sentence
-import amr_output
-import amr_path
 
 '''
  input validator
@@ -257,24 +255,24 @@ def main(input):
         amr = '\n'.join(nline[3:]).strip()
 
         if amr_validator(amr) == False:
-            raise NameError('Invalid AMR Input: %s' % sen_id)
-        print senid
+            raise NameError('Invalid AMR Input: %s' % senid)
+
         amr_nodes_acr, path_whole = amr_reader(amr)
         
         if docid not in amr_table:
             amr_table[docid] = dict()
         amr_table[docid][senid] = Sentence(senid, sen, amr,
                                            amr_nodes_acr, path_whole)
+
     return amr_table
 
 
 
 if __name__ == '__main__':
-    input = open('../output/test', 'r').read()
-    # input = open('../output/banked_amr', 'r').read()
+    # input = open('../output/test', 'r').read()
+    input = open('../output/banked_amr', 'r').read()
 
     amr_table = main(input)
-    amr_path.add(amr_table)
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
@@ -283,4 +281,4 @@ if __name__ == '__main__':
     # get_ne_query.main(amr_table)
 
     # amr_output.namedentity(amr_table)
-    amr_output.html(amr_table)
+    # amr_output.html(amr_table)

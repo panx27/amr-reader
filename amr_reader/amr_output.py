@@ -18,16 +18,18 @@ def get_path(name, paths):
     return result + p + '\n'
 
 def get_html(senid, sen, amr, amr_paths, output):
-    graph = '<img src="./graphs/%s.png">' % senid # default graphs path: ./graphs/
+    graph = '<img src="./graphs/%s.png">' % senid # default path of graphs: ./graphs/
     senid = '<h2>%s</h2>\n' % senid
     sen = '<p><b>%s</b></p>\n' % sen
     amr = '<p>%s</p>\n' % amr.replace('\n', '<br>').replace(' ', '&nbsp;')
-    paths = '<p><b>Paths:</b><br>'
-    for p in amr_paths:
-        paths += get_path(p, amr_paths[p])
+    paths = ''
+    # paths = '<p><b>Paths:</b><br>'
+    # for p in amr_paths:
+    #     paths += get_path(p, amr_paths[p])
     output.write('<body>\n%s%s%s%s%s</body>\n' % (senid, sen, amr, paths, graph))
 
-def html(amr_table, output=open('../output/test.html', 'w'), graph_path='../output/graphs/'):
+def html(amr_table, output_path='../output/', graph_path='../output/graphs/'):
+    output = open(output_path + 'test.html', 'w')
     import amr_visualizer
 
     try: os.mkdir(graph_path)
@@ -44,7 +46,8 @@ def html(amr_table, output=open('../output/test.html', 'w'), graph_path='../outp
 '''
  named entities
 '''
-def namedentity(amr_table, output=open('../output/amr_ne', 'w')):
+def namedentity(amr_table, output_path='../output/'):
+    output = open(output_path + 'amr_nes', 'w')
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
@@ -58,3 +61,36 @@ def namedentity(amr_table, output=open('../output/amr_ne', 'w')):
                                                             node.ful_name_,
                                                             node.entity_name_,
                                                             node.wiki_))
+
+'''
+ AMR nodes
+ if you would like to modify the output format of AMR node, go to
+ node.py: def __str__(self):
+'''
+def node(amr_table, output_path='../output/'):
+    output = open(output_path + 'amr_nodes', 'w')
+    for docid in sorted(amr_table):
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            assert sen.senid_ == senid
+            amr_nodes = sen.amr_nodes_
+            for n in amr_nodes:
+                node = amr_nodes[n]
+                if node.is_entity_ and node.entity_type_ == '':
+                    pass
+                else:
+                    output.write('%s\n%s\n' % (senid, amr_nodes[n])) 
+
+'''
+ AMR graphs
+'''
+def graph(amr_table, graph_path='../output/graphs/'):
+    import amr_visualizer
+
+    try: os.mkdir(graph_path)
+    except OSError: pass
+
+    for docid in sorted(amr_table):
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            amr_visualizer.visualizer(sen.amr_nodes_, sen.path_whole_, output_name=sen.senid_)

@@ -45,7 +45,8 @@ def read(path, file_name, output):
 
 '''
  generate raw amr from isi amr release files
- convert '()' to '%28 %29' only
+ keep everthing 
+ except convert '()' to '%28 %29' only
 '''
 def read_all(path, file_name, output):
     f = open(path + file_name)
@@ -57,16 +58,24 @@ def read_all(path, file_name, output):
         if re.match('# ::zh .+', line) != None:
             continue
 
-        ### '()' in wiki title
+        ### convert '()' in wiki title
         m = re.search(':wiki\s\"(.+?)\"', line)
         if m != None:
             line = line.replace(m.group(1),
                                 urllib.quote_plus(m.group(1)))
-        ### '()' in :name
-        m = re.search('\"(\w*\(\S+\)\w*)\"', line)
-        if m != None:
-            line = line.replace(m.group(1),
-                                urllib.quote_plus(m.group(1)))
+        # ### convet '()' in :name
+        # m = re.search('\"(\w*\(\S+\)\w*)\"', line)
+        # if m != None:
+        #     line = line.replace(m.group(1),
+        #                         urllib.quote_plus(m.group(1)))
+
+        ### convert '()' in :name
+        m = re.findall('\"(\S+)\"', line)
+        for i in m:
+            if '(' in i or ')' in i:
+                line = line.replace(i,
+                                    urllib.quote_plus(i))
+
         output.write(line)
     print 'END OF FILE: %s' % file_name
 

@@ -28,4 +28,4 @@ class Node(object):
         else:
             m = 'ENTITY TYPE: %s\nENTITY NAME: %s\nWIKIPEDIA TITLE: %s\n' % \
                      (self.entity_type_, self.entity_name_, self.wiki_)
-            return name + polarity + children + m
+            return name + polarity + m + children
