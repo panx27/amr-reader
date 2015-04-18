@@ -1,32 +1,27 @@
-# amr_reader
-Input: raw AMR<br>
-Output: AMR graphs, AMR paths
+## Usage
+
+      python main.py [-h] [-g] [-n] [-e] [-q] [directory of AMR files]
+
+optional arguments:
+
+      -g, --graph   output AMR graphs '../output/graphs/'
+      -n, --node    output AMR nodes '../output/amr_nodes'
+      -e, --entity  output named entities '../output/nes'
+      -q, --query   output named entity queries '../output/queries'
 
 ## Example
-PROXY_APW_ENG_20080515_0931.31<br>
-   The Yuri dolgoruky is the first in a series of new nuclear submarines to be commissioned this year but the bulava nuclear-armed missile developed to equip the submarine has failed tests and the deployment prospects are uncertain.<br>
+   First, what is the biggest puzzle between China and the US?<br>
 
-    (c3 / contrast-01
-      :ARG1 (c / commission-01
-            :ARG1 (p / product :wiki "Russian_submarine_Yury_Dolgorukiy_(K-535)"
-                  :name (n / name :op1 "Yuri" :op2 "Dolgoruky")
-                  :mod (f2 / first
-                        :ARG1-of (i / include-91
-                              :ARG2 (s / series
-                                    :mod (s2 / submarine
-                                          :mod (n2 / nucleus)
-                                          :mod (n3 / new))))))
-            :time (y / year
-                  :mod (t / this))))
-
-Paths:<br>
-root to entity:<br>
-
-      contrast-01 --> (:ARG1) commission-01 --> (:ARG1) product	Yuri Dolgoruky
-entity to leaf:<br> 
-
-      product	Yuri Dolgoruky --> (:mod) first --> (:ARG1-of) include-91 --> (:ARG2) series --> (:mod) submarine --> (:mod) nucleus
-      product	Yuri Dolgoruky --> (:mod) first --> (:ARG1-of) include-91 --> (:ARG2) series --> (:mod) submarine --> (:mod) new
+      (p / puzzle-01
+         :ARG0 (a / amr-unknown)
+         :ARG1 (b2 / between
+               :op1 (c / country :wiki "China"
+                     :name (n / name :op1 "China"))
+               :op2 (c2 / country :wiki "United_States"
+                     :name (n2 / name :op1 "US")))
+         :mod (b / big
+               :degree (m / most))
+         :li (x / 1))
 
 Graph:<br>
 
