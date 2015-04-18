@@ -9,6 +9,7 @@ optional arguments:
       -e, --entity  output named entities '../output/nes'
       -q, --query   output named entity queries '../output/queries'
 
+If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.
 ## Example
    First, what is the biggest puzzle between China and the US?<br>
 
