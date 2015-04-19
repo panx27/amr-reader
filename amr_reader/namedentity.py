@@ -12,9 +12,8 @@ class NamedEntity(object):
         self.maintype_ = maintype       # PER, ORG, GPE
         self.wiki_ = wiki               # wikipedia title
         self.coreference_ = ''          # coreference name
-        self.attribute_ = set()         # amr attribute
-        self.coherence_ = set()         # coherent named entity
-        # self.paths_ = list()            # amr paths
+        self.neighbors_ = set()         # amr neighbors
+        self.coherence_ = set()         # coherent named entities
 
     def __str__(self):
         senid = '# ::id %s\n' % self.senid_

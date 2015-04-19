@@ -431,7 +431,7 @@ def generator(input, coherence_level):
 def retrieve_path_rte(node, path, paths_rte, named_entities):
     for i in node.next_:
         tmp = path[:] # passing by value
-        if i.is_entity_:
+        if i.is_entity_ and i.entity_type_ != '':
             # ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
             ne = named_entities[i.name_]
             path.append((i.edge_label_, ne))
@@ -450,7 +450,7 @@ def retrieve_path_etl(node, path, paths_etl, named_entities):
         paths_etl.append(path)
     for i in node.next_:
         tmp = path[:] # passing by value
-        if i.is_entity_:
+        if i.is_entity_ and i.entity_type_ != '':
             # ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
             ne = named_entities[i.name_]
             tmp.append((i.edge_label_, ne))
@@ -467,8 +467,8 @@ def add_name_coreference(amr_table):
         named_entities_doc_level = list()
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
-            for ne in sen.named_entities:
-                named_entities_doc_level.append(sen.named_entities[ne])
+            for ne in sen.named_entities_:
+                named_entities_doc_level.append(sen.named_entities_[ne])
 
         '''        
          PER name coreference:
@@ -485,7 +485,7 @@ def add_name_coreference(amr_table):
                     namei = i.entity_name_.split(' ')
                     namej = j.entity_name_.split(' ')
                     if len(namei) == 1 and namei[0] in namej:
-                        ne = amr_table[docid][i.senid_].named_entities[i.name_]
+                        ne = amr_table[docid][i.senid_].named_entities_[i.name_]
                         ne.coreference_ = j.entity_name_
 
         '''        
@@ -508,8 +508,38 @@ def add_name_coreference(amr_table):
                                     match = False
                                     break
                             if match == True:
-                                ne = amr_table[docid][i.senid_].named_entities[i.name_]
+                                ne = amr_table[docid][i.senid_].named_entities_[i.name_]
                                 ne.coreference_ = j.entity_name_
+
+'''
+ adding coherent set
+'''
+def add_coherence(amr_table):
+    '''
+     if one node links to multiple named entity nodes,
+     those named entity nodes are considered as coherence
+    '''
+    # conjunction_list = ["and", "or", "contrast-01", "either", 
+    #                     "neither", "slash", "between", "both"]
+    for docid in sorted(amr_table):
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            amr_nodes = sen.amr_nodes_
+            for n in amr_nodes:
+                node = amr_nodes[n]
+                tmp = list()
+                for i in node.next_:
+                    if i.is_entity_ and i.entity_type_ != '':
+                        tmp.append((node, i.edge_label_, sen.named_entities_[i.name_]))
+
+                for i in tmp:
+                    ne = i[2]
+                    for j in tmp:
+                        if i != j:
+                            node_name = j[0].ful_name_
+                            edge_label = j[1]
+                            coherent_ne = j[2]
+                            ne.coherence_.add((node_name, edge_label, coherent_ne))
 
 def main(amr_table):
     subtype_table = get_subtype_mapping_table()
@@ -536,26 +566,28 @@ def main(amr_table):
                                      subtype=node.entity_type_,
                                      maintype=main_type, wiki=node.wiki_)
 
-                    if node.name_ in sen.named_entities: # test
+                    if node.name_ in sen.named_entities_: # test
                         print 'overlapped ne in one sentence', senid, node.name_
-                    sen.named_entities[node.name_] = ne
+                    sen.named_entities_[node.name_] = ne
 
             ### generate path - root to entity
-            retrieve_path_rte(root, [('@root', root.ful_name_)], paths_rte, sen.named_entities)
+            retrieve_path_rte(root, [('@root', root.ful_name_)], paths_rte, sen.named_entities_)
             if paths_rte != []:
                 sen.amr_paths_['rte'] = paths_rte
 
             ### generate path - entity to leaf
             for i in amr_nodes_acr:
                 node = amr_nodes_acr[i]
-                if node.is_entity_ and node.next_ != list():
-                    # ne = '%s\t%s' % (node.entity_type_, node.entity_name_)
-                    ne = sen.named_entities[node.name_]
-                    retrieve_path_etl(node, [('@entity', ne)], paths_etl, sen.named_entities)
+                if node.is_entity_ and node.entity_type_ != '' and node.next_ != list():
+                    ne = sen.named_entities_[node.name_]
+                    retrieve_path_etl(node, [('@entity', ne)], paths_etl, sen.named_entities_)
             if paths_etl != []:
                 sen.amr_paths_['etl'] = paths_etl
 
-    add_name_coreference(amr_table)
+    # ### adding name coreference
+    # add_name_coreference(amr_table)
+    # ### adding coherent set
+    # add_coherence(amr_table)
 
 if __name__ == '__main__':
     subtype_table = get_subtype_mapping_table()

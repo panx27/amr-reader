@@ -12,7 +12,7 @@ class Sentence(object):
         self.amr_nodes_ = amr_nodes   # amr ndoes table
         self.path_whole_ = path_whole # path of whole graph
         self.amr_paths_ = dict()      # amr paths
-        self.named_entities = dict()  # named entities
+        self.named_entities_ = dict()  # named entities
 
     def __str__(self):
         senid = '# ::id %s\n' % self.senid_

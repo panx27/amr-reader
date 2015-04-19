@@ -46,6 +46,29 @@ if __name__ == '__main__':
     if args.query:
         import get_ne_query
         get_ne_query.main(amr_table)
+        for docid in sorted(amr_table):
+            for senid in sorted(amr_table[docid]):
+                print senid
+                sen = amr_table[docid][senid]
+
+        #         for i in sen.amr_paths_:
+        #             if i == 'rte':
+        #                 for j in sen.amr_paths_[i]:
+        #                     print j
+        #         print
+
+                # for ne in sen.named_entities_:
+                #     print sen.named_entities_[ne].entity_name_
+                #     print sen.named_entities_[ne].coherence_
+                # print
+
+        #         for i in sen.amr_paths_:
+        #             print i
+        #             for j in sen.amr_paths_[i]:
+        #                 for k in j:
+        #                     print k[0], k[1],
+        #                 print
+
     if args.visualization:
         m = re.search('\/(\w+)\/', input_path[::-1])
         amr_output.html(amr_table, m.group(1)[::-1])
