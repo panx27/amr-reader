@@ -14,11 +14,14 @@ class NamedEntity(object):
         self.coreference_ = ''          # coreference name
         self.attribute_ = set()         # amr attribute
         self.coherence_ = set()         # coherent named entity
-        self.paths_ = list()            # amr paths
+        # self.paths_ = list()            # amr paths
 
     def __str__(self):
         senid = '# ::id %s\n' % self.senid_
         name = 'name: %s\n' % self.entity_name_
         ne_type = 'entity type: %s\t%s\n' % (self.subtype_, self.maintype_)
+        coreference = 'coreference: %s\n' % self.coreference_
         wiki = '%s\n' % self.wiki_
-        return senid + name + ne_type + wiki
+        # return senid + name + ne_type + wiki
+        return '%s' % (self.entity_name_)
+        # return '%s, %s' % (self.entity_name_, self.coreference_)

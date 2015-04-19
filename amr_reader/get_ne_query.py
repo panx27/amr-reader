@@ -123,63 +123,63 @@ def get_subtype_mapping_table():
 
 
 
-# adding PER name coreference
-def add_person_name_coreference(ne_table):
-    for doc_id in ne_table.keys():
-        name_entities_in_doc = list()
-        for sen_id in ne_table[doc_id].keys():
-            for ne_abb in ne_table[doc_id][sen_id].keys():
-                name_entities_in_doc.append(ne_table[doc_id][sen_id][ne_abb])
+# # adding PER name coreference
+# def add_person_name_coreference(ne_table):
+#     for doc_id in ne_table.keys():
+#         name_entities_in_doc = list()
+#         for sen_id in ne_table[doc_id].keys():
+#             for ne_abb in ne_table[doc_id][sen_id].keys():
+#                 name_entities_in_doc.append(ne_table[doc_id][sen_id][ne_abb])
 
-        for i in name_entities_in_doc:
-            ne_abb = i.acronym_
-            sen_id = i.sen_id_
-            doc_id = sen_id[:sen_id.rfind('.')]
-            for j in name_entities_in_doc:
-                ne_i = i.name_.split(' ')
-                ne_j = j.name_.split(' ')
-                ne_i_type = i.subtype_
-                ne_j_type = j.subtype_
-                # if the main type is PER, the number of tokens of mi is 1, 
-                # and mi != mj, and mj contain mi, and sub-types of mi and mj are same
-                if ne_i_type in subtypes_table.keys() and \
-                   subtypes_table[ne_i_type] == "PER" and \
-                   ne_j_type in subtypes_table.keys() and \
-                   subtypes_table[ne_j_type] == "PER" and \
-                   len(ne_i) == 1 and ne_i != ne_j and ne_i[0] in ne_j and \
-                                              ne_i_type == ne_j_type:
-                    ne_table[doc_id][sen_id][ne_abb].coreference_ = ' '.join(ne_j)
+#         for i in name_entities_in_doc:
+#             ne_abb = i.acronym_
+#             sen_id = i.sen_id_
+#             doc_id = sen_id[:sen_id.rfind('.')]
+#             for j in name_entities_in_doc:
+#                 ne_i = i.name_.split(' ')
+#                 ne_j = j.name_.split(' ')
+#                 ne_i_type = i.subtype_
+#                 ne_j_type = j.subtype_
+#                 # if the main type is PER, the number of tokens of mi is 1, 
+#                 # and mi != mj, and mj contain mi, and sub-types of mi and mj are same
+#                 if ne_i_type in subtypes_table.keys() and \
+#                    subtypes_table[ne_i_type] == "PER" and \
+#                    ne_j_type in subtypes_table.keys() and \
+#                    subtypes_table[ne_j_type] == "PER" and \
+#                    len(ne_i) == 1 and ne_i != ne_j and ne_i[0] in ne_j and \
+#                                               ne_i_type == ne_j_type:
+#                     ne_table[doc_id][sen_id][ne_abb].coreference_ = ' '.join(ne_j)
 
 
 
-# adding ORG acronym coreference
-def add_org_acronym_coreference(ne_table):
-    for doc_id in ne_table.keys():
-        name_entities_in_doc = list()
-        for sen_id in ne_table[doc_id].keys():
-            for ne_abb in ne_table[doc_id][sen_id].keys():
-                name_entities_in_doc.append(ne_table[doc_id][sen_id][ne_abb])
+# # adding ORG acronym coreference
+# def add_org_acronym_coreference(ne_table):
+#     for doc_id in ne_table.keys():
+#         name_entities_in_doc = list()
+#         for sen_id in ne_table[doc_id].keys():
+#             for ne_abb in ne_table[doc_id][sen_id].keys():
+#                 name_entities_in_doc.append(ne_table[doc_id][sen_id][ne_abb])
 
-        for i in name_entities_in_doc:
-            # if all letters are uppercase, main type is ORG
-            if i.name_.isupper() == True and \
-               i.subtype_ in subtypes_table.keys() and \
-               subtypes_table[i.subtype_] == "ORG":
-                sen_id = i.sen_id_
-                doc_id = sen_id[:sen_id.rfind('.')]
-                acronym = i.name_
-                for j in name_entities_in_doc:
-                    if j.subtype_ in subtypes_table.keys() and \
-                       subtypes_table[j.subtype_] == "ORG":
-                        name = j.name_.split(' ')
-                        if len(acronym) == len(name) and len(name) > 1:
-                            match = True
-                            for n in range(len(name)):
-                                if name[n][0] != acronym[n]:
-                                    match = False
-                                    break
-                            if match == True:
-                                ne_table[doc_id][sen_id][i.acronym_].coreference_ = j.name_
+#         for i in name_entities_in_doc:
+#             # if all letters are uppercase, main type is ORG
+#             if i.name_.isupper() == True and \
+#                i.subtype_ in subtypes_table.keys() and \
+#                subtypes_table[i.subtype_] == "ORG":
+#                 sen_id = i.sen_id_
+#                 doc_id = sen_id[:sen_id.rfind('.')]
+#                 acronym = i.name_
+#                 for j in name_entities_in_doc:
+#                     if j.subtype_ in subtypes_table.keys() and \
+#                        subtypes_table[j.subtype_] == "ORG":
+#                         name = j.name_.split(' ')
+#                         if len(acronym) == len(name) and len(name) > 1:
+#                             match = True
+#                             for n in range(len(name)):
+#                                 if name[n][0] != acronym[n]:
+#                                     match = False
+#                                     break
+#                             if match == True:
+#                                 ne_table[doc_id][sen_id][i.acronym_].coreference_ = j.name_
 
 
 
@@ -428,35 +428,89 @@ def generator(input, coherence_level):
 '''
  retrieve path - root to entity
 '''
-def retrieve_path_rte(node, path, paths_rte):
+def retrieve_path_rte(node, path, paths_rte, named_entities):
     for i in node.next_:
         tmp = path[:] # passing by value
         if i.is_entity_:
-            ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+            # ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+            ne = named_entities[i.name_]
             path.append((i.edge_label_, ne))
             paths_rte.append(path)
-            retrieve_path_rte(i, path, paths_rte)
+            retrieve_path_rte(i, path, paths_rte, named_entities)
             path = tmp
         else:
             tmp.append((i.edge_label_, i.ful_name_))
-            retrieve_path_rte(i, tmp, paths_rte)
+            retrieve_path_rte(i, tmp, paths_rte, named_entities)
 
 '''
  retrieve path - entity to leaf
 '''
-def retrieve_path_etl(node, path, paths_etl):
+def retrieve_path_etl(node, path, paths_etl, named_entities):
     if node.next_ == list():
         paths_etl.append(path)
     for i in node.next_:
         tmp = path[:] # passing by value
         if i.is_entity_:
-            ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+            # ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+            ne = named_entities[i.name_]
             tmp.append((i.edge_label_, ne))
-            retrieve_path_etl(i, tmp, paths_etl)
+            retrieve_path_etl(i, tmp, paths_etl, named_entities)
         else:
             tmp.append((i.edge_label_, i.ful_name_))
-            retrieve_path_etl(i, tmp, paths_etl)
-    
+            retrieve_path_etl(i, tmp, paths_etl, named_entities)
+
+'''
+ adding name coreference
+'''
+def add_name_coreference(amr_table):
+    for docid in sorted(amr_table):
+        named_entities_doc_level = list()
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            for ne in sen.named_entities:
+                named_entities_doc_level.append(sen.named_entities[ne])
+
+        '''        
+         PER name coreference:
+           main type is PER;
+           subtypes of mi and mj are same;
+           mi != mj;
+           number of tokens of mi is 1;
+           mj contain mi;
+        '''
+        for i in named_entities_doc_level:
+            if i.maintype_ != 'PER': continue
+            for j in named_entities_doc_level:
+                if i.subtype_ == j.subtype_ and i.entity_name_ != j.entity_name_:
+                    namei = i.entity_name_.split(' ')
+                    namej = j.entity_name_.split(' ')
+                    if len(namei) == 1 and namei[0] in namej:
+                        ne = amr_table[docid][i.senid_].named_entities[i.name_]
+                        ne.coreference_ = j.entity_name_
+
+        '''        
+         ORG name coreference:
+           main type is ORG;
+           capital letters;
+           subtypes of mi and mj are same;
+        '''
+        for i in named_entities_doc_level:
+            if i.maintype_ != 'ORG': continue
+            if i.entity_name_.isupper() != True: continue
+            for j in named_entities_doc_level:
+                if i.subtype_ == j.subtype_:
+                    namei = i.entity_name_
+                    namej = j.entity_name_.split(' ')
+                    if len(namei) == len(namej) and len(namej) > 1:
+                            match = True
+                            for n in range(len(namej)):
+                                if namej[n][0] != namei[n]:
+                                    match = False
+                                    break
+                            if match == True:
+                                ne = amr_table[docid][i.senid_].named_entities[i.name_]
+                                ne.coreference_ = j.entity_name_
+
 def main(amr_table):
     subtype_table = get_subtype_mapping_table()
 
@@ -481,12 +535,13 @@ def main(amr_table):
                                      entity_name=node.entity_name_,
                                      subtype=node.entity_type_,
                                      maintype=main_type, wiki=node.wiki_)
-                    if node.name_ in sen.named_entities: # test !!!
-                        print '!!!!!!', senid, node.name_
+
+                    if node.name_ in sen.named_entities: # test
+                        print 'overlapped ne in one sentence', senid, node.name_
                     sen.named_entities[node.name_] = ne
 
             ### generate path - root to entity
-            retrieve_path_rte(root, [('@root', root.ful_name_)], paths_rte)
+            retrieve_path_rte(root, [('@root', root.ful_name_)], paths_rte, sen.named_entities)
             if paths_rte != []:
                 sen.amr_paths_['rte'] = paths_rte
 
@@ -494,15 +549,13 @@ def main(amr_table):
             for i in amr_nodes_acr:
                 node = amr_nodes_acr[i]
                 if node.is_entity_ and node.next_ != list():
-                    ne = '%s\t%s' % (node.entity_type_, node.entity_name_)
-                    retrieve_path_etl(node, [('@entity', ne)], paths_etl)
+                    # ne = '%s\t%s' % (node.entity_type_, node.entity_name_)
+                    ne = sen.named_entities[node.name_]
+                    retrieve_path_etl(node, [('@entity', ne)], paths_etl, sen.named_entities)
             if paths_etl != []:
                 sen.amr_paths_['etl'] = paths_etl
 
-
+    add_name_coreference(amr_table)
 
 if __name__ == '__main__':
     subtype_table = get_subtype_mapping_table()
-    
-
-    

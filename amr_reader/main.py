@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 import get_raw_amr
 import amr_reader
 import amr_output
@@ -16,6 +17,7 @@ if __name__ == '__main__':
     parser.add_argument('-n', '--node', help='output AMR nodes \'../output/amr_nodes\'', action='store_true')
     parser.add_argument('-e', '--entity', help='output named entities \'../output/nes\'', action='store_true')
     parser.add_argument('-q', '--query', help='output named entity queries \'../output/queries\'', action='store_true')
+    parser.add_argument('-v', '--visualization', help='output html format visualization \'../output/*.html\'', action='store_true')
     args = parser.parse_args()
 
     output_path = '../output/'
@@ -30,13 +32,16 @@ if __name__ == '__main__':
     output.close()
 
     amr_table = amr_reader.main(open(output_path + 'banked_amr', 'r').read())
-    if args.graph: 
+    if args.graph:
         amr_output.graph(amr_table)
-    if args.node: 
+    if args.node:
         amr_output.node(amr_table)
-    if args.entity: 
+    if args.entity:
         amr_output.namedentity(amr_table)
-
-    # import get_ne_query
-    # get_ne_query.main(amr_table)
-    # amr_output.html(amr_table)
+    if args.query:
+        import get_ne_query
+        get_ne_query.main(amr_table)
+        amr_output.path(amr_table)
+    if args.visualization:
+        m = re.search('\/(\w+)\/', input_path[::-1])
+        amr_output.html(amr_table, m.group(1)[::-1])
