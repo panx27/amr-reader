@@ -6,6 +6,7 @@ optional arguments:
 
       -g, --graph   output AMR graphs '../output/graphs/'
       -n, --node    output AMR nodes '../output/amr_nodes'
+      -p, --path    output AMR paths '../output/amr_paths'
       -e, --entity  output named entities '../output/nes'
       -q, --query   output named entity queries '../output/queries'
 
