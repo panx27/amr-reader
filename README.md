@@ -1,6 +1,7 @@
 ## Usage
 
-      python main.py [-h] [-g] [-n] [-e] [-q] [directory of AMR files]
+      python main.py [-h] [-g] [-n] [-p] [-e] [-q] [directory of AMR files]
+
 
 optional arguments:
 
