@@ -15,6 +15,7 @@ if __name__ == '__main__':
     parser.add_argument('directory', type=str, help='directory of AMR files', nargs='+') 
     parser.add_argument('-g', '--graph', help='output AMR graphs \'../output/graphs/\'', action='store_true')
     parser.add_argument('-n', '--node', help='output AMR nodes \'../output/amr_nodes\'', action='store_true')
+    parser.add_argument('-p', '--path', help='output AMR paths \'../output/amr_paths\'', action='store_true')
     parser.add_argument('-e', '--entity', help='output named entities \'../output/nes\'', action='store_true')
     parser.add_argument('-q', '--query', help='output named entity queries \'../output/queries\'', action='store_true')
     parser.add_argument('-v', '--visualization', help='output html format visualization \'../output/*.html\'', action='store_true')
@@ -38,10 +39,13 @@ if __name__ == '__main__':
         amr_output.node(amr_table)
     if args.entity:
         amr_output.namedentity(amr_table)
-    if args.query:
+    if args.path:
         import get_ne_query
         get_ne_query.main(amr_table)
         amr_output.path(amr_table)
+    if args.query:
+        import get_ne_query
+        get_ne_query.main(amr_table)
     if args.visualization:
         m = re.search('\/(\w+)\/', input_path[::-1])
         amr_output.html(amr_table, m.group(1)[::-1])
