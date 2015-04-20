@@ -105,6 +105,7 @@ def path(amr_table, output_path='../output/'):
             sen = amr_table[docid][senid]
             assert sen.senid_ == senid
             for path_type in sen.amr_paths_:
+                # if path_type != 'etl': continue
                 paths = sen.amr_paths_[path_type]
                 for p in paths:
                     path = ''

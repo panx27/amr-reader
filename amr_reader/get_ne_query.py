@@ -56,19 +56,6 @@ def get_adj_noun_mapping_table():
 #         types[line.strip()] = 'GPE'
 #     return types
 
-'''
- AMR subtype to main type (PER, ORG, GPE) mapping table
-'''
-def get_subtype_mapping_table():
-    # current_path = os.path.dirname(os.path.abspath(__file__))
-    types = dict()
-    f = open('../doc/ne_types/isi_ne-type-sc.txt')
-    for line in f:
-        if '# superclass amr-ne-type' in line:
-            continue
-        line = line.strip().split(' ')
-        types[line[1]] = line[0]
-    return types
 
 # '''
 #  named entity table
@@ -423,7 +410,19 @@ def generator(input, coherence_level):
 
 
 
-
+'''
+ AMR subtype to main type (PER, ORG, GPE) mapping table
+'''
+def get_subtype_mapping_table():
+    # current_path = os.path.dirname(os.path.abspath(__file__))
+    types = dict()
+    f = open('../doc/ne_types/isi_ne-type-sc.txt')
+    for line in f:
+        if '# superclass amr-ne-type' in line:
+            continue
+        line = line.strip().split(' ')
+        types[line[1]] = line[0]
+    return types
 
 '''
  retrieve path - root to entity
@@ -445,19 +444,25 @@ def retrieve_path_rte(node, path, paths_rte, named_entities):
 '''
  retrieve path - entity to leaf
 '''
-def retrieve_path_etl(node, path, paths_etl, named_entities):
+def retrieve_path_etl(node, path, paths_etl, named_entities, amr_nodes):
     if node.next_ == list():
         paths_etl.append(path)
     for i in node.next_:
         tmp = path[:] # passing by value
-        if i.is_entity_ and i.entity_type_ != '':
-            # ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
+        if (i.is_entity_ and i.entity_type_ != '') or \
+           (i.name_ in named_entities and i.ful_name_ == ''):
             ne = named_entities[i.name_]
             tmp.append((i.edge_label_, ne))
-            retrieve_path_etl(i, tmp, paths_etl, named_entities)
+            retrieve_path_etl(i, tmp, paths_etl, named_entities, amr_nodes)
         else:
-            tmp.append((i.edge_label_, i.ful_name_))
-            retrieve_path_etl(i, tmp, paths_etl, named_entities)
+            if i.ful_name_ == '':
+                if amr_nodes[i.name_].ful_name_ != '':
+                    tmp.append((i.edge_label_, amr_nodes[i.name_].ful_name_))
+                else:
+                    tmp.append((i.edge_label_, i.name_)) # in case of :value
+            else:
+                tmp.append((i.edge_label_, i.ful_name_))
+            retrieve_path_etl(i, tmp, paths_etl, named_entities, amr_nodes)
 
 '''
  adding name coreference
@@ -565,9 +570,6 @@ def main(amr_table):
                                      entity_name=node.entity_name_,
                                      subtype=node.entity_type_,
                                      maintype=main_type, wiki=node.wiki_)
-
-                    if node.name_ in sen.named_entities_: # test
-                        print 'overlapped ne in one sentence', senid, node.name_
                     sen.named_entities_[node.name_] = ne
 
             ### generate path - root to entity
@@ -580,7 +582,7 @@ def main(amr_table):
                 node = amr_nodes_acr[i]
                 if node.is_entity_ and node.entity_type_ != '' and node.next_ != list():
                     ne = sen.named_entities_[node.name_]
-                    retrieve_path_etl(node, [('@entity', ne)], paths_etl, sen.named_entities_)
+                    retrieve_path_etl(node, [('@entity', ne)], paths_etl, sen.named_entities_, sen.amr_nodes_)
             if paths_etl != []:
                 sen.amr_paths_['etl'] = paths_etl
 
@@ -589,5 +591,39 @@ def main(amr_table):
     # ### adding coherent set
     # add_coherence(amr_table)
 
-if __name__ == '__main__':
-    subtype_table = get_subtype_mapping_table()
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def foo(amr_table):
+    out = open('../output/conjunction', 'w')
+    for docid in sorted(amr_table):
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            amr_nodes = sen.amr_nodes_
+            for n in amr_nodes:
+                node = amr_nodes[n]
+                tmp = list()
+                for i in node.next_:
+                    if re.search(':op\d', i.edge_label_) != None:
+                        tmp.append(i)
+
+                if len(tmp) > 1:
+                    out.write('%s\t%s\t' % (senid, node.ful_name_))
+                    for i in tmp:
+                        if i.is_entity_:
+                            out.write('(%s\t%s)\t' % (i.edge_label_, i.entity_name_))
+                        else:
+                            out.write('(%s\t%s)\t' % (i.edge_label_, i.ful_name_))
+                    out.write('\n')

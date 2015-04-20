@@ -70,7 +70,6 @@ def generate_node_single(content, amr_nodes, amr_nodes_acr):
                         entity_name=entity_name.strip())
         amr_nodes[content] = new_node
         amr_nodes_acr[acr] = new_node
-
     else:
         new_node = Node(name=acr, ful_name=ful, is_polarity=is_polarity)
         amr_nodes[content] = new_node
@@ -127,7 +126,7 @@ def generate_nodes_multiple(content, amr_nodes, amr_nodes_acr):
             node = copy.copy(amr_nodes_acr[concept])
             node.next_ = list()
         ### in case of (d / date-entity :year 2012)
-        else: 
+        else:
             node = Node(name=concept)
             amr_nodes_acr[concept] = node
         node.edge_label_ = role
@@ -228,7 +227,7 @@ def amr_reader(raw_amr_input):
     ### the last node (whole amr) is always the root of the graph
     root = amr_nodes[sorted(amr_nodes, key=len, reverse=True)[0]]
     retrieve_path_whole(root, '@', path_whole)
-
+    
     return amr_nodes_acr, path_whole
 
 '''
