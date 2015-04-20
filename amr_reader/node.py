@@ -17,12 +17,17 @@ class Node(object):
         self.is_polarity_ = is_polarity # whether the node is polarity
 
     def __str__(self):
-        name = 'NAME OF NODE: %s / %s\n' % (self.name_, self.ful_name_)
+        if self.ful_name_ == '':
+            name = 'NAME OF NODE: %s\n' % self.name_
+        else:
+            name = 'NAME OF NODE: %s / %s\n' % (self.name_, self.ful_name_)
         polarity = 'POLARITY: %s\n' % self.is_polarity_
         children = 'LINK TO:\n'
         for i in self.next_:
-            children += '\t(%s) -> %s / %s\n' % (i.edge_label_,
-                                                 i.name_, i.ful_name_)
+            if i.ful_name_ == '':
+                children += '\t(%s) -> %s\n' % (i.edge_label_, i.name_)
+            else:
+                children += '\t(%s) -> %s / %s\n' % (i.edge_label_, i.name_, i.ful_name_)
         if not self.is_entity_:
             return name + polarity + children
         else:

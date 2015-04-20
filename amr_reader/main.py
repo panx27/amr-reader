@@ -1,19 +1,19 @@
 import os
 import sys
 import re
+import argparse
 import get_raw_amr
 import amr_reader
 import amr_output
-
-def usage():
-    return 'Usage: python main.py <path of the directory of AMR files>'
+import amr_ne
+import amr_path
 
 if __name__ == '__main__':
-    import argparse
     parser = argparse.ArgumentParser()
     parser.description = 'AMR Reader'
     parser.add_argument('directory', type=str, help='directory of AMR files', nargs='+') 
     parser.add_argument('-g', '--graph', help='output AMR graphs \'../output/graphs/\'', action='store_true')
+    parser.add_argument('-ge', '--grapheasy', help='output AMR graphs (curt version)\'../output/graphs/\'', action='store_true')
     parser.add_argument('-n', '--node', help='output AMR nodes \'../output/amr_nodes\'', action='store_true')
     parser.add_argument('-p', '--path', help='output AMR paths \'../output/amr_paths\'', action='store_true')
     parser.add_argument('-e', '--entity', help='output named entities \'../output/nes\'', action='store_true')
@@ -33,15 +33,18 @@ if __name__ == '__main__':
     output.close()
 
     amr_table = amr_reader.main(open(output_path + 'banked_amr', 'r').read())
+    amr_ne.add_named_entity(amr_table)
+
     if args.graph:
         amr_output.graph(amr_table)
+    if args.grapheasy:
+        amr_output.graph(amr_table, easy=True)
     if args.node:
         amr_output.node(amr_table)
     if args.entity:
         amr_output.namedentity(amr_table)
     if args.path:
-        import get_ne_query
-        get_ne_query.main(amr_table)
+        amr_path.main(amr_table)
         amr_output.path(amr_table)
     if args.query:
         import get_ne_query

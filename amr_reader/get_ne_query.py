@@ -410,59 +410,45 @@ def generator(input, coherence_level):
 
 
 
-'''
- AMR subtype to main type (PER, ORG, GPE) mapping table
-'''
-def get_subtype_mapping_table():
-    # current_path = os.path.dirname(os.path.abspath(__file__))
-    types = dict()
-    f = open('../doc/ne_types/isi_ne-type-sc.txt')
-    for line in f:
-        if '# superclass amr-ne-type' in line:
-            continue
-        line = line.strip().split(' ')
-        types[line[1]] = line[0]
-    return types
 
-'''
- retrieve path - root to entity
-'''
-def retrieve_path_rte(node, path, paths_rte, named_entities):
-    for i in node.next_:
-        tmp = path[:] # passing by value
-        if i.is_entity_ and i.entity_type_ != '':
-            # ne = '%s\t%s' % (i.entity_type_, i.entity_name_)
-            ne = named_entities[i.name_]
-            path.append((i.edge_label_, ne))
-            paths_rte.append(path)
-            retrieve_path_rte(i, path, paths_rte, named_entities)
-            path = tmp
-        else:
-            tmp.append((i.edge_label_, i.ful_name_))
-            retrieve_path_rte(i, tmp, paths_rte, named_entities)
+# '''
+#  retrieve path - root to entity
+# '''
+# def retrieve_path_rte(node, path, paths_rte, named_entities):
+#     for i in node.next_:
+#         tmp = path[:] # passing by value
+#         if i.is_entity_ and i.entity_type_ != '':
+#             ne = named_entities[i.name_]
+#             path.append((i.edge_label_, ne))
+#             paths_rte.append(path)
+#             retrieve_path_rte(i, path, paths_rte, named_entities)
+#             path = tmp
+#         else:
+#             tmp.append((i.edge_label_, i.ful_name_))
+#             retrieve_path_rte(i, tmp, paths_rte, named_entities)
 
-'''
- retrieve path - entity to leaf
-'''
-def retrieve_path_etl(node, path, paths_etl, named_entities, amr_nodes):
-    if node.next_ == list():
-        paths_etl.append(path)
-    for i in node.next_:
-        tmp = path[:] # passing by value
-        if (i.is_entity_ and i.entity_type_ != '') or \
-           (i.name_ in named_entities and i.ful_name_ == ''):
-            ne = named_entities[i.name_]
-            tmp.append((i.edge_label_, ne))
-            retrieve_path_etl(i, tmp, paths_etl, named_entities, amr_nodes)
-        else:
-            if i.ful_name_ == '':
-                if amr_nodes[i.name_].ful_name_ != '':
-                    tmp.append((i.edge_label_, amr_nodes[i.name_].ful_name_))
-                else:
-                    tmp.append((i.edge_label_, i.name_)) # in case of :value
-            else:
-                tmp.append((i.edge_label_, i.ful_name_))
-            retrieve_path_etl(i, tmp, paths_etl, named_entities, amr_nodes)
+# '''
+#  retrieve path - entity to leaf
+# '''
+# def retrieve_path_etl(node, path, paths_etl, named_entities, amr_nodes):
+#     if node.next_ == list():
+#         paths_etl.append(path)
+#     for i in node.next_:
+#         tmp = path[:] # passing by value
+#         if (i.is_entity_ and i.entity_type_ != '') or \
+#            (i.name_ in named_entities and i.ful_name_ == ''):
+#             ne = named_entities[i.name_]
+#             tmp.append((i.edge_label_, ne))
+#             retrieve_path_etl(i, tmp, paths_etl, named_entities, amr_nodes)
+#         else:
+#             if i.ful_name_ == '':
+#                 if amr_nodes[i.name_].ful_name_ != '':
+#                     tmp.append((i.edge_label_, amr_nodes[i.name_].ful_name_))
+#                 else:
+#                     tmp.append((i.edge_label_, i.name_)) # in case of :value
+#             else:
+#                 tmp.append((i.edge_label_, i.ful_name_))
+#             retrieve_path_etl(i, tmp, paths_etl, named_entities, amr_nodes)
 
 '''
  adding name coreference

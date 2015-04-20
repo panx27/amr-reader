@@ -20,7 +20,7 @@ def amr_validator(raw_amr_input):
 
 '''
  input: raw amr
- output: amr_contents (list, golbal variable)
+ output: amr_contents (container:list(), golbal variable)
  functionality: split raw amr by pairing '()'
 '''
 def split_amr(text, content):
@@ -66,7 +66,9 @@ def generate_node_single(content, amr_nodes, amr_nodes_acr):
         entity_name = ''
         for i in names:
             entity_name += re.match(':op\d\s\"(\S+)\"', i).group(1) + ' '
-        new_node = Node(name=acr, ful_name=ful, is_entity=True,
+        # new_node = Node(name=acr, ful_name=ful, is_entity=True, # ???is_entity = False???
+        #                 entity_name=entity_name.strip())
+        new_node = Node(name=acr, ful_name=ful, # ???is_entity = False???
                         entity_name=entity_name.strip())
         amr_nodes[content] = new_node
         amr_nodes_acr[acr] = new_node

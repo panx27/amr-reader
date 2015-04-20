@@ -46,7 +46,7 @@ def html(amr_table, filename='test', output_path='../output/', graph_path='../ou
 '''
  AMR graphs
 '''
-def graph(amr_table, graph_path='../output/graphs/'):
+def graph(amr_table, graph_path='../output/graphs/', easy=False):
     import amr_visualizer
 
     try: os.mkdir(graph_path)
@@ -55,7 +55,10 @@ def graph(amr_table, graph_path='../output/graphs/'):
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
-            amr_visualizer.visualizer(sen.amr_nodes_, sen.path_whole_, output_name=sen.senid_)
+            if easy:
+                amr_visualizer.visualizer_easy(sen.amr_nodes_, sen.path_whole_, output_name=sen.senid_)
+            else:
+                amr_visualizer.visualizer(sen.amr_nodes_, sen.path_whole_, output_name=sen.senid_)
 
 '''
  AMR nodes
@@ -71,7 +74,8 @@ def node(amr_table, output_path='../output/'):
             amr_nodes = sen.amr_nodes_
             for n in amr_nodes:
                 node = amr_nodes[n]
-                if node.is_entity_ and node.entity_type_ == '':
+                # if node.is_entity_ and node.entity_type_ == '':
+                if node.ful_name_ == 'name': # ingore 'n / name' node
                     pass
                 else:
                     output.write('%s\n%s\n' % (senid, amr_nodes[n])) 
@@ -88,7 +92,8 @@ def namedentity(amr_table, output_path='../output/'):
             amr_nodes = sen.amr_nodes_
             for n in amr_nodes:
                 node = amr_nodes[n]
-                if node.is_entity_ and node.entity_type_ != '':
+                # if node.is_entity_ and node.entity_type_ != '':
+                if node.is_entity_:
                     output.write('%s\t%s / %s\t%s\t%s\n' % (senid,
                                                             node.name_,
                                                             node.ful_name_,
