@@ -1,15 +1,27 @@
 ## Usage
 
-      python main.py <directory of AMR files> [-h] [-g] [-n] [-p] [-e] [-q]
+      python main.py <directory of AMR files> [-h] [-g GRAPH] [-n] [-p] [-e] [-q] [-v]
+
 
 
 optional arguments:
 
-      -g, --graph   output AMR graphs '../output/graphs/'
+      -g GRAPH, --graph GRAPH  output AMR graphs '../output/graphs/'
       -n, --node    output AMR nodes '../output/amr_nodes'
       -p, --path    output AMR paths '../output/amr_paths'
       -e, --entity  output named entities '../output/nes'
       -q, --query   output named entity queries '../output/queries'
+
+      -h, --help            show this help message and exit
+      -g GRAPH, --graph GRAPH
+      	                    output AMR graphs '../output/graphs/' 
+                            GRAPH=n: normal graphs
+                            GRAPH=s: simple graphs
+      -n, --node            output AMR nodes '../output/amr_nodes'
+      -p, --path            output AMR paths '../output/amr_paths'
+      -e, --entity          output named entities '../output/nes'
+      -q, --query           output named entity queries '../output/queries'
+      -v, --visualization   output html format visualization '../output/*.html'
 
 If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.
 ## Example
