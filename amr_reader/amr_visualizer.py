@@ -57,7 +57,7 @@ def visualizer(amr_nodes_acr, path_whole, output_path='../output/graphs/',
     G.layout(prog = 'dot')
     G.draw('%s%s.png' % (output_path, output_name))
 
-def visualizer_easy(amr_nodes_acr, path_whole, output_path='../output/graphs/',
+def visualizer_curt(amr_nodes_acr, path_whole, output_path='../output/graphs/',
                     output_name='amr_graph', show_wiki=True):
     nodes = set()
     for i in path_whole:

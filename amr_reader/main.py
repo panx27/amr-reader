@@ -12,8 +12,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.description = 'AMR Reader'
     parser.add_argument('directory', type=str, help='directory of AMR files', nargs='+') 
-    parser.add_argument('-g', '--graph', help='output AMR graphs \'../output/graphs/\'', action='store_true')
-    parser.add_argument('-ge', '--grapheasy', help='output AMR graphs (curt version)\'../output/graphs/\'', action='store_true')
+    parser.add_argument('-g', '--graph', help='output AMR graphs \'../output/graphs/\' -g=n: normal graphs -g=s: simple graphs ', type=str)
     parser.add_argument('-n', '--node', help='output AMR nodes \'../output/amr_nodes\'', action='store_true')
     parser.add_argument('-p', '--path', help='output AMR paths \'../output/amr_paths\'', action='store_true')
     parser.add_argument('-e', '--entity', help='output named entities \'../output/nes\'', action='store_true')
@@ -35,10 +34,10 @@ if __name__ == '__main__':
     amr_table = amr_reader.main(open(output_path + 'banked_amr', 'r').read())
     amr_ne.add_named_entity(amr_table)
 
-    if args.graph:
+    if args.graph == 'n':
         amr_output.graph(amr_table)
-    if args.grapheasy:
-        amr_output.graph(amr_table, easy=True)
+    if args.graph == 's':
+        amr_output.graph(amr_table, curt=True)
     if args.node:
         amr_output.node(amr_table)
     if args.entity:
@@ -47,31 +46,7 @@ if __name__ == '__main__':
         amr_path.main(amr_table)
         amr_output.path(amr_table)
     if args.query:
-        import get_ne_query
-        get_ne_query.main(amr_table)
-        for docid in sorted(amr_table):
-            for senid in sorted(amr_table[docid]):
-                print senid
-                sen = amr_table[docid][senid]
-
-        #         for i in sen.amr_paths_:
-        #             if i == 'rte':
-        #                 for j in sen.amr_paths_[i]:
-        #                     print j
-        #         print
-
-                # for ne in sen.named_entities_:
-                #     print sen.named_entities_[ne].entity_name_
-                #     print sen.named_entities_[ne].coherence_
-                # print
-
-        #         for i in sen.amr_paths_:
-        #             print i
-        #             for j in sen.amr_paths_[i]:
-        #                 for k in j:
-        #                     print k[0], k[1],
-        #                 print
-
+        pass
     if args.visualization:
         m = re.search('\/(\w+)\/', input_path[::-1])
         amr_output.html(amr_table, m.group(1)[::-1])

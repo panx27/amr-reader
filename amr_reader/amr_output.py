@@ -46,7 +46,7 @@ def html(amr_table, filename='test', output_path='../output/', graph_path='../ou
 '''
  AMR graphs
 '''
-def graph(amr_table, graph_path='../output/graphs/', easy=False):
+def graph(amr_table, graph_path='../output/graphs/', curt=False):
     import amr_visualizer
 
     try: os.mkdir(graph_path)
@@ -55,8 +55,8 @@ def graph(amr_table, graph_path='../output/graphs/', easy=False):
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
-            if easy:
-                amr_visualizer.visualizer_easy(sen.amr_nodes_, sen.path_whole_, output_name=sen.senid_)
+            if curt:
+                amr_visualizer.visualizer_curt(sen.amr_nodes_, sen.path_whole_, output_name=sen.senid_)
             else:
                 amr_visualizer.visualizer(sen.amr_nodes_, sen.path_whole_, output_name=sen.senid_)
 
