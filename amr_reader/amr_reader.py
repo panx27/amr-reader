@@ -268,16 +268,9 @@ def main(input):
 
 
 if __name__ == '__main__':
-    # input = open('../output/test', 'r').read()
     input = open('../output/banked_amr', 'r').read()
 
     amr_table = main(input)
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
-
-    # import get_ne_query
-    # get_ne_query.main(amr_table)
-
-    # amr_output.namedentity(amr_table)
-    # amr_output.html(amr_table)

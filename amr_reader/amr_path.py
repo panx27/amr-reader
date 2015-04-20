@@ -109,4 +109,3 @@ def add(amr_table):
             paths_rtc = list()
             retrieve_path_rtc(root, 'm', [('@root', root.ful_name_)], paths_rtc)
             sen.amr_paths_['rtc'] = paths_rtc
-
