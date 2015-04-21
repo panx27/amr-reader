@@ -8,7 +8,6 @@ from namedentity import NamedEntity
  AMR subtype to main type (PER, ORG, GPE) mapping table
 '''
 def get_subtype_mapping_table():
-    # current_path = os.path.dirname(os.path.abspath(__file__))
     types = dict()
     f = open('../doc/ne_types/isi_ne-type-sc.txt')
     for line in f:

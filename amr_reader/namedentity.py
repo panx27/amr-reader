@@ -21,6 +21,12 @@ class NamedEntity(object):
         ne_type = 'entity type: %s\t%s\n' % (self.subtype_, self.maintype_)
         coreference = 'coreference: %s\n' % self.coreference_
         wiki = '%s\n' % self.wiki_
-        # return senid + name + ne_type + wiki
         return '%s' % (self.entity_name_)
-        # return '%s, %s' % (self.entity_name_, self.coreference_)
+        # return '%s, %s, %s, %s' % (self.entity_name_, self.coreference_,
+        #                            self.neighbors_, self.coherence_)
+
+    def name(self):
+        if self.coreference_ != '':
+            return self.coreference_
+        else:
+            return self.entity_name_

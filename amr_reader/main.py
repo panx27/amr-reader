@@ -7,6 +7,7 @@ import amr_reader
 import amr_output
 import amr_ne
 import amr_path
+import amr_ne_query
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -46,7 +47,8 @@ if __name__ == '__main__':
         amr_path.main(amr_table)
         amr_output.path(amr_table)
     if args.query:
-        pass
+        amr_ne_query.main(amr_table)
+        amr_output.query(amr_table)
     if args.visualization:
         m = re.search('\/(\w+)\/', input_path[::-1])
         amr_output.html(amr_table, m.group(1)[::-1])

@@ -119,3 +119,25 @@ def path(amr_table, output_path='../output/'):
                     output.write('%s\t%s\t[%s]\n' % (senid,
                                                      path_type,
                                                      path.strip(', ')))
+
+'''
+ AMR named entity queries
+'''
+def query(amr_table, output_path='../output/'):
+    output = open(output_path + 'amr_queries', 'w')
+    for docid in sorted(amr_table):
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            assert sen.senid_ == senid
+            for i in sen.named_entities_:
+                ne = sen.named_entities_[i]
+                query = '%s(%s|%s)' % (ne.name(), ne.subtype_, ne.maintype_)
+                # for i in ne.neighbors_:
+                #     query += '%s;' % i[2].name()
+                # query += '|'
+                for i in ne.coherence_:
+                    query += '%s;' % i[2].name()
+
+                output.write('%s\t%s\t%s\n' % (senid,
+                                               ne.entity_name_,
+                                               query.strip(';')))

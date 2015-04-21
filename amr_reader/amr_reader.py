@@ -66,10 +66,9 @@ def generate_node_single(content, amr_nodes, amr_nodes_acr):
         entity_name = ''
         for i in names:
             entity_name += re.match(':op\d\s\"(\S+)\"', i).group(1) + ' '
-        # new_node = Node(name=acr, ful_name=ful, is_entity=True, # ???is_entity = False???
+        # new_node = Node(name=acr, ful_name=ful, is_entity=True,
         #                 entity_name=entity_name.strip())
-        new_node = Node(name=acr, ful_name=ful, # ???is_entity = False???
-                        entity_name=entity_name.strip())
+        new_node = Node(name=acr, ful_name=ful, entity_name=entity_name.strip())
         amr_nodes[content] = new_node
         amr_nodes_acr[acr] = new_node
     else:

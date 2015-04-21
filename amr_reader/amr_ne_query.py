@@ -2,18 +2,18 @@
  generate AMR named entity query
 '''
 
-'''
- AMR adj. to nonu mapping table
-'''
-def get_adj_noun_mapping_table():
-    f = open('../doc/ne-table.txt')
-    adj_noun_map = dict()
-    for line in f:
-        line = line.strip().split('\t')
-        adj = line[0].lower() # LOWERCASE
-        noun = line[1].lower()
-        adj_noun_map[adj] = noun
-    return adj_noun_map
+# '''
+#  AMR adj. to nonu mapping table
+# '''
+# def get_adj_noun_mapping_table():
+#     f = open('../doc/tables/ne-table.txt')
+#     adj_noun_map = dict()
+#     for line in f:
+#         line = line.strip().split('\t')
+#         adj = line[0].lower() # LOWERCASE
+#         noun = line[1].lower()
+#         adj_noun_map[adj] = noun
+#     return adj_noun_map
 
 '''
  adding name coreference
@@ -23,8 +23,9 @@ def add_name_coreference(amr_table):
         named_entities_doc_level = list()
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
-            for ne in sen.named_entities_:
-                named_entities_doc_level.append(sen.named_entities_[ne])
+            for i in sen.named_entities_:
+                ne = sen.named_entities_[i]
+                named_entities_doc_level.append(ne)
 
         '''        
          PER name coreference:
@@ -97,12 +98,50 @@ def add_coherence(amr_table):
                             coherent_ne = j[2]
                             ne.coherence_.add((node_name, edge_label, coherent_ne))
 
-def main(amr_table):
-    import amr_paths
-    amr_paths.main(amr_table)
+'''
+ merge coreferential named entities as a coreferential chian in doc level
+'''
+def add_chain_doc_level(amr_table):
+    from namedentity import NamedEntity
 
+    for docid in sorted(amr_table):
+        chain = dict()
+        ### merge
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            for i in sen.named_entities_:
+                ne = sen.named_entities_[i]
+                name = ne.name()
+                if name not in chain: # key should be entity name + entity type?
+                    chain[name] = NamedEntity(entity_name=name, subtype=ne.subtype_, 
+                                              maintype=ne.maintype_, wiki=ne.wiki_)
+                chain[name].neighbors_ = chain[name].neighbors_.union(ne.neighbors_)
+                chain[name].coherence_ = chain[name].coherence_.union(ne.coherence_)
+
+        ### propagate
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            for i in sen.named_entities_:
+                ne = sen.named_entities_[i]
+                name = ne.name()
+                ne.neighbors_ = chain[name].neighbors_
+                ne.coherence_ = chain[name].coherence_
+
+def main(amr_table):
     ### adding name coreference
     add_name_coreference(amr_table)
 
     ### adding coherent set
     add_coherence(amr_table)
+
+    ### adding coreferential chain
+    add_chain_doc_level(amr_table)
+
+    # for docid in sorted(amr_table):
+    #     for senid in sorted(amr_table[docid]):
+    #         sen = amr_table[docid][senid]
+    #         print senid
+    #         for i in sen.named_entities_:
+    #             ne = sen.named_entities_[i]
+    #             print ne
+    #         print
