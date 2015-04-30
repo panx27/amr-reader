@@ -141,3 +141,21 @@ def query(amr_table, output_path='../output/'):
                 output.write('%s\t%s\t%s\n' % (senid,
                                                ne.entity_name_,
                                                query.strip(';')))
+
+'''
+ named entity wiki titile
+'''
+def newiki(amr_table, output_path='../output/'):
+    wiki = set()
+    output = open(output_path + 'amr_nes_wiki', 'w')
+    for docid in sorted(amr_table):
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            assert sen.senid_ == senid
+            amr_nodes = sen.amr_nodes_
+            for n in amr_nodes:
+                node = amr_nodes[n]
+                if node.is_entity_:
+                    wiki.add(node.wiki_)
+    for i in sorted(wiki):
+        output.write('%s\n' % i)
