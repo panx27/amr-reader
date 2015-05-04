@@ -19,6 +19,8 @@ if __name__ == '__main__':
     parser.add_argument('-e', '--entity', help='output named entities \'../output/nes\'', action='store_true')
     parser.add_argument('-q', '--query', help='output named entity queries \'../output/queries\'', action='store_true')
     parser.add_argument('-v', '--visualization', help='output html format visualization \'../output/*.html\'', action='store_true')
+    parser.add_argument('-t', '--test', help='test', action='store_true')
+
     args = parser.parse_args()
 
     output_path = '../output/'
@@ -46,9 +48,13 @@ if __name__ == '__main__':
     if args.path:
         amr_path.main(amr_table)
         amr_output.path(amr_table)
-    if args.query:
-        amr_ne_query.main(amr_table)
-        amr_output.query(amr_table)
     if args.visualization:
         m = re.search('\/(\w+)\/', input_path[::-1])
         amr_output.html(amr_table, m.group(1)[::-1])
+    if args.query:
+        amr_ne_query.main(amr_table)
+        amr_output.query(amr_table)
+    if args.test:
+        amr_output.node_test(amr_table)
+        amr_ne_query.main(amr_table)
+        amr_output.query_test(amr_table)

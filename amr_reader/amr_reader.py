@@ -1,3 +1,6 @@
+'''
+ AMR reader
+'''
 import re
 import os
 import sys

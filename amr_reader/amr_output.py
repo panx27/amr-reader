@@ -1,3 +1,6 @@
+'''
+ AMR output
+'''
 import os
 
 '''
@@ -74,11 +77,10 @@ def node(amr_table, output_path='../output/'):
             amr_nodes = sen.amr_nodes_
             for n in amr_nodes:
                 node = amr_nodes[n]
-                # if node.is_entity_ and node.entity_type_ == '':
                 if node.ful_name_ == 'name': # ingore 'n / name' node
                     pass
                 else:
-                    output.write('%s\n%s\n' % (senid, amr_nodes[n])) 
+                    output.write('%s\n%s\n' % (senid, node))
 
 '''
  named entities
@@ -92,13 +94,9 @@ def namedentity(amr_table, output_path='../output/'):
             amr_nodes = sen.amr_nodes_
             for n in amr_nodes:
                 node = amr_nodes[n]
-                # if node.is_entity_ and node.entity_type_ != '':
                 if node.is_entity_:
-                    output.write('%s\t%s / %s\t%s\t%s\n' % (senid,
-                                                            node.name_,
-                                                            node.ful_name_,
-                                                            node.entity_name_,
-                                                            node.wiki_))
+                    output.write('%s\t%s / %s\t%s\t%s\n' % (senid, node.name_, node.ful_name_,
+                                                            node.entity_name_, node.wiki_))
 
 '''
  AMR paths
@@ -110,7 +108,6 @@ def path(amr_table, output_path='../output/'):
             sen = amr_table[docid][senid]
             assert sen.senid_ == senid
             for path_type in sen.amr_paths_:
-                # if path_type != 'etl': continue
                 paths = sen.amr_paths_[path_type]
                 for p in paths:
                     path = ''
@@ -132,9 +129,9 @@ def query(amr_table, output_path='../output/'):
             for i in sen.named_entities_:
                 ne = sen.named_entities_[i]
                 query = '%s(%s|%s)' % (ne.name(), ne.subtype_, ne.maintype_)
-                # for i in ne.neighbors_:
-                #     query += '%s;' % i[2].name()
-                # query += '|'
+                for i in ne.neighbors_:
+                    query += '%s;' % i[1]
+                query += '|'
                 for i in ne.coherence_:
                     query += '%s;' % i[2].name()
 
@@ -159,3 +156,41 @@ def newiki(amr_table, output_path='../output/'):
                     wiki.add(node.wiki_)
     for i in sorted(wiki):
         output.write('%s\n' % i)
+
+'''
+ test
+'''
+def node_test(amr_table, output_path='../output/'):
+    output = open(output_path + 'amr_nodes_test', 'w')
+    for docid in sorted(amr_table):
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            assert sen.senid_ == senid
+            amr_nodes = sen.amr_nodes_
+            for n in amr_nodes:
+                node = amr_nodes[n]
+                # if node.edge_label_ == ':time':
+                # if node.ful_name_ == 'date-entity':
+                if node.edge_label_ == ':location':
+                    output.write('%s\n%s\n' % (senid, node))
+
+def query_test(amr_table, output_path='../output/'):
+    output = open(output_path + 'amr_queries_test', 'w')
+    for docid in sorted(amr_table):
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            assert sen.senid_ == senid
+            for i in sen.named_entities_:
+                ne = sen.named_entities_[i]
+                query = '%s(%s|%s)' % (ne.name(), ne.subtype_, ne.maintype_)
+                for i in ne.neighbors_:
+                    query += '%s;' % i[1]
+                query += '|'
+                for i in ne.coherence_:
+                    query += '%s;' % i[2].name()
+                # if len(ne.coherence_) == 0: 
+                #     continue
+                output.write('%s\t%s\t%s\n' % (senid,
+                                               ne.entity_name_,
+                                               query.strip(';')))
+        output.write('\n')

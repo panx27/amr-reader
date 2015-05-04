@@ -1,5 +1,5 @@
 '''
- generate amr paths
+ generate AMR paths
 '''
 
 '''
@@ -8,7 +8,6 @@
 def retrieve_path_rte(node, path, paths_rte, named_entities):
     for i in node.next_:
         tmp = path[:] # passing by value
-        # if i.is_entity_ and i.entity_type_ != '':
         if i.is_entity_:
             ne = named_entities[i.name_]
             path.append((i.edge_label_, ne))
@@ -27,7 +26,6 @@ def retrieve_path_etl(node, path, paths_etl, named_entities, amr_nodes):
         paths_etl.append(path)
     for i in node.next_:
         tmp = path[:] # passing by value
-        # if (i.is_entity_ and i.entity_type_ != '') or \
         if (i.is_entity_) or \
            (i.name_ in named_entities and i.ful_name_ == ''):
             ne = named_entities[i.name_]
@@ -47,9 +45,9 @@ def main(amr_table):
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
-            amr_nodes_acr = sen.amr_nodes_
+            amr_nodes = sen.amr_nodes_
             path_whole = sen.path_whole_
-            root = amr_nodes_acr[path_whole[0][1]]
+            root = amr_nodes[path_whole[0][1]]
 
             paths_rte = list() # path - root to entity
             paths_etl = list() # path - entity to leaf
@@ -60,9 +58,8 @@ def main(amr_table):
                 sen.amr_paths_['rte'] = paths_rte
 
             ### generate path - entity to leaf
-            for i in amr_nodes_acr:
-                node = amr_nodes_acr[i]
-                # if node.is_entity_ and node.entity_type_ != '' and node.next_ != list():
+            for i in amr_nodes:
+                node = amr_nodes[i]
                 if node.is_entity_ and node.next_ != list():
                     ne = sen.named_entities_[node.name_]
                     retrieve_path_etl(node, [('@entity', ne)], paths_etl, sen.named_entities_, sen.amr_nodes_)

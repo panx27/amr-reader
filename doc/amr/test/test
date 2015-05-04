@@ -1,3 +1,5 @@
+# AMR release (generated on Tue Dec 23, 2014 at 16:52:40)
+
 # ::id DF-170-181103-888_2097.1 ::date 2013-09-16T07:15:31 ::annotator LDC-AMR-14 ::preferred
 # ::snt He can't seem to help himself from apologizing for anything and everything.
 # ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2097_1.txt
@@ -32,7 +34,7 @@
             :ARG1 (a3 / apologize-01
                   :ARG0 (h / he)
                   :ARG2 (p / person :wiki "Sarah_Palin"
-                        :name (n / name :op1 "Palin")))
+                        :name (n / name :op1 "Sarah" :op2 "Palin")))
             :ARG1-of (c / cause-01
                   :ARG0 (a2 / amr-unknown))))
 
@@ -90,8 +92,8 @@
             :ARG1 (t / ticket))
       :op2 (h2 / hire-01
             :ARG1 (p / person
-                  :mod (c / country :wiki "China"
-                        :name (n / name :op1 "China")))
+                  :mod (c / publication :wiki "this is test"
+                        :name (n / name :op1 "National" :op2 "Broadcasting" :op3 "Company")))
             :ARG2 (c2 / cater-01
                   :ARG0 p
                   :ARG1 (e / event)))

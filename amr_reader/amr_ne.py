@@ -1,8 +1,7 @@
-from namedentity import NamedEntity
-
 '''
  generate AMR NamedEntity object
 '''
+from namedentity import NamedEntity
 
 '''
  AMR subtype to main type (PER, ORG, GPE) mapping table

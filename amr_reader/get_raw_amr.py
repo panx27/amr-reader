@@ -1,15 +1,15 @@
-import re
-import os
-import urllib
-
 '''
- generate raw amr from isi amr release files
+ generate raw AMR from ISI AMR release files
  output:
         # ::id
         # ::snt
         ( ... 
              AMR ... )
 '''
+import re
+import os
+import urllib
+
 def read(path, file_name, output):
     f = open(path + file_name)
     for line in f:
