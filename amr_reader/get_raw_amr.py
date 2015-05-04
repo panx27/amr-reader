@@ -1,4 +1,11 @@
 '''
+ dispose raw AMR
+'''
+import re
+import os
+import urllib
+
+'''
  generate raw AMR from ISI AMR release files
  output:
         # ::id
@@ -6,10 +13,6 @@
         ( ... 
              AMR ... )
 '''
-import re
-import os
-import urllib
-
 def read(path, file_name, output):
     f = open(path + file_name)
     for line in f:
