@@ -237,13 +237,19 @@ def add_date_entity(amr_table):
                     if year != '' and month != '' and day != '':
                         date = '%s/%s/%s' % (month, day, year)
                         global_time_doc_level.add(('global-time', date))
-                        date = '%s %s %s' % (num_to_month[month], cardinal_to_ordinal(day), year)
-                        global_time_doc_level.add(('global-time', date))
+                        try:
+                            date = '%s %s %s' % (num_to_month[month], cardinal_to_ordinal(day), year)
+                            global_time_doc_level.add(('global-time', date))
+                        except:
+                            pass
                     elif month != '' and day != '':
                         date = '%s/%s' % (month, day)
                         global_time_doc_level.add(('global-time', date))
-                        date = '%s %s' % (num_to_month[month], cardinal_to_ordinal(day))
-                        global_time_doc_level.add(('global-time', date))
+                        try:
+                            date = '%s %s' % (num_to_month[month], cardinal_to_ordinal(day))
+                            global_time_doc_level.add(('global-time', date))
+                        except:
+                            pass
                     elif year != '':
                         date = year
                         global_time_doc_level.add(('global-time', date))
