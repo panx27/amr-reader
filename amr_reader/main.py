@@ -50,6 +50,7 @@ if __name__ == '__main__':
         amr_output.path(amr_table)
     if args.visualization:
         m = re.search('\/(\w+)\/', input_path[::-1])
+        amr_ne_query.main(amr_table, chain=False)
         amr_output.html(amr_table, m.group(1)[::-1])
     if args.query:
         amr_ne_query.main(amr_table)

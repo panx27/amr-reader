@@ -307,35 +307,6 @@ def add_location(amr_table):
                     ne.coherence_ = ne.coherence_.union(global_loc_doc_level)
 
 '''
- merge coreferential named entities as a coreferential chian in doc level
-'''
-def get_chain_doc_level(amr_table):
-    from namedentity import NamedEntity
-
-    for docid in sorted(amr_table):
-        chain = dict()
-        ### merge
-        for senid in sorted(amr_table[docid]):
-            sen = amr_table[docid][senid]
-            for i in sen.named_entities_:
-                ne = sen.named_entities_[i]
-                name = ne.name()
-                if name not in chain: # key should be entity name + entity type?
-                    chain[name] = NamedEntity(entity_name=name, subtype=ne.subtype_, 
-                                              maintype=ne.maintype_, wiki=ne.wiki_)
-                chain[name].neighbors_ = chain[name].neighbors_.union(ne.neighbors_)
-                chain[name].coherence_ = chain[name].coherence_.union(ne.coherence_)
-
-        ### propagate
-        for senid in sorted(amr_table[docid]):
-            sen = amr_table[docid][senid]
-            for i in sen.named_entities_:
-                ne = sen.named_entities_[i]
-                name = ne.name()
-                ne.neighbors_ = chain[name].neighbors_
-                ne.coherence_ = chain[name].coherence_
-
-'''
  retrieve AMR subtree - concept to leaf
 '''
 def retrieve_ctl(node, path, paths_ctl, named_entities, amr_nodes):
@@ -384,8 +355,36 @@ def add_semantic_role(amr_table):
                                         else:                     # named entity
                                             ne.coherence_.add((node.ful_name_, k[0], k[1]))
 
+'''
+ merge coreferential named entities as a coreferential chian in doc level
+'''
+def get_chain_doc_level(amr_table):
+    from namedentity import NamedEntity
 
-def main(amr_table):
+    for docid in sorted(amr_table):
+        chain = dict()
+        ### merge
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            for i in sen.named_entities_:
+                ne = sen.named_entities_[i]
+                name = ne.name()
+                if name not in chain: # key should be entity name + entity type?
+                    chain[name] = NamedEntity(entity_name=name, subtype=ne.subtype_, 
+                                              maintype=ne.maintype_, wiki=ne.wiki_)
+                chain[name].neighbors_ = chain[name].neighbors_.union(ne.neighbors_)
+                chain[name].coherence_ = chain[name].coherence_.union(ne.coherence_)
+
+        ### propagate
+        for senid in sorted(amr_table[docid]):
+            sen = amr_table[docid][senid]
+            for i in sen.named_entities_:
+                ne = sen.named_entities_[i]
+                name = ne.name()
+                ne.neighbors_ = chain[name].neighbors_
+                ne.coherence_ = chain[name].coherence_
+
+def main(amr_table, chain=True):
     ### adding name coreference
     add_name_coreference(amr_table)
 
@@ -404,9 +403,9 @@ def main(amr_table):
     ### adding global location
     add_location(amr_table)
 
-    ### adding coreferential chain
-    get_chain_doc_level(amr_table)
-
     ### adding semantic role
     add_semantic_role(amr_table)
     
+    ### adding coreferential chain
+    if chain:
+        get_chain_doc_level(amr_table)

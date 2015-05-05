@@ -6,30 +6,28 @@ import os
 '''
  html
 '''
-def get_path(name, paths):
-    result = '<b>%s</b>\n<br>\n' % name
-    p = ''
-    for i in paths:
-        for j in i:
-            role = j[0]
-            concept = j[1]
-            if role == '@root' or role == '@entity':
-                p += '<font face="arial">%s</font>' % concept
-            else:
-                p += ' --> <font face="verdana" color="orange">%s</font> <font face="arial">%s</font>' % (role, concept)
-        p += '<br>'
-    return result + p + '\n'
+def get_ne(ne):
+    name = '<b><i>%s</i></b>\n<br>\n' % ne.entity_name_
+    coreference = '&nbsp;&nbsp;<i>Coreferential name: </i><font face="arial">%s</font><br>' % ne.coreference_
+    neighbors = '&nbsp;&nbsp;<i>Neighbors: </i> <font face="arial">'
+    for i in ne.neighbors_:
+        neighbors += '%s' % str(i)
+    neighbors += '</font><br>'
+    coherence = '&nbsp;&nbsp;<i>Coheret set: </i> <font face="arial">'
+    for i in ne.coherence_:
+        coherence += '(\'%s\', \'%s\', \'%s\')' % (i[0], i[1], i[2].entity_name_)
+    coherence += '</font><br>'
+    return name + coreference + neighbors + coherence + '\n'
 
-def get_html(senid, sen, amr, amr_paths, output):
-    graph = '<img src="./graphs/%s.png">' % senid # default path of graphs: ./graphs/
-    senid = '<h2>%s</h2>\n' % senid
-    sen = '<p><b>%s</b></p>\n' % sen
-    amr = '<p><code>%s</code></p>\n' % amr.replace('\n', '<br>').replace(' ', '&nbsp;')
-    paths = ''
-    # paths = '<p><b>Paths:</b><br>'
-    # for p in amr_paths:
-    #     paths += get_path(p, amr_paths[p])
-    output.write('<body>\n%s%s%s%s%s</body>\n' % (senid, sen, amr, paths, graph))
+def get_html(sen, output):
+    graph = '<img src="./graphs/%s.png">' % sen.senid_ # default path of graphs: ./graphs/
+    senid = '<h2>%s</h2>\n' % sen.senid_
+    sentence = '<p><b>%s</b></p>\n' % sen.sen_
+    amr = '<p><code>%s</code></p>\n' % sen.amr_.replace('\n', '<br>').replace(' ', '&nbsp;')
+    nes = '<p>Named Entities:<br>'
+    for n in sen.named_entities_:
+        nes += get_ne(sen.named_entities_[n])
+    output.write('<body>\n%s%s%s%s%s</body>\n' % (senid, sentence, amr, nes, graph))
 
 def html(amr_table, filename='test', output_path='../output/', graph_path='../output/graphs/'):
     output = open(output_path + '%s.html' % filename, 'w')
@@ -44,7 +42,7 @@ def html(amr_table, filename='test', output_path='../output/', graph_path='../ou
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
             amr_visualizer.visualizer(sen.amr_nodes_, sen.path_whole_, output_name=sen.senid_)
-            get_html(sen.senid_, sen.sen_, sen.amr_, sen.amr_paths_, output)
+            get_html(sen, output)
 
 '''
  AMR graphs
