@@ -1,6 +1,6 @@
-## Usage
+## Quickstart
 
-      python main.py <directory of AMR files> [-h] [-g GRAPH] [-n] [-p] [-e] [-q] [-v]
+      bin/amr_reader <directory of AMR files> <directory of output files> [-h] [-g GRAPH] [-n] [-p] [-e] [-q] [-v]
 
 
 
@@ -8,18 +8,18 @@ optional arguments:
 
       -h, --help              show this help message and exit
       -g GRAPH, --graph GRAPH
-                              output AMR graphs '../output/graphs/' 
+                              output AMR graphs 
                               GRAPH=n: normal graphs
                               GRAPH=s: simple graphs
-      -n, --node              output AMR nodes '../output/amr_nodes'
-      -p, --path              output AMR paths '../output/amr_paths'
-      -e, --entity            output named entities '../output/nes'
-      -q, --query             output named entity queries '../output/queries'
-      -v, --visualization     output html format visualization '../output/*.html'
+      -n, --node              output AMR nodes
+      -p, --path              output AMR paths
+      -e, --entity            output named entities
+      -q, --query             output named entity queries
+      -v, --visualization     output html format visualization
 
-- Your input should be raw AMR format (see ./doc/amr/test/).
+- Your input should be raw AMR format (see ./amr/tests/test_amr/).
 - If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.<br>
-- If you would like to modify the output format, please modify amr_output.py file.
+- If you would like to modify the output format, please modify ./amr/src/output.py file.
 
 ## Example
    First, what is the biggest puzzle between China and the US?<br>
