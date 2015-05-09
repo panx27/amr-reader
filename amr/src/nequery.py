@@ -414,7 +414,7 @@ def main(amr_table, coref=True, coherence=True, hor=True, hrr=True, time=True,
         add_name_coreference(amr_table)
 
     ### Adding coherent set
-    if coherent:
+    if coherence:
         add_coherence(amr_table)
 
     ### Adding have-org-rol-91
