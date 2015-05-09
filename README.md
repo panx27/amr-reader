@@ -17,7 +17,7 @@ optional arguments:
       -q, --query             output named entity queries
       -v, --visualization     output html format visualization
 
-- Your input should be raw AMR format (see ./amr/tests/test_amr/).
+- Your input should be raw AMR format (see ./amr/tests/test_amr/test).
 - If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.<br>
 - If you would like to modify the output format, please modify ./amr/src/output.py file.
 
