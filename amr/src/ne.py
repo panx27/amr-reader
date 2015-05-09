@@ -1,7 +1,7 @@
 '''
- generate AMR NamedEntity object
+ Generate AMR NamedEntity object
 '''
-from namedentity import NamedEntity
+from Namedentity import NamedEntity
 
 '''
  AMR subtype to main type (PER, ORG, GPE) mapping table
@@ -11,16 +11,16 @@ def get_subtype_mapping_table():
     currentpath = os.path.dirname(os.path.abspath(__file__))
 
     types = dict()
-    f = open(currentpath + '/../doc/ne_types/isi_ne-type-sc.txt')
+    f = open(currentpath + '/../docs/ne_types/isi_ne-type-sc.txt')
     for line in f:
-        if '# superclass amr-ne-type' in line:
+        if '# superclass amr-ne-type' in line: # First line
             continue
         line = line.strip().split(' ')
         types[line[1]] = line[0]
     return types
 
 '''
- add NamedEntity object in to 'amr_table'
+ Adding NamedEntity objects into 'amr_table'
 '''
 def add_named_entity(amr_table):
     subtype_table = get_subtype_mapping_table()
@@ -28,12 +28,12 @@ def add_named_entity(amr_table):
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
-            amr_nodes_acr = sen.amr_nodes_
+            amr_nodes = sen.amr_nodes_
 
-            ### generate NamedEntity object
-            for i in amr_nodes_acr:
-                node = amr_nodes_acr[i]
-                if node.is_entity_ and node.entity_type_ != '':
+            ### Generate NamedEntity object
+            for i in amr_nodes:
+                node = amr_nodes[i]
+                if node.is_entity_:
                     main_type = ''
                     if node.entity_type_ in subtype_table:
                         main_type = subtype_table[node.entity_type_]

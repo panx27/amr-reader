@@ -6,13 +6,13 @@ import os
 import sys
 sys.setrecursionlimit(10000)
 import copy
-from node import Node
-from sentence import Sentence
+from Node import Node
+from Sentence import Sentence
 
 '''
- input validator
+ Input validator
 '''
-def amr_validator(raw_amr_input):
+def amr_validator(raw_amr_input): # TODO: add more test cases
     if raw_amr_input.count('(') == 0:
         return False
     if raw_amr_input.count(')') == 0:
@@ -22,9 +22,9 @@ def amr_validator(raw_amr_input):
     return True
 
 '''
- input: raw amr
- output: amr_contents (container:list(), golbal variable)
- functionality: split raw amr by pairing '()'
+ Input: raw AMR
+ Output: amr_contents (list(), golbal variable)
+ Functionality: split raw amr by pairing '()'
 '''
 def split_amr(text, content):
     if len(text) == 0:
@@ -46,75 +46,74 @@ def split_amr(text, content):
         split_amr(text, content)
 
 '''
- input: splited raw amr by pairing '()'
- output: node object 
-         container: 'amr_nodes': amr content as key
-                    'amr_nodes_acr': acronym as key
- single: only one pair of '()'
+ Input: splited AMR: single pair of '()'
+ Output: generate Node object
+         containers: 'amr_nodes_con' - amr content as key
+                     'amr_nodes_acr' - acronym as key
 '''
-def generate_node_single(content, amr_nodes, amr_nodes_acr):
+def generate_node_single(content, amr_nodes_con, amr_nodes_acr):
     assert content.count('(') == 1 and content.count(')') == 1
     predict_event = re.search('(\w+)\s/\s(\S+)', content)
-    acr = predict_event.group(1) # acronym
-    ful = predict_event.group(2).strip(')') # full name
+    acr = predict_event.group(1) # Acronym
+    ful = predict_event.group(2).strip(')') # Full name
 
-    ### in case of :polarity -
+    ### In case of :polarity -
     is_polarity = False
-    if re.search(":polarity\s-", content) != None: 
+    if re.search(":polarity\s-", content) != None:
         is_polarity = True
 
-    ### node is a named entity
+    ### Node is a named entity
     names = re.findall(':op\d\s\"\S+\"', content)
     if len(names) > 0:
         entity_name = ''
         for i in names:
             entity_name += re.match(':op\d\s\"(\S+)\"', i).group(1) + ' '
-        # new_node = Node(name=acr, ful_name=ful, is_entity=True,
-        #                 entity_name=entity_name.strip())
-        new_node = Node(name=acr, ful_name=ful, entity_name=entity_name.strip())
-        amr_nodes[content] = new_node
+        new_node = Node(name=acr, ful_name=ful,
+                        entity_name=entity_name.strip(), polarity=is_polarity)
+        amr_nodes_con[content] = new_node
         amr_nodes_acr[acr] = new_node
     else:
-        new_node = Node(name=acr, ful_name=ful, is_polarity=is_polarity)
-        amr_nodes[content] = new_node
+        new_node = Node(name=acr, ful_name=ful, polarity=is_polarity)
+        amr_nodes_con[content] = new_node
         amr_nodes_acr[acr] = new_node
 
 '''
- input: splited raw amr by pairing '()'
- output: node object 
-         container: 'amr_nodes': amr content as key
-                    'amr_nodes_acr': acronym as key
- multiple: multiple pairs of '()'
+ Input: splited AMR: multiple pairs of '()'
+ Output: generate Node object
+         containers: 'amr_nodes_con' - amr content as key
+                     'amr_nodes_acr' - acronym as key
 '''
-def generate_nodes_multiple(content, amr_nodes, amr_nodes_acr):
+def generate_nodes_multiple(content, amr_nodes_con, amr_nodes_acr):
     assert content.count('(') > 1 and content.count(')') > 1
     assert content.count('(') == content.count(')')
-    content_key = content # key of dict 'amr_nodes'
+    content_key = content # Key of dict() 'amr_nodes_con'
     arg_nodes = list()
     is_named_entity = False
     is_polarity = False
-    
-    ### remove existing nodes from content and link nodes
-    ### always check the longest node first, because it may contain other nodes
-    for i in sorted(amr_nodes, key=len, reverse=True): 
+
+    '''
+     remove existing nodes from the content, and link those
+     nodes to the root of subtree
+    '''
+    for i in sorted(amr_nodes_con, key=len, reverse=True):
         if i in content:
             e = content.find(i)
             s = content[:e].rfind(':')
-            role = re.search(':\S+\s', content[s:e]).group() # role (edge label)
+            role = re.search(':\S+\s', content[s:e]).group() # Edge label
             content = content.replace(role+i, '', 1)
-            amr_nodes[i].edge_label_ = role.strip()
+            amr_nodes_con[i].edge_label_ = role.strip()
             if ':name' in role:
                 is_named_entity = True
-                ne = amr_nodes[i]
+                ne = amr_nodes_con[i]
             else:
-                arg_nodes.append(amr_nodes[i])
+                arg_nodes.append(amr_nodes_con[i])
 
     predict_event = re.search('\w+\s/\s\S+', content).group().split(' / ')
-    acr = predict_event[0] # acronym
-    ful = predict_event[1] # full name
+    acr = predict_event[0] # Acronym
+    ful = predict_event[1] # Full name
 
-    ### in case of :polarity -
-    if re.search(":polarity\s-", content) != None: 
+    ### In case of :polarity -
+    if re.search(":polarity\s-", content) != None:
         is_polarity = True
 
     nodes = re.findall(':\S+\s\S+', content)
@@ -129,60 +128,64 @@ def generate_nodes_multiple(content, amr_nodes, amr_nodes_acr):
         if concept in amr_nodes_acr:
             node = copy.copy(amr_nodes_acr[concept])
             node.next_ = list()
-        ### in case of (d / date-entity :year 2012)
-        else:
+        else: # In case of (d / date-entity :year 2012)
             node = Node(name=concept)
             amr_nodes_acr[concept] = node
         node.edge_label_ = role
         arg_nodes.append(node)
-        
-    ''' named entity is a special node, thus, all concepts of a 
-        named entity will be merged. For example, 
+
+    '''
+        Named entity is a special node, so the subtree of a
+        named entity will be merged. For example,
         (p / person :wiki -
-           :name (n / name 
+           :name (n / name
                     :op1 "Pascale"))
         will be consider as one node.
 
-        According to AMR Specification, "we fill the :instance 
-        slot from a special list of standard AMR named entity types". 
-        Thus, for named entity node, we will use entity type 
-        (p / person in the example) instead of :instance
+        According to AMR Specification, "we fill the :instance
+        slot from a special list of standard AMR named entity types".
+        Thus, for named entity node, we will use entity type
+        (p / person in the example above) instead of :instance
     '''
     if is_named_entity:
-        ### find wikipedia title
+        ### Find Wikipedia title
         wikititle = 'NULL'
-        # if re.match('\S+\s/\s\S+\s.*:wiki\s-', content) != None: wikititle = '-'
-        if re.match(':wiki\s-', content) != None: wikititle = '-'
+        # if re.match('\S+\s/\s\S+\s.*:wiki\s-', content) != None:
+        #     wikititle = '-'
+        if re.match(':wiki\s-', content) != None:
+            wikititle = '-'
         else:
             m = re.search(':wiki\s\"(.+?)\"', content)
-            if m != None: wikititle = m.group(1)
-            else: wikititle = 'NULL'
+            if m != None:
+                wikititle = m.group(1)
+            else:
+                wikititle = 'NULL'
 
         new_node = Node(name=acr, ful_name=ful, next_node=arg_nodes,
                         edge_label=ne.ful_name_, is_entity=True,
                         entity_type=ful, entity_name=ne.entity_name_,
-                        wiki=wikititle, is_polarity=is_polarity)
-        amr_nodes[content_key] = new_node
+                        wiki=wikititle, polarity=is_polarity)
+        amr_nodes_con[content_key] = new_node
         amr_nodes_acr[acr] = new_node
 
     elif len(arg_nodes) > 0:
         new_node = Node(name=acr, ful_name=ful, next_node=arg_nodes,
-                        is_polarity=is_polarity)
-        amr_nodes[content_key] = new_node
+                        polarity=is_polarity)
+        amr_nodes_con[content_key] = new_node
         amr_nodes_acr[acr] = new_node
 
 '''
- in case of single pair of '()' contains multiple nodes
+ In case of single pair of '()' contains multiple nodes
  e.x. (m / moment :poss p5)
 '''
-def revise_node(content, amr_nodes, amr_nodes_acr):
+def revise_node(content, amr_nodes_con, amr_nodes_acr):
     m = re.search('\w+\s/\s\S+\s+(.+)', content.replace('\n', ''))
     if m != None and \
        ' / name' not in content and \
        ':polarity -' not in content:
         arg_nodes = list()
         acr = re.search('\w+\s/\s\S+', content).group().split(' / ')[0]
-        nodes = re.findall('\S+\s\".+\"|\S+\s\S+', m.group(1)) 
+        nodes = re.findall('\S+\s\".+\"|\S+\s\S+', m.group(1))
         for i in nodes:
             i = re.search('(:\S+)\s(.+)', i)
             role = i.group(1)
@@ -190,91 +193,76 @@ def revise_node(content, amr_nodes, amr_nodes_acr):
             if concept in amr_nodes_acr:
                 node = copy.copy(amr_nodes_acr[concept])
                 node.next_ = list()
-            ### in case of (d / date-entity :year 2012)
-            else: 
+            else: # in case of (d / date-entity :year 2012)
                 node = Node(name=concept)
                 amr_nodes_acr[concept] = node
             node.edge_label_ = role
             arg_nodes.append(node)
         amr_nodes_acr[acr].next_ = arg_nodes
-        amr_nodes[content].next_ = arg_nodes
-    
-'''
- retrieve path - whole graph
-'''
-def retrieve_path_whole(node, parent, path_whole):
-    path_whole.append((parent, node.name_, node.edge_label_))
-    for i in node.next_:
-        retrieve_path_whole(i, node.name_, path_whole)
+        amr_nodes_con[content].next_ = arg_nodes
 
 '''
- amr reader
+ Retrieve path - whole graph
+'''
+def retrieve_graph(node, parent, graph):
+    graph.append((parent, node.name_, node.edge_label_))
+    for i in node.next_:
+        retrieve_graph(i, node.name_, graph)
+
+'''
+ AMR reader
 '''
 def amr_reader(raw_amr_input):
     global amr_contents
     amr_contents = list()
-    amr_nodes = dict() # amr content as key
-    amr_nodes_acr = dict() # acronym as key
-    path_whole = list() # path of whole graph
-    
+    amr_nodes_con = dict() # AMR content as key
+    amr_nodes_acr = dict() # Acronym as key
+    graph = list() # Path of whole graph
+
     split_amr(raw_amr_input, list())
     for i in amr_contents:
         if i.count('(') == 1 and i.count(')') == 1:
-            generate_node_single(i, amr_nodes, amr_nodes_acr)
+            generate_node_single(i, amr_nodes_con, amr_nodes_acr)
     for i in amr_contents:
         if i.count('(') > 1 and i.count(')') > 1:
-            generate_nodes_multiple(i, amr_nodes, amr_nodes_acr)
+            generate_nodes_multiple(i, amr_nodes_con, amr_nodes_acr)
     for i in amr_contents:
         if i.count('(') == 1 and i.count(')') == 1:
-            revise_node(i, amr_nodes, amr_nodes_acr)
+            revise_node(i, amr_nodes_con, amr_nodes_acr)
 
-    ### the last node (whole amr) is always the root of the graph
-    root = amr_nodes[sorted(amr_nodes, key=len, reverse=True)[0]]
-    retrieve_path_whole(root, '@', path_whole)
-    
-    return amr_nodes_acr, path_whole
+    # The longest node (whole AMR) is always the root of the AMR graph
+    root = amr_nodes_con[sorted(amr_nodes_con, key=len, reverse=True)[0]]
+    retrieve_graph(root, '@', graph)
+
+    return amr_nodes_acr, graph
 
 '''
- main function
+ Main function
 
- input: raw amr
- output: 'amr_table'
+ Input: raw AMR
+ Output: 'amr_table'
          container: dict()   dict()      Sentence
          key:       docid -> senid -> sentence object
 '''
-def main(input):
+def main(input_):
     amr_table = dict()
-    sentences = input.strip().split('# ::id ')
-    sentences = sentences[1:]
+    sentences = input_.strip().split('# ::id ')
 
     for i in sentences:
+        if i == '': continue
         nline = i.split('\n')
-        senid = re.search('(\S+) ', nline[0]).group(1)
+        senid = re.search('(\S+)', nline[0]).group(1)
         docid = senid[:senid.rfind('.')]
         sen = re.search('# ::snt (.+)', nline[1]).group(1)
-        # m = re.search('# ::save-date (.+) ::file (\S+)', nline[2])
-        # save_date = m.group(1)
-        # file_name = m.group(2)
-        amr = '\n'.join(nline[3:]).strip()
+        amr = '\n'.join(nline[2:]).strip()
 
         if amr_validator(amr) == False:
             raise NameError('Invalid AMR Input: %s' % senid)
 
-        amr_nodes_acr, path_whole = amr_reader(amr)
-        
+        amr_nodes_acr, graph = amr_reader(amr)
+
         if docid not in amr_table:
             amr_table[docid] = dict()
         amr_table[docid][senid] = Sentence(senid, sen, amr,
-                                           amr_nodes_acr, path_whole)
-
+                                           amr_nodes_acr, graph)
     return amr_table
-
-
-
-if __name__ == '__main__':
-    input = open('../output/banked_amr', 'r').read()
-
-    amr_table = main(input)
-    for docid in sorted(amr_table):
-        for senid in sorted(amr_table[docid]):
-            sen = amr_table[docid][senid]

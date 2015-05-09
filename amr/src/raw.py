@@ -1,55 +1,55 @@
 '''
- dispose raw AMR
+ Dispose raw AMR
 '''
 import re
 import os
 import urllib
 
 '''
- generate raw AMR from ISI AMR release files
- output:
+ Input: raw AMR from ISI AMR release files
+ Output:
         # ::id
         # ::snt
-        ( ... 
-             AMR ... )
+        ( ...
+             AMR
+                ... )
 '''
 def read(path, file_name, output):
     f = open(path + file_name)
     for line in f:
         m = re.search('#\s::id\s(\S+)', line)
         if m != None:
-            sen_id = m.group(1)
-            print sen_id
-            output.write('# ::id %s\n' %sen_id)
+            senid = m.group(1)
+            # print senid
+            output.append('# ::id %s\n' % senid)
             sen = re.search('#\s::snt\s(.+)', next(f)).group(1)
-            output.write('%s\n' %sen)
+            output.append('# ::snt %s\n' % sen)
             next(f)
             line = next(f)
             while line != '\n':
-                ### '()' in wiki title
+                ### convert '( )' to '%28 %29' in wiki title
                 m = re.search(':wiki\s\"(.+?)\"', line)
                 if m != None:
                     line = line.replace(m.group(1),
                                         urllib.quote_plus(m.group(1)))
-                ### '()' in :name
+                ### convert '( )' to '%28 %29' in :name
                 m = re.search('\"(\w*\(\S+\)\w*)\"', line)
                 if m != None:
                     line = line.replace(m.group(1),
                     urllib.quote_plus(m.group(1)))
-
-                output.write(line)
+                output.append(line)
 
                 try:
                     line = next(f)
                 except StopIteration:
                     print 'END OF FILE: %s' % file_name
                     break
-            output.write('\n')
+            output.append('\n')
 
 '''
- generate raw amr from isi amr release files
- keep everthing 
- except convert '()' to '%28 %29' only
+ Input: raw AMR from ISI AMR release files
+ Output: keep everthing
+         only convert '( )' to '%28 %29'
 '''
 def read_all(path, file_name, output):
     f = open(path + file_name)
@@ -61,43 +61,39 @@ def read_all(path, file_name, output):
         if re.match('# ::zh .+', line) != None:
             continue
 
-        ### convert '()' in wiki title
+        ### convert '( )' to '%28 %29' in wiki title
         m = re.search(':wiki\s\"(.+?)\"', line)
         if m != None:
             line = line.replace(m.group(1),
                                 urllib.quote_plus(m.group(1)))
-        # ### convet '()' in :name
-        # m = re.search('\"(\w*\(\S+\)\w*)\"', line)
-        # if m != None:
-        #     line = line.replace(m.group(1),
-        #                         urllib.quote_plus(m.group(1)))
-
-        ### convert '()' in :name
+        ### convert '( )' to '%28 %29' in :name
         m = re.findall('\"(\S+)\"', line)
         for i in m:
             if '(' in i or ')' in i:
-                line = line.replace(i,
-                                    urllib.quote_plus(i))
-
-        output.write(line)
+                line = line.replace(i, urllib.quote_plus(i))
+        output.append(line)
     print 'END OF FILE: %s' % file_name
 
 '''
- generate plain docs from isi amr release files
+ Input: raw AMR from ISI AMR release files
+ Output: plain docs
 '''
-def generate_raw_docs(path, file_name):
+def generate_raw_docs(path, file_name, output_path):
+    output_path += 'raw_docs/'
+    try: os.mkdir(output_path)
+    except OSError: pass
+
     f = open(path + file_name)
     for line in f:
         m = re.search('#\s::id\s(\S+)', line)
         if m != None:
-            sen_id = m.group(1)
-            doc_id = sen_id[:sen_id.rfind('.')]
-            try: os.mkdir('../output/raw_docs/')
-            except OSError: pass
-            out = open('../output/raw_docs/%s' % doc_id, 'aw')
-            print sen_id
+            senid = m.group(1)
+            docid = senid[:senid.rfind('.')]
+
+            out = open(output_path + docid, 'aw')
+            print senid
             sen = re.search('#\s::snt\s(.+)', next(f)).group(1)
-            out.write('%s\t%s\n' % (sen_id, sen))
+            out.write('%s\t%s\n' % (senid, sen))
             next(f)
             line = next(f)
             while line != '\n':
@@ -105,15 +101,5 @@ def generate_raw_docs(path, file_name):
                 try:
                     line = next(f)
                 except StopIteration:
-                    print 'END OF FILE'
+                    print 'END OF FILE %s' % file_name
                     break
-
-
-                
-if __name__ == '__main__':
-    path = '../doc/amr/Dec23/'
-    file_list = os.listdir(path)
-    output = open('../output/banked_amr', 'w')
-    for i in file_list:
-        read_all(path, i, output)
-        # generate_raw_docs(path, i)
