@@ -9,6 +9,18 @@ from src import ne
 from src import path
 from src import nequery
 
+def get_amr_table(input_path):
+    raw_amr = list()
+    for i in os.listdir(input_path):
+        raw.read(input_path, i, raw_amr)
+    raw_amr = ''.join(raw_amr)
+
+    amr_table = reader.main(raw_amr)
+    ne.add_named_entity(amr_table)
+    nequery.main(amr_table)
+
+    return amr_table
+
 if __name__ == '__main__':
     ### Arguments
     parser = argparse.ArgumentParser()
@@ -42,14 +54,14 @@ if __name__ == '__main__':
 
     ### Input path
     input_path = args.input[0]
-    out = list()
+    raw_amr = list()
     for i in os.listdir(input_path):
-        raw.read(input_path, i, out)
+        raw.read(input_path, i, raw_amr)
         # raw.generate_raw_docs(input_path, i, output_path)
 
     ### Generate amr_table
-    out = ''.join(out)
-    amr_table = reader.main(out)
+    raw_amr = ''.join(raw_amr)
+    amr_table = reader.main(raw_amr)
     ne.add_named_entity(amr_table)
 
     ### Arguments Parser
