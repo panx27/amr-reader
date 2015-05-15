@@ -1,6 +1,7 @@
 '''
  AMR output functions
 '''
+
 import os
 
 '''

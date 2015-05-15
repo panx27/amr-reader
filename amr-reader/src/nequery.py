@@ -1,6 +1,7 @@
 '''
  Generate AMR named entity query
 '''
+
 import copy
 import re
 

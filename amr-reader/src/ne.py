@@ -1,6 +1,7 @@
 '''
  Generate AMR NamedEntity object
 '''
+
 from Namedentity import NamedEntity
 
 '''
