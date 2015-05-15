@@ -1,4 +1,4 @@
 #!/bin/bash
 
 BINPATH=`dirname $0`
-python "$BINPATH/../amr/main.py" $@
+python "$BINPATH/../amr-reader/main.py" $@

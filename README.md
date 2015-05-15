@@ -8,7 +8,7 @@ optional arguments:
 
       -h, --help              show this help message and exit
       -g GRAPH, --graph GRAPH
-                              output AMR graphs 
+                              output AMR graphs
                               GRAPH=n: normal graphs
                               GRAPH=s: simple graphs
       -n, --node              output AMR nodes
@@ -17,7 +17,7 @@ optional arguments:
       -q, --query             output named entity queries
       -v, --visualization     output html format visualization
 
-- Your input should be raw AMR format (see ./amr/tests/test_amr/test).
+- Your input should be raw AMR format (see ./amr/tests/test_amr_doc/test).
 - If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.<br>
 - If you would like to modify the output format, please modify ./amr/src/output.py file.
 
@@ -40,7 +40,7 @@ Graph:<br>
       Green Ellispe: concept
       Orange Ellispe: concept with sense
       Blue Rectangle: named entity
-![alt tag](https://github.com/panx27/amr-reader/blob/master/example.png)
+![alt tag](https://github.com/panx27/amr-reader/blob/master/docs/example.png)
 
 ## Citation
 If you would like to cite this work, please cite the following publication: <br>
