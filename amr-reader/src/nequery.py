@@ -377,6 +377,10 @@ def add_semantic_role(amr_table):
 
 '''
  Merge coreferential named entities as a coreferential chian in doc level
+
+ We treat a coreferential chain of mentions as a single mention.
+ In doing so, the collaborator set for the entire chain is computed
+ as the union over all of the chain's mentions' collaborator sets.
 '''
 def get_chain_doc_level(amr_table):
     from Namedentity import NamedEntity
@@ -389,7 +393,7 @@ def get_chain_doc_level(amr_table):
             for i in sen.named_entities_:
                 ne = sen.named_entities_[i]
                 name = ne.name()
-                if name not in chain: # TODO: Key should be entity name + entity type?
+                if name not in chain:
                     chain[name] = NamedEntity(entity_name=name,
                                               subtype=ne.subtype_,
                                               maintype=ne.maintype_,
@@ -405,8 +409,7 @@ def get_chain_doc_level(amr_table):
             for i in sen.named_entities_:
                 ne = sen.named_entities_[i]
                 name = ne.name()
-                ne.neighbors_ = chain[name].neighbors_
-                ne.coherence_ = chain[name].coherence_
+                ne.chain_ = chain[name]
 
 def main(amr_table, coref=True, coherence=True, hor=True, hrr=True, time=True,
          loc=True, sr=True, chain=True):
