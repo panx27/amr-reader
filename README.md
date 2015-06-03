@@ -38,7 +38,7 @@ optional arguments:
 Graph:<br>
 
       Green Ellispe: concept
-      Orange Ellispe: concept with sense
+      Orange Ellispe: predict with sense
       Black Ellispe: constant
       Blue Rectangle: named entity
 ![alt tag](https://github.com/panx27/amr-reader/blob/master/docs/example.png)
