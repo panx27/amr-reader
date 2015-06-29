@@ -29,15 +29,16 @@ def visualizer(sen, output_path, show_wiki=True):
         if node.ful_name_ != '':
             ### Node is a named entity
             if node.is_entity_:
+                ne = sen.named_entities_[node.name_]
                 if show_wiki:
-                    ne_name = '%s\nwiki: %s' % (node.entity_name_, node.wiki_)
+                    ne_name = '%s\nwiki: %s' % (ne.entity_name_, ne.wiki_)
                 else:
-                    ne_name = '%s\n' % node.entity_name_
+                    ne_name = '%s\n' % ne.entity_name_
                 G.add_node(i, shape='point', fillcolor='red')
-                G.add_node(i + '#' + node.ful_name_, shape='box', color='blue',
+                G.add_node(i + '#' + ne.subtype_, shape='box', color='blue',
                            label=ne_name)
-                G.add_edge(i, i + '#' + node.ful_name_,
-                           label=node.ful_name_ + pol)
+                G.add_edge(i, i + '#' + ne.subtype_,
+                           label=ne.subtype_ + pol)
             ### Node is a instance
             else:
                 full_name = '%s' % node.ful_name_

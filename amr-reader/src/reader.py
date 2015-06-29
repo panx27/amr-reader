@@ -149,18 +149,16 @@ def generate_nodes_multiple(content, amr_nodes_con, amr_nodes_acr):
         (p / person in the example above) instead of :instance
     '''
     if is_named_entity:
-        ### Find Wikipedia title
-        wikititle = 'NULL'
-        # if re.match('\S+\s/\s\S+\s.*:wiki\s-', content) != None:
-        #     wikititle = '-'
+        ### Find Wikipedia title:
+        wikititle = ''
         if re.match(':wiki\s-', content) != None:
-            wikititle = '-'
+            wikititle = '-' # Entity is NIL, Wiki title does not exist
         else:
             m = re.search(':wiki\s\"(.+?)\"', content)
             if m != None:
-                wikititle = m.group(1)
+                wikititle = m.group(1) # Wiki title
             else:
-                wikititle = 'NULL'
+                wikititle = '' # There is no Wiki title information
 
         new_node = Node(name=acr, ful_name=ful, next_node=arg_nodes,
                         edge_label=ne.ful_name_, is_entity=True,
@@ -255,6 +253,8 @@ def main(input_):
         senid = re.search('(\S+)', nline[0]).group(1)
         docid = senid[:senid.rfind('.')]
         sen = re.search('# ::snt (.+)', nline[1]).group(1)
+        if nline[2].startswith('# ::save-date'): # ingore save-date info
+            nline.remove(nline[2])
         amr = '\n'.join(nline[2:]).strip()
 
         if amr_validator(amr) == False:

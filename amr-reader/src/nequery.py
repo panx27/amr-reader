@@ -371,7 +371,7 @@ def add_semantic_role(amr_table):
                                     for k in path:
                                         if isinstance(k[1], str): # Node
                                             ne.neighbors_.add(k)
-                                        else:                     # Named entity
+                                        elif k[1] != ne:          # Named entity
                                             ne.coherence_.add((node.ful_name_,
                                                                k[0], k[1]))
 

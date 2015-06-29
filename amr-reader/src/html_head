@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Button show hide -->
+	<script type="text/javascript">
+	  function toggle_visibility(id) {
+	  var e = document.getElementById(id);
+	  if(e.style.display == 'block')
+          e.style.display = 'none';
+	  else
+          e.style.display = 'block';
+	  }
+	</script>
+</head>

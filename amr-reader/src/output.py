@@ -8,31 +8,35 @@ import os
  HTML format
 '''
 def get_ne(ne):
-    name = '<b><i>%s</i></b>\n<br>\n' % ne.entity_name_
-    coreference = '&nbsp;&nbsp;<i>Coreferential name: ' \
-                  '</i><font face="arial">%s</font><br>' % ne.coreference_
-    neighbors = '&nbsp;&nbsp;<i>Neighbors: </i> <font face="arial">'
+    name = '<b>%s</b> ---> <code>%s</code> <br>' % (ne.entity_name_,
+                                                         ne.wiki_)
+    coreference = '&nbsp;<i>Coref. name: ' \
+                  '</i><code>%s</code><br>' % ne.coreference_
+    neighbors = '&nbsp;<i>Neighbors:&nbsp;&nbsp;&nbsp; </i> <code>'
     for i in ne.neighbors_:
         neighbors += '%s ' % str(i)
-    neighbors += '</font><br>'
-    coherence = '&nbsp;&nbsp;<i>Coheret set: </i> <font face="arial">'
+    neighbors += '</code><br>'
+    coherence = '&nbsp;<i>Coheret set:&nbsp </i> <code>'
     for i in ne.coherence_:
-        coherence += '(\'%s\', \'%s\', \'%s\') ' % (i[0], i[1], i[2].entity_name_)
-    coherence += '</font><br>'
-    return name + coreference + neighbors + coherence + '\n'
+        coherence += '(%s, %s, %s) ' % (i[0], i[1], i[2].entity_name_)
+    coherence += '</code><br>'
+    return '%s\n%s\n%s\n%s\n<br>' % (name, coreference, neighbors, coherence)
 
 def get_sentence(sen, output):
     graph = '<img src="./graphs/%s.png">' % sen.senid_
-    senid = '<h2>%s</h2>\n' % sen.senid_
-    sentence = '<p><b>%s</b></p>\n' % sen.sen_
-    amr = '<p><code>%s</code></p>\n' % sen.amr_. \
+    senid = '<h2>%s</h2>' % sen.senid_
+    sentence = '<p><b>%s</b></p>' % sen.sen_
+    amr = '<p><code>%s</code></p>' % sen.amr_. \
           replace('\n', '<br>'). \
           replace(' ', '&nbsp;')
-    nes = '<p>Named Entities:<br>'
+    nes = '<button type="button" onclick="toggle_visibility(\'%s\');"><b>' \
+          'Named Entities</b></button> &#9660;<br><div id="%s" ' \
+          'style="display: none;">\n' % (sen.senid_, sen.senid_)
     for n in sen.named_entities_:
         nes += get_ne(sen.named_entities_[n])
-    output.write('<body>\n%s%s%s%s%s</body>\n' % (senid, sentence,
-                                                  amr, nes, graph))
+    nes += '</div>'
+    output.write('<body>\n%s\n%s\n%s\n%s\n%s\n</body>\n' % (senid, sentence,
+                                                            amr, nes, graph))
 
 def html(amr_table, filename, output_path):
     output = open(output_path + '%s.html' % filename, 'w')
@@ -42,7 +46,9 @@ def html(amr_table, filename, output_path):
     try: os.mkdir(graph_path)
     except OSError: pass
 
-    output.write('<meta charset=\'utf-8\'>\n')
+    # head = '<meta charset=\'utf-8\'>\n'
+    head = os.path.dirname(os.path.abspath(__file__)) + '/html_head'
+    output.write(open(head, 'r').read())
 
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
