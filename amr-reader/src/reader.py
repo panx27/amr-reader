@@ -151,7 +151,7 @@ def generate_nodes_multiple(content, amr_nodes_con, amr_nodes_acr):
     if is_named_entity:
         ### Find Wikipedia title:
         wikititle = ''
-        if re.match(':wiki\s-', content) != None:
+        if re.match('.+:wiki\s-.*', content) != None:
             wikititle = '-' # Entity is NIL, Wiki title does not exist
         else:
             m = re.search(':wiki\s\"(.+?)\"', content)
@@ -253,8 +253,8 @@ def main(input_):
         senid = re.search('(\S+)', nline[0]).group(1)
         docid = senid[:senid.rfind('.')]
         sen = re.search('# ::snt (.+)', nline[1]).group(1)
-        if nline[2].startswith('# ::save-date'): # ingore save-date info
-            nline.remove(nline[2])
+        # if nline[2].startswith('# ::save-date'): # ingore save-date info
+        #     nline.remove(nline[2])
         amr = '\n'.join(nline[2:]).strip()
 
         if amr_validator(amr) == False:
