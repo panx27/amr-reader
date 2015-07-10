@@ -1,4 +1,3 @@
 #!/bin/bash
-
-BINPATH=`dirname $0`
+BINPATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 python "$BINPATH/../amr-reader/main.py" $@
