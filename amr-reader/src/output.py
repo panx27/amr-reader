@@ -38,7 +38,7 @@ def get_sentence(sen, output):
     output.write('<body>\n%s\n%s\n%s\n%s\n%s\n</body>\n' % (senid, sentence,
                                                             amr, nes, graph))
 
-def html(amr_table, filename, output_path):
+def html(amr_table, filename, output_path, curt=False):
     output = open(output_path + '%s.html' % filename, 'w')
     import visualizer
 
@@ -53,7 +53,10 @@ def html(amr_table, filename, output_path):
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
-            visualizer.visualizer(sen, graph_path)
+            if curt:
+                visualizer.visualizer_curt(sen, graph_path)
+            else:
+                visualizer.visualizer(sen, graph_path)
             get_sentence(sen, output)
 
 '''

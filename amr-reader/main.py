@@ -18,8 +18,8 @@ if __name__ == '__main__':
     parser.add_argument('output', type=str,
                         help='directory of output files', nargs='+')
     parser.add_argument('-g', '--graph',
-                        help='output AMR graphs -g=n: \
-                        normal graphs -g=s: simple graphs ', type=str)
+                        help='output AMR graphs \
+                        -g=n: normal graphs -g=s: simple graphs ', type=str)
     parser.add_argument('-n', '--node',
                         help='output AMR nodes', action='store_true')
     parser.add_argument('-p', '--path',
@@ -29,8 +29,8 @@ if __name__ == '__main__':
     parser.add_argument('-q', '--query',
                         help='output named entity queries', action='store_true')
     parser.add_argument('-v', '--visualization',
-                        help='output html format visualization',
-                        action='store_true')
+                        help='output html format visualization \
+                        -v=n normal graphs -v=s: simple graphs', type=str)
     args = parser.parse_args()
 
     ### Output path
@@ -73,9 +73,13 @@ if __name__ == '__main__':
         path.main(amr_table)
         output.path(amr_table, output_path)
 
-    if args.visualization:
+    if args.visualization == 'n':
         nequery.main(amr_table, chain=False)
         output.html(amr_table, 'visualization', output_path)
+
+    if args.visualization == 's':
+        nequery.main(amr_table, chain=False)
+        output.html(amr_table, 'visualization', output_path, curt=True)
 
     if args.query:
         nequery.main(amr_table)
