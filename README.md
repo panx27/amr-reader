@@ -15,7 +15,10 @@ optional arguments:
       -p, --path              output AMR paths
       -e, --entity            output named entities
       -q, --query             output named entity queries
-      -v, --visualization     output html format visualization
+      -v VISUALIZATION, --visualization VISUALIZATION
+                              output html format visualization
+                              VISUALIZATION=n: normal graphs
+                              VISUALIZATION=s: simple graphs
 
 - Your input should be raw AMR format (see ./amr/tests/test_amr_doc/test).
 - If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.<br>
