@@ -1,6 +1,6 @@
 ## Quickstart
 
-      bin/amr_reader <directory of AMR files> <directory of output files> [-h] [-g GRAPH] [-n] [-p] [-e] [-q] [-v]
+      bin/amr_reader <directory of AMR files> <directory of output files> [-h] [-g GRAPH] [-n] [-p] [-e] [-q] [-v VISUALIZATION]
 
 
 
