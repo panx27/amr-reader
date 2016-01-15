@@ -5,13 +5,13 @@
   - pygraphviz
 
  Input: 'Sentence' object
- Output: AMR graphs
+ Output: AMR visualized graph
 '''
 
 import re
 import pygraphviz as pgv
 
-def visualizer(sen, output_path, show_wiki=True):
+def visualizer(sen, outdir, show_wiki=True):
     nodes = set()
     for i in sen.graph_:
         nodes.add(i[0])
@@ -63,9 +63,9 @@ def visualizer(sen, output_path, show_wiki=True):
 
     G.layout()
     G.layout(prog='dot')
-    G.draw('%s%s.png' % (output_path, sen.senid_))
+    G.draw('%s/%s.png' % (outdir, sen.senid_))
 
-def visualizer_curt(sen, output_path, show_wiki=True):
+def visualizer_curt(sen, outdir, show_wiki=True):
     nodes = set()
     for i in sen.graph_:
         nodes.add(i[0])
@@ -110,4 +110,4 @@ def visualizer_curt(sen, output_path, show_wiki=True):
 
     G.layout()
     G.layout(prog='dot')
-    G.draw('%s%s.png' % (output_path, sen.senid_))
+    G.draw('%s/%s.png' % (outdir, sen.senid_))

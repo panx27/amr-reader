@@ -5,7 +5,7 @@
 import os
 
 '''
- HTML format
+ HTML
 '''
 def get_ne(ne):
     name = '<b>%s</b> ---> <code>%s</code> <br>' % (ne.entity_name_,
@@ -22,7 +22,7 @@ def get_ne(ne):
     coherence += '</code><br>'
     return '%s\n%s\n%s\n%s\n<br>' % (name, coreference, neighbors, coherence)
 
-def get_sentence(sen, output):
+def get_sentence(sen, out):
     graph = '<img src="./graphs/%s.png">' % sen.senid_
     senid = '<h2>%s</h2>' % sen.senid_
     sentence = '<p><b>%s</b></p>' % sen.sen_
@@ -35,110 +35,99 @@ def get_sentence(sen, output):
     for n in sen.named_entities_:
         nes += get_ne(sen.named_entities_[n])
     nes += '</div>'
-    output.write('<body>\n%s\n%s\n%s\n%s\n%s\n</body>\n' % (senid, sentence,
-                                                            amr, nes, graph))
+    out.write('<body>\n%s\n%s\n%s\n%s\n%s\n</body>\n' % (senid, sentence,
+                                                         amr, nes, graph))
 
-def html(amr_table, filename, output_path, curt=False):
-    output = open(output_path + '%s.html' % filename, 'w')
+def html(amres, filename, outdir, curt=False):
+    out = open('%s/%s.html' % (outdir, filename), 'w')
     import visualizer
 
-    graph_path = output_path + 'graphs/'
-    try: os.mkdir(graph_path)
-    except OSError: pass
+    graphdir = '%s/%s' % (outdir, 'graphs')
+    try:
+        os.mkdir(graphdir)
+    except OSError:
+        pass
 
     # head = '<meta charset=\'utf-8\'>\n'
-    head = os.path.dirname(os.path.abspath(__file__)) + '/html_head'
-    output.write(open(head, 'r').read())
+    head = os.path.dirname(os.path.abspath(__file__)) + '/../docs/html_head'
+    out.write(open(head, 'r').read())
 
-    for docid in sorted(amr_table):
-        for senid in sorted(amr_table[docid]):
-            sen = amr_table[docid][senid]
-            if curt:
-                visualizer.visualizer_curt(sen, graph_path)
-            else:
-                visualizer.visualizer(sen, graph_path)
-            get_sentence(sen, output)
+    for snt in amres:
+        if curt:
+            visualizer.visualizer_curt(snt, graphdir)
+        else:
+            visualizer.visualizer(snt, graphdir)
+        get_sentence(snt, out)
 
 '''
- AMR graphs
-  Input: 'Sentence' object
+ Visualized AMR graphs
+ Input: 'Sentence' object
 '''
-def graph(amr_table, output_path, curt=False):
+def graph(amres, outdir, curt=False):
     import visualizer
 
-    graph_path = output_path + 'graphs/'
-    try: os.mkdir(graph_path)
-    except OSError: pass
+    graphdir = '%s/%s' % (outdir, 'graphs')
+    try:
+        os.mkdir(graphdir)
+    except OSError:
+        pass
 
-    for docid in sorted(amr_table):
-        for senid in sorted(amr_table[docid]):
-            sen = amr_table[docid][senid]
-            if curt:
-                visualizer.visualizer_curt(sen, graph_path)
-            else:
-                visualizer.visualizer(sen, graph_path)
+    for snt in amres:
+        if curt:
+            visualizer.visualizer_curt(snt, graphdir)
+        else:
+            visualizer.visualizer(snt, graphdir)
 
 '''
  AMR nodes
   if you would like to modify the output format of AMR node, modify
   node.py: def __str__(self):
 '''
-def node(amr_table, output_path):
-    output = open(output_path + 'amr_nodes', 'w')
-    for docid in sorted(amr_table):
-        for senid in sorted(amr_table[docid]):
-            sen = amr_table[docid][senid]
-            assert sen.senid_ == senid
-            amr_nodes = sen.amr_nodes_
-            for n in amr_nodes:
-                node = amr_nodes[n]
-                if node.ful_name_ == 'name': # Ingore 'n / name' node
-                    pass
-                else:
-                    output.write('%s\n%s\n' % (senid, node))
+def node(amres, outdir):
+    out = open('%s/amr_nodes' % outdir, 'w')
+    for snt in amres:
+        for acr in snt.amr_nodes_:
+            node = snt.amr_nodes_[acr]
+            if node.ful_name_ == 'name': # Ingore 'n / name' node
+                pass
+            else:
+                out.write('%s\n%s\n' % (snt.senid_, node))
 
 '''
  Named entities
 '''
-def namedentity(amr_table, output_path):
-    output = open(output_path + 'amr_nes', 'w')
-    for docid in sorted(amr_table):
-        for senid in sorted(amr_table[docid]):
-            sen = amr_table[docid][senid]
-            assert sen.senid_ == senid
-            amr_nodes = sen.amr_nodes_
-            for n in amr_nodes:
-                node = amr_nodes[n]
-                if node.is_entity_:
-                    output.write('%s\t%s / %s\t%s\t%s\n' % (senid, node.name_,
-                                                            node.ful_name_,
-                                                            node.entity_name_,
-                                                            node.wiki_))
+def namedentity(amres, outdir):
+    out = open('%s/amr_nes' % outdir, 'w')
+    for snt in amres:
+        for acr in snt.amr_nodes_:
+            node = snt.amr_nodes_[acr]
+            if node.is_entity_:
+                out.write('%s\t%s / %s\t%s\t%s\n' % (snt.senid_, node.name_,
+                                                     node.ful_name_,
+                                                     node.entity_name_,
+                                                     node.wiki_))
 
 '''
  AMR paths
 '''
-def path(amr_table, output_path):
-    output = open(output_path + 'amr_paths', 'w')
-    for docid in sorted(amr_table):
-        for senid in sorted(amr_table[docid]):
-            sen = amr_table[docid][senid]
-            assert sen.senid_ == senid
-            for path_type in sen.amr_paths_:
-                paths = sen.amr_paths_[path_type]
-                for p in paths:
-                    path = ''
-                    for i in p:
-                        path += '(\'%s\', \'%s\'), ' % (i[0], i[1])
-                    output.write('%s\t%s\t[%s]\n' % (senid,
-                                                     path_type,
-                                                     path.strip(', ')))
+def path(amres, outdir):
+    out = open('%s/amr_paths' % outdir, 'w')
+    for snt in amres:
+        for path_type in snt.amr_paths_:
+            paths = snt.amr_paths_[path_type]
+            for p in paths:
+                path = ''
+                for i in p:
+                    path += '(\'%s\', \'%s\'), ' % (i[0], i[1])
+                out.write('%s\t%s\t[%s]\n' % (snt.senid_,
+                                              path_type,
+                                              path.strip(', ')))
 
 '''
  AMR named entity queries
 '''
-def query(amr_table, output_path):
-    output = open(output_path + 'amr_queries', 'w')
+def query(amr_table, outdir):
+    output = open(outdir + 'amr_queries', 'w')
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]
@@ -159,9 +148,9 @@ def query(amr_table, output_path):
 '''
  Named entity wiki titile
 '''
-def newiki(amr_table, output_path):
+def newiki(amr_table, outdir):
     wiki = set()
-    output = open(output_path + 'amr_nes_wiki', 'w')
+    output = open(outdir + 'amr_nes_wiki', 'w')
     for docid in sorted(amr_table):
         for senid in sorted(amr_table[docid]):
             sen = amr_table[docid][senid]

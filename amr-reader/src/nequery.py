@@ -29,7 +29,8 @@ def add_name_coreference(amr_table):
             if i.maintype_ != 'PER':
                 continue
             for j in named_entities_doc_level:
-                if i.subtype_ == j.subtype_ and i.entity_name_ != j.entity_name_:
+                if i.subtype_ == j.subtype_ and \
+                   i.entity_name_ != j.entity_name_:
                     namei = i.entity_name_.split(' ')
                     namej = j.entity_name_.split(' ')
                     if len(namei) == 1 and namei[0] in namej:
@@ -271,7 +272,8 @@ def add_date_entity(amr_table):
 
                     ### Other
                     if ':century' in date_entity:
-                        m = re.search('(\d\d)\d*', date_entity[':century'].name_)
+                        m = re.search('(\d\d)\d*',
+                                      date_entity[':century'].name_)
                         if m != None:
                             time = cardinal_to_ordinal(m.group(1)) + ' century'
                     if ':weekday' in date_entity:
@@ -411,8 +413,8 @@ def get_chain_doc_level(amr_table):
                 name = ne.name()
                 ne.chain_ = chain[name]
 
-def main(amr_table, coref=True, coherence=True, hor=True, hrr=True, time=True,
-         loc=True, sr=True, chain=True):
+def main(amres, coref=True, coherence=True, hor=True,
+         hrr=True, time=True, loc=True, sr=True, chain=True):
     ### Adding name coreference
     if coref:
         add_name_coreference(amr_table)

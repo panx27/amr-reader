@@ -7,6 +7,7 @@ import os
 import sys
 sys.setrecursionlimit(10000)
 import copy
+import urllib
 from Node import Node
 from Sentence import Sentence
 
@@ -55,8 +56,12 @@ def split_amr(text, content):
 def generate_node_single(content, amr_nodes_con, amr_nodes_acr):
     assert content.count('(') == 1 and content.count(')') == 1
     predict_event = re.search('(\w+)\s/\s(\S+)', content)
-    acr = predict_event.group(1) # Acronym
-    ful = predict_event.group(2).strip(')') # Full name
+    try:
+        acr = predict_event.group(1) # Acronym
+        ful = predict_event.group(2).strip(')') # Full name
+    except:
+        acr = '-'
+        ful = '-'
 
     ### In case of :polarity -
     is_polarity = False
@@ -70,11 +75,13 @@ def generate_node_single(content, amr_nodes_con, amr_nodes_acr):
         for i in names:
             entity_name += re.match(':op\d\s\"(\S+)\"', i).group(1) + ' '
         new_node = Node(name=acr, ful_name=ful,
-                        entity_name=entity_name.strip(), polarity=is_polarity)
+                        entity_name=entity_name.strip(),
+                        polarity=is_polarity, content=content)
         amr_nodes_con[content] = new_node
         amr_nodes_acr[acr] = new_node
     else:
-        new_node = Node(name=acr, ful_name=ful, polarity=is_polarity)
+        new_node = Node(name=acr, ful_name=ful, polarity=is_polarity,
+                        content=content)
         amr_nodes_con[content] = new_node
         amr_nodes_acr[acr] = new_node
 
@@ -108,10 +115,13 @@ def generate_nodes_multiple(content, amr_nodes_con, amr_nodes_acr):
                 ne = amr_nodes_con[i]
             else:
                 arg_nodes.append(amr_nodes_con[i])
-
-    predict_event = re.search('\w+\s/\s\S+', content).group().split(' / ')
-    acr = predict_event[0] # Acronym
-    ful = predict_event[1] # Full name
+    try:
+        predict_event = re.search('\w+\s/\s\S+', content).group().split(' / ')
+        acr = predict_event[0] # Acronym
+        ful = predict_event[1] # Full name
+    except:
+        acr = '-'
+        ful = '-'
 
     ### In case of :polarity -
     if re.search(":polarity\s-", content) != None:
@@ -163,13 +173,13 @@ def generate_nodes_multiple(content, amr_nodes_con, amr_nodes_acr):
         new_node = Node(name=acr, ful_name=ful, next_node=arg_nodes,
                         edge_label=ne.ful_name_, is_entity=True,
                         entity_type=ful, entity_name=ne.entity_name_,
-                        wiki=wikititle, polarity=is_polarity)
+                        wiki=wikititle, polarity=is_polarity, content=content)
         amr_nodes_con[content_key] = new_node
         amr_nodes_acr[acr] = new_node
 
     elif len(arg_nodes) > 0:
         new_node = Node(name=acr, ful_name=ful, next_node=arg_nodes,
-                        polarity=is_polarity)
+                        polarity=is_polarity, content=content)
         amr_nodes_con[content_key] = new_node
         amr_nodes_acr[acr] = new_node
 
@@ -236,34 +246,50 @@ def amr_reader(raw_amr_input):
     return amr_nodes_acr, graph
 
 '''
- Main function
-
  Input: raw AMR
- Output: 'amr_table'
-         container: dict()   dict()      Sentence
-         key:       docid -> senid -> sentence object
+ Output: list of Sentence object
 '''
-def main(input_):
-    amr_table = dict()
-    sentences = input_.strip().split('# ::id ')
+def main(raw_amr):
+    res = list()
+    for snt in re.split('\n\s*\n', raw_amr):
+        try:
+            sen = re.search('# ::snt (.*?)\n', snt).group(1)
+        except:
+            sen = ''
+        try:
+            senid = re.search('# ::id (.*?) ', snt).group(1)
+            docid = senid[:senid.rfind('.')]
+        except:
+            senid = ''
+            docid = ''
+        amr = ''
+        comment = ''
+        for line in snt.splitlines(True):
+            if line.startswith('# '):
+                comment += line
+                continue
 
-    for i in sentences:
-        if i == '': continue
-        nline = i.split('\n')
-        senid = re.search('(\S+)', nline[0]).group(1)
-        docid = senid[:senid.rfind('.')]
-        sen = re.search('# ::snt (.+)', nline[1]).group(1)
-        # if nline[2].startswith('# ::save-date'): # ingore save-date info
-        #     nline.remove(nline[2])
-        amr = '\n'.join(nline[2:]).strip()
+            ### convert '( )' to '%28 %29' in :wiki
+            m = re.search(':wiki\s\"(.+?)\"', line)
+            if m != None:
+                line = line.replace(m.group(1), urllib.quote_plus(m.group(1)))
 
+            ### convert '( )' to '%28 %29' in :name
+            m = re.findall('\"(\S+)\"', line)
+            for i in m:
+                if '(' in i or ')' in i:
+                    line = line.replace(i, urllib.quote_plus(i))
+            amr += line
+
+        if amr == '':
+            continue
         if amr_validator(amr) == False:
             raise NameError('Invalid AMR Input: %s' % senid)
 
         amr_nodes_acr, graph = amr_reader(amr)
 
-        if docid not in amr_table:
-            amr_table[docid] = dict()
-        amr_table[docid][senid] = Sentence(senid, sen, amr,
-                                           amr_nodes_acr, graph)
-    return amr_table
+        snt_obj = Sentence(senid, sen, amr, comment,
+                           amr_nodes_acr, graph)
+        res.append(snt_obj)
+
+    return res

@@ -21,25 +21,20 @@ def get_subtype_mapping_table():
     return types
 
 '''
- Adding NamedEntity objects into 'amr_table'
+ Add NamedEntity object
 '''
-def add_named_entity(amr_table):
-    subtype_table = get_subtype_mapping_table()
-
-    for docid in sorted(amr_table):
-        for senid in sorted(amr_table[docid]):
-            sen = amr_table[docid][senid]
-            amr_nodes = sen.amr_nodes_
-
-            ### Generate NamedEntity object
-            for i in amr_nodes:
-                node = amr_nodes[i]
-                if node.is_entity_:
-                    main_type = ''
-                    if node.entity_type_ in subtype_table:
-                        main_type = subtype_table[node.entity_type_]
-                    ne = NamedEntity(senid=senid, name=node.name_,
-                                     entity_name=node.entity_name_,
-                                     subtype=node.entity_type_,
-                                     maintype=main_type, wiki=node.wiki_)
-                    sen.named_entities_[node.name_] = ne
+def add_named_entity(amres):
+    sttable = get_subtype_mapping_table()
+    for snt in amres:
+        ### Generate NamedEntity object
+        for acr in snt.amr_nodes_:
+            node = snt.amr_nodes_[acr]
+            if node.is_entity_:
+                mtype = ''
+                if node.entity_type_ in sttable:
+                    mtype = sttable[node.entity_type_]
+                ne = NamedEntity(senid=snt.senid_, name=node.name_,
+                                 entity_name=node.entity_name_,
+                                 subtype=node.entity_type_,
+                                 maintype=mtype, wiki=node.wiki_)
+                snt.named_entities_[node.name_] = ne
