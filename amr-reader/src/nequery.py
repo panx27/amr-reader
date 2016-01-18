@@ -413,8 +413,25 @@ def get_chain_doc_level(amr_table):
                 name = ne.name()
                 ne.chain_ = chain[name]
 
+def list2dict(amres):
+    res = dict()
+    for snt in amres:
+        senid = snt.senid_
+        try:
+            docid = re.search('(.+)\.\d+', senid).group(1)
+        except:
+            docid = ''
+        if docid not in res:
+            res[docid] = dict()
+        res[docid][senid] = snt
+    return res
+
 def main(amres, coref=True, coherence=True, hor=True,
          hrr=True, time=True, loc=True, sr=True, chain=True):
+
+    ### Convert list to dict
+    amr_table = list2dict(amres)
+
     ### Adding name coreference
     if coref:
         add_name_coreference(amr_table)

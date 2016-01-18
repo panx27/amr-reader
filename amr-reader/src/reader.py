@@ -258,10 +258,8 @@ def main(raw_amr):
             sen = ''
         try:
             senid = re.search('# ::id (.*?) ', snt).group(1)
-            docid = senid[:senid.rfind('.')]
         except:
             senid = ''
-            docid = ''
         amr = ''
         comment = ''
         for line in snt.splitlines(True):

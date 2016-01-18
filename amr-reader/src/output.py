@@ -126,24 +126,21 @@ def path(amres, outdir):
 '''
  AMR named entity queries
 '''
-def query(amr_table, outdir):
-    output = open(outdir + 'amr_queries', 'w')
-    for docid in sorted(amr_table):
-        for senid in sorted(amr_table[docid]):
-            sen = amr_table[docid][senid]
-            assert sen.senid_ == senid
-            for i in sen.named_entities_:
-                ne = sen.named_entities_[i]
-                query = '%s(%s|%s)' % (ne.name(), ne.subtype_, ne.maintype_)
-                for i in ne.neighbors_:
-                    query += '%s;' % i[1]
-                query += '|'
-                for i in ne.coherence_:
-                    query += '%s;' % i[2].name()
+def query(amres, outdir):
+    out = open('%s/amr_queries' % outdir, 'w')
+    for snt in amres:
+        for i in snt.named_entities_:
+            ne = snt.named_entities_[i]
+            query = '%s(%s|%s)' % (ne.name(), ne.subtype_, ne.maintype_)
+            for i in ne.neighbors_:
+                query += '%s;' % i[1]
+            query += '|'
+            for i in ne.coherence_:
+                query += '%s;' % i[2].name()
 
-                output.write('%s\t%s\t%s\n' % (senid,
-                                               ne.entity_name_,
-                                               query.strip(';')))
+            out.write('%s\t%s\t%s\n' % (snt.senid_,
+                                        ne.entity_name_,
+                                        query.strip(';')))
 
 '''
  Named entity wiki titile

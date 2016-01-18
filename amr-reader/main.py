@@ -70,9 +70,8 @@ if __name__ == '__main__':
         output.path(amres, outdir)
 
     if args.query:
-        pass
-        # nequery.main(amres)
-        # output.query(amres, outdir)
+        nequery.main(amres)
+        output.query(amres, outdir)
 
     if args.visualization == 'n':
         output.html(amres, 'visualization', outdir)
