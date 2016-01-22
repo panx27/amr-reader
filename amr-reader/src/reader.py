@@ -253,11 +253,11 @@ def main(raw_amr):
     res = list()
     for snt in re.split('\n\s*\n', raw_amr):
         try:
-            sen = re.search('# ::snt (.*?)\n', snt).group(1)
+            sen = re.search('::snt (.*?)\n', snt).group(1)
         except:
             sen = ''
         try:
-            senid = re.search('# ::id (.*?) ', snt).group(1)
+            senid = re.search('::id (.*?) ', snt).group(1)
         except:
             senid = ''
         amr = ''
