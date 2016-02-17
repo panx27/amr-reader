@@ -10,6 +10,7 @@ import copy
 import urllib
 from Node import Node
 from Sentence import Sentence
+import uuid
 
 '''
  Input validator
@@ -259,7 +260,7 @@ def main(raw_amr):
         try:
             senid = re.search('::id (.*?) ', snt).group(1)
         except:
-            senid = ''
+            senid = uuid.uuid4()
         amr = ''
         comment = ''
         for line in snt.splitlines(True):
