@@ -20,9 +20,9 @@ optional arguments:
                               VISUALIZATION=n: normal graphs
                               VISUALIZATION=s: simple graphs
 
-- Your input should be raw AMR format (see ./amr/tests/test_amr_doc/test).
+- Your input should be raw AMR format (see amr-reader/tests/test_amr_doc/test).
 - If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.<br>
-- If you would like to modify the output format, please modify ./amr/src/output.py file.
+- If you would like to modify the output format, you could modify amr-reader/src/output.py file.
 
 ## Example
    First, what is the biggest puzzle between China and the US?<br>
