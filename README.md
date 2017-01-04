@@ -1,7 +1,7 @@
 ## Quickstart
 
       bin/amr_reader <directory of AMR files> <directory of output files> [-h] [-g GRAPH] [-n] [-p] [-e] [-q] [-v VISUALIZATION]
-      e.g., bin/amr_reader amr-reader/test/test_amr_doc/ output/ -v=n
+      e.g., python /amr_reader/main.py amr-reader/test/test_amr_doc/ output/ -v=n
 
 
 optional arguments:
