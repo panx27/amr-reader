@@ -30,8 +30,12 @@ optional arguments:
       (a / anticipate-01
       :ARG0 (i / i)
       :ARG1 (n / nominate-01 :polarity -
-            :ARG0 (p2 / political-party :wiki "Republican_Party_(United_States)" :name (n3 / name :op1 "GOP"))
-            :ARG1 (p / person :name :wiki "Mitt_Romney" (n2 / name :op1 "Mitt" :op2 "Romney"))
+            :ARG0 (p2 / political-party 
+                        :wiki "Republican_Party_(United_States)" 
+                        :name (n3 / name :op1 "GOP"))
+            :ARG1 (p / person
+                  :wiki "Mitt_Romney" 
+                  :name (n2 / name :op1 "Mitt" :op2 "Romney"))
             :time (d / date-entity :year 2012)))
 
   Visualization:<br>
