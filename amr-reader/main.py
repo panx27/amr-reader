@@ -18,7 +18,7 @@ if __name__ == '__main__':
                         help='directory of output files', nargs='+')
     parser.add_argument('-g', '--graph',
                         help='output AMR graphs \
-                        -g=n: normal graphs -g=s: simple graphs ', type=str)
+                        -g=n: normal graphs -g=s: simplified graphs ', type=str)
     parser.add_argument('-n', '--node',
                         help='output AMR nodes', action='store_true')
     parser.add_argument('-p', '--path',
@@ -29,7 +29,7 @@ if __name__ == '__main__':
                         help='output named entity queries', action='store_true')
     parser.add_argument('-v', '--visualization',
                         help='output html format visualization \
-                        -v=n normal graphs -v=s: simple graphs', type=str)
+                        -v=n normal graphs -v=s: simplified graphs', type=str)
     args = parser.parse_args()
 
     ### Output Dir
