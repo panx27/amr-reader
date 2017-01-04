@@ -49,3 +49,6 @@ Graph:<br>
 ## Citation
 If you would like to cite this work, please cite the following publication: <br>
 [Unsupervised Entity Linking with Abstract Meaning Representation](http://nlp.cs.rpi.edu/paper/amrel.pdf).
+
+## Demo
+[AMR based Entity Linker](https://blender04.cs.rpi.edu/~panx2/amr/).
