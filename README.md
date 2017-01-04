@@ -1,7 +1,7 @@
 ## Quickstart
 
-      bin/amr_reader <directory of AMR files> <directory of output files> [-h] [-g GRAPH] [-n] [-p] [-e] [-q] [-v VISUALIZATION]
-      e.g., python /amr_reader/main.py amr-reader/test/test_amr_doc/ output/ -v=n
+      python amr_reader/main.py <directory of AMR files> <directory of output files> [-h] [-g GRAPH] [-n] [-p] [-e] [-q] [-v VISUALIZATION]
+      e.g., python amr_reader/main.py amr-reader/test/test_amr_doc/ output/ -v=n
 
 
 optional arguments:
@@ -25,18 +25,14 @@ optional arguments:
 - If you would like to modify the output format, you could modify amr-reader/src/output.py file.
 
 ## Example
-      First, what is the biggest puzzle between China and the US?
+      I am cautiously anticipating the GOP nominee in 2012 not to be Mitt Romney.
 
-      (p / puzzle-01
-         :ARG0 (a / amr-unknown)
-         :ARG1 (b2 / between
-               :op1 (c / country :wiki "China"
-                     :name (n / name :op1 "China"))
-               :op2 (c2 / country :wiki "United_States"
-                     :name (n2 / name :op1 "US")))
-         :mod (b / big
-               :degree (m / most))
-         :li (x / 1))
+      (a / anticipate-01
+      :ARG0 (i / i)
+      :ARG1 (n / nominate-01 :polarity -
+            :ARG0 (p2 / political-party :wiki "Republican_Party_(United_States)" :name (n3 / name :op1 "GOP"))
+            :ARG1 (p / person :name :wiki "Mitt_Romney" (n2 / name :op1 "Mitt" :op2 "Romney"))
+            :time (d / date-entity :year 2012)))
 
   Visualization:<br>
 
