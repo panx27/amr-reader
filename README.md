@@ -26,7 +26,7 @@ optional arguments:
 
 ## Example
    Sentence:<br>
-     First, what is the biggest puzzle between China and the US?<br>
+   First, what is the biggest puzzle between China and the US?<br>
    AMR:<br>
 
       (p / puzzle-01
