@@ -25,8 +25,9 @@ optional arguments:
 - If you would like to modify the output format, you could modify amr-reader/src/output.py file.
 
 ## Example
-   First, what is the biggest puzzle between China and the US?<br>
-   AMR:<br>
+   Sentence:
+      First, what is the biggest puzzle between China and the US?
+   AMR:<br>
 
       (p / puzzle-01
          :ARG0 (a / amr-unknown)
