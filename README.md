@@ -10,7 +10,7 @@ optional arguments:
       -g GRAPH, --graph GRAPH
                               output AMR graphs
                               GRAPH=n: normal graphs
-                              GRAPH=s: simple graphs (without :instance label)
+                              GRAPH=s: simplified graphs (without :instance label)
       -n, --node              output AMR nodes
       -p, --path              output AMR paths
       -e, --entity            output named entities
@@ -18,13 +18,14 @@ optional arguments:
       -v VISUALIZATION, --visualization VISUALIZATION
                               output html format visualization
                               VISUALIZATION=n: normal graphs
-                              VISUALIZATION=s: simple graphs
+                              VISUALIZATION=s: simplified graphs
 
 - Your input should be raw AMR format (see amr-reader/tests/test_amr_doc/test).
 - If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.<br>
 - If you would like to modify the output format, you could modify amr-reader/src/output.py file.
 
 ## Example
+   Sentence:
    First, what is the biggest puzzle between China and the US?<br>
 
       (p / puzzle-01
@@ -38,7 +39,7 @@ optional arguments:
                :degree (m / most))
          :li (x / 1))
 
-Graph:<br>
+  Visualization:<br>
 
       Green Ellispe: concept
       Orange Ellispe: predict with sense
