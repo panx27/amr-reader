@@ -21,9 +21,9 @@ def html_get_sentence(sent):
     graph = '<img src="./graphs/%s.png">' % sent.sentid
     senid = '<h2>%s</h2>' % sent.sentid
     sentence = '<p><b>%s</b></p>' % sent.sent
-    amr = '<p><code>%s</code></p>' % sent.amr. \
-          replace('\n', '<br>'). \
-          replace(' ', '&nbsp;')
+    amr = '<p><code>%s</code></p>' % sent.raw_amr \
+          .replace('\n', '<br>') \
+          .replace(' ', '&nbsp;')
     nes = '<button type="button" onclick="toggle_visibility(\'%s\');"><b>' \
           'Named Entities</b></button> &#9660;<br><div id="%s" ' \
           'style="display: none;">\n' % (sent.sentid, sent.sentid)

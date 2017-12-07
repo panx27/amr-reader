@@ -1,28 +1,27 @@
 ## Quickstart
 
-      python amr_reader/main.py <directory of AMR files> <directory of output files> [-h] [-g GRAPH] [-n] [-p] [-e] [-q] [-v VISUALIZATION]
-      e.g., python amr_reader/main.py amr-reader/test/test_amr_doc/ output/ -v=n
+      python amrreader/main.py [-h] [-g GRAPH] [-n] [-p] [-e] [-v VISUALIZATION] indir outdir
+      e.g., python amrreader/main.py amrreader/test/test_amr_doc/ output/ -v=n
 
+
+positional arguments:
+  indir                 directory to AMR input files
+  outdir                outpu directory
 
 optional arguments:
+  -g GRAPH, --graph GRAPH
+                        generate AMR graphs -g=n: standard graphs -g=s:
+                        simplified graphs
+  -n, --node            generate AMR nodes
+  -p, --path            generate AMR paths
+  -e, --entity          generate named entities
+  -v VISUALIZATION, --visualization VISUALIZATION
+                        generate html visualization -v=n standard graphs -v=s:
+                        simplified graphs
 
-      -h, --help              show this help message and exit
-      -g GRAPH, --graph GRAPH
-                              output AMR graphs
-                              GRAPH=n: normal graphs
-                              GRAPH=s: simplified graphs (without :instance label)
-      -n, --node              output AMR nodes
-      -p, --path              output AMR paths
-      -e, --entity            output named entities
-      -q, --query             output named entity queries
-      -v VISUALIZATION, --visualization VISUALIZATION
-                              output html format visualization
-                              VISUALIZATION=n: normal graphs
-                              VISUALIZATION=s: simplified graphs
 
 - Your input should be raw AMR format (see amr-reader/tests/test_amr_doc/test).
 - If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.<br>
-- If you would like to modify the output format, you could modify amr-reader/src/output.py file.
 
 ## Example
       I am cautiously anticipating the GOP nominee in 2012 not to be Mitt Romney.

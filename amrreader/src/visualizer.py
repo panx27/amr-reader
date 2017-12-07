@@ -24,7 +24,7 @@ def visualizer(sent, outdir, show_wiki=True):
     for i in nodes:
         if i == '@': # Root
             continue
-        node = sen.amr_nodes[i]
+        node = sent.amr_nodes[i]
         pol = ''
         if node.polarity:
             pol = '\npolarity'
@@ -58,14 +58,14 @@ def visualizer(sent, outdir, show_wiki=True):
             G.add_node(i, shape='ellipse', color='black')
 
     # Draw edge label
-    for i in sen.graph:
+    for i in sent.graph:
         if i[0] == '@':
             continue
         G.add_edge(i[0], i[1], label=i[2], fontname='monospace')
 
     G.layout()
     G.layout(prog='dot')
-    G.draw('%s/%s.png' % (outdir, sen.senid_))
+    G.draw('%s/%s.png' % (outdir, sent.sentid))
 
 
 def visualizer_curt(sen, outdir, show_wiki=True):
