@@ -19,7 +19,7 @@
                               generate html visualization -v=n standard graphs -v=s:
                               simplified graphs
 
-
+- Ptyhon3
 - Your input should be raw AMR format (see amr-reader/tests/test_amr_doc/test).
 - If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.<br>
 
