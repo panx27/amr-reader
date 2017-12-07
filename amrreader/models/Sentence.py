@@ -15,4 +15,4 @@ class Sentence(object):
         self.named_entities = dict() # Named entities
 
     def __str__(self):
-        return '%s%s\n' % (self.comment, self.raw_amr)
+        return '%s%s\n' % (self.comments, self.raw_amr)

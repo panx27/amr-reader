@@ -3,12 +3,12 @@
 '''
 
 class Node(object):
-    def __init__(self, name='', ful_name='', next_nodes=list(), edge_label='',
+    def __init__(self, name='', ful_name='', next_nodes=[], edge_label='',
                  is_entity=False, entity_type='', entity_name='', wiki='',
                  polarity=False, content=''):
-        self.name = name               # Name of node (acronym)
-        self.ful_name = ful_name       # Full name of node
-        self.next_nodes = next_nodes   # Next nodes (a list)
+        self.name = name               # Node name (acronym)
+        self.ful_name = ful_name       # Full name of the node
+        self.next_nodes = next_nodes   # Next nodes (list)
         self.edge_label = edge_label   # Edge label between two nodes
         self.is_entity = is_entity     # Whether the node is named entity
         self.entity_type = entity_type # Entity type

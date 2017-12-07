@@ -3,7 +3,6 @@ sys.setrecursionlimit(10000)
 import os
 import re
 import copy
-# import urllib
 import urllib.parse
 from models.Node import Node
 from models.Sentence import Sentence
@@ -81,8 +80,9 @@ def generate_node_single(content, amr_nodes_content, amr_nodes_acronym):
         entity_name = ''
         for i in names:
             entity_name += re.match(':op\d\s\"(\S+)\"', i).group(1) + ' '
+        entity_name = urllib.parse.unquote_plus(entity_name.strip())
         new_node = Node(name=acr, ful_name=ful,
-                        entity_name=entity_name.strip(),
+                        entity_name=entity_name,
                         polarity=is_polarity, content=content)
         amr_nodes_content[content] = new_node
         amr_nodes_acronym[acr] = new_node
@@ -168,13 +168,12 @@ def generate_nodes_multiple(content, amr_nodes_content, amr_nodes_acronym):
 
     if is_named_entity:
         # Get Wikipedia title:
-        wikititle = ''
         if re.match('.+:wiki\s-.*', content):
             wikititle = '-' # Entity is NIL, Wiki title does not exist
         else:
             m = re.search(':wiki\s\"(.+?)\"', content)
             if m:
-                wikititle = m.group(1) # Wiki title
+                wikititle = urllib.parse.unquote_plus(m.group(1)) # Wiki title
             else:
                 wikititle = '' # There is no Wiki title information
 

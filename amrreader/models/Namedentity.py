@@ -4,7 +4,7 @@
 
 class NamedEntity(object):
     def __init__(self, sentid='', name='', entity_name='',
-                 subtype='', maintype='', wiki=''):
+                 subtype=None, maintype=None, wiki=''):
         self.sentid = sentid           # Sentence id
         self.name = name               # Name (acronym)
         self.entity_name = entity_name # Full entity name
