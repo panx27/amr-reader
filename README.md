@@ -4,20 +4,20 @@
       e.g., python amrreader/main.py amrreader/test/test_amr_doc/ output/ -v=n
 
 
-positional arguments:
-  indir                 directory to AMR input files
-  outdir                outpu directory
+      positional arguments:
+        indir                 directory to AMR input files
+        outdir                outpu directory
 
-optional arguments:
-  -g GRAPH, --graph GRAPH
-                        generate AMR graphs -g=n: standard graphs -g=s:
-                        simplified graphs
-  -n, --node            generate AMR nodes
-  -p, --path            generate AMR paths
-  -e, --entity          generate named entities
-  -v VISUALIZATION, --visualization VISUALIZATION
-                        generate html visualization -v=n standard graphs -v=s:
-                        simplified graphs
+      optional arguments:
+        -g GRAPH, --graph GRAPH
+                              generate AMR graphs -g=n: standard graphs -g=s:
+                              simplified graphs
+        -n, --node            generate AMR nodes
+        -p, --path            generate AMR paths
+        -e, --entity          generate named entities
+        -v VISUALIZATION, --visualization VISUALIZATION
+                              generate html visualization -v=n standard graphs -v=s:
+                              simplified graphs
 
 
 - Your input should be raw AMR format (see amr-reader/tests/test_amr_doc/test).
