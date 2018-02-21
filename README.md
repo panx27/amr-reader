@@ -6,25 +6,25 @@
 
       positional arguments:
         indir                 directory to AMR input files
-        outdir                outpu directory
+        outdir                output directory
 
       optional arguments:
         -g GRAPH, --graph GRAPH
-                              generate AMR graphs -g=n: standard graphs -g=s:
-                              simplified graphs
+                              generate AMR graphs -g=n: standard graphs
+                                                  -g=s: simplified graphs
         -n, --node            generate AMR nodes
         -p, --path            generate AMR paths
         -e, --entity          generate named entities
         -v VISUALIZATION, --visualization VISUALIZATION
-                              generate html visualization -v=n standard graphs -v=s:
-                              simplified graphs
+                              generate html visualization -v=n: standard graphs
+                                                          -v=s: simplified graphs
 
 - Ptyhon3
 - Your input should be raw AMR format (see amr-reader/tests/test_amr_doc/test).
 - If you would like to use AMR visualization functionality, please install [PyGraphviz](https://pygraphviz.github.io/) first.<br>
 
 ## Example
-      I am cautiously anticipating the GOP nominee in 2012 not to be Mitt Romney.
+      # ::snt I am cautiously anticipating the GOP nominee in 2012 not to be Mitt Romney.
 
       (a / anticipate-01
       :ARG0 (i / i)
