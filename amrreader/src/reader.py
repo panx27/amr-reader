@@ -4,9 +4,10 @@ import os
 import re
 import copy
 import urllib.parse
-from models.Node import Node
-from models.Sentence import Sentence
 import uuid
+
+from .models.Node import Node
+from .models.Sentence import Sentence
 
 
 def amr_validator(raw_amr): # TODO: add more test cases

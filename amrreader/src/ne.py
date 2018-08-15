@@ -1,5 +1,6 @@
 import os
-from models.Namedentity import NamedEntity
+
+from .models.Namedentity import NamedEntity
 
 
 def get_subtype_mapping_table():
