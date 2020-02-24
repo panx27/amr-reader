@@ -124,4 +124,4 @@ def visualizer_curt(sen, outdir, show_wiki=True):
 
     G.layout()
     G.layout(prog='dot')
-    G.draw('%s/%s.png' % (outdir, sen.senid_))
+    G.draw('%s/%s.png' % (outdir, sen.sentid))

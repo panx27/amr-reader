@@ -82,7 +82,7 @@ def generate_node_single(content, amr_nodes_content, amr_nodes_acronym):
         i = re.search('(:\S+)\s(\S+)', i)
         role = i.group(1)
         concept = i.group(2).strip(')')
-        if role == ':wiki' and is_named_entity:
+        if role == ':wiki':
             continue
         if role == ':polarity':
             continue
